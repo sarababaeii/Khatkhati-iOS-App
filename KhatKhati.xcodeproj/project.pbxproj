@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03B6DD352422CDEB00CC0B7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD342422CDEB00CC0B7F /* AppDelegate.swift */; };
+		03B6DD372422CDEB00CC0B7F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD362422CDEB00CC0B7F /* SceneDelegate.swift */; };
+		03B6DD392422CDEB00CC0B7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD382422CDEB00CC0B7F /* ViewController.swift */; };
+		03B6DD3C2422CDEB00CC0B7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B6DD3A2422CDEB00CC0B7F /* Main.storyboard */; };
+		03B6DD3F2422CDEB00CC0B7F /* KhatKhati.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD3D2422CDEB00CC0B7F /* KhatKhati.xcdatamodeld */; };
+		03B6DD412422CDEC00CC0B7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03B6DD402422CDEC00CC0B7F /* Assets.xcassets */; };
+		03B6DD442422CDEC00CC0B7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B6DD422422CDEC00CC0B7F /* LaunchScreen.storyboard */; };
+		03B6DD4F2422CDED00CC0B7F /* KhatKhatiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD4E2422CDED00CC0B7F /* KhatKhatiTests.swift */; };
+		03B6DD5A2422CDED00CC0B7F /* KhatKhatiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD592422CDED00CC0B7F /* KhatKhatiUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		03B6DD4B2422CDEC00CC0B7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03B6DD292422CDEB00CC0B7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03B6DD302422CDEB00CC0B7F;
+			remoteInfo = KhatKhati;
+		};
+		03B6DD562422CDED00CC0B7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 03B6DD292422CDEB00CC0B7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03B6DD302422CDEB00CC0B7F;
+			remoteInfo = KhatKhati;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03B6DD312422CDEB00CC0B7F /* KhatKhati.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KhatKhati.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		03B6DD342422CDEB00CC0B7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		03B6DD362422CDEB00CC0B7F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		03B6DD382422CDEB00CC0B7F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		03B6DD3B2422CDEB00CC0B7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		03B6DD3E2422CDEB00CC0B7F /* KhatKhati.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KhatKhati.xcdatamodel; sourceTree = "<group>"; };
+		03B6DD402422CDEC00CC0B7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		03B6DD432422CDEC00CC0B7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		03B6DD452422CDEC00CC0B7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03B6DD4A2422CDEC00CC0B7F /* KhatKhatiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KhatKhatiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		03B6DD4E2422CDED00CC0B7F /* KhatKhatiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhatKhatiTests.swift; sourceTree = "<group>"; };
+		03B6DD502422CDED00CC0B7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03B6DD552422CDED00CC0B7F /* KhatKhatiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KhatKhatiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		03B6DD592422CDED00CC0B7F /* KhatKhatiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhatKhatiUITests.swift; sourceTree = "<group>"; };
+		03B6DD5B2422CDED00CC0B7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		03B6DD2E2422CDEB00CC0B7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03B6DD472422CDEC00CC0B7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03B6DD522422CDED00CC0B7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03B6DD282422CDEB00CC0B7F = {
+			isa = PBXGroup;
+			children = (
+				03B6DD332422CDEB00CC0B7F /* KhatKhati */,
+				03B6DD4D2422CDEC00CC0B7F /* KhatKhatiTests */,
+				03B6DD582422CDED00CC0B7F /* KhatKhatiUITests */,
+				03B6DD322422CDEB00CC0B7F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		03B6DD322422CDEB00CC0B7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				03B6DD312422CDEB00CC0B7F /* KhatKhati.app */,
+				03B6DD4A2422CDEC00CC0B7F /* KhatKhatiTests.xctest */,
+				03B6DD552422CDED00CC0B7F /* KhatKhatiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		03B6DD332422CDEB00CC0B7F /* KhatKhati */ = {
+			isa = PBXGroup;
+			children = (
+				03B6DD342422CDEB00CC0B7F /* AppDelegate.swift */,
+				03B6DD362422CDEB00CC0B7F /* SceneDelegate.swift */,
+				03B6DD382422CDEB00CC0B7F /* ViewController.swift */,
+				03B6DD3A2422CDEB00CC0B7F /* Main.storyboard */,
+				03B6DD402422CDEC00CC0B7F /* Assets.xcassets */,
+				03B6DD422422CDEC00CC0B7F /* LaunchScreen.storyboard */,
+				03B6DD452422CDEC00CC0B7F /* Info.plist */,
+				03B6DD3D2422CDEB00CC0B7F /* KhatKhati.xcdatamodeld */,
+			);
+			path = KhatKhati;
+			sourceTree = "<group>";
+		};
+		03B6DD4D2422CDEC00CC0B7F /* KhatKhatiTests */ = {
+			isa = PBXGroup;
+			children = (
+				03B6DD4E2422CDED00CC0B7F /* KhatKhatiTests.swift */,
+				03B6DD502422CDED00CC0B7F /* Info.plist */,
+			);
+			path = KhatKhatiTests;
+			sourceTree = "<group>";
+		};
+		03B6DD582422CDED00CC0B7F /* KhatKhatiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				03B6DD592422CDED00CC0B7F /* KhatKhatiUITests.swift */,
+				03B6DD5B2422CDED00CC0B7F /* Info.plist */,
+			);
+			path = KhatKhatiUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		03B6DD302422CDEB00CC0B7F /* KhatKhati */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03B6DD5E2422CDED00CC0B7F /* Build configuration list for PBXNativeTarget "KhatKhati" */;
+			buildPhases = (
+				03B6DD2D2422CDEB00CC0B7F /* Sources */,
+				03B6DD2E2422CDEB00CC0B7F /* Frameworks */,
+				03B6DD2F2422CDEB00CC0B7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KhatKhati;
+			productName = KhatKhati;
+			productReference = 03B6DD312422CDEB00CC0B7F /* KhatKhati.app */;
+			productType = "com.apple.product-type.application";
+		};
+		03B6DD492422CDEC00CC0B7F /* KhatKhatiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03B6DD612422CDED00CC0B7F /* Build configuration list for PBXNativeTarget "KhatKhatiTests" */;
+			buildPhases = (
+				03B6DD462422CDEC00CC0B7F /* Sources */,
+				03B6DD472422CDEC00CC0B7F /* Frameworks */,
+				03B6DD482422CDEC00CC0B7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03B6DD4C2422CDEC00CC0B7F /* PBXTargetDependency */,
+			);
+			name = KhatKhatiTests;
+			productName = KhatKhatiTests;
+			productReference = 03B6DD4A2422CDEC00CC0B7F /* KhatKhatiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		03B6DD542422CDED00CC0B7F /* KhatKhatiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 03B6DD642422CDED00CC0B7F /* Build configuration list for PBXNativeTarget "KhatKhatiUITests" */;
+			buildPhases = (
+				03B6DD512422CDED00CC0B7F /* Sources */,
+				03B6DD522422CDED00CC0B7F /* Frameworks */,
+				03B6DD532422CDED00CC0B7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				03B6DD572422CDED00CC0B7F /* PBXTargetDependency */,
+			);
+			name = KhatKhatiUITests;
+			productName = KhatKhatiUITests;
+			productReference = 03B6DD552422CDED00CC0B7F /* KhatKhatiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		03B6DD292422CDEB00CC0B7F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Sara Babaei";
+				TargetAttributes = {
+					03B6DD302422CDEB00CC0B7F = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					03B6DD492422CDEC00CC0B7F = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 03B6DD302422CDEB00CC0B7F;
+					};
+					03B6DD542422CDED00CC0B7F = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 03B6DD302422CDEB00CC0B7F;
+					};
+				};
+			};
+			buildConfigurationList = 03B6DD2C2422CDEB00CC0B7F /* Build configuration list for PBXProject "KhatKhati" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 03B6DD282422CDEB00CC0B7F;
+			productRefGroup = 03B6DD322422CDEB00CC0B7F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				03B6DD302422CDEB00CC0B7F /* KhatKhati */,
+				03B6DD492422CDEC00CC0B7F /* KhatKhatiTests */,
+				03B6DD542422CDED00CC0B7F /* KhatKhatiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		03B6DD2F2422CDEB00CC0B7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03B6DD442422CDEC00CC0B7F /* LaunchScreen.storyboard in Resources */,
+				03B6DD412422CDEC00CC0B7F /* Assets.xcassets in Resources */,
+				03B6DD3C2422CDEB00CC0B7F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03B6DD482422CDEC00CC0B7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03B6DD532422CDED00CC0B7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		03B6DD2D2422CDEB00CC0B7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03B6DD392422CDEB00CC0B7F /* ViewController.swift in Sources */,
+				03B6DD352422CDEB00CC0B7F /* AppDelegate.swift in Sources */,
+				03B6DD372422CDEB00CC0B7F /* SceneDelegate.swift in Sources */,
+				03B6DD3F2422CDEB00CC0B7F /* KhatKhati.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03B6DD462422CDEC00CC0B7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03B6DD4F2422CDED00CC0B7F /* KhatKhatiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		03B6DD512422CDED00CC0B7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03B6DD5A2422CDED00CC0B7F /* KhatKhatiUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		03B6DD4C2422CDEC00CC0B7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03B6DD302422CDEB00CC0B7F /* KhatKhati */;
+			targetProxy = 03B6DD4B2422CDEC00CC0B7F /* PBXContainerItemProxy */;
+		};
+		03B6DD572422CDED00CC0B7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 03B6DD302422CDEB00CC0B7F /* KhatKhati */;
+			targetProxy = 03B6DD562422CDED00CC0B7F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		03B6DD3A2422CDEB00CC0B7F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03B6DD3B2422CDEB00CC0B7F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		03B6DD422422CDEC00CC0B7F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				03B6DD432422CDEC00CC0B7F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		03B6DD5C2422CDED00CC0B7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		03B6DD5D2422CDED00CC0B7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		03B6DD5F2422CDED00CC0B7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3QN7DG53LR;
+				INFOPLIST_FILE = KhatKhati/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.aut.KhatKhati;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		03B6DD602422CDED00CC0B7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3QN7DG53LR;
+				INFOPLIST_FILE = KhatKhati/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.aut.KhatKhati;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		03B6DD622422CDED00CC0B7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3QN7DG53LR;
+				INFOPLIST_FILE = KhatKhatiTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.aut.KhatKhatiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KhatKhati.app/KhatKhati";
+			};
+			name = Debug;
+		};
+		03B6DD632422CDED00CC0B7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3QN7DG53LR;
+				INFOPLIST_FILE = KhatKhatiTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.aut.KhatKhatiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KhatKhati.app/KhatKhati";
+			};
+			name = Release;
+		};
+		03B6DD652422CDED00CC0B7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3QN7DG53LR;
+				INFOPLIST_FILE = KhatKhatiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.aut.KhatKhatiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KhatKhati;
+			};
+			name = Debug;
+		};
+		03B6DD662422CDED00CC0B7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3QN7DG53LR;
+				INFOPLIST_FILE = KhatKhatiUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.aut.KhatKhatiUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KhatKhati;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		03B6DD2C2422CDEB00CC0B7F /* Build configuration list for PBXProject "KhatKhati" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03B6DD5C2422CDED00CC0B7F /* Debug */,
+				03B6DD5D2422CDED00CC0B7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03B6DD5E2422CDED00CC0B7F /* Build configuration list for PBXNativeTarget "KhatKhati" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03B6DD5F2422CDED00CC0B7F /* Debug */,
+				03B6DD602422CDED00CC0B7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03B6DD612422CDED00CC0B7F /* Build configuration list for PBXNativeTarget "KhatKhatiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03B6DD622422CDED00CC0B7F /* Debug */,
+				03B6DD632422CDED00CC0B7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		03B6DD642422CDED00CC0B7F /* Build configuration list for PBXNativeTarget "KhatKhatiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03B6DD652422CDED00CC0B7F /* Debug */,
+				03B6DD662422CDED00CC0B7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		03B6DD3D2422CDEB00CC0B7F /* KhatKhati.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				03B6DD3E2422CDEB00CC0B7F /* KhatKhati.xcdatamodel */,
+			);
+			currentVersion = 03B6DD3E2422CDEB00CC0B7F /* KhatKhati.xcdatamodel */;
+			path = KhatKhati.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 03B6DD292422CDEB00CC0B7F /* Project object */;
+}

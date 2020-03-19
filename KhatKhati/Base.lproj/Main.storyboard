@@ -11,6 +11,9 @@
         <array key="Vazir-Black.ttf">
             <string>Vazir-Black</string>
         </array>
+        <array key="Vazir-Bold.ttf">
+            <string>Vazir-Bold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Home View Controller-->
@@ -21,7 +24,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appName" translatesAutoresizingMaskIntoConstraints="NO" id="nc0-bu-eQj">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KhatKhatiName" translatesAutoresizingMaskIntoConstraints="NO" id="nc0-bu-eQj">
                                 <rect key="frame" x="22" y="0.0" width="331" height="118"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="118" id="iuJ-Zy-rlo"/>
@@ -33,8 +36,8 @@
                                     <constraint firstAttribute="height" constant="232" id="vWA-5y-TcF"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQz-nJ-fMz" customClass="YellowCustomButton" customModule="KhatKhati" customModuleProvider="target">
-                                <rect key="frame" x="70.5" y="303" width="234" height="61"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQz-nJ-fMz" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                <rect key="frame" x="70.5" y="297" width="234" height="61"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="234" id="9PG-mU-9u5"/>
                                     <constraint firstAttribute="height" constant="61" id="lpn-Vt-Rig"/>
@@ -46,8 +49,8 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17" scale="default"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nzj-VR-rcO" customClass="BlueCustomButton" customModule="KhatKhati" customModuleProvider="target">
-                                <rect key="frame" x="70.5" y="380" width="234" height="61"/>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nzj-VR-rcO" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                <rect key="frame" x="70.5" y="374" width="234" height="61"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="61" id="frO-ct-aDe"/>
                                 </constraints>
@@ -55,6 +58,10 @@
                                 <state key="normal" title="ایجاد بازی">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="createLobbyAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iP4-6R-Jl9"/>
+                                    <segue destination="I4V-oy-IXb" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="BXf-KN-ZBA"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="دوستان" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rft-gv-PKN">
                                 <rect key="frame" x="298" y="123" width="55" height="28"/>
@@ -69,7 +76,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Nzj-VR-rcO" firstAttribute="leading" secondItem="oQz-nJ-fMz" secondAttribute="leading" id="0Jo-Hi-eGD"/>
+                            <constraint firstItem="Nzj-VR-rcO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oQz-nJ-fMz" secondAttribute="leading" id="0Jo-Hi-eGD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Moi-ZX-GJd" secondAttribute="trailing" id="0LX-f2-qQx"/>
                             <constraint firstItem="oQz-nJ-fMz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AF9-NH-QdY"/>
                             <constraint firstItem="Nzj-VR-rcO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G1t-bw-bWu"/>
@@ -81,28 +88,93 @@
                             <constraint firstItem="Moi-ZX-GJd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aSz-B0-aeF"/>
                             <constraint firstItem="Nzj-VR-rcO" firstAttribute="trailing" secondItem="oQz-nJ-fMz" secondAttribute="trailing" id="hQZ-cd-RiH"/>
                             <constraint firstItem="nc0-bu-eQj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iji-39-M76"/>
-                            <constraint firstItem="oQz-nJ-fMz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tae-jV-4t5"/>
+                            <constraint firstItem="Moi-ZX-GJd" firstAttribute="top" secondItem="Nzj-VR-rcO" secondAttribute="bottom" id="tBl-lS-eqN"/>
                             <constraint firstItem="Rft-gv-PKN" firstAttribute="top" secondItem="nc0-bu-eQj" secondAttribute="bottom" constant="5" id="vmD-pb-3VW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Moi-ZX-GJd" secondAttribute="bottom" id="x7q-LC-gOI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nc0-bu-eQj" secondAttribute="trailing" constant="22" id="zr6-ov-NYw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="createLobbyButton" destination="Nzj-VR-rcO" id="RsS-Ey-9kh"/>
+                        <outlet property="joinGameButton" destination="oQz-nJ-fMz" id="AdW-gh-ZWG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138.40000000000001" y="114.69265367316342"/>
         </scene>
-        <!--View Controller-->
+        <!--New Lobby View Controller-->
         <scene sceneID="cMa-fK-lfE">
             <objects>
-                <viewController id="I4V-oy-IXb" sceneMemberID="viewController">
+                <viewController id="I4V-oy-IXb" customClass="NewLobbyViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lr2-JM-3nM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بازی جدید" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4t-o5-AYi">
+                                <rect key="frame" x="124" y="23.5" width="127" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="I4L-8e-eaP"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="127" id="ofd-dh-6Sf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Vazir-Black" family="Vazir" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mo0-Lw-ZD6">
+                                <rect key="frame" x="32" y="32" width="33" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="33" id="Mel-Zv-PrG"/>
+                                    <constraint firstAttribute="height" constant="33" id="qYY-Vu-mHv"/>
+                                </constraints>
+                                <state key="normal" image="BackButton"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="B02-37-tGE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KhatKhati" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KX6-GT-Rr7" customClass="CustomLabel" customModule="KhatKhati" customModuleProvider="target">
+                                <rect key="frame" x="37" y="106.5" width="301" height="86"/>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="301" id="KPB-nc-Pa0"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="86" id="YqO-7i-mN9"/>
+                                    <constraint firstAttribute="height" constant="86" id="fqQ-Gc-lhc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCA-yB-IrP" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                <rect key="frame" x="131" y="173.5" width="113" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="113" id="MGk-95-Ea4"/>
+                                    <constraint firstAttribute="height" constant="38" id="gIc-G2-yDs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="18"/>
+                                <state key="normal" title="کپی">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="thin"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="kCA-yB-IrP" firstAttribute="centerX" secondItem="lr2-JM-3nM" secondAttribute="centerX" id="5Tw-JG-ZIt"/>
+                            <constraint firstItem="Mo0-Lw-ZD6" firstAttribute="leading" secondItem="gpQ-MJ-rmd" secondAttribute="leading" constant="32" id="ByM-8k-jSo"/>
+                            <constraint firstItem="KX6-GT-Rr7" firstAttribute="leading" secondItem="gpQ-MJ-rmd" secondAttribute="leading" constant="37" id="G2V-1T-I1N"/>
+                            <constraint firstItem="gpQ-MJ-rmd" firstAttribute="trailing" secondItem="KX6-GT-Rr7" secondAttribute="trailing" constant="37" id="K6X-6I-ahE"/>
+                            <constraint firstItem="kCA-yB-IrP" firstAttribute="centerY" secondItem="KX6-GT-Rr7" secondAttribute="bottom" id="Lpb-lh-kpu"/>
+                            <constraint firstItem="KX6-GT-Rr7" firstAttribute="top" secondItem="e4t-o5-AYi" secondAttribute="bottom" constant="33" id="N0P-hM-dWj"/>
+                            <constraint firstItem="e4t-o5-AYi" firstAttribute="centerX" secondItem="lr2-JM-3nM" secondAttribute="centerX" id="OrR-Ru-XO4"/>
+                            <constraint firstItem="e4t-o5-AYi" firstAttribute="centerY" secondItem="Mo0-Lw-ZD6" secondAttribute="centerY" id="g7d-RK-fnx"/>
+                            <constraint firstItem="Mo0-Lw-ZD6" firstAttribute="top" secondItem="gpQ-MJ-rmd" secondAttribute="top" constant="32" id="ski-Rx-Mld"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gpQ-MJ-rmd"/>
                     </view>
+                    <connections>
+                        <outlet property="copyButton" destination="kCA-yB-IrP" id="Gq1-vK-FS2"/>
+                        <outlet property="nameLabel" destination="KX6-GT-Rr7" id="2yT-eb-L75"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qLM-yD-Z9e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -110,7 +182,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Background" width="562.5" height="348"/>
-        <image name="appName" width="330" height="118"/>
+        <image name="BackButton" width="33" height="28"/>
+        <image name="Background" width="375" height="232"/>
+        <image name="KhatKhatiName" width="330" height="118"/>
     </resources>
 </document>

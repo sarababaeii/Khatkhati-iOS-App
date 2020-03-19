@@ -1,24 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Vazir-Black.ttf">
+            <string>Vazir-Black</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appName" translatesAutoresizingMaskIntoConstraints="NO" id="nc0-bu-eQj">
+                                <rect key="frame" x="22" y="0.0" width="331" height="118"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="118" id="iuJ-Zy-rlo"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Moi-ZX-GJd">
+                                <rect key="frame" x="0.0" y="435" width="375" height="232"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="232" id="vWA-5y-TcF"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQz-nJ-fMz" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                <rect key="frame" x="70.5" y="297" width="234" height="61"/>
+                                <color key="backgroundColor" red="1" green="0.84215241669999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="234" id="9PG-mU-9u5"/>
+                                    <constraint firstAttribute="height" constant="61" id="lpn-Vt-Rig"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Vazir-Black" family="Vazir" pointSize="20"/>
+                                <size key="titleShadowOffset" width="50" height="50"/>
+                                <state key="normal" title="ورود به بازی">
+                                    <color key="titleColor" red="0.97906917329999998" green="0.96509641410000002" blue="0.96160084010000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.99607843139999996" green="0.80392156859999997" blue="0.0" alpha="0.54724957190000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17" scale="default"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nzj-VR-rcO">
+                                <rect key="frame" x="70.5" y="374" width="234" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="frO-ct-aDe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Vazir-Black" family="Vazir" pointSize="20"/>
+                                <state key="normal" title="ایجاد بازی"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="دوستان" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rft-gv-PKN">
+                                <rect key="frame" x="298" y="123" width="55" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="CMw-ga-4PD"/>
+                                    <constraint firstAttribute="width" constant="55" id="oi1-5v-u0A"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Vazir-Black" family="Vazir" pointSize="18"/>
+                                <color key="textColor" red="0.21862572429999999" green="0.21085071559999999" blue="0.3258422017" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Nzj-VR-rcO" firstAttribute="leading" secondItem="oQz-nJ-fMz" secondAttribute="leading" id="0Jo-Hi-eGD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Moi-ZX-GJd" secondAttribute="trailing" id="0LX-f2-qQx"/>
+                            <constraint firstItem="oQz-nJ-fMz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AF9-NH-QdY"/>
+                            <constraint firstItem="Nzj-VR-rcO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G1t-bw-bWu"/>
+                            <constraint firstItem="Nzj-VR-rcO" firstAttribute="top" secondItem="oQz-nJ-fMz" secondAttribute="bottom" constant="16" id="Oo8-Hj-UYt"/>
+                            <constraint firstItem="Rft-gv-PKN" firstAttribute="trailing" secondItem="nc0-bu-eQj" secondAttribute="trailing" id="SIp-ZF-rp2"/>
+                            <constraint firstItem="nc0-bu-eQj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="W5Z-qg-XXW"/>
+                            <constraint firstItem="nc0-bu-eQj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="aJG-qW-xOM"/>
+                            <constraint firstItem="Moi-ZX-GJd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aSz-B0-aeF"/>
+                            <constraint firstItem="Nzj-VR-rcO" firstAttribute="trailing" secondItem="oQz-nJ-fMz" secondAttribute="trailing" id="hQZ-cd-RiH"/>
+                            <constraint firstItem="nc0-bu-eQj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iji-39-M76"/>
+                            <constraint firstItem="Moi-ZX-GJd" firstAttribute="top" secondItem="Nzj-VR-rcO" secondAttribute="bottom" id="s1N-Ji-roX"/>
+                            <constraint firstItem="Rft-gv-PKN" firstAttribute="top" secondItem="nc0-bu-eQj" secondAttribute="bottom" constant="5" id="vmD-pb-3VW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Moi-ZX-GJd" secondAttribute="bottom" id="x7q-LC-gOI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nc0-bu-eQj" secondAttribute="trailing" constant="22" id="zr6-ov-NYw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="115"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="appName" width="330" height="118"/>
+        <image name="background" width="375" height="232"/>
+    </resources>
 </document>

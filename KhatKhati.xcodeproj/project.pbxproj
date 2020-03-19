@@ -9,13 +9,19 @@
 /* Begin PBXBuildFile section */
 		03B6DD352422CDEB00CC0B7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD342422CDEB00CC0B7F /* AppDelegate.swift */; };
 		03B6DD372422CDEB00CC0B7F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD362422CDEB00CC0B7F /* SceneDelegate.swift */; };
-		03B6DD392422CDEB00CC0B7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD382422CDEB00CC0B7F /* ViewController.swift */; };
+		03B6DD392422CDEB00CC0B7F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD382422CDEB00CC0B7F /* HomeViewController.swift */; };
 		03B6DD3C2422CDEB00CC0B7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B6DD3A2422CDEB00CC0B7F /* Main.storyboard */; };
 		03B6DD3F2422CDEB00CC0B7F /* KhatKhati.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD3D2422CDEB00CC0B7F /* KhatKhati.xcdatamodeld */; };
 		03B6DD412422CDEC00CC0B7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03B6DD402422CDEC00CC0B7F /* Assets.xcassets */; };
 		03B6DD442422CDEC00CC0B7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B6DD422422CDEC00CC0B7F /* LaunchScreen.storyboard */; };
 		03B6DD4F2422CDED00CC0B7F /* KhatKhatiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD4E2422CDED00CC0B7F /* KhatKhatiTests.swift */; };
 		03B6DD5A2422CDED00CC0B7F /* KhatKhatiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD592422CDED00CC0B7F /* KhatKhatiUITests.swift */; };
+		03B6DD6D2422E01000CC0B7F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD6C2422E01000CC0B7F /* CustomButton.swift */; };
+		03B6DD732422F4B700CC0B7F /* Vazir-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03B6DD6E2422F4B600CC0B7F /* Vazir-Bold.ttf */; };
+		03B6DD742422F4B700CC0B7F /* Vazir-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03B6DD6F2422F4B600CC0B7F /* Vazir-Black.ttf */; };
+		03B6DD752422F4B700CC0B7F /* Vazir-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03B6DD702422F4B600CC0B7F /* Vazir-Thin.ttf */; };
+		03B6DD762422F4B700CC0B7F /* Vazir.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03B6DD712422F4B600CC0B7F /* Vazir.ttf */; };
+		03B6DD772422F4B700CC0B7F /* Vazir-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03B6DD722422F4B700CC0B7F /* Vazir-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +45,7 @@
 		03B6DD312422CDEB00CC0B7F /* KhatKhati.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KhatKhati.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03B6DD342422CDEB00CC0B7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03B6DD362422CDEB00CC0B7F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		03B6DD382422CDEB00CC0B7F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		03B6DD382422CDEB00CC0B7F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		03B6DD3B2422CDEB00CC0B7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03B6DD3E2422CDEB00CC0B7F /* KhatKhati.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KhatKhati.xcdatamodel; sourceTree = "<group>"; };
 		03B6DD402422CDEC00CC0B7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +57,12 @@
 		03B6DD552422CDED00CC0B7F /* KhatKhatiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KhatKhatiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03B6DD592422CDED00CC0B7F /* KhatKhatiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhatKhatiUITests.swift; sourceTree = "<group>"; };
 		03B6DD5B2422CDED00CC0B7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03B6DD6C2422E01000CC0B7F /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		03B6DD6E2422F4B600CC0B7F /* Vazir-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vazir-Bold.ttf"; sourceTree = "<group>"; };
+		03B6DD6F2422F4B600CC0B7F /* Vazir-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vazir-Black.ttf"; sourceTree = "<group>"; };
+		03B6DD702422F4B600CC0B7F /* Vazir-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vazir-Thin.ttf"; sourceTree = "<group>"; };
+		03B6DD712422F4B600CC0B7F /* Vazir.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Vazir.ttf; sourceTree = "<group>"; };
+		03B6DD722422F4B700CC0B7F /* Vazir-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vazir-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +113,10 @@
 		03B6DD332422CDEB00CC0B7F /* KhatKhati */ = {
 			isa = PBXGroup;
 			children = (
-				03B6DD342422CDEB00CC0B7F /* AppDelegate.swift */,
-				03B6DD362422CDEB00CC0B7F /* SceneDelegate.swift */,
-				03B6DD382422CDEB00CC0B7F /* ViewController.swift */,
-				03B6DD3A2422CDEB00CC0B7F /* Main.storyboard */,
-				03B6DD402422CDEC00CC0B7F /* Assets.xcassets */,
-				03B6DD422422CDEC00CC0B7F /* LaunchScreen.storyboard */,
-				03B6DD452422CDEC00CC0B7F /* Info.plist */,
-				03B6DD3D2422CDEB00CC0B7F /* KhatKhati.xcdatamodeld */,
+				03B6DD6A2422CE5100CC0B7F /* Model */,
+				03B6DD692422CE4B00CC0B7F /* View */,
+				03B6DD682422CE4200CC0B7F /* Controller */,
+				03B6DD672422CE2F00CC0B7F /* SupportingFiles */,
 			);
 			path = KhatKhati;
 			sourceTree = "<group>";
@@ -129,6 +137,48 @@
 				03B6DD5B2422CDED00CC0B7F /* Info.plist */,
 			);
 			path = KhatKhatiUITests;
+			sourceTree = "<group>";
+		};
+		03B6DD672422CE2F00CC0B7F /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				03B6DD342422CDEB00CC0B7F /* AppDelegate.swift */,
+				03B6DD362422CDEB00CC0B7F /* SceneDelegate.swift */,
+				03B6DD402422CDEC00CC0B7F /* Assets.xcassets */,
+				03B6DD422422CDEC00CC0B7F /* LaunchScreen.storyboard */,
+				03B6DD452422CDEC00CC0B7F /* Info.plist */,
+				03B6DD6F2422F4B600CC0B7F /* Vazir-Black.ttf */,
+				03B6DD6E2422F4B600CC0B7F /* Vazir-Bold.ttf */,
+				03B6DD722422F4B700CC0B7F /* Vazir-Medium.ttf */,
+				03B6DD702422F4B600CC0B7F /* Vazir-Thin.ttf */,
+				03B6DD712422F4B600CC0B7F /* Vazir.ttf */,
+				03B6DD3D2422CDEB00CC0B7F /* KhatKhati.xcdatamodeld */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		03B6DD682422CE4200CC0B7F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				03B6DD382422CDEB00CC0B7F /* HomeViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		03B6DD692422CE4B00CC0B7F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				03B6DD3A2422CDEB00CC0B7F /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		03B6DD6A2422CE5100CC0B7F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				03B6DD6C2422E01000CC0B7F /* CustomButton.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,8 +285,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03B6DD732422F4B700CC0B7F /* Vazir-Bold.ttf in Resources */,
 				03B6DD442422CDEC00CC0B7F /* LaunchScreen.storyboard in Resources */,
+				03B6DD752422F4B700CC0B7F /* Vazir-Thin.ttf in Resources */,
+				03B6DD762422F4B700CC0B7F /* Vazir.ttf in Resources */,
 				03B6DD412422CDEC00CC0B7F /* Assets.xcassets in Resources */,
+				03B6DD742422F4B700CC0B7F /* Vazir-Black.ttf in Resources */,
+				03B6DD772422F4B700CC0B7F /* Vazir-Medium.ttf in Resources */,
 				03B6DD3C2422CDEB00CC0B7F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,10 +317,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03B6DD392422CDEB00CC0B7F /* ViewController.swift in Sources */,
+				03B6DD392422CDEB00CC0B7F /* HomeViewController.swift in Sources */,
 				03B6DD352422CDEB00CC0B7F /* AppDelegate.swift in Sources */,
 				03B6DD372422CDEB00CC0B7F /* SceneDelegate.swift in Sources */,
 				03B6DD3F2422CDEB00CC0B7F /* KhatKhati.xcdatamodeld in Sources */,
+				03B6DD6D2422E01000CC0B7F /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,8 +495,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.1;
 				DEVELOPMENT_TEAM = 3QN7DG53LR;
 				INFOPLIST_FILE = KhatKhati/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,8 +515,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.1;
 				DEVELOPMENT_TEAM = 3QN7DG53LR;
 				INFOPLIST_FILE = KhatKhati/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

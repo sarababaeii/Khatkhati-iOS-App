@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03877A8424239F6000935612 /* YellowCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03877A8324239F6000935612 /* YellowCustomButton.swift */; };
+		03877A8624239F7100935612 /* BlueCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03877A8524239F7100935612 /* BlueCustomButton.swift */; };
+		03877A8824239F8400935612 /* PinkCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03877A8724239F8400935612 /* PinkCustomButton.swift */; };
 		03B6DD352422CDEB00CC0B7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD342422CDEB00CC0B7F /* AppDelegate.swift */; };
 		03B6DD372422CDEB00CC0B7F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD362422CDEB00CC0B7F /* SceneDelegate.swift */; };
 		03B6DD392422CDEB00CC0B7F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD382422CDEB00CC0B7F /* HomeViewController.swift */; };
@@ -42,6 +45,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03877A8324239F6000935612 /* YellowCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowCustomButton.swift; sourceTree = "<group>"; };
+		03877A8524239F7100935612 /* BlueCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueCustomButton.swift; sourceTree = "<group>"; };
+		03877A8724239F8400935612 /* PinkCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinkCustomButton.swift; sourceTree = "<group>"; };
 		03B6DD312422CDEB00CC0B7F /* KhatKhati.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KhatKhati.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03B6DD342422CDEB00CC0B7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03B6DD362422CDEB00CC0B7F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +183,9 @@
 			isa = PBXGroup;
 			children = (
 				03B6DD6C2422E01000CC0B7F /* CustomButton.swift */,
+				03877A8324239F6000935612 /* YellowCustomButton.swift */,
+				03877A8524239F7100935612 /* BlueCustomButton.swift */,
+				03877A8724239F8400935612 /* PinkCustomButton.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -317,11 +326,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03877A8424239F6000935612 /* YellowCustomButton.swift in Sources */,
 				03B6DD392422CDEB00CC0B7F /* HomeViewController.swift in Sources */,
+				03877A8824239F8400935612 /* PinkCustomButton.swift in Sources */,
 				03B6DD352422CDEB00CC0B7F /* AppDelegate.swift in Sources */,
 				03B6DD372422CDEB00CC0B7F /* SceneDelegate.swift in Sources */,
 				03B6DD3F2422CDEB00CC0B7F /* KhatKhati.xcdatamodeld in Sources */,
 				03B6DD6D2422E01000CC0B7F /* CustomButton.swift in Sources */,
+				03877A8624239F7100935612 /* BlueCustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

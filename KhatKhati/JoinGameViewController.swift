@@ -11,4 +11,22 @@ import UIKit
 
 class JoinGameViewController: UIViewController {
     
+    @IBOutlet weak var randomGameButton: CustomButton!
+    
+    func setRandomGameButtonAttributes() {
+        randomGameButton.setCornerRadius(radius: 32.5)
+        randomGameButton.setShadowColor(color: Colors.blue)
+        randomGameButton.setBackgroundColor(color: Colors.blue)
+    }
+    
+    func configure() {
+        setRandomGameButtonAttributes()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+     
+     configure()
+    }
 }

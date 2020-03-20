@@ -14,6 +14,9 @@
         <array key="Vazir-Bold.ttf">
             <string>Vazir-Bold</string>
         </array>
+        <array key="Vazir-Medium.ttf">
+            <string>Vazir-Medium</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Home View Controller-->
@@ -27,13 +30,13 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KhatKhatiName" translatesAutoresizingMaskIntoConstraints="NO" id="nc0-bu-eQj">
                                 <rect key="frame" x="22" y="0.0" width="331" height="118"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="118" id="iuJ-Zy-rlo"/>
+                                    <constraint firstAttribute="width" secondItem="nc0-bu-eQj" secondAttribute="height" multiplier="331:118" id="8Rh-f6-Uyq"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="Moi-ZX-GJd">
                                 <rect key="frame" x="0.0" y="435" width="375" height="232"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="232" id="vWA-5y-TcF"/>
+                                    <constraint firstAttribute="width" secondItem="Moi-ZX-GJd" secondAttribute="height" multiplier="375:232" id="cRW-WS-26t"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQz-nJ-fMz" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
@@ -48,6 +51,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17" scale="default"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Fsv-bJ-ERM" kind="presentation" id="sV0-CN-hUk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nzj-VR-rcO" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
                                 <rect key="frame" x="70.5" y="374" width="234" height="61"/>
@@ -130,23 +136,21 @@
                                 </constraints>
                                 <state key="normal" image="BackButton"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="B02-37-tGE"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="B02-37-tGE"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KhatKhati" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KX6-GT-Rr7" customClass="CustomLabel" customModule="KhatKhati" customModuleProvider="target">
-                                <rect key="frame" x="37" y="106.5" width="301" height="86"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KhatKhati" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KX6-GT-Rr7" customClass="CustomLabel" customModule="KhatKhati" customModuleProvider="target">
+                                <rect key="frame" x="37" y="106.5" width="301" height="95"/>
                                 <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="301" id="KPB-nc-Pa0"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="86" id="YqO-7i-mN9"/>
-                                    <constraint firstAttribute="height" constant="86" id="fqQ-Gc-lhc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCA-yB-IrP" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
-                                <rect key="frame" x="131" y="173.5" width="113" height="38"/>
+                                <rect key="frame" x="131" y="182.5" width="113" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="113" id="MGk-95-Ea4"/>
                                     <constraint firstAttribute="height" constant="38" id="gIc-G2-yDs"/>
@@ -156,34 +160,209 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="thin"/>
                                 </state>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q5g-eD-fq7" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                <rect key="frame" x="280" y="134" width="40" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="G7g-N7-l1x"/>
+                                    <constraint firstAttribute="width" constant="40" id="vqm-hA-Sz2"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TelegramLogo" translatesAutoresizingMaskIntoConstraints="NO" id="I3e-ju-eLA">
+                                <rect key="frame" x="290" y="144" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="xxE-OK-cgO"/>
+                                    <constraint firstAttribute="width" constant="20" id="zeT-eR-zs7"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCp-lu-950" customClass="CustomLabel" customModule="KhatKhati" customModuleProvider="target">
+                                <rect key="frame" x="37" y="311.5" width="301" height="44"/>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="9Cw-dd-pis"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="نوع بازی">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="Vazir-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="20" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMV-g5-g8W" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                <rect key="frame" x="37" y="311.5" width="81" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="81" id="GNP-cz-h0S"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="16"/>
+                                <state key="normal" title="عمومی">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeLobbyType:" destination="I4V-oy-IXb" eventType="touchUpInside" id="20d-Vm-vMS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xN2-Uh-qgA" customClass="CustomLabel" customModule="KhatKhati" customModuleProvider="target">
+                                <rect key="frame" x="37" y="255.5" width="301" height="44"/>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="hPw-S3-K6q"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="تعداد دور">
+                                        <attributes>
+                                            <font key="NSFont" size="18" name="Vazir-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="20" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1JI-0A-hBl" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                <rect key="frame" x="37" y="255.5" width="81" height="44"/>
+                                <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="16"/>
+                                <state key="normal" title="۶">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeRoundsNumber:" destination="I4V-oy-IXb" eventType="touchUpInside" id="ajR-eE-mAN"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="دعوت دوستان" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMa-c6-F7L">
+                                <rect key="frame" x="137.5" y="371.5" width="100" height="29"/>
+                                <fontDescription key="fontDescription" name="Vazir-Medium" family="Vazir" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n8t-dQ-rI2">
+                                <rect key="frame" x="0.0" y="486" width="375" height="181"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="n8t-dQ-rI2" secondAttribute="height" multiplier="375:181" id="eEd-03-rIE"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgK-QH-4B4" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                <rect key="frame" x="75.5" y="486" width="224" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="1LJ-EE-gyR"/>
+                                    <constraint firstAttribute="width" constant="224" id="OZK-OO-xAg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Vazir-Black" family="Vazir" pointSize="20"/>
+                                <state key="normal" title="بزن بریم">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="gMV-g5-g8W" firstAttribute="leading" secondItem="jCp-lu-950" secondAttribute="leading" id="46c-zt-aKr"/>
+                            <constraint firstItem="Q5g-eD-fq7" firstAttribute="centerY" secondItem="KX6-GT-Rr7" secondAttribute="centerY" id="4ME-l7-1IU"/>
                             <constraint firstItem="kCA-yB-IrP" firstAttribute="centerX" secondItem="lr2-JM-3nM" secondAttribute="centerX" id="5Tw-JG-ZIt"/>
+                            <constraint firstItem="xN2-Uh-qgA" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KX6-GT-Rr7" secondAttribute="trailing" id="8au-bh-cQO"/>
+                            <constraint firstItem="I3e-ju-eLA" firstAttribute="centerY" secondItem="Q5g-eD-fq7" secondAttribute="centerY" id="Aye-kC-CJq"/>
                             <constraint firstItem="Mo0-Lw-ZD6" firstAttribute="leading" secondItem="gpQ-MJ-rmd" secondAttribute="leading" constant="32" id="ByM-8k-jSo"/>
-                            <constraint firstItem="KX6-GT-Rr7" firstAttribute="leading" secondItem="gpQ-MJ-rmd" secondAttribute="leading" constant="37" id="G2V-1T-I1N"/>
-                            <constraint firstItem="gpQ-MJ-rmd" firstAttribute="trailing" secondItem="KX6-GT-Rr7" secondAttribute="trailing" constant="37" id="K6X-6I-ahE"/>
+                            <constraint firstItem="gMV-g5-g8W" firstAttribute="trailing" secondItem="1JI-0A-hBl" secondAttribute="trailing" id="FHp-8F-uHv"/>
+                            <constraint firstItem="KX6-GT-Rr7" firstAttribute="leading" relation="lessThanOrEqual" secondItem="gpQ-MJ-rmd" secondAttribute="leading" constant="37" id="G2V-1T-I1N"/>
+                            <constraint firstItem="mgK-QH-4B4" firstAttribute="top" secondItem="n8t-dQ-rI2" secondAttribute="top" id="G4o-Ag-MpD"/>
+                            <constraint firstItem="1JI-0A-hBl" firstAttribute="bottom" secondItem="xN2-Uh-qgA" secondAttribute="bottom" id="HhZ-2c-oWf"/>
+                            <constraint firstItem="1JI-0A-hBl" firstAttribute="leading" secondItem="xN2-Uh-qgA" secondAttribute="leading" id="K4l-Nv-kAz"/>
+                            <constraint firstItem="gpQ-MJ-rmd" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="KX6-GT-Rr7" secondAttribute="trailing" constant="37" id="K6X-6I-ahE"/>
                             <constraint firstItem="kCA-yB-IrP" firstAttribute="centerY" secondItem="KX6-GT-Rr7" secondAttribute="bottom" id="Lpb-lh-kpu"/>
                             <constraint firstItem="KX6-GT-Rr7" firstAttribute="top" secondItem="e4t-o5-AYi" secondAttribute="bottom" constant="33" id="N0P-hM-dWj"/>
+                            <constraint firstItem="gpQ-MJ-rmd" firstAttribute="bottom" secondItem="n8t-dQ-rI2" secondAttribute="bottom" id="Nbk-Nd-9eX"/>
                             <constraint firstItem="e4t-o5-AYi" firstAttribute="centerX" secondItem="lr2-JM-3nM" secondAttribute="centerX" id="OrR-Ru-XO4"/>
+                            <constraint firstItem="xN2-Uh-qgA" firstAttribute="top" secondItem="kCA-yB-IrP" secondAttribute="bottom" constant="35" id="PNO-tF-pEO"/>
+                            <constraint firstItem="gMV-g5-g8W" firstAttribute="top" secondItem="jCp-lu-950" secondAttribute="top" id="Peo-hQ-tBb"/>
+                            <constraint firstItem="jCp-lu-950" firstAttribute="top" secondItem="xN2-Uh-qgA" secondAttribute="bottom" constant="12" id="Snd-bp-zvb"/>
+                            <constraint firstItem="xN2-Uh-qgA" firstAttribute="leading" relation="lessThanOrEqual" secondItem="KX6-GT-Rr7" secondAttribute="leading" id="UH3-78-7DM"/>
+                            <constraint firstItem="I3e-ju-eLA" firstAttribute="centerX" secondItem="Q5g-eD-fq7" secondAttribute="centerX" id="YRg-i2-Myh"/>
+                            <constraint firstItem="1JI-0A-hBl" firstAttribute="top" secondItem="xN2-Uh-qgA" secondAttribute="top" id="cIe-1Q-WxP"/>
+                            <constraint firstItem="jCp-lu-950" firstAttribute="trailing" secondItem="KX6-GT-Rr7" secondAttribute="trailing" id="dG2-ZI-Izl"/>
+                            <constraint firstItem="eMa-c6-F7L" firstAttribute="centerX" secondItem="lr2-JM-3nM" secondAttribute="centerX" id="dvX-GN-ELi"/>
                             <constraint firstItem="e4t-o5-AYi" firstAttribute="centerY" secondItem="Mo0-Lw-ZD6" secondAttribute="centerY" id="g7d-RK-fnx"/>
+                            <constraint firstItem="jCp-lu-950" firstAttribute="leading" relation="lessThanOrEqual" secondItem="KX6-GT-Rr7" secondAttribute="leading" id="hlV-FT-xBk"/>
+                            <constraint firstItem="mgK-QH-4B4" firstAttribute="centerX" secondItem="lr2-JM-3nM" secondAttribute="centerX" id="hmp-bf-HIu"/>
+                            <constraint firstItem="n8t-dQ-rI2" firstAttribute="leading" secondItem="gpQ-MJ-rmd" secondAttribute="leading" id="k4f-5p-pZS"/>
                             <constraint firstItem="Mo0-Lw-ZD6" firstAttribute="top" secondItem="gpQ-MJ-rmd" secondAttribute="top" constant="32" id="ski-Rx-Mld"/>
+                            <constraint firstItem="jCp-lu-950" firstAttribute="centerY" secondItem="lr2-JM-3nM" secondAttribute="centerY" id="u1e-Cp-30b"/>
+                            <constraint firstItem="Q5g-eD-fq7" firstAttribute="centerX" secondItem="KX6-GT-Rr7" secondAttribute="centerX" multiplier="1.6" id="waA-Ua-b2D"/>
+                            <constraint firstItem="gpQ-MJ-rmd" firstAttribute="trailing" secondItem="n8t-dQ-rI2" secondAttribute="trailing" id="xzU-Yd-K35"/>
+                            <constraint firstItem="eMa-c6-F7L" firstAttribute="top" secondItem="jCp-lu-950" secondAttribute="bottom" constant="16" id="yH5-Dl-cZi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gpQ-MJ-rmd"/>
                     </view>
                     <connections>
                         <outlet property="copyButton" destination="kCA-yB-IrP" id="Gq1-vK-FS2"/>
+                        <outlet property="lobbyTypeButton" destination="gMV-g5-g8W" id="Pu8-re-lQz"/>
+                        <outlet property="lobbyTypeLabel" destination="jCp-lu-950" id="un5-b8-a4c"/>
                         <outlet property="nameLabel" destination="KX6-GT-Rr7" id="2yT-eb-L75"/>
+                        <outlet property="roundsNumberButton" destination="1JI-0A-hBl" id="iVt-BY-KlF"/>
+                        <outlet property="roundsNumberLabel" destination="xN2-Uh-qgA" id="h1I-x8-cdR"/>
+                        <outlet property="startGameButton" destination="mgK-QH-4B4" id="nSd-lo-XAp"/>
+                        <outlet property="telegramView" destination="Q5g-eD-fq7" id="lDa-aD-Ysc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qLM-yD-Z9e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="930" y="113"/>
+            <point key="canvasLocation" x="1020" y="507"/>
+        </scene>
+        <!--Join Game View Controller-->
+        <scene sceneID="eDi-vc-8eK">
+            <objects>
+                <viewController id="Fsv-bJ-ERM" customClass="JoinGameViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0a6-TS-gjj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ورود به بازی" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZP-dY-NCy">
+                                <rect key="frame" x="112.5" y="23.5" width="150" height="50"/>
+                                <fontDescription key="fontDescription" name="Vazir-Black" family="Vazir" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGo-Mb-wQx">
+                                <rect key="frame" x="32" y="32" width="33" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="DC0-Oy-4MI"/>
+                                </constraints>
+                                <state key="normal" image="BackButton"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="4nJ-e4-cP0"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="7u7-Ra-Jan">
+                                <rect key="frame" x="0.0" y="415" width="375" height="232"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7u7-Ra-Jan" secondAttribute="height" multiplier="375:232" id="ips-qe-YDb"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="WZP-dY-NCy" firstAttribute="centerY" secondItem="JGo-Mb-wQx" secondAttribute="centerY" id="6YZ-DI-vN6"/>
+                            <constraint firstItem="7u7-Ra-Jan" firstAttribute="leading" secondItem="uLj-T8-JK9" secondAttribute="leading" id="6qp-lv-SRh"/>
+                            <constraint firstItem="WZP-dY-NCy" firstAttribute="centerX" secondItem="0a6-TS-gjj" secondAttribute="centerX" id="BTI-U9-vGS"/>
+                            <constraint firstItem="JGo-Mb-wQx" firstAttribute="top" secondItem="uLj-T8-JK9" secondAttribute="top" constant="32" id="Cbb-yY-gt2"/>
+                            <constraint firstItem="JGo-Mb-wQx" firstAttribute="leading" secondItem="uLj-T8-JK9" secondAttribute="leading" constant="32" id="P00-cU-GDJ"/>
+                            <constraint firstItem="uLj-T8-JK9" firstAttribute="bottom" secondItem="7u7-Ra-Jan" secondAttribute="bottom" id="j8n-eH-RA8"/>
+                            <constraint firstItem="uLj-T8-JK9" firstAttribute="trailing" secondItem="7u7-Ra-Jan" secondAttribute="trailing" id="xiq-IU-fEa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uLj-T8-JK9"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QZ2-CI-7qt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1020" y="-173"/>
         </scene>
     </scenes>
     <resources>
         <image name="BackButton" width="33" height="28"/>
         <image name="Background" width="375" height="232"/>
         <image name="KhatKhatiName" width="330" height="118"/>
+        <image name="TelegramLogo" width="20" height="18"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="B02-37-tGE"/>
+    </inferredMetricsTieBreakers>
 </document>

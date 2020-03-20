@@ -60,49 +60,45 @@ class NewLobbyViewController: UIViewController {
     
     func setCopyButtonAttributes() {
         copyButton.setCornerRadius(radius: 21)
-        copyButton.setShadowColor(red: 240/255, green: 6/255, blue: 197/255, alpha: 0.37)
-        copyButton.setBackgroundColor(topRed: 255/255, topGreen: 0/255, topBlue: 244/255, topAlpha: 1,
-                                          bottomRed: 255/255, bottomGreen: 11/255, bottomBlue: 150/255, bottomAlpha: 1)
+        copyButton.setShadowColor(color: Colors.pink)
+        copyButton.setBackgroundColor(color: Colors.pink)
     }
     
     func setNameLabelAttributes() {
         nameLabel.setCornerRadius(radius: 43)
-        nameLabel.setBackgroundColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
+        nameLabel.setBackgroundColor(color: Colors.gray)
     }
     
     func setTelegramViewAttributes() {
         telegramView.setCornerRadius(radius: 20)
-        telegramView.setBackgroundColor(topRed: 29/255, topGreen: 210/255, topBlue: 0/255, topAlpha: 1, bottomRed: 28/255, bottomGreen: 186/255, bottomBlue: 12/255, bottomAlpha: 1)
-        telegramView.setShadowColor(red: 29/255, green: 198/255, blue: 6/266, alpha: 0.5)
+        telegramView.setShadowColor(color: Colors.green)
+        telegramView.setBackgroundColor(color: Colors.green)
     }
     
     func setRoundsNumberLabelAttributes() {
         roundsNumberLabel.setCornerRadius(radius: 22.5)
-        roundsNumberLabel.setBackgroundColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
+        roundsNumberLabel.setBackgroundColor(color: Colors.gray)
     }
     
     func setLobbyTypeLabelAttributes() {
         lobbyTypeLabel.setCornerRadius(radius: 22.5)
-        lobbyTypeLabel.setBackgroundColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
+        lobbyTypeLabel.setBackgroundColor(color: Colors.gray)
     }
     
     func setRoundsNumberButtonAttributes() {
         roundsNumberButton.setCornerRadius(radius: 22.5)
-        roundsNumberButton.setBackgroundColor(topRed: 255/255, topGreen: 215/255, topBlue: 0/255, topAlpha: 1,
-                                              bottomRed: 254/255, bottomGreen: 189/255, bottomBlue: 0/255, bottomAlpha: 1)
+        roundsNumberButton.setBackgroundColor(color: Colors.yellow)
     }
     
     func setLobbyTypeButtonAttributes() {
         lobbyTypeButton.setCornerRadius(radius: 22.5)
-        lobbyTypeButton.setBackgroundColor(topRed: 0/255, topGreen: 177/255, topBlue: 255/255, topAlpha: 1,
-                                           bottomRed: 3/255, bottomGreen: 138/255, bottomBlue: 255/255, bottomAlpha: 1)
+        lobbyTypeButton.setBackgroundColor(color: Colors.blue)
     }
     
     func setStartGameButtonAttributes() {
         startGameButton.setCornerRadius(radius: 30.5)
-        startGameButton.setShadowColor(red: 2/255, green: 156/255, blue: 255/255, alpha: 0.4)
-        startGameButton.setBackgroundColor(topRed: 0/255, topGreen: 177/255, topBlue: 255/255, topAlpha: 1,
-                                           bottomRed: 3/255, bottomGreen: 138/255, bottomBlue: 255/255, bottomAlpha: 1)
+        startGameButton.setShadowColor(color: Colors.blue)
+        startGameButton.setBackgroundColor(color: Colors.blue)
     }
     
     func configure() {

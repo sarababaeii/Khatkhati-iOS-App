@@ -20,16 +20,14 @@ class HomeViewController: UIViewController {
     
     func setJoinGameButtonAttributes(){
         joinGameButton.setCornerRadius(radius: 30.5)
-        joinGameButton.setShadowColor(red: 254/255, green: 205/255, blue: 0/255, alpha: 0.55)
-        joinGameButton.setBackgroundColor(topRed: 255/255, topGreen: 215/255, topBlue: 0/255, topAlpha: 1,
-                                          bottomRed: 254/255, bottomGreen: 189/255, bottomBlue: 0/255, bottomAlpha: 1)
+        joinGameButton.setShadowColor(color: Colors.yellow)
+        joinGameButton.setBackgroundColor(color: Colors.yellow)
     }
     
     func setCreateLobbyButtonAttributes(){
         createLobbyButton.setCornerRadius(radius: 30.5)
-        createLobbyButton.setShadowColor(red: 2/255, green: 156/255, blue: 255/255, alpha: 0.4)
-        createLobbyButton.setBackgroundColor(topRed: 0/255, topGreen: 177/255, topBlue: 255/255, topAlpha: 1,
-                                             bottomRed: 3/255, bottomGreen: 138/255, bottomBlue: 255/255, bottomAlpha: 1)
+        createLobbyButton.setShadowColor(color: Colors.blue)
+        createLobbyButton.setBackgroundColor(color: Colors.blue)
     }
     
     func configure(){

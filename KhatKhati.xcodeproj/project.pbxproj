@@ -22,7 +22,8 @@
 		03B6DD752422F4B700CC0B7F /* Vazir-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03B6DD702422F4B600CC0B7F /* Vazir-Thin.ttf */; };
 		03B6DD762422F4B700CC0B7F /* Vazir.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03B6DD712422F4B600CC0B7F /* Vazir.ttf */; };
 		03B6DD772422F4B700CC0B7F /* Vazir-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03B6DD722422F4B700CC0B7F /* Vazir-Medium.ttf */; };
-		03D5526A2424257800969560 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D552692424257800969560 /* CustomView.swift */; };
+		03C544BD2424EF3B00C4049C /* ComponentColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C544BC2424EF3B00C4049C /* ComponentColor.swift */; };
+		03C544BF2424F0C200C4049C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C544BE2424F0C200C4049C /* Colors.swift */; };
 		03D5526E24245D8300969560 /* JoinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5526D24245D8300969560 /* JoinGameViewController.swift */; };
 		03F287DD2423D9FB0024937C /* NewLobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F287DC2423D9FB0024937C /* NewLobbyViewController.swift */; };
 		03F287DF2423F2320024937C /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F287DE2423F2320024937C /* CustomLabel.swift */; };
@@ -67,7 +68,8 @@
 		03B6DD702422F4B600CC0B7F /* Vazir-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vazir-Thin.ttf"; sourceTree = "<group>"; };
 		03B6DD712422F4B600CC0B7F /* Vazir.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Vazir.ttf; sourceTree = "<group>"; };
 		03B6DD722422F4B700CC0B7F /* Vazir-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vazir-Medium.ttf"; sourceTree = "<group>"; };
-		03D552692424257800969560 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		03C544BC2424EF3B00C4049C /* ComponentColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentColor.swift; sourceTree = "<group>"; };
+		03C544BE2424F0C200C4049C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		03D5526D24245D8300969560 /* JoinGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGameViewController.swift; sourceTree = "<group>"; };
 		03F287DC2423D9FB0024937C /* NewLobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLobbyViewController.swift; sourceTree = "<group>"; };
 		03F287DE2423F2320024937C /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
@@ -184,7 +186,8 @@
 			children = (
 				03B6DD6C2422E01000CC0B7F /* CustomButton.swift */,
 				03F287DE2423F2320024937C /* CustomLabel.swift */,
-				03D552692424257800969560 /* CustomView.swift */,
+				03C544BC2424EF3B00C4049C /* ComponentColor.swift */,
+				03C544BE2424F0C200C4049C /* Colors.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -338,12 +341,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				03F287DF2423F2320024937C /* CustomLabel.swift in Sources */,
-				03D5526A2424257800969560 /* CustomView.swift in Sources */,
+				03C544BD2424EF3B00C4049C /* ComponentColor.swift in Sources */,
 				03B6DD392422CDEB00CC0B7F /* HomeViewController.swift in Sources */,
 				03F287DD2423D9FB0024937C /* NewLobbyViewController.swift in Sources */,
 				03B6DD352422CDEB00CC0B7F /* AppDelegate.swift in Sources */,
 				03B6DD372422CDEB00CC0B7F /* SceneDelegate.swift in Sources */,
 				03B6DD3F2422CDEB00CC0B7F /* KhatKhati.xcdatamodeld in Sources */,
+				03C544BF2424F0C200C4049C /* Colors.swift in Sources */,
 				03D5526E24245D8300969560 /* JoinGameViewController.swift in Sources */,
 				03B6DD6D2422E01000CC0B7F /* CustomButton.swift in Sources */,
 			);

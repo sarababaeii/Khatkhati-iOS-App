@@ -14,8 +14,8 @@ class CustomLabel: UILabel {
             self.layer.cornerRadius = radius
     }
     
-    func setBackgroundColor(red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat){
-        self.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: alpha)
+    func setBackgroundColor(color: ComponentColor){
+        self.backgroundColor = color.topBackground
     }
     
     override func awakeFromNib() {

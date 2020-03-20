@@ -59,7 +59,7 @@ class NewLobbyViewController: UIViewController {
     }
     
     func setCopyButtonAttributes() {
-        copyButton.setCornerRadius(radius: 21)
+        copyButton.setCornerRadius(radius: 20)
         copyButton.setShadowColor(color: Colors.pink)
         copyButton.setBackgroundColor(color: Colors.pink)
     }

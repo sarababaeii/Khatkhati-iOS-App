@@ -16,8 +16,6 @@ class CustomButton: UIButton {
         }
     
     func setBackgroundColor(color: ComponentColor) {
-//        let gradientLayer = GradientView.init(gradientStartColor: color.topBackground, gradientEndColor: color.bottomBackground)
-//        gradientLayer.draw()
         let gradientLayer = CAGradientLayer()
         gradientLayer.type = .radial
         gradientLayer.frame = self.bounds

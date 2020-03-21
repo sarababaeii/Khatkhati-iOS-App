@@ -59,7 +59,7 @@ class NewLobbyViewController: UIViewController {
     }
     
     func setCopyButtonAttributes() {
-        copyButton.setCornerRadius(radius: 20)
+        copyButton.setCornerRadius(radius: 20.5)
         copyButton.setShadowColor(color: Colors.pink)
         copyButton.setBackgroundColor(color: Colors.pink)
     }
@@ -108,7 +108,7 @@ class NewLobbyViewController: UIViewController {
     }
     
     func setStartGameButtonAttributes() {
-        startGameButton.setCornerRadius(radius: 30.5)
+        startGameButton.setCornerRadius(radius: 30)
         startGameButton.setShadowColor(color: Colors.blue)
         startGameButton.setBackgroundColor(color: Colors.blue)
     }

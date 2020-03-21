@@ -88,6 +88,18 @@ class NewLobbyViewController: UIViewController {
     func setRoundsNumberButtonAttributes() {
         roundsNumberButton.setCornerRadius(radius: 22.5)
         roundsNumberButton.setBackgroundColor(color: Colors.yellow)
+
+        
+//        let gradientView1 = GradientView(gradientStartColor: Colors.yellow.topBackground, gradientEndColor: Colors.yellow.bottomBackground)
+//        
+//                
+//        gradientView1.translatesAutoresizingMaskIntoConstraints = false
+//        let horizontalConstraint = gradientView1.centerXAnchor.constraint(equalTo: roundsNumberButton.centerXAnchor)
+//        let verticalConstraint = gradientView1.centerYAnchor.constraint(equalTo: roundsNumberButton.centerYAnchor)
+//        let widthConstraint = gradientView1.widthAnchor.constraint(equalToConstant: 100)
+//        let heightConstraint = gradientView1.heightAnchor.constraint(equalToConstant: 100)
+//        
+//        view.addConstraints([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
     }
     
     func setLobbyTypeButtonAttributes() {

@@ -12,6 +12,8 @@ import UIKit
 class JoinGameViewController: UIViewController {
     
     @IBOutlet weak var randomGameButton: CustomButton!
+    @IBOutlet weak var lobbyCodeTextField: UITextField!
+    @IBOutlet weak var joinButton: CustomButton!
     
     func setRandomGameButtonAttributes() {
         randomGameButton.setCornerRadius(radius: 32.5)
@@ -19,8 +21,21 @@ class JoinGameViewController: UIViewController {
         randomGameButton.setBackgroundColor(color: Colors.blue)
     }
     
+    func setLobbyCodeTextFieldAttributes() {
+        lobbyCodeTextField.layer.cornerRadius = 20
+        lobbyCodeTextField.backgroundColor = Colors.gray.topBackground
+    }
+    
+    func setJoinButtonAttributrs() {
+        joinButton.setCornerRadius(radius: 21)
+        joinButton.setShadowColor(color: Colors.pink)
+        joinButton.setBackgroundColor(color: Colors.pink)
+    }
+    
     func configure() {
         setRandomGameButtonAttributes()
+        setLobbyCodeTextFieldAttributes()
+        setJoinButtonAttributrs()
     }
     
     override func viewDidLoad() {

@@ -16,6 +16,8 @@ class CustomButton: UIButton {
         }
     
     func setBackgroundColor(color: ComponentColor) {
+//        let gradientLayer = GradientView.init(gradientStartColor: color.topBackground, gradientEndColor: color.bottomBackground)
+//        gradientLayer.draw()
         let gradientLayer = CAGradientLayer()
         gradientLayer.type = .radial
         gradientLayer.frame = self.bounds
@@ -38,4 +40,11 @@ class CustomButton: UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+//    override func viewDidLayoutSubviews() {
+//       super.viewDidLayoutSubviews()
+//       //Update you're layer based on the new frame
+////       self.view.addGradientWithColor()
+//
+//    }
 }

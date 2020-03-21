@@ -236,7 +236,6 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="xN2-Uh-qgA" secondAttribute="bottom" id="GoS-js-myP"/>
                                             <constraint firstItem="xN2-Uh-qgA" firstAttribute="top" secondItem="eqU-n0-RZ4" secondAttribute="top" id="HDz-L7-nkE"/>
@@ -421,53 +420,99 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ykw-ib-H0R" userLabel="View1">
-                                <rect key="frame" x="62.5" y="101" width="250" height="305"/>
+                                <rect key="frame" x="62.5" y="114.5" width="250" height="305"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JIm-Aj-6KU" userLabel="View1.1">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JIm-Aj-6KU" userLabel="View1.0">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="120"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="World" translatesAutoresizingMaskIntoConstraints="NO" id="HaC-y9-cUr">
-                                                <rect key="frame" x="72" y="0.0" width="106" height="106"/>
+                                                <rect key="frame" x="65" y="0.0" width="120" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="HaC-y9-cUr" secondAttribute="height" multiplier="1:1" id="2Vr-p5-h6T"/>
-                                                    <constraint firstAttribute="width" constant="106" id="bLQ-N6-yd9"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QD2-Yh-Qx6" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="53" width="250" height="67"/>
-                                                <state key="normal">
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="پیدا کردن بازی">
-                                                            <attributes>
-                                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" size="20" name="Vazir-Black"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QD2-Yh-Qx6" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="60" width="250" height="60"/>
+                                                <fontDescription key="fontDescription" name="Vazir-Black" family="Vazir" pointSize="20"/>
+                                                <state key="normal" title="پیدا کردن بازی">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="JIm-Aj-6KU" secondAttribute="height" multiplier="250:120" id="7v2-qt-jrF"/>
+                                            <constraint firstAttribute="bottom" secondItem="QD2-Yh-Qx6" secondAttribute="bottom" id="8h1-bg-2f4"/>
+                                            <constraint firstItem="HaC-y9-cUr" firstAttribute="top" secondItem="JIm-Aj-6KU" secondAttribute="top" id="B2z-0o-yBs"/>
+                                            <constraint firstAttribute="trailing" secondItem="QD2-Yh-Qx6" secondAttribute="trailing" id="Eks-3f-HdG"/>
+                                            <constraint firstItem="QD2-Yh-Qx6" firstAttribute="leading" relation="lessThanOrEqual" secondItem="JIm-Aj-6KU" secondAttribute="leading" id="RsU-iS-caE"/>
+                                            <constraint firstItem="QD2-Yh-Qx6" firstAttribute="top" secondItem="HaC-y9-cUr" secondAttribute="centerY" id="STa-p7-BTq"/>
+                                            <constraint firstItem="HaC-y9-cUr" firstAttribute="centerX" secondItem="QD2-Yh-Qx6" secondAttribute="centerX" id="jGu-O4-d3L"/>
+                                            <constraint firstItem="QD2-Yh-Qx6" firstAttribute="top" secondItem="JIm-Aj-6KU" secondAttribute="centerY" id="sID-Uo-Fc5"/>
+                                            <constraint firstItem="QD2-Yh-Qx6" firstAttribute="centerX" secondItem="JIm-Aj-6KU" secondAttribute="centerX" id="tHF-lD-bw2"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="As8-h6-sio" userLabel="View1.1">
+                                        <rect key="frame" x="0.0" y="120" width="250" height="85"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FiT-2Y-ESW">
+                                                <rect key="frame" x="107" y="26" width="36" height="33"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="FiT-2Y-ESW" firstAttribute="centerY" secondItem="As8-h6-sio" secondAttribute="centerY" id="Oix-n6-6W7"/>
+                                            <constraint firstItem="FiT-2Y-ESW" firstAttribute="centerX" secondItem="As8-h6-sio" secondAttribute="centerX" id="TBG-II-cPB"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brA-VS-nim" userLabel="View1.2">
+                                        <rect key="frame" x="0.0" y="205" width="250" height="100"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="نام اتاق" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Fj-sM-Crn">
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="0Fj-sM-Crn" secondAttribute="height" multiplier="250:80" id="ANU-tT-DkS"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.25490196078431371" green="0.25490196079999999" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="24"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="join"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jj-Cs-3MJ" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                <rect key="frame" x="57.5" y="57.5" width="135" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="8jj-Cs-3MJ" secondAttribute="height" multiplier="120:40" id="xJj-BS-ssI"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="21"/>
+                                                <state key="normal" title="ورود">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="JIm-Aj-6KU" secondAttribute="height" multiplier="250:120" id="7v2-qt-jrF"/>
-                                            <constraint firstAttribute="bottom" secondItem="QD2-Yh-Qx6" secondAttribute="bottom" id="8h1-bg-2f4"/>
-                                            <constraint firstItem="HaC-y9-cUr" firstAttribute="top" secondItem="JIm-Aj-6KU" secondAttribute="top" id="B2z-0o-yBs"/>
-                                            <constraint firstItem="QD2-Yh-Qx6" firstAttribute="top" secondItem="HaC-y9-cUr" secondAttribute="centerY" id="STa-p7-BTq"/>
-                                            <constraint firstItem="QD2-Yh-Qx6" firstAttribute="leading" secondItem="JIm-Aj-6KU" secondAttribute="leading" id="UNA-Vb-qhB"/>
-                                            <constraint firstItem="HaC-y9-cUr" firstAttribute="centerX" secondItem="QD2-Yh-Qx6" secondAttribute="centerX" id="jGu-O4-d3L"/>
-                                            <constraint firstItem="QD2-Yh-Qx6" firstAttribute="centerX" secondItem="JIm-Aj-6KU" secondAttribute="centerX" id="mhB-qo-ky6"/>
-                                            <constraint firstItem="QD2-Yh-Qx6" firstAttribute="leading" secondItem="JIm-Aj-6KU" secondAttribute="leading" id="nXx-mr-ezD"/>
-                                            <constraint firstAttribute="trailing" secondItem="QD2-Yh-Qx6" secondAttribute="trailing" id="rFd-t3-jiu"/>
+                                            <constraint firstItem="0Fj-sM-Crn" firstAttribute="top" secondItem="brA-VS-nim" secondAttribute="top" id="4gP-dX-xa5"/>
+                                            <constraint firstItem="8jj-Cs-3MJ" firstAttribute="centerY" secondItem="0Fj-sM-Crn" secondAttribute="bottom" id="J5z-Q3-fBD"/>
+                                            <constraint firstAttribute="trailing" secondItem="0Fj-sM-Crn" secondAttribute="trailing" id="Kda-bn-3rL"/>
+                                            <constraint firstAttribute="width" secondItem="brA-VS-nim" secondAttribute="height" multiplier="250:100" id="Kv4-FC-kYM"/>
+                                            <constraint firstItem="8jj-Cs-3MJ" firstAttribute="centerX" secondItem="brA-VS-nim" secondAttribute="centerX" id="jtS-I9-hzs"/>
+                                            <constraint firstItem="0Fj-sM-Crn" firstAttribute="leading" secondItem="brA-VS-nim" secondAttribute="leading" id="m7o-hy-PI6"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstItem="As8-h6-sio" firstAttribute="bottom" secondItem="brA-VS-nim" secondAttribute="top" id="0Z7-xi-h0W"/>
+                                    <constraint firstAttribute="trailing" secondItem="brA-VS-nim" secondAttribute="trailing" id="9Wb-qO-5lD"/>
                                     <constraint firstItem="JIm-Aj-6KU" firstAttribute="leading" secondItem="ykw-ib-H0R" secondAttribute="leading" id="Edh-SK-Bn5"/>
                                     <constraint firstAttribute="width" secondItem="ykw-ib-H0R" secondAttribute="height" multiplier="250:305" id="Izb-Gx-hny"/>
                                     <constraint firstItem="JIm-Aj-6KU" firstAttribute="top" secondItem="ykw-ib-H0R" secondAttribute="top" id="NT4-WQ-ODQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="brA-VS-nim" secondAttribute="bottom" id="Ncz-oj-sSd"/>
                                     <constraint firstAttribute="trailing" secondItem="JIm-Aj-6KU" secondAttribute="trailing" id="Yec-IY-IEz"/>
+                                    <constraint firstItem="As8-h6-sio" firstAttribute="leading" secondItem="ykw-ib-H0R" secondAttribute="leading" id="aAo-3h-QKS"/>
+                                    <constraint firstAttribute="trailing" secondItem="As8-h6-sio" secondAttribute="trailing" id="bRL-tG-xGO"/>
+                                    <constraint firstItem="As8-h6-sio" firstAttribute="top" secondItem="JIm-Aj-6KU" secondAttribute="bottom" id="gsJ-75-Tll"/>
+                                    <constraint firstItem="brA-VS-nim" firstAttribute="leading" secondItem="ykw-ib-H0R" secondAttribute="leading" id="vao-6s-MPo"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -477,7 +522,7 @@
                             <constraint firstItem="nR9-sj-XWV" firstAttribute="top" secondItem="uLj-T8-JK9" secondAttribute="top" id="awe-yg-mu2"/>
                             <constraint firstItem="uLj-T8-JK9" firstAttribute="trailing" secondItem="nR9-sj-XWV" secondAttribute="trailing" id="baJ-o4-3F1"/>
                             <constraint firstItem="uLj-T8-JK9" firstAttribute="bottom" secondItem="7u7-Ra-Jan" secondAttribute="bottom" id="j8n-eH-RA8"/>
-                            <constraint firstItem="ykw-ib-H0R" firstAttribute="centerY" secondItem="uLj-T8-JK9" secondAttribute="centerY" multiplier="0.76" id="jzs-Hu-AT9"/>
+                            <constraint firstItem="ykw-ib-H0R" firstAttribute="centerY" secondItem="uLj-T8-JK9" secondAttribute="centerY" multiplier="0.8" id="jzs-Hu-AT9"/>
                             <constraint firstItem="ykw-ib-H0R" firstAttribute="centerX" secondItem="uLj-T8-JK9" secondAttribute="centerX" id="mDR-WT-YkR"/>
                             <constraint firstItem="ykw-ib-H0R" firstAttribute="leading" secondItem="uLj-T8-JK9" secondAttribute="leading" constant="62.5" id="qUN-HO-oyS"/>
                             <constraint firstItem="nR9-sj-XWV" firstAttribute="leading" secondItem="uLj-T8-JK9" secondAttribute="leading" id="rqQ-dg-3Mn"/>
@@ -486,6 +531,8 @@
                         <viewLayoutGuide key="safeArea" id="uLj-T8-JK9"/>
                     </view>
                     <connections>
+                        <outlet property="joinButton" destination="8jj-Cs-3MJ" id="hYi-G8-LAP"/>
+                        <outlet property="lobbyCodeTextField" destination="0Fj-sM-Crn" id="jkN-n5-Njk"/>
                         <outlet property="randomGameButton" destination="QD2-Yh-Qx6" id="fRp-iS-Nad"/>
                     </connections>
                 </viewController>
@@ -502,6 +549,6 @@
         <image name="World" width="97" height="97"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4nJ-e4-cP0"/>
+        <segue reference="B02-37-tGE"/>
     </inferredMetricsTieBreakers>
 </document>

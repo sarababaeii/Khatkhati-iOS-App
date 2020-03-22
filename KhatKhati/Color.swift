@@ -9,14 +9,18 @@
 import Foundation
 import UIKit
 
-class ComponentColor {
+class Color {
     var topBackground: UIColor
     var bottomBackground: UIColor
-    var shadow: UIColor
+    var shadow: UIColor?
     
-    init(topBackground: UIColor, bottomBackground: UIColor, shadow: UIColor) {
+    init(topBackground: UIColor, bottomBackground: UIColor) {
         self.topBackground = topBackground
         self.bottomBackground = bottomBackground
+    }
+    
+    convenience init(topBackground: UIColor, bottomBackground: UIColor, shadow: UIColor) {
+        self.init(topBackground: topBackground, bottomBackground: bottomBackground)
         self.shadow = shadow
     }
 }

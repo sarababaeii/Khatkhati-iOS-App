@@ -15,7 +15,7 @@ class CustomButton: UIButton {
             self.layer.cornerRadius = radius
         }
     
-    func setBackgroundColor(color: ComponentColor) {
+    func setBackgroundColor(color: Color) {
         let gradientLayer = CAGradientLayer()
         gradientLayer.type = .radial
         gradientLayer.frame = self.bounds
@@ -26,23 +26,16 @@ class CustomButton: UIButton {
         self.layer.insertSublayer(gradientLayer, at: 0)
     }
     
-    func setShadowColor(color: ComponentColor){
+    func setShadowColor(color: Color){
         self.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
         self.layer.shadowOpacity = 1.0
         self.layer.shadowRadius = 8.0
         self.layer.masksToBounds = false
         
-        self.layer.shadowColor = color.shadow.cgColor
+        self.layer.shadowColor = color.shadow?.cgColor
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
-//    override func viewDidLayoutSubviews() {
-//       super.viewDidLayoutSubviews()
-//       //Update you're layer based on the new frame
-////       self.view.addGradientWithColor()
-//
-//    }
 }

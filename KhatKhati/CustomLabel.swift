@@ -14,7 +14,7 @@ class CustomLabel: UILabel {
             self.layer.cornerRadius = radius
     }
     
-    func setBackgroundColor(color: ComponentColor){
+    func setBackgroundColor(color: Color){
         self.backgroundColor = color.topBackground
     }
     

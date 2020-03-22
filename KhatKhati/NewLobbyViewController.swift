@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class NewLobbyViewController: UIViewController {
+    
     @IBOutlet weak var copyButton: CustomButton!
     @IBOutlet weak var nameLabel: CustomLabel!
     @IBOutlet weak var telegramView: CustomButton!
@@ -60,34 +61,34 @@ class NewLobbyViewController: UIViewController {
     
     func setCopyButtonAttributes() {
         copyButton.setCornerRadius(radius: 20.5)
-        copyButton.setShadowColor(color: Colors.pink)
-        copyButton.setBackgroundColor(color: Colors.pink)
+        copyButton.setShadowColor(color: ComponentColors.pink)
+        copyButton.setBackgroundColor(color: ComponentColors.pink)
     }
     
     func setNameLabelAttributes() {
         nameLabel.setCornerRadius(radius: 43)
-        nameLabel.setBackgroundColor(color: Colors.gray)
+        nameLabel.setBackgroundColor(color: ComponentColors.gray)
     }
     
     func setTelegramViewAttributes() {
         telegramView.setCornerRadius(radius: 20)
-        telegramView.setShadowColor(color: Colors.green)
-        telegramView.setBackgroundColor(color: Colors.green)
+        telegramView.setShadowColor(color: ComponentColors.green)
+        telegramView.setBackgroundColor(color: ComponentColors.green)
     }
     
     func setRoundsNumberLabelAttributes() {
         roundsNumberLabel.setCornerRadius(radius: 22.5)
-        roundsNumberLabel.setBackgroundColor(color: Colors.gray)
+        roundsNumberLabel.setBackgroundColor(color: ComponentColors.gray)
     }
     
     func setLobbyTypeLabelAttributes() {
         lobbyTypeLabel.setCornerRadius(radius: 22.5)
-        lobbyTypeLabel.setBackgroundColor(color: Colors.gray)
+        lobbyTypeLabel.setBackgroundColor(color: ComponentColors.gray)
     }
     
     func setRoundsNumberButtonAttributes() {
         roundsNumberButton.setCornerRadius(radius: 22.5)
-        roundsNumberButton.setBackgroundColor(color: Colors.yellow)
+        roundsNumberButton.setBackgroundColor(color: ComponentColors.yellow)
 
         
 //        let gradientView1 = GradientView(gradientStartColor: Colors.yellow.topBackground, gradientEndColor: Colors.yellow.bottomBackground)
@@ -104,13 +105,13 @@ class NewLobbyViewController: UIViewController {
     
     func setLobbyTypeButtonAttributes() {
         lobbyTypeButton.setCornerRadius(radius: 22.5)
-        lobbyTypeButton.setBackgroundColor(color: Colors.blue)
+        lobbyTypeButton.setBackgroundColor(color: ComponentColors.blue)
     }
     
     func setStartGameButtonAttributes() {
         startGameButton.setCornerRadius(radius: 30)
-        startGameButton.setShadowColor(color: Colors.blue)
-        startGameButton.setBackgroundColor(color: Colors.blue)
+        startGameButton.setShadowColor(color: ComponentColors.blue)
+        startGameButton.setBackgroundColor(color: ComponentColors.blue)
     }
     
     func configure() {

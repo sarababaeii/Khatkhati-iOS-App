@@ -10,14 +10,9 @@ import Foundation
 import UIKit
 
 class LoadingViewController: UIViewController {
-    func configure() {
-        
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-     
-     configure()
     }
 }

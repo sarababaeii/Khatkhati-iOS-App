@@ -28,7 +28,7 @@ class JoinGameViewController: UIViewController {
     }
     
     func setJoinButtonAttributrs() {
-        joinButton.setCornerRadius(radius: 21.5)
+        joinButton.setCornerRadius(radius: 20.5)
         joinButton.setShadowColor(color: ComponentColors.pink)
         joinButton.setBackgroundColor(color: ComponentColors.pink)
     }

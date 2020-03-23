@@ -12,6 +12,7 @@ import UIKit
 class Color {
     var topBackground: UIColor
     var bottomBackground: UIColor
+    var mainColor: UIColor?
     var shadow: UIColor?
     
     init(topBackground: UIColor, bottomBackground: UIColor) {
@@ -22,5 +23,10 @@ class Color {
     convenience init(topBackground: UIColor, bottomBackground: UIColor, shadow: UIColor) {
         self.init(topBackground: topBackground, bottomBackground: bottomBackground)
         self.shadow = shadow
+    }
+    
+    convenience init(topBackground: UIColor, bottomBackground: UIColor, mainColor: UIColor) {
+        self.init(topBackground: topBackground, bottomBackground: bottomBackground)
+        self.mainColor = mainColor
     }
 }

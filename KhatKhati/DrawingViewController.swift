@@ -11,6 +11,9 @@ import UIKit
 
 class DrawingViewController: UIViewController {
    
+    @IBOutlet weak var canvas: UIImageView!
+    @IBOutlet weak var templeCanvas: UIImageView!
+    
     @IBOutlet weak var redColorButton: CustomButton!
     @IBOutlet weak var greenColorButton: CustomButton!
     @IBOutlet weak var darkBlueColorButton: CustomButton!
@@ -35,27 +38,93 @@ class DrawingViewController: UIViewController {
     @IBOutlet weak var blackColorView: CustomButton!
     @IBOutlet weak var grayColorView: CustomButton!
     
-    var lastColorPickedButton: UIButton?
-    var lastColorPickedView: UIView?
+    var brushColorButton: CustomButton?
+    var brushColorView: UIView?
+    
+    var lastPoint = CGPoint.zero
+//    var brushColor: DrawingColors?
+    var brushWidth: CGFloat = 10.0
+    var opacity: CGFloat = 1.0
+    var swiped = false
     
     @IBAction func colorPicked(_ sender: Any) {
-        if let lastColorPickedButton = lastColorPickedButton {
-            lastColorPickedView?.isHidden = true
-            lastColorPickedButton.isHidden = false
+        if let brushColorButton = brushColorButton {
+            brushColorView?.isHidden = true
+            brushColorButton.isHidden = false
         }
         
-        lastColorPickedButton = (sender as! UIButton)
+        brushColorButton = (sender as! CustomButton)
         
         if let siblings = (sender as! UIButton).superview?.subviews {
             for component in siblings {
                 if component != sender as! UIView {
                     component.isHidden = false
-                    lastColorPickedView = component
+                    brushColorView = component
                 }
             }
         }
         (sender as! UIButton).isHidden = true
     }
+    
+    func drawLine(from fromPoint: CGPoint, to toPoint: CGPoint) {
+        UIGraphicsBeginImageContext(view.frame.size)
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return
+        }
+        templeCanvas.image?.draw(in: view.bounds)
+
+        context.move(to: fromPoint)
+        context.addLine(to: toPoint)
+
+        context.setLineCap(.round)
+        context.setBlendMode(.normal)
+        context.setLineWidth(brushWidth)
+        context.setStrokeColor((brushColorButton?.color!.cgColor)!) //make sure is correct
+
+        context.strokePath()
+
+        templeCanvas.image = UIGraphicsGetImageFromCurrentImageContext()
+        templeCanvas.alpha = opacity
+        
+        UIGraphicsEndImageContext()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else {
+            return
+        }
+        
+        swiped = false
+        lastPoint = touch.location(in: view)
+      }
+      
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else {
+          return
+        }
+        
+        swiped = true
+        let currentPoint = touch.location(in: view)
+        drawLine(from: lastPoint, to: currentPoint)
+
+        lastPoint = currentPoint
+    }
+      
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if !swiped {
+          // draw a single point
+          drawLine(from: lastPoint, to: lastPoint)
+        }
+        
+        // Merge tempImageView into mainImageView
+        UIGraphicsBeginImageContext(canvas.frame.size)
+        canvas.image?.draw(in: view.bounds, blendMode: .normal, alpha: 1.0)
+        templeCanvas?.image?.draw(in: view.bounds, blendMode: .normal, alpha: opacity)
+        canvas.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        templeCanvas.image = nil
+      }
     
     func setRedColorAttributes() {
         redColorButton.setCornerRadius(radius: 10)
@@ -63,7 +132,6 @@ class DrawingViewController: UIViewController {
         
         redColorView.setCornerRadius(radius: 10)
         redColorView.setBackgroundColor(color: DrawingColors.red)
-        redColorView.isHidden = true
     }
     
     func setGreenColorAttributes() {
@@ -72,7 +140,6 @@ class DrawingViewController: UIViewController {
         
         greenColorView.setCornerRadius(radius: 10)
         greenColorView.setBackgroundColor(color: DrawingColors.green)
-        greenColorView.isHidden = true
     }
     
     func setDarkBlueColorAttributes() {
@@ -81,7 +148,6 @@ class DrawingViewController: UIViewController {
         
         darkBlueColorView.setCornerRadius(radius: 10)
         darkBlueColorView.setBackgroundColor(color: DrawingColors.darkBlue)
-        darkBlueColorView.isHidden = true
     }
     
     func setYellowColorAttributes() {
@@ -90,7 +156,6 @@ class DrawingViewController: UIViewController {
         
         yellowColorView.setCornerRadius(radius: 10)
         yellowColorView.setBackgroundColor(color: DrawingColors.yellow)
-        yellowColorView.isHidden = true
     }
     
     func setPurpleColorAttributes() {
@@ -99,7 +164,6 @@ class DrawingViewController: UIViewController {
         
         purpleColorView.setCornerRadius(radius: 10)
         purpleColorView.setBackgroundColor(color: DrawingColors.purple)
-        purpleColorView.isHidden = true
     }
     
     func setPinkColorAttributes() {
@@ -108,7 +172,6 @@ class DrawingViewController: UIViewController {
         
         pinkColorView.setCornerRadius(radius: 10)
         pinkColorView.setBackgroundColor(color: DrawingColors.pink)
-        pinkColorView.isHidden = true
     }
     
     func setBrownColorAttributes() {
@@ -117,7 +180,6 @@ class DrawingViewController: UIViewController {
         
         brownColorView.setCornerRadius(radius: 10)
         brownColorView.setBackgroundColor(color: DrawingColors.brown)
-        brownColorView.isHidden = true
     }
     
     func setLightBlueColorAttributes() {
@@ -126,7 +188,6 @@ class DrawingViewController: UIViewController {
         
         lightBlueColorView.setCornerRadius(radius: 10)
         lightBlueColorView.setBackgroundColor(color: DrawingColors.lightBlue)
-        lightBlueColorView.isHidden = true
     }
     
     func setBlackColorAttributes() {
@@ -135,7 +196,6 @@ class DrawingViewController: UIViewController {
         
         blackColorView.setCornerRadius(radius: 10)
         blackColorView.setBackgroundColor(color: DrawingColors.black)
-        blackColorView.isHidden = true
     }
     
     func setGrayColorAttributes() {
@@ -144,7 +204,6 @@ class DrawingViewController: UIViewController {
         
         grayColorView.setCornerRadius(radius: 10)
         grayColorView.setBackgroundColor(color: DrawingColors.gray)
-        grayColorView.isHidden = true
     }
     
     func configure() {

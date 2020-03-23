@@ -11,11 +11,16 @@ import UIKit
 
 class CustomButton: UIButton {
     
+    var color: UIColor?
+    
     func setCornerRadius(radius: CGFloat){
             self.layer.cornerRadius = radius
         }
     
     func setBackgroundColor(color: Color) {
+//        self.color = color.mainColor
+        self.color = color.topBackground
+        
         let gradientLayer = CAGradientLayer()
         gradientLayer.type = .radial
         gradientLayer.frame = self.bounds

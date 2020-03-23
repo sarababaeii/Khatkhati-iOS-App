@@ -17,20 +17,19 @@ class JoinGameViewController: UIViewController {
     
     func setRandomGameButtonAttributes() {
         randomGameButton.setCornerRadius(radius: 30)
-        randomGameButton.setShadowColor(color: ComponentColors.blue)
-        randomGameButton.setBackgroundColor(color: ComponentColors.blue)
+        randomGameButton.setShadowColor(color: Colors.blue.componentColor!)
+        randomGameButton.setBackgroundColor(color: Colors.blue.componentColor!)
     }
     
     func setLobbyCodeTextFieldAttributes() {
         lobbyCodeTextField.layer.cornerRadius = 20
-        lobbyCodeTextField.backgroundColor = ComponentColors.gray.topBackground
-        lobbyCodeTextField.layer.borderColor = ComponentColors.gray.topBackground.cgColor
+        lobbyCodeTextField.backgroundColor = Colors.gray.componentColor!.topBackground
     }
     
     func setJoinButtonAttributrs() {
         joinButton.setCornerRadius(radius: 20.5)
-        joinButton.setShadowColor(color: ComponentColors.pink)
-        joinButton.setBackgroundColor(color: ComponentColors.pink)
+        joinButton.setShadowColor(color: Colors.pink.componentColor!)
+        joinButton.setBackgroundColor(color: Colors.pink.componentColor!)
     }
     
     func configure() {

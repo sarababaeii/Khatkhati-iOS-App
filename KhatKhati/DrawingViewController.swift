@@ -39,6 +39,8 @@ class DrawingViewController: UIViewController {
     @IBOutlet weak var blackColorView: CustomButton!
     @IBOutlet weak var grayColorView: CustomButton!
     
+    var brushSelected: Bool = true
+    
     var brushColorButton: CustomButton?
     var brushColorView: UIView?
     
@@ -48,10 +50,7 @@ class DrawingViewController: UIViewController {
     var swiped = false
     
     @IBAction func colorPicked(_ sender: Any) {
-        if let brushColorButton = brushColorButton {
-            brushColorView?.isHidden = true
-            brushColorButton.isHidden = false
-        }
+        unselectedColor()
         
         brushColorButton = (sender as! CustomButton)
         
@@ -64,6 +63,30 @@ class DrawingViewController: UIViewController {
             }
         }
         (sender as! UIButton).isHidden = true
+    }
+    
+    @IBAction func coloring(_ sender: Any) {
+        //TODO: showing selected
+        
+        brushSelected = true
+        colorPicked(redColorButton!)
+    }
+    
+    @IBAction func erasing(_ sender: Any) {
+        //TODO: showing selected
+        
+        brushSelected = false
+        unselectedColor()
+    }
+    
+    func unselectedColor() {
+        if let brushColorButton = brushColorButton {
+            brushColorView?.isHidden = true
+            brushColorButton.isHidden = false
+        }
+        
+        brushColorView = nil
+        brushColorButton = nil
     }
     
     func drawLine(from fromPoint: CGPoint, to toPoint: CGPoint) {
@@ -81,8 +104,14 @@ class DrawingViewController: UIViewController {
         context.setLineCap(.round)
         context.setBlendMode(.normal)
         context.setLineWidth(brushWidth)
-        context.setStrokeColor((brushColorButton?.color?.cgColor)!)
-
+      
+        if brushSelected {
+            context.setStrokeColor((brushColorButton?.color?.cgColor)!)
+        }
+        else {
+            context.setStrokeColor(((Colors.white.drawingColor!).topBackground).cgColor)
+        }
+        
         context.strokePath()
 
         templeCanvas.image = UIGraphicsGetImageFromCurrentImageContext()
@@ -108,7 +137,6 @@ class DrawingViewController: UIViewController {
         swiped = true
         let currentPoint = touch.location(in: canvasView)
         drawLine(from: lastPoint, to: currentPoint)
-
         lastPoint = currentPoint
     }
     
@@ -128,87 +156,93 @@ class DrawingViewController: UIViewController {
         templeCanvas.image = nil
     }
     
+    func initializeBrush() {
+        colorPicked(redColorButton!)
+    }
+    
     func setRedColorAttributes() {
         redColorButton.setCornerRadius(radius: 10)
-        redColorButton.setBackgroundColor(color: DrawingColors.red)
+        redColorButton.setBackgroundColor(color: Colors.red.drawingColor!)
         
         redColorView.setCornerRadius(radius: 10)
-        redColorView.setBackgroundColor(color: DrawingColors.red)
+        redColorView.setBackgroundColor(color: Colors.red.drawingColor!)
     }
     
     func setGreenColorAttributes() {
         greenColorButton.setCornerRadius(radius: 10)
-        greenColorButton.setBackgroundColor(color: DrawingColors.green)
+        greenColorButton.setBackgroundColor(color: Colors.green.drawingColor!)
         
         greenColorView.setCornerRadius(radius: 10)
-        greenColorView.setBackgroundColor(color: DrawingColors.green)
+        greenColorView.setBackgroundColor(color: Colors.green.drawingColor!)
     }
     
     func setDarkBlueColorAttributes() {
         darkBlueColorButton.setCornerRadius(radius: 10)
-        darkBlueColorButton.setBackgroundColor(color: DrawingColors.darkBlue)
+        darkBlueColorButton.setBackgroundColor(color: Colors.darkBlue.drawingColor!)
         
         darkBlueColorView.setCornerRadius(radius: 10)
-        darkBlueColorView.setBackgroundColor(color: DrawingColors.darkBlue)
+        darkBlueColorView.setBackgroundColor(color: Colors.darkBlue.drawingColor!)
     }
     
     func setYellowColorAttributes() {
         yellowColorButton.setCornerRadius(radius: 10)
-        yellowColorButton.setBackgroundColor(color: DrawingColors.yellow)
+        yellowColorButton.setBackgroundColor(color: Colors.yellow.drawingColor!)
         
         yellowColorView.setCornerRadius(radius: 10)
-        yellowColorView.setBackgroundColor(color: DrawingColors.yellow)
+        yellowColorView.setBackgroundColor(color: Colors.yellow.drawingColor!)
     }
     
     func setPurpleColorAttributes() {
         purpleColorButton.setCornerRadius(radius: 10)
-        purpleColorButton.setBackgroundColor(color: DrawingColors.purple)
+        purpleColorButton.setBackgroundColor(color: Colors.purple.drawingColor!)
         
         purpleColorView.setCornerRadius(radius: 10)
-        purpleColorView.setBackgroundColor(color: DrawingColors.purple)
+        purpleColorView.setBackgroundColor(color: Colors.purple.drawingColor!)
     }
     
     func setPinkColorAttributes() {
         pinkColorButton.setCornerRadius(radius: 10)
-        pinkColorButton.setBackgroundColor(color: DrawingColors.pink)
+        pinkColorButton.setBackgroundColor(color: Colors.pink.drawingColor!)
         
         pinkColorView.setCornerRadius(radius: 10)
-        pinkColorView.setBackgroundColor(color: DrawingColors.pink)
+        pinkColorView.setBackgroundColor(color: Colors.pink.drawingColor!)
     }
     
     func setBrownColorAttributes() {
         brownColorButton.setCornerRadius(radius: 10)
-        brownColorButton.setBackgroundColor(color: DrawingColors.brown)
+        brownColorButton.setBackgroundColor(color: Colors.brown.drawingColor!)
         
         brownColorView.setCornerRadius(radius: 10)
-        brownColorView.setBackgroundColor(color: DrawingColors.brown)
+        brownColorView.setBackgroundColor(color: Colors.brown.drawingColor!)
     }
     
     func setLightBlueColorAttributes() {
         lightBlueColorButton.setCornerRadius(radius: 10)
-        lightBlueColorButton.setBackgroundColor(color: DrawingColors.lightBlue)
+        lightBlueColorButton.setBackgroundColor(color: Colors.lightBlue.drawingColor!)
         
         lightBlueColorView.setCornerRadius(radius: 10)
-        lightBlueColorView.setBackgroundColor(color: DrawingColors.lightBlue)
+        lightBlueColorView.setBackgroundColor(color: Colors.lightBlue.drawingColor!)
     }
     
     func setBlackColorAttributes() {
         blackColorButton.setCornerRadius(radius: 10)
-        blackColorButton.setBackgroundColor(color: DrawingColors.black)
+        blackColorButton.setBackgroundColor(color: Colors.black.drawingColor!)
         
         blackColorView.setCornerRadius(radius: 10)
-        blackColorView.setBackgroundColor(color: DrawingColors.black)
+        blackColorView.setBackgroundColor(color: Colors.black.drawingColor!)
     }
     
     func setGrayColorAttributes() {
         grayColorButton.setCornerRadius(radius: 10)
-        grayColorButton.setBackgroundColor(color: DrawingColors.gray)
+        grayColorButton.setBackgroundColor(color: Colors.gray.drawingColor!)
         
         grayColorView.setCornerRadius(radius: 10)
-        grayColorView.setBackgroundColor(color: DrawingColors.gray)
+        grayColorView.setBackgroundColor(color: Colors.gray.drawingColor!)
     }
     
     func configure() {
+        initializeBrush()
+        
         setRedColorAttributes()
         setGreenColorAttributes()
         setDarkBlueColorAttributes()

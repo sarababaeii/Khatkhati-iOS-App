@@ -444,7 +444,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۰:۵۴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1e-nY-c6W">
-                                                <rect key="frame" x="158.5" y="21" width="58" height="46"/>
+                                                <rect key="frame" x="156" y="17" width="63" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="E1e-nY-c6W" secondAttribute="height" multiplier="63:50" id="oZ9-c7-epu"/>
                                                 </constraints>
@@ -453,14 +453,14 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z56-Tt-x43">
-                                                <rect key="frame" x="32" y="33" width="31" height="22"/>
+                                                <rect key="frame" x="32" y="31" width="31" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="z56-Tt-x43" secondAttribute="height" multiplier="28:20" id="17V-PZ-Fga"/>
                                                 </constraints>
                                                 <state key="normal" image="Menu"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQW-jO-cMq">
-                                                <rect key="frame" x="304.5" y="33" width="38.5" height="22"/>
+                                                <rect key="frame" x="304.5" y="31" width="38.5" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="mQW-jO-cMq" secondAttribute="height" multiplier="35:20" id="ZRM-wV-vhb"/>
                                                 </constraints>
@@ -874,12 +874,18 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Gbh-ga-iyU" secondAttribute="height" multiplier="1:1" id="CfT-4b-GgU"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="coloring:" destination="FH5-3d-izd" eventType="touchUpInside" id="h9O-zp-aCE"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4M-5y-k7E" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
                                                 <rect key="frame" x="105.5" y="0.0" width="40.5" height="40.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Y4M-5y-k7E" secondAttribute="height" multiplier="1:1" id="D87-zx-EMG"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="erasing:" destination="FH5-3d-izd" eventType="touchUpInside" id="e9u-Lo-8D1"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -982,7 +988,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RC3-yy-QeC">
-                                                <rect key="frame" x="32" y="31.5" width="33" height="33"/>
+                                                <rect key="frame" x="32" y="29" width="33" height="33"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="RC3-yy-QeC" secondAttribute="height" multiplier="1:1" id="LeS-66-L4T"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="alm-cz-b32"/>
@@ -993,7 +999,7 @@
                                                 </connections>
                                             </button>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ورود به بازی" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0du-ar-2kL">
-                                                <rect key="frame" x="119" y="21.5" width="137.5" height="53.5"/>
+                                                <rect key="frame" x="112.5" y="16.5" width="150" height="58.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="0du-ar-2kL" secondAttribute="height" multiplier="128:50" id="woO-A0-DSP"/>
                                                 </constraints>
@@ -1012,13 +1018,13 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="در حال جست و جو" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejs-Zg-4iA">
-                                        <rect key="frame" x="93.5" y="262.5" width="188" height="33"/>
+                                        <rect key="frame" x="84" y="257" width="207.5" height="44"/>
                                         <fontDescription key="fontDescription" name="Vazir-Black" family="Vazir" pointSize="28"/>
                                         <color key="textColor" red="0.23137254901960785" green="0.22352941176470587" blue="0.34901960784313724" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="موتور خلاقیتتو گرم کن..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X56-TE-fbA">
-                                        <rect key="frame" x="85.5" y="314.5" width="204" height="28"/>
+                                        <rect key="frame" x="71" y="310" width="233" height="37.5"/>
                                         <fontDescription key="fontDescription" name="Vazir" family="Vazir" pointSize="24"/>
                                         <color key="textColor" red="0.19215686274509802" green="0.19215686274509802" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1246,6 +1252,7 @@
         <image name="World" width="97" height="97"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="2R5-S7-aH0"/>
         <segue reference="sbc-o3-ODR"/>
         <segue reference="4nJ-e4-cP0"/>
     </inferredMetricsTieBreakers>

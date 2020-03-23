@@ -11,6 +11,7 @@ import UIKit
 
 class DrawingViewController: UIViewController {
    
+    @IBOutlet weak var canvasView: UIView!
     @IBOutlet weak var canvas: UIImageView!
     @IBOutlet weak var templeCanvas: UIImageView!
     
@@ -42,8 +43,7 @@ class DrawingViewController: UIViewController {
     var brushColorView: UIView?
     
     var lastPoint = CGPoint.zero
-//    var brushColor: DrawingColors?
-    var brushWidth: CGFloat = 10.0
+    var brushWidth: CGFloat = 6.0
     var opacity: CGFloat = 1.0
     var swiped = false
     
@@ -67,11 +67,13 @@ class DrawingViewController: UIViewController {
     }
     
     func drawLine(from fromPoint: CGPoint, to toPoint: CGPoint) {
-        UIGraphicsBeginImageContext(view.frame.size)
+        UIGraphicsBeginImageContext(canvasView.frame.size)
+        
         guard let context = UIGraphicsGetCurrentContext() else {
             return
         }
-        templeCanvas.image?.draw(in: view.bounds)
+        
+        templeCanvas.image?.draw(in: canvasView.bounds)
 
         context.move(to: fromPoint)
         context.addLine(to: toPoint)
@@ -79,13 +81,13 @@ class DrawingViewController: UIViewController {
         context.setLineCap(.round)
         context.setBlendMode(.normal)
         context.setLineWidth(brushWidth)
-        context.setStrokeColor((brushColorButton?.color!.cgColor)!) //make sure is correct
+        context.setStrokeColor((brushColorButton?.color?.cgColor)!)
 
         context.strokePath()
 
         templeCanvas.image = UIGraphicsGetImageFromCurrentImageContext()
         templeCanvas.alpha = opacity
-        
+
         UIGraphicsEndImageContext()
     }
     
@@ -95,36 +97,36 @@ class DrawingViewController: UIViewController {
         }
         
         swiped = false
-        lastPoint = touch.location(in: view)
-      }
-      
+        lastPoint = touch.location(in: canvasView)
+    }
+    
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else {
-          return
+            return
         }
         
         swiped = true
-        let currentPoint = touch.location(in: view)
+        let currentPoint = touch.location(in: canvasView)
         drawLine(from: lastPoint, to: currentPoint)
 
         lastPoint = currentPoint
     }
-      
+    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if !swiped {
-          // draw a single point
-          drawLine(from: lastPoint, to: lastPoint)
+        // draw a single point
+            drawLine(from: lastPoint, to: lastPoint)
         }
-        
+
         // Merge tempImageView into mainImageView
         UIGraphicsBeginImageContext(canvas.frame.size)
-        canvas.image?.draw(in: view.bounds, blendMode: .normal, alpha: 1.0)
-        templeCanvas?.image?.draw(in: view.bounds, blendMode: .normal, alpha: opacity)
+        canvas.image?.draw(in: canvasView.bounds, blendMode: .normal, alpha: 1.0)
+        templeCanvas?.image?.draw(in: canvasView.bounds, blendMode: .normal, alpha: opacity)
         canvas.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        
+
         templeCanvas.image = nil
-      }
+    }
     
     func setRedColorAttributes() {
         redColorButton.setCornerRadius(radius: 10)

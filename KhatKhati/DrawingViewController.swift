@@ -69,6 +69,7 @@ class DrawingViewController: UIViewController {
         //TODO: showing selected
         
         brushSelected = true
+        brushWidth = 6.0
         colorPicked(redColorButton!)
     }
     
@@ -76,6 +77,7 @@ class DrawingViewController: UIViewController {
         //TODO: showing selected
         
         brushSelected = false
+        brushWidth = 10.0
         unselectedColor()
     }
     

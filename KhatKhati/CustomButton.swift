@@ -22,7 +22,7 @@ class CustomButton: UIButton {
         
         if let bottomBackground = color.bottomBackground {
             let gradientLayer = CAGradientLayer()
-            gradientLayer.type = .radial
+//            gradientLayer.type = .radial
             gradientLayer.frame = self.bounds
             gradientLayer.cornerRadius = self.layer.cornerRadius //must be called after setCornerRadius
             

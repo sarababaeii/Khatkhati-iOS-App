@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0323C15F242EB6A20074856A /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0323C15E242EB6A20074856A /* SocketIOManager.swift */; };
 		032B6D382426B40E00F7AA13 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B6D372426B40E00F7AA13 /* LoadingViewController.swift */; };
 		033602432427AF4B00925975 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033602422427AF4B00925975 /* DrawingViewController.swift */; };
 		03B100E8242973E7009418D2 /* GuessingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B100E7242973E7009418D2 /* GuessingViewController.swift */; };
@@ -31,6 +32,9 @@
 		03D5526E24245D8300969560 /* JoinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5526D24245D8300969560 /* JoinGameViewController.swift */; };
 		03F287DD2423D9FB0024937C /* NewLobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F287DC2423D9FB0024937C /* NewLobbyViewController.swift */; };
 		03F287DF2423F2320024937C /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F287DE2423F2320024937C /* CustomLabel.swift */; };
+		4D02B8C3C2CE97CE9F61814F /* Pods_KhatKhati_KhatKhatiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D4CE308C1B1455638C26E06 /* Pods_KhatKhati_KhatKhatiUITests.framework */; };
+		904009CC2792C786C28E523F /* Pods_KhatKhatiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EB2108E0BB2FC31CD3C84C /* Pods_KhatKhatiTests.framework */; };
+		F51C49F67F5291DC0F0E58D9 /* Pods_KhatKhati.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4C524938FE9A8BF7EFEE00 /* Pods_KhatKhati.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0323C15E242EB6A20074856A /* SocketIOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
 		032B6D372426B40E00F7AA13 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		033602422427AF4B00925975 /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
 		03B100E7242973E7009418D2 /* GuessingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessingViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +86,15 @@
 		03D5526D24245D8300969560 /* JoinGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGameViewController.swift; sourceTree = "<group>"; };
 		03F287DC2423D9FB0024937C /* NewLobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLobbyViewController.swift; sourceTree = "<group>"; };
 		03F287DE2423F2320024937C /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		08EB2108E0BB2FC31CD3C84C /* Pods_KhatKhatiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KhatKhatiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B4C524938FE9A8BF7EFEE00 /* Pods_KhatKhati.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KhatKhati.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E44E5E8761B87A77EA99321 /* Pods-KhatKhati.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KhatKhati.release.xcconfig"; path = "Target Support Files/Pods-KhatKhati/Pods-KhatKhati.release.xcconfig"; sourceTree = "<group>"; };
+		3C9759B4171F56EC00C68930 /* Pods-KhatKhati.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KhatKhati.debug.xcconfig"; path = "Target Support Files/Pods-KhatKhati/Pods-KhatKhati.debug.xcconfig"; sourceTree = "<group>"; };
+		3D4CE308C1B1455638C26E06 /* Pods_KhatKhati_KhatKhatiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KhatKhati_KhatKhatiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8676DC8918C964F2D2574E35 /* Pods-KhatKhatiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KhatKhatiTests.debug.xcconfig"; path = "Target Support Files/Pods-KhatKhatiTests/Pods-KhatKhatiTests.debug.xcconfig"; sourceTree = "<group>"; };
+		99E0B7B55AFDFA858DF42D17 /* Pods-KhatKhatiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KhatKhatiTests.release.xcconfig"; path = "Target Support Files/Pods-KhatKhatiTests/Pods-KhatKhatiTests.release.xcconfig"; sourceTree = "<group>"; };
+		9CB3A168AFFDD51CDB80CCD2 /* Pods-KhatKhati-KhatKhatiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KhatKhati-KhatKhatiUITests.release.xcconfig"; path = "Target Support Files/Pods-KhatKhati-KhatKhatiUITests/Pods-KhatKhati-KhatKhatiUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E3ED174C318A019BCAA3A2F3 /* Pods-KhatKhati-KhatKhatiUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KhatKhati-KhatKhatiUITests.debug.xcconfig"; path = "Target Support Files/Pods-KhatKhati-KhatKhatiUITests/Pods-KhatKhati-KhatKhatiUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F51C49F67F5291DC0F0E58D9 /* Pods_KhatKhati.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				904009CC2792C786C28E523F /* Pods_KhatKhatiTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D02B8C3C2CE97CE9F61814F /* Pods_KhatKhati_KhatKhatiUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +132,8 @@
 				03B6DD4D2422CDEC00CC0B7F /* KhatKhatiTests */,
 				03B6DD582422CDED00CC0B7F /* KhatKhatiUITests */,
 				03B6DD322422CDEB00CC0B7F /* Products */,
+				F83240421C8615772B5527E2 /* Pods */,
+				DF526716AF6B7993D46A59CA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -200,6 +219,7 @@
 				03C544BC2424EF3B00C4049C /* Color.swift */,
 				03C544BE2424F0C200C4049C /* Colors.swift */,
 				03C727272426584300334429 /* GradientView.swift */,
+				0323C15E242EB6A20074856A /* SocketIOManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -216,6 +236,29 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		DF526716AF6B7993D46A59CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B4C524938FE9A8BF7EFEE00 /* Pods_KhatKhati.framework */,
+				3D4CE308C1B1455638C26E06 /* Pods_KhatKhati_KhatKhatiUITests.framework */,
+				08EB2108E0BB2FC31CD3C84C /* Pods_KhatKhatiTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F83240421C8615772B5527E2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C9759B4171F56EC00C68930 /* Pods-KhatKhati.debug.xcconfig */,
+				2E44E5E8761B87A77EA99321 /* Pods-KhatKhati.release.xcconfig */,
+				E3ED174C318A019BCAA3A2F3 /* Pods-KhatKhati-KhatKhatiUITests.debug.xcconfig */,
+				9CB3A168AFFDD51CDB80CCD2 /* Pods-KhatKhati-KhatKhatiUITests.release.xcconfig */,
+				8676DC8918C964F2D2574E35 /* Pods-KhatKhatiTests.debug.xcconfig */,
+				99E0B7B55AFDFA858DF42D17 /* Pods-KhatKhatiTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -223,9 +266,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03B6DD5E2422CDED00CC0B7F /* Build configuration list for PBXNativeTarget "KhatKhati" */;
 			buildPhases = (
+				A1FC195D687533161FEF9A2E /* [CP] Check Pods Manifest.lock */,
 				03B6DD2D2422CDEB00CC0B7F /* Sources */,
 				03B6DD2E2422CDEB00CC0B7F /* Frameworks */,
 				03B6DD2F2422CDEB00CC0B7F /* Resources */,
+				A0F22CE38799A277CB19CB54 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -240,6 +285,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03B6DD612422CDED00CC0B7F /* Build configuration list for PBXNativeTarget "KhatKhatiTests" */;
 			buildPhases = (
+				93697609A4876F99EFE07CA9 /* [CP] Check Pods Manifest.lock */,
 				03B6DD462422CDEC00CC0B7F /* Sources */,
 				03B6DD472422CDEC00CC0B7F /* Frameworks */,
 				03B6DD482422CDEC00CC0B7F /* Resources */,
@@ -258,9 +304,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03B6DD642422CDED00CC0B7F /* Build configuration list for PBXNativeTarget "KhatKhatiUITests" */;
 			buildPhases = (
+				4940ED55EDC966F4B17CD602 /* [CP] Check Pods Manifest.lock */,
 				03B6DD512422CDED00CC0B7F /* Sources */,
 				03B6DD522422CDED00CC0B7F /* Frameworks */,
 				03B6DD532422CDED00CC0B7F /* Resources */,
+				938056C95F05BD8265A76CDB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -347,12 +395,116 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4940ED55EDC966F4B17CD602 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KhatKhati-KhatKhatiUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93697609A4876F99EFE07CA9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KhatKhatiTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		938056C95F05BD8265A76CDB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KhatKhati-KhatKhatiUITests/Pods-KhatKhati-KhatKhatiUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KhatKhati-KhatKhatiUITests/Pods-KhatKhati-KhatKhatiUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KhatKhati-KhatKhatiUITests/Pods-KhatKhati-KhatKhatiUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0F22CE38799A277CB19CB54 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KhatKhati/Pods-KhatKhati-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KhatKhati/Pods-KhatKhati-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KhatKhati/Pods-KhatKhati-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1FC195D687533161FEF9A2E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KhatKhati-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		03B6DD2D2422CDEB00CC0B7F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				03F287DF2423F2320024937C /* CustomLabel.swift in Sources */,
+				0323C15F242EB6A20074856A /* SocketIOManager.swift in Sources */,
 				03C544BD2424EF3B00C4049C /* Color.swift in Sources */,
 				03C727282426584300334429 /* GradientView.swift in Sources */,
 				03B6DD392422CDEB00CC0B7F /* HomeViewController.swift in Sources */,
@@ -536,6 +688,7 @@
 		};
 		03B6DD5F2422CDED00CC0B7F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C9759B4171F56EC00C68930 /* Pods-KhatKhati.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -556,6 +709,7 @@
 		};
 		03B6DD602422CDED00CC0B7F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E44E5E8761B87A77EA99321 /* Pods-KhatKhati.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -576,6 +730,7 @@
 		};
 		03B6DD622422CDED00CC0B7F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8676DC8918C964F2D2574E35 /* Pods-KhatKhatiTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -598,6 +753,7 @@
 		};
 		03B6DD632422CDED00CC0B7F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99E0B7B55AFDFA858DF42D17 /* Pods-KhatKhatiTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -620,6 +776,7 @@
 		};
 		03B6DD652422CDED00CC0B7F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3ED174C318A019BCAA3A2F3 /* Pods-KhatKhati-KhatKhatiUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -640,6 +797,7 @@
 		};
 		03B6DD662422CDED00CC0B7F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CB3A168AFFDD51CDB80CCD2 /* Pods-KhatKhati-KhatKhatiUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

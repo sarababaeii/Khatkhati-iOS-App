@@ -137,7 +137,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بازی جدید" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4t-o5-AYi">
-                                        <rect key="frame" x="123.5" y="25" width="128" height="50"/>
+                                        <rect key="frame" x="129" y="29.5" width="117" height="45.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="e4t-o5-AYi" secondAttribute="height" multiplier="128:50" id="ZQS-xC-Zga"/>
                                         </constraints>
@@ -146,7 +146,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mo0-Lw-ZD6">
-                                        <rect key="frame" x="32" y="33.5" width="33" height="33"/>
+                                        <rect key="frame" x="32" y="35.5" width="33" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Mo0-Lw-ZD6" secondAttribute="height" multiplier="1:1" id="UGR-Pl-4bp"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="eCL-zl-AVR"/>
@@ -180,7 +180,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCA-yB-IrP" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
-                                                <rect key="frame" x="94.5" y="68.5" width="122" height="41"/>
+                                                <rect key="frame" x="99" y="70" width="113" height="38"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="113" id="7eF-t0-dLg"/>
                                                     <constraint firstAttribute="width" secondItem="kCA-yB-IrP" secondAttribute="height" multiplier="113:38" id="qFZ-iP-3hB"/>
@@ -324,7 +324,7 @@
                                 <rect key="frame" x="32" y="347" width="311" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="دعوت دوستان" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMa-c6-F7L">
-                                        <rect key="frame" x="105.5" y="0.0" width="100" height="28.5"/>
+                                        <rect key="frame" x="113" y="0.0" width="85" height="21"/>
                                         <fontDescription key="fontDescription" name="Vazir-Medium" family="Vazir" pointSize="18"/>
                                         <color key="textColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -926,15 +926,23 @@
                                     <constraint firstAttribute="bottom" secondItem="SQn-pa-98h" secondAttribute="bottom" id="ydS-NI-hg5"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0p7-fw-FGJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="651"/>
+                                <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="0.41133347602739728" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="5tp-fs-033" firstAttribute="centerX" secondItem="3rT-84-p3Q" secondAttribute="centerX" id="0aS-Js-ie4"/>
+                            <constraint firstItem="0p7-fw-FGJ" firstAttribute="leading" secondItem="RD0-eh-Wtu" secondAttribute="leading" id="3tF-5R-XQO"/>
                             <constraint firstItem="RD0-eh-Wtu" firstAttribute="trailing" secondItem="hJR-Kf-wjY" secondAttribute="trailing" id="6Kl-Pu-yOR"/>
+                            <constraint firstItem="RD0-eh-Wtu" firstAttribute="trailing" secondItem="0p7-fw-FGJ" secondAttribute="trailing" id="6bO-Wn-Opm"/>
                             <constraint firstItem="hJR-Kf-wjY" firstAttribute="top" secondItem="RD0-eh-Wtu" secondAttribute="top" id="Bg7-0e-7VN"/>
+                            <constraint firstItem="0p7-fw-FGJ" firstAttribute="top" secondItem="RD0-eh-Wtu" secondAttribute="top" id="F4V-KS-V65"/>
                             <constraint firstItem="yek-85-i8W" firstAttribute="top" secondItem="hJR-Kf-wjY" secondAttribute="bottom" id="KUI-Sh-6J4"/>
                             <constraint firstItem="yek-85-i8W" firstAttribute="leading" secondItem="RD0-eh-Wtu" secondAttribute="leading" constant="39" id="PqH-k4-4AC"/>
                             <constraint firstItem="hJR-Kf-wjY" firstAttribute="leading" secondItem="RD0-eh-Wtu" secondAttribute="leading" id="Wpx-l3-JPJ"/>
+                            <constraint firstItem="0p7-fw-FGJ" firstAttribute="bottom" secondItem="RD0-eh-Wtu" secondAttribute="bottom" constant="-16" id="mMi-X3-C1j"/>
                             <constraint firstItem="RD0-eh-Wtu" firstAttribute="bottom" secondItem="5tp-fs-033" secondAttribute="bottom" constant="16" id="nPY-yv-hbh"/>
                             <constraint firstItem="5tp-fs-033" firstAttribute="leading" secondItem="RD0-eh-Wtu" secondAttribute="leading" constant="32" id="vh2-is-qCL"/>
                             <constraint firstItem="yek-85-i8W" firstAttribute="centerX" secondItem="3rT-84-p3Q" secondAttribute="centerX" id="wLM-Zc-PYI"/>
@@ -1060,36 +1068,34 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R0O-h4-5fd" userLabel="View3">
-                                <rect key="frame" x="32" y="607" width="311" height="44"/>
+                                <rect key="frame" x="0.0" y="611" width="375" height="56"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="تایپ کن" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FpN-E9-7s3">
-                                        <rect key="frame" x="0.0" y="0.0" width="311" height="44"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="تایپ کن" textAlignment="right" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FpN-E9-7s3">
+                                        <rect key="frame" x="81.5" y="8" width="283.5" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="FpN-E9-7s3" secondAttribute="height" multiplier="312:44" id="Qek-m9-tfd"/>
+                                        </constraints>
                                         <color key="textColor" red="0.22745098039215686" green="0.22745098039215686" blue="0.22745098039215686" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Vazir" family="Vazir" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pZ-7Z-Rj8" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="85.5" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="5pZ-7Z-Rj8" secondAttribute="height" multiplier="70:36" id="2jL-hK-a5P"/>
-                                        </constraints>
+                                        <rect key="frame" x="10" y="8" width="67.5" height="40"/>
                                         <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="16"/>
                                         <state key="normal" title="ارسال">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="FpN-E9-7s3" firstAttribute="top" secondItem="R0O-h4-5fd" secondAttribute="top" id="8wN-Z8-clt"/>
-                                    <constraint firstAttribute="trailing" secondItem="FpN-E9-7s3" secondAttribute="trailing" id="Dt8-rd-f1y"/>
-                                    <constraint firstItem="5pZ-7Z-Rj8" firstAttribute="leading" secondItem="R0O-h4-5fd" secondAttribute="leading" id="IdS-u3-L2h"/>
-                                    <constraint firstAttribute="width" secondItem="R0O-h4-5fd" secondAttribute="height" multiplier="312:44" id="cG3-Fr-vPC"/>
-                                    <constraint firstItem="FpN-E9-7s3" firstAttribute="leading" secondItem="R0O-h4-5fd" secondAttribute="leading" id="gGW-ZW-B3m"/>
-                                    <constraint firstAttribute="bottom" secondItem="FpN-E9-7s3" secondAttribute="bottom" id="nX3-97-0nO"/>
-                                    <constraint firstItem="5pZ-7Z-Rj8" firstAttribute="top" secondItem="R0O-h4-5fd" secondAttribute="top" id="rdp-Vr-10u"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5pZ-7Z-Rj8" secondAttribute="trailing" constant="20" symbolic="YES" id="v9V-U7-t7f"/>
-                                    <constraint firstAttribute="bottom" secondItem="5pZ-7Z-Rj8" secondAttribute="bottom" id="xBd-u8-E2U"/>
+                                    <constraint firstItem="FpN-E9-7s3" firstAttribute="bottom" secondItem="5pZ-7Z-Rj8" secondAttribute="bottom" id="FGR-IW-nDz"/>
+                                    <constraint firstItem="5pZ-7Z-Rj8" firstAttribute="leading" secondItem="R0O-h4-5fd" secondAttribute="leading" constant="10" id="IdS-u3-L2h"/>
+                                    <constraint firstAttribute="trailing" secondItem="FpN-E9-7s3" secondAttribute="trailing" constant="10" id="cRd-LR-cIK"/>
+                                    <constraint firstItem="FpN-E9-7s3" firstAttribute="top" secondItem="5pZ-7Z-Rj8" secondAttribute="top" id="nRq-lk-PXp"/>
+                                    <constraint firstAttribute="bottom" secondItem="FpN-E9-7s3" secondAttribute="bottom" constant="8" id="nX3-97-0nO"/>
+                                    <constraint firstAttribute="top" secondItem="FpN-E9-7s3" secondAttribute="top" constant="-8" id="nnn-Ga-rap"/>
+                                    <constraint firstItem="FpN-E9-7s3" firstAttribute="leading" secondItem="5pZ-7Z-Rj8" secondAttribute="trailing" constant="4" id="uFZ-LV-lSg"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1097,8 +1103,8 @@
                         <constraints>
                             <constraint firstItem="QRQ-G7-aZj" firstAttribute="centerX" secondItem="GlI-9K-a7e" secondAttribute="centerX" id="5cV-dY-b4R"/>
                             <constraint firstItem="JTG-Lz-hf6" firstAttribute="trailing" secondItem="sAf-Jt-OAb" secondAttribute="trailing" id="5mm-T5-zyd"/>
-                            <constraint firstItem="R0O-h4-5fd" firstAttribute="leading" secondItem="JTG-Lz-hf6" secondAttribute="leading" constant="32" id="AQY-Dx-Qty"/>
-                            <constraint firstItem="JTG-Lz-hf6" firstAttribute="bottom" secondItem="R0O-h4-5fd" secondAttribute="bottom" constant="16" id="E5l-zQ-dhb"/>
+                            <constraint firstItem="R0O-h4-5fd" firstAttribute="leading" secondItem="JTG-Lz-hf6" secondAttribute="leading" id="AQY-Dx-Qty"/>
+                            <constraint firstItem="JTG-Lz-hf6" firstAttribute="bottom" secondItem="R0O-h4-5fd" secondAttribute="bottom" id="E5l-zQ-dhb"/>
                             <constraint firstItem="QRQ-G7-aZj" firstAttribute="top" secondItem="sAf-Jt-OAb" secondAttribute="bottom" id="Jte-jQ-wBv"/>
                             <constraint firstItem="sAf-Jt-OAb" firstAttribute="top" secondItem="JTG-Lz-hf6" secondAttribute="top" id="Nd2-4H-6Yl"/>
                             <constraint firstItem="R0O-h4-5fd" firstAttribute="centerX" secondItem="GlI-9K-a7e" secondAttribute="centerX" id="vqa-AY-fvq"/>
@@ -1109,6 +1115,7 @@
                     </view>
                     <connections>
                         <outlet property="chatTextField" destination="FpN-E9-7s3" id="T95-Tf-tjE"/>
+                        <outlet property="messageView" destination="R0O-h4-5fd" id="JYy-ne-wZs"/>
                         <outlet property="sendButton" destination="5pZ-7Z-Rj8" id="G4c-VZ-Ty1"/>
                     </connections>
                 </viewController>
@@ -1137,7 +1144,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RC3-yy-QeC">
-                                                <rect key="frame" x="32" y="29" width="33" height="33"/>
+                                                <rect key="frame" x="32" y="31.5" width="33" height="33"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="RC3-yy-QeC" secondAttribute="height" multiplier="1:1" id="LeS-66-L4T"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="alm-cz-b32"/>
@@ -1148,7 +1155,7 @@
                                                 </connections>
                                             </button>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ورود به بازی" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0du-ar-2kL">
-                                                <rect key="frame" x="112.5" y="16.5" width="150" height="58.5"/>
+                                                <rect key="frame" x="119" y="21.5" width="137.5" height="53.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="0du-ar-2kL" secondAttribute="height" multiplier="128:50" id="woO-A0-DSP"/>
                                                 </constraints>
@@ -1167,13 +1174,13 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="در حال جست و جو" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejs-Zg-4iA">
-                                        <rect key="frame" x="84" y="257" width="207.5" height="44"/>
+                                        <rect key="frame" x="93.5" y="262.5" width="188" height="33"/>
                                         <fontDescription key="fontDescription" name="Vazir-Black" family="Vazir" pointSize="28"/>
                                         <color key="textColor" red="0.23137254901960785" green="0.22352941176470587" blue="0.34901960784313724" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="موتور خلاقیتتو گرم کن..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X56-TE-fbA">
-                                        <rect key="frame" x="71" y="310" width="233" height="37.5"/>
+                                        <rect key="frame" x="85.5" y="314.5" width="204" height="28"/>
                                         <fontDescription key="fontDescription" name="Vazir" family="Vazir" pointSize="24"/>
                                         <color key="textColor" red="0.19215686274509802" green="0.19215686274509802" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>

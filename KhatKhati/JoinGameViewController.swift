@@ -43,5 +43,7 @@ class JoinGameViewController: UIViewController {
         // Do any additional setup after loading the view.
      
         configure()
+        
+        SocketIOManager.sharedInstance.shareStatus()
     }
 }

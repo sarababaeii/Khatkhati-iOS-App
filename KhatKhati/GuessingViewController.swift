@@ -11,12 +11,41 @@ import UIKit
 
 class GuessingViewController: UIViewController {
     
+    @IBOutlet weak var messageView: UIView!
     @IBOutlet weak var chatTextField: UITextField!
     @IBOutlet weak var sendButton: CustomButton!
     
+    //MARK: Keyboard management
+    func registerForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification){
+//        let keyboardFrame = notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+//        adjustLayoutForKeyboard(targetHight: keyboardFrame.size.height)
+        
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        adjustLayoutForKeyboard(targetHight: 0)
+    }
+    
+    func adjustLayoutForKeyboard(targetHight: CGFloat){
+//        if self.view.frame.origin.y == 0 {
+            messageView.frame.origin.y -= targetHight
+//        }
+//        messageView.bottom = targetHight
+    }
+    
     func setChatTextFieldAttributes(){
         chatTextField.layer.cornerRadius = 22
-        chatTextField.backgroundColor = Colors.gray.componentColor?.topBackground
+//        chatTextField.backgroundColor = Colors.gray.componentColor?.topBackground
     }
     
     func setSendButtonAttributes(){
@@ -27,6 +56,8 @@ class GuessingViewController: UIViewController {
     func configure() {
         setChatTextFieldAttributes()
         setSendButtonAttributes()
+        
+        registerForKeyboardNotifications()
     }
     
     override func viewDidLoad() {
@@ -34,5 +65,7 @@ class GuessingViewController: UIViewController {
         // Do any additional setup after loading the view.
      
         configure()
+        
+        SocketIOManager.sharedInstance.shareStatus()
     }
 }

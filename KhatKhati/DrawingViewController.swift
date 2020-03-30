@@ -55,10 +55,6 @@ class DrawingViewController: UIViewController {
     @IBAction func colorPicked(_ sender: Any) {
         unselectedColor()
         
-        if !brushSelected {
-            coloring(brushButton!)
-        }
-        
         brushColorButton = (sender as! CustomButton)
         
         if let siblings = (sender as! UIButton).superview?.subviews {
@@ -70,6 +66,10 @@ class DrawingViewController: UIViewController {
             }
         }
         (sender as! UIButton).isHidden = true
+        
+        if !brushSelected {
+            coloring(brushButton!)
+        }
     }
     
     @IBAction func coloring(_ sender: Any) {
@@ -80,7 +80,10 @@ class DrawingViewController: UIViewController {
 
         brushSelected = true
         brushWidth = 6.0
-        colorPicked(redColorButton!)
+        
+        if brushColorButton == nil {
+            colorPicked(redColorButton!)
+        }
     }
     
     @IBAction func erasing(_ sender: Any) {
@@ -89,7 +92,7 @@ class DrawingViewController: UIViewController {
         showSelected(willShowComponent: brushButton!, willHideComponent: brushView!)
 
         brushSelected = false
-        brushWidth = 15.0 //TODO: good?!
+        brushWidth = 17.0 //TODO: good?!
         unselectedColor()
     }
     

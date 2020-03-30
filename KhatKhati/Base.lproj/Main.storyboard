@@ -966,8 +966,8 @@
                                     <constraint firstAttribute="bottom" secondItem="SQn-pa-98h" secondAttribute="bottom" id="ydS-NI-hg5"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0p7-fw-FGJ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="526"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0p7-fw-FGJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="0.41133347602739728" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
@@ -982,7 +982,7 @@
                             <constraint firstItem="yek-85-i8W" firstAttribute="top" secondItem="hJR-Kf-wjY" secondAttribute="bottom" id="KUI-Sh-6J4"/>
                             <constraint firstItem="yek-85-i8W" firstAttribute="leading" secondItem="RD0-eh-Wtu" secondAttribute="leading" constant="39" id="PqH-k4-4AC"/>
                             <constraint firstItem="hJR-Kf-wjY" firstAttribute="leading" secondItem="RD0-eh-Wtu" secondAttribute="leading" id="Wpx-l3-JPJ"/>
-                            <constraint firstItem="0p7-fw-FGJ" firstAttribute="bottom" secondItem="RD0-eh-Wtu" secondAttribute="bottom" constant="-16" id="mMi-X3-C1j"/>
+                            <constraint firstItem="0p7-fw-FGJ" firstAttribute="bottom" secondItem="RD0-eh-Wtu" secondAttribute="bottom" id="mMi-X3-C1j"/>
                             <constraint firstItem="RD0-eh-Wtu" firstAttribute="bottom" secondItem="5tp-fs-033" secondAttribute="bottom" constant="16" id="nPY-yv-hbh"/>
                             <constraint firstItem="5tp-fs-033" firstAttribute="leading" secondItem="RD0-eh-Wtu" secondAttribute="leading" constant="32" id="vh2-is-qCL"/>
                             <constraint firstItem="yek-85-i8W" firstAttribute="centerX" secondItem="3rT-84-p3Q" secondAttribute="centerX" id="wLM-Zc-PYI"/>
@@ -1261,6 +1261,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aWv-O3-Q0g"/>
                     </view>
+                    <connections>
+                        <outlet property="loadingBackgroundImage" destination="iP9-u0-eLX" id="tzp-Pq-nDf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z5s-8q-oaz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1459,8 +1462,7 @@
         <image name="paint‌Brush" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ixS-pH-Pm3"/>
-        <segue reference="sV0-CN-hUk"/>
+        <segue reference="sbc-o3-ODR"/>
         <segue reference="VT4-2O-IYQ"/>
         <segue reference="9kx-zI-YcT"/>
         <segue reference="4nJ-e4-cP0"/>

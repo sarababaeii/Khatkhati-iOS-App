@@ -42,6 +42,7 @@ class JoinGameViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func joinGameAction(_ sender: Any) {
         if let caption = fetchInput() {
+            GameConstants.roomID = caption
             SocketIOManager.sharedInstance.joinGame(roomID: caption, username: "Player0")
             lobbyCodeTextField.resignFirstResponder()
         }

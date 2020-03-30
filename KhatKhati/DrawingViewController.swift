@@ -166,6 +166,10 @@ class DrawingViewController: UIViewController {
         
         swiped = false
         lastPoint = touch.location(in: canvasView)
+        
+        if let roomID = GameConstants.roomID {
+            SocketIOManager.sharedInstance.sendDrawing(roomID: roomID, state: "start", point: [lastPoint.x, lastPoint.y])
+        }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -177,6 +181,10 @@ class DrawingViewController: UIViewController {
         let currentPoint = touch.location(in: canvasView)
         drawLine(from: lastPoint, to: currentPoint)
         lastPoint = currentPoint
+        
+        if let roomID = GameConstants.roomID {
+            SocketIOManager.sharedInstance.sendDrawing(roomID: roomID, state: "moving", point: [lastPoint.x, lastPoint.y])
+        }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -184,7 +192,11 @@ class DrawingViewController: UIViewController {
         // draw a single point
             drawLine(from: lastPoint, to: lastPoint)
         }
-
+        
+        if let roomID = GameConstants.roomID {
+            SocketIOManager.sharedInstance.sendDrawing(roomID: roomID, state: "end", point: [lastPoint.x, lastPoint.y])
+        }
+        
         // Merge tempImageView into mainImageView
         UIGraphicsBeginImageContext(canvas.frame.size)
         canvas.image?.draw(in: canvasView.bounds, blendMode: .normal, alpha: 1.0)

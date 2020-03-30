@@ -1464,6 +1464,7 @@
         <image name="paint‌Brush" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="2R5-S7-aH0"/>
         <segue reference="sbc-o3-ODR"/>
         <segue reference="VT4-2O-IYQ"/>
         <segue reference="9kx-zI-YcT"/>

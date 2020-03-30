@@ -15,6 +15,7 @@ class SocketIOManager: NSObject {
      var manager: SocketManager?
      var socket: SocketIOClient?
 
+    //MARK: Connecting
     func establishConnection() {
         guard let socket = manager?.defaultSocket else{
             return
@@ -39,12 +40,47 @@ class SocketIOManager: NSObject {
     func getPlayer() {
         print("1 more step pleeeease")
         
-        socket?.on("players_list", callback: {  (data, ack) in
+        socket?.on("players_list", callback: { (data, ack) in
             print("hereeee")
             if let dict = data[0] as? [String : Any] {
                 print(dict["users"] as Any)
           }
         })
+    }
+    
+    //MARK: Drawing
+    func sendDrawing(roomID: String, state: String, point: [CGFloat]) {
+        let data = ["room": roomID, "state": state, "point": point] as [String : Any]
+        //color and brush size not defined
+        socket?.emit("send_message", data)
+    }
+    
+    func receiveDrawing() {
+        
+    }
+    
+    //MARK: Choosing word
+    func sendWord(word: String) {
+        if let roomID = GameConstants.roomID {
+            let data = ["room_id": roomID, "word": word]
+            socket?.emit("lets_play_on", data)
+        }
+    }
+    
+    func receiveWords() {
+        
+    }
+    
+    //MARK: Chatting
+    func sendMessage(message: String) {
+        if let roomID = GameConstants.roomID {
+            let data = ["room_id": roomID, "text": message, "username": GameConstants.username!]
+            socket?.emit("chat", data)
+        }
+    }
+    
+    func receiveMessage() {
+
     }
     
     func shareStatus() {

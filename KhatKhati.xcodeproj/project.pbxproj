@@ -11,6 +11,7 @@
 		032B6D382426B40E00F7AA13 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B6D372426B40E00F7AA13 /* LoadingViewController.swift */; };
 		033602432427AF4B00925975 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033602422427AF4B00925975 /* DrawingViewController.swift */; };
 		03506C02243257EE0052DE06 /* TimerSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03506C01243257EE0052DE06 /* TimerSetting.swift */; };
+		03506C0424329D990052DE06 /* GameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03506C0324329D990052DE06 /* GameConstants.swift */; };
 		03B100E8242973E7009418D2 /* GuessingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B100E7242973E7009418D2 /* GuessingViewController.swift */; };
 		03B6DD352422CDEB00CC0B7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD342422CDEB00CC0B7F /* AppDelegate.swift */; };
 		03B6DD372422CDEB00CC0B7F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD362422CDEB00CC0B7F /* SceneDelegate.swift */; };
@@ -60,6 +61,7 @@
 		032B6D372426B40E00F7AA13 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		033602422427AF4B00925975 /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
 		03506C01243257EE0052DE06 /* TimerSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSetting.swift; sourceTree = "<group>"; };
+		03506C0324329D990052DE06 /* GameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConstants.swift; sourceTree = "<group>"; };
 		03B100E7242973E7009418D2 /* GuessingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessingViewController.swift; sourceTree = "<group>"; };
 		03B6DD312422CDEB00CC0B7F /* KhatKhati.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KhatKhati.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03B6DD342422CDEB00CC0B7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				03C727272426584300334429 /* GradientView.swift */,
 				0323C15E242EB6A20074856A /* SocketIOManager.swift */,
 				03506C01243257EE0052DE06 /* TimerSetting.swift */,
+				03506C0324329D990052DE06 /* GameConstants.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				03F287DD2423D9FB0024937C /* NewLobbyViewController.swift in Sources */,
 				03B6DD352422CDEB00CC0B7F /* AppDelegate.swift in Sources */,
 				03506C02243257EE0052DE06 /* TimerSetting.swift in Sources */,
+				03506C0424329D990052DE06 /* GameConstants.swift in Sources */,
 				03B6DD372422CDEB00CC0B7F /* SceneDelegate.swift in Sources */,
 				03B100E8242973E7009418D2 /* GuessingViewController.swift in Sources */,
 				03B6DD3F2422CDEB00CC0B7F /* KhatKhati.xcdatamodeld in Sources */,

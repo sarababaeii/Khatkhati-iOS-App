@@ -45,46 +45,6 @@ class SocketIOManager: NSObject {
                 print(dict["users"] as Any)
           }
         })
-        
-//        socket?.on("players_list", callback: {(data, ack) -> Void in
-//            print("hiiiiiii \(data.count)")
-//
-//
-//
-////            print(data["users"])
-////            guard data.count > 0,
-////                let users = data.first as? [String: String] else {
-////                    return
-////            }
-////
-////            if let result = users["users"] {
-////                for user in result {
-////                    print("**********")
-////                    print(user)
-////                    print("**********")
-////                }
-////            }
-//
-//
-//        })
-        
-        
-//        guard result.count > 0,
-//                let _ = self,
-//                let user = result.first as? [[String: Any]],
-//                let data = UIApplication.jsonData(from: user) else {
-//                    return
-//            }
-//
-//            do {
-//                let userModel = try JSONDecoder().decode([User].self, from: data)
-//                completion(userModel)
-//
-//            } catch let error {
-//                print("Something happen wrong here...\(error)")
-//                completion(nil)
-//            }
-//        }
     }
     
     func shareStatus() {

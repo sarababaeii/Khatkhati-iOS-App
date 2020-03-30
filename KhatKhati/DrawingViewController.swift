@@ -11,10 +11,13 @@ import UIKit
 
 class DrawingViewController: UIViewController {
     //MARK: Defenitions
+    @IBOutlet weak var timerLabel: UILabel!
+    
     @IBOutlet weak var canvasView: UIView!
     @IBOutlet weak var canvas: UIImageView!
     @IBOutlet weak var templeCanvas: UIImageView!
     
+    //MARK: ColorPalette:
     @IBOutlet weak var redColorButton: CustomButton!
     @IBOutlet weak var greenColorButton: CustomButton!
     @IBOutlet weak var darkBlueColorButton: CustomButton!
@@ -50,6 +53,11 @@ class DrawingViewController: UIViewController {
     var brushWidth: CGFloat = 6.0
     var opacity: CGFloat = 1.0
     var swiped = false
+    
+    func setTimer() {
+        let timer = TimerSetting(label: timerLabel)
+        timer.on()
+    }
     
     //MARK: Color picking
     @IBAction func colorPicked(_ sender: Any) {
@@ -274,6 +282,8 @@ class DrawingViewController: UIViewController {
     }
     
     func configure() {
+        setTimer()
+        
         initializeBrush()
         
         setRedColorAttributes()
@@ -293,7 +303,5 @@ class DrawingViewController: UIViewController {
         // Do any additional setup after loading the view.
      
         configure()
-        
-        SocketIOManager.sharedInstance.shareStatus()
     }
 }

@@ -443,7 +443,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="31P-Oo-Vjj" userLabel="View0.0">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۰:۵۴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1e-nY-c6W">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۰:۰۰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1e-nY-c6W">
                                                 <rect key="frame" x="156" y="17" width="63" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="E1e-nY-c6W" secondAttribute="height" multiplier="63:50" id="oZ9-c7-epu"/>
@@ -1015,6 +1015,7 @@
                         <outlet property="redColorButton" destination="IHx-HL-f8K" id="Bek-3D-4Jn"/>
                         <outlet property="redColorView" destination="y77-Sf-ks7" id="cfz-xN-Hfy"/>
                         <outlet property="templeCanvas" destination="IhC-yN-VJX" id="cdJ-NC-z0X"/>
+                        <outlet property="timerLabel" destination="E1e-nY-c6W" id="SPY-ju-qtB"/>
                         <outlet property="yellowColorButton" destination="wzg-7T-eGc" id="Wkt-Gi-fPB"/>
                         <outlet property="yellowColorView" destination="hpr-Ai-1QO" id="mFT-Ni-zYP"/>
                     </connections>
@@ -1037,7 +1038,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tlX-17-WxP" userLabel="View0.0">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۰:۵۴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJL-aX-ODE">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۰:۰۰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJL-aX-ODE">
                                                 <rect key="frame" x="156" y="17" width="63" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="oJL-aX-ODE" secondAttribute="height" multiplier="63:50" id="2jm-X5-00S"/>
@@ -1159,6 +1160,7 @@
                         <outlet property="chatTextField" destination="FpN-E9-7s3" id="T95-Tf-tjE"/>
                         <outlet property="messageView" destination="R0O-h4-5fd" id="JYy-ne-wZs"/>
                         <outlet property="sendButton" destination="5pZ-7Z-Rj8" id="G4c-VZ-Ty1"/>
+                        <outlet property="timerLabel" destination="oJL-aX-ODE" id="abE-MT-Wdw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYO-UJ-82M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

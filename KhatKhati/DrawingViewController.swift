@@ -49,10 +49,7 @@ class DrawingViewController: UIViewController {
     var brushColorButton: CustomButton?
     var brushColorView: UIView?
     
-    var lastPoint = CGPoint.zero
-    var brushWidth: CGFloat = 6.0
-    var opacity: CGFloat = 1.0
-    var swiped = false
+    var drawing: Drawing?
     
     func setTimer() {
         let timer = TimerSetting(label: timerLabel)
@@ -78,16 +75,17 @@ class DrawingViewController: UIViewController {
         if !brushSelected {
             coloring(brushButton!)
         }
+        
+        drawing?.brushColor = brushColorButton!.color!
     }
     
     @IBAction func coloring(_ sender: Any) {
-        //TODO: showing selected
         showSelected(willShowComponent: brushView!, willHideComponent: brushButton!)
     
         showSelected(willShowComponent: eraserButton!, willHideComponent: eraserView!)
 
         brushSelected = true
-        brushWidth = 6.0
+        drawing?.brushWidth = 6.0
         
         if brushColorButton == nil {
             colorPicked(redColorButton!)
@@ -100,8 +98,10 @@ class DrawingViewController: UIViewController {
         showSelected(willShowComponent: brushButton!, willHideComponent: brushView!)
 
         brushSelected = false
-        brushWidth = 17.0 //TODO: good?!
         unselectedColor()
+        
+        drawing?.brushWidth = 17.0 //TODO: good?!
+        drawing?.brushColor = Colors.white.drawingColor!.topBackground
     }
     
     func unselectedColor() {
@@ -127,84 +127,29 @@ class DrawingViewController: UIViewController {
         }
     }
     
-    //MARK: Drawing
-    func drawLine(from fromPoint: CGPoint, to toPoint: CGPoint) {
-        UIGraphicsBeginImageContext(canvasView.frame.size)
-        
-        guard let context = UIGraphicsGetCurrentContext() else {
-            return
-        }
-        
-        templeCanvas.image?.draw(in: canvasView.bounds)
-
-        context.move(to: fromPoint)
-        context.addLine(to: toPoint)
-
-        context.setLineCap(.round)
-        context.setBlendMode(.normal)
-        context.setLineWidth(brushWidth)
-      
-        if brushSelected {
-            context.setStrokeColor((brushColorButton?.color?.cgColor)!)
-        }
-        else {
-            context.setStrokeColor(((Colors.white.drawingColor!).topBackground).cgColor)
-        }
-        
-        context.strokePath()
-
-        templeCanvas.image = UIGraphicsGetImageFromCurrentImageContext()
-        templeCanvas.alpha = opacity
-
-        UIGraphicsEndImageContext()
-    }
-    
+    //MARK: Drawing management]
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else {
-            return
-        }
-        
-        swiped = false
-        lastPoint = touch.location(in: canvasView)
+        drawing?.touchesBegan(touches)
         
         if let roomID = GameConstants.roomID {
-            SocketIOManager.sharedInstance.sendDrawing(roomID: roomID, state: "start", point: [lastPoint.x, lastPoint.y])
+            SocketIOManager.sharedInstance.sendDrawing(roomID: roomID, state: "start", point: [(drawing?.lastPoint.x)!, (drawing?.lastPoint.y)!])
         }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else {
-            return
-        }
-        
-        swiped = true
-        let currentPoint = touch.location(in: canvasView)
-        drawLine(from: lastPoint, to: currentPoint)
-        lastPoint = currentPoint
+        drawing?.touchesMoved(touches)
         
         if let roomID = GameConstants.roomID {
-            SocketIOManager.sharedInstance.sendDrawing(roomID: roomID, state: "moving", point: [lastPoint.x, lastPoint.y])
+            SocketIOManager.sharedInstance.sendDrawing(roomID: roomID, state: "moving", point: [(drawing?.lastPoint.x)!, (drawing?.lastPoint.y)!])
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if !swiped {
-        // draw a single point
-            drawLine(from: lastPoint, to: lastPoint)
-        }
+        drawing?.touchesEnded()
         
         if let roomID = GameConstants.roomID {
-            SocketIOManager.sharedInstance.sendDrawing(roomID: roomID, state: "end", point: [lastPoint.x, lastPoint.y])
+            SocketIOManager.sharedInstance.sendDrawing(roomID: roomID, state: "end", point: [(drawing?.lastPoint.x)!, (drawing?.lastPoint.y)!])
         }
-        
-        // Merge tempImageView into mainImageView
-        UIGraphicsBeginImageContext(canvas.frame.size)
-        canvas.image?.draw(in: canvasView.bounds, blendMode: .normal, alpha: 1.0)
-        templeCanvas?.image?.draw(in: canvasView.bounds, blendMode: .normal, alpha: opacity)
-        canvas.image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        templeCanvas.image = nil
     }
     
     //MARK: Initializing
@@ -294,9 +239,9 @@ class DrawingViewController: UIViewController {
     }
     
     func configure() {
-        setTimer()
+        drawing = Drawing(canvasView: canvasView, canvas: canvas, templeCanvas: templeCanvas)
         
-        initializeBrush()
+        setTimer()
         
         setRedColorAttributes()
         setGreenColorAttributes()
@@ -308,6 +253,8 @@ class DrawingViewController: UIViewController {
         setLightBlueColorAttributes()
         setBlackColorAttributes()
         setGrayColorAttributes()
+        
+        initializeBrush()
     }
     
     override func viewDidLoad() {

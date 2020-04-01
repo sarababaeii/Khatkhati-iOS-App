@@ -172,13 +172,13 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZm-zH-hhY" userLabel="View1.0">
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="89"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KhatKhati" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KX6-GT-Rr7" customClass="CustomLabel" customModule="KhatKhati" customModuleProvider="target">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="نام اتاق" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gXE-TU-uIa">
                                                 <rect key="frame" x="0.0" y="0.0" width="311" height="89"/>
-                                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <color key="backgroundColor" red="0.91968107876712324" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="24"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                            </textField>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCA-yB-IrP" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
                                                 <rect key="frame" x="94.5" y="68.5" width="122" height="41"/>
                                                 <constraints>
@@ -210,11 +210,11 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="KX6-GT-Rr7" firstAttribute="leading" secondItem="eZm-zH-hhY" secondAttribute="leading" id="9kZ-LI-gC5"/>
+                                            <constraint firstItem="gXE-TU-uIa" firstAttribute="leading" secondItem="eZm-zH-hhY" secondAttribute="leading" id="5V9-Qt-QMi"/>
+                                            <constraint firstAttribute="trailing" secondItem="gXE-TU-uIa" secondAttribute="trailing" id="5VR-ge-4dx"/>
                                             <constraint firstItem="Q5g-eD-fq7" firstAttribute="centerX" secondItem="eZm-zH-hhY" secondAttribute="centerX" multiplier="1.75" id="Fxu-IK-Bi7"/>
-                                            <constraint firstAttribute="bottom" secondItem="KX6-GT-Rr7" secondAttribute="bottom" id="QFp-uc-260"/>
-                                            <constraint firstItem="KX6-GT-Rr7" firstAttribute="top" secondItem="eZm-zH-hhY" secondAttribute="top" id="Vw1-YJ-hTR"/>
-                                            <constraint firstAttribute="trailing" secondItem="KX6-GT-Rr7" secondAttribute="trailing" id="gbV-AT-aw6"/>
+                                            <constraint firstAttribute="bottom" secondItem="gXE-TU-uIa" secondAttribute="bottom" id="Sel-Zg-CV5"/>
+                                            <constraint firstItem="gXE-TU-uIa" firstAttribute="top" secondItem="eZm-zH-hhY" secondAttribute="top" id="dDJ-2m-8oB"/>
                                             <constraint firstItem="Q5g-eD-fq7" firstAttribute="centerY" secondItem="eZm-zH-hhY" secondAttribute="centerY" id="j15-76-MZK"/>
                                             <constraint firstItem="kCA-yB-IrP" firstAttribute="centerX" secondItem="eZm-zH-hhY" secondAttribute="centerX" id="oyN-l7-nvX"/>
                                             <constraint firstItem="kCA-yB-IrP" firstAttribute="centerY" secondItem="eZm-zH-hhY" secondAttribute="bottom" id="xdN-tn-2eQ"/>
@@ -416,9 +416,9 @@
                     </view>
                     <connections>
                         <outlet property="copyButton" destination="kCA-yB-IrP" id="Gq1-vK-FS2"/>
+                        <outlet property="lobbyNameTextField" destination="gXE-TU-uIa" id="3zk-5t-mxN"/>
                         <outlet property="lobbyTypeButton" destination="gMV-g5-g8W" id="Pu8-re-lQz"/>
                         <outlet property="lobbyTypeLabel" destination="jCp-lu-950" id="un5-b8-a4c"/>
-                        <outlet property="nameLabel" destination="KX6-GT-Rr7" id="2yT-eb-L75"/>
                         <outlet property="roundsNumberButton" destination="1JI-0A-hBl" id="iVt-BY-KlF"/>
                         <outlet property="roundsNumberLabel" destination="xN2-Uh-qgA" id="h1I-x8-cdR"/>
                         <outlet property="startGameButton" destination="mgK-QH-4B4" id="nSd-lo-XAp"/>
@@ -443,7 +443,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="31P-Oo-Vjj" userLabel="View0.0">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۰:۰۰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1e-nY-c6W">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۰:۶۰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1e-nY-c6W">
                                                 <rect key="frame" x="156" y="17" width="63" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="E1e-nY-c6W" secondAttribute="height" multiplier="63:50" id="oZ9-c7-epu"/>
@@ -1038,7 +1038,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tlX-17-WxP" userLabel="View0.0">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۰:۰۰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJL-aX-ODE">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۰:۶۰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJL-aX-ODE">
                                                 <rect key="frame" x="156" y="17" width="63" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="oJL-aX-ODE" secondAttribute="height" multiplier="63:50" id="2jm-X5-00S"/>
@@ -1100,14 +1100,21 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9tQ-GQ-guS">
                                         <rect key="frame" x="0.0" y="0.0" width="297" height="297"/>
                                     </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D6E-Az-pTs">
+                                        <rect key="frame" x="0.0" y="0.0" width="297" height="297"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="9tQ-GQ-guS" firstAttribute="leading" secondItem="QRQ-G7-aZj" secondAttribute="leading" id="2ab-dt-zJB"/>
                                     <constraint firstAttribute="trailing" secondItem="9tQ-GQ-guS" secondAttribute="trailing" id="3kO-Qt-aoS"/>
+                                    <constraint firstAttribute="trailing" secondItem="D6E-Az-pTs" secondAttribute="trailing" id="5RB-Y1-DSw"/>
+                                    <constraint firstItem="D6E-Az-pTs" firstAttribute="leading" secondItem="QRQ-G7-aZj" secondAttribute="leading" id="DWe-RN-zGp"/>
+                                    <constraint firstItem="D6E-Az-pTs" firstAttribute="top" secondItem="QRQ-G7-aZj" secondAttribute="top" id="KJs-cF-30w"/>
                                     <constraint firstItem="9tQ-GQ-guS" firstAttribute="top" secondItem="QRQ-G7-aZj" secondAttribute="top" id="PEp-dW-o4l"/>
                                     <constraint firstAttribute="bottom" secondItem="9tQ-GQ-guS" secondAttribute="bottom" id="PIU-2l-VW9"/>
                                     <constraint firstAttribute="width" secondItem="QRQ-G7-aZj" secondAttribute="height" multiplier="1:1" id="TBP-N9-cid"/>
+                                    <constraint firstAttribute="bottom" secondItem="D6E-Az-pTs" secondAttribute="bottom" id="atE-3y-jod"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R0O-h4-5fd" userLabel="View3">
@@ -1157,9 +1164,12 @@
                         <viewLayoutGuide key="safeArea" id="JTG-Lz-hf6"/>
                     </view>
                     <connections>
+                        <outlet property="canvas" destination="9tQ-GQ-guS" id="krZ-uK-193"/>
+                        <outlet property="canvasView" destination="QRQ-G7-aZj" id="wBA-tu-JhT"/>
                         <outlet property="chatTextField" destination="FpN-E9-7s3" id="T95-Tf-tjE"/>
                         <outlet property="messageView" destination="R0O-h4-5fd" id="JYy-ne-wZs"/>
                         <outlet property="sendButton" destination="5pZ-7Z-Rj8" id="G4c-VZ-Ty1"/>
+                        <outlet property="templeCanvas" destination="D6E-Az-pTs" id="DIb-zO-RuK"/>
                         <outlet property="timerLabel" destination="oJL-aX-ODE" id="abE-MT-Wdw"/>
                     </connections>
                 </viewController>
@@ -1464,10 +1474,9 @@
         <image name="paint‌Brush" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2R5-S7-aH0"/>
-        <segue reference="sbc-o3-ODR"/>
+        <segue reference="sV0-CN-hUk"/>
         <segue reference="VT4-2O-IYQ"/>
         <segue reference="9kx-zI-YcT"/>
-        <segue reference="4nJ-e4-cP0"/>
+        <segue reference="B02-37-tGE"/>
     </inferredMetricsTieBreakers>
 </document>

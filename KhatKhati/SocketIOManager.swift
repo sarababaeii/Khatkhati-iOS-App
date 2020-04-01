@@ -15,6 +15,12 @@ class SocketIOManager: NSObject {
      var manager: SocketManager?
      var socket: SocketIOClient?
 
+    var users = [String]()
+    var draw = [String : Any]()
+    var words = [String : Any]()
+    var play = [String : String]()
+    
+    
     //MARK: Connecting
     func establishConnection() {
         guard let socket = manager?.defaultSocket else{
@@ -35,17 +41,24 @@ class SocketIOManager: NSObject {
     func joinGame(roomID: String, username: String) {
         let data = ["room_id" : roomID, "username" : username]
         socket?.emit("subscribe", data)
+        
+        addHandlers()
     }
     
-    func getPlayer() {
-        print("1 more step pleeeease")
+    func getPlayers() {
+        print("hereeeee")
+        for user in users {
+            print(user)
+        }
         
-        socket?.on("players_list", callback: { (data, ack) in
-            print("hereeee")
-            if let dict = data[0] as? [String : Any] {
-                print(dict["users"] as Any)
-          }
-        })
+    }
+    
+    func addHandlers() {
+        socket?.on("players_list") { data, ack in
+            let kuft = data[0] as! [String : Any]
+            self.users = kuft["users"] as! [String]
+            return
+        }
     }
     
     //MARK: Drawing
@@ -55,8 +68,17 @@ class SocketIOManager: NSObject {
         socket?.emit("send_message", data)
     }
     
-    func receiveDrawing() {
-        
+    func receiveDrawing(state: String, point: [CGFloat]) {
+//        switch state {
+//        case "start":
+////
+//        case "moving":
+//
+//        case "end":
+//
+//        default:
+//            <#code#>
+//        }
     }
     
     //MARK: Choosing word

@@ -28,6 +28,7 @@
 		03B6DD752422F4B700CC0B7F /* Vazir-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03B6DD702422F4B600CC0B7F /* Vazir-Thin.ttf */; };
 		03B6DD762422F4B700CC0B7F /* Vazir.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03B6DD712422F4B600CC0B7F /* Vazir.ttf */; };
 		03B6DD772422F4B700CC0B7F /* Vazir-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03B6DD722422F4B700CC0B7F /* Vazir-Medium.ttf */; };
+		03BA7664243548E200E0B345 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BA7663243548E200E0B345 /* Drawing.swift */; };
 		03C544BD2424EF3B00C4049C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C544BC2424EF3B00C4049C /* Color.swift */; };
 		03C544BF2424F0C200C4049C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C544BE2424F0C200C4049C /* Colors.swift */; };
 		03C727282426584300334429 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C727272426584300334429 /* GradientView.swift */; };
@@ -84,6 +85,7 @@
 		03B6DD702422F4B600CC0B7F /* Vazir-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vazir-Thin.ttf"; sourceTree = "<group>"; };
 		03B6DD712422F4B600CC0B7F /* Vazir.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Vazir.ttf; sourceTree = "<group>"; };
 		03B6DD722422F4B700CC0B7F /* Vazir-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vazir-Medium.ttf"; sourceTree = "<group>"; };
+		03BA7663243548E200E0B345 /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
 		03C544BC2424EF3B00C4049C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		03C544BE2424F0C200C4049C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		03C727272426584300334429 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				0323C15E242EB6A20074856A /* SocketIOManager.swift */,
 				03506C01243257EE0052DE06 /* TimerSetting.swift */,
 				03506C0324329D990052DE06 /* GameConstants.swift */,
+				03BA7663243548E200E0B345 /* Drawing.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				03B6DD3F2422CDEB00CC0B7F /* KhatKhati.xcdatamodeld in Sources */,
 				03C544BF2424F0C200C4049C /* Colors.swift in Sources */,
 				033602432427AF4B00925975 /* DrawingViewController.swift in Sources */,
+				03BA7664243548E200E0B345 /* Drawing.swift in Sources */,
 				03D5526E24245D8300969560 /* JoinGameViewController.swift in Sources */,
 				03B6DD6D2422E01000CC0B7F /* CustomButton.swift in Sources */,
 				032B6D382426B40E00F7AA13 /* LoadingViewController.swift in Sources */,

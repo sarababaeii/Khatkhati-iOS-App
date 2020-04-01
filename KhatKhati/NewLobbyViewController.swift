@@ -11,8 +11,9 @@ import UIKit
 
 class NewLobbyViewController: UIViewController {
     
+    @IBOutlet weak var lobbyNameTextField: UITextField!
     @IBOutlet weak var copyButton: CustomButton!
-    @IBOutlet weak var nameLabel: CustomLabel!
+//    @IBOutlet weak var nameLabel: CustomLabel!
     @IBOutlet weak var telegramView: CustomButton!
    
     @IBOutlet weak var roundsNumberLabel: CustomLabel!
@@ -65,9 +66,10 @@ class NewLobbyViewController: UIViewController {
         copyButton.setBackgroundColor(color: Colors.pink.componentColor!)
     }
     
-    func setNameLabelAttributes() {
-        nameLabel.setCornerRadius(radius: 43)
-        nameLabel.setBackgroundColor(color: Colors.gray.componentColor!)
+    func setLobbyNameTextFieldAttributes() {
+        lobbyNameTextField.layer.cornerRadius = 43
+//        lobbyNameTextField.setCornerRadius(radius: 43)
+//        lobbyNameTextField.setBackgroundColor(color: Colors.gray.componentColor!)
     }
     
     func setTelegramViewAttributes() {
@@ -116,7 +118,7 @@ class NewLobbyViewController: UIViewController {
     
     func configure() {
         setCopyButtonAttributes()
-        setNameLabelAttributes()
+        setLobbyNameTextFieldAttributes()
         setTelegramViewAttributes()
         
         setRoundsNumberLabelAttributes()
@@ -137,3 +139,5 @@ class NewLobbyViewController: UIViewController {
         SocketIOManager.sharedInstance.shareStatus()
        }
 }
+
+//TODO: Keyboard management, sharing, copy

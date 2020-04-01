@@ -10,18 +10,26 @@ import Foundation
 import UIKit
 
 class GuessingViewController: UIViewController {
-    
+    //MARK: Defenitions
     @IBOutlet weak var timerLabel: UILabel!
+    
+    @IBOutlet weak var canvasView: UIView!
+    @IBOutlet weak var canvas: UIImageView!
+    @IBOutlet weak var templeCanvas: UIImageView!
+    
     @IBOutlet weak var messageView: UIView!
     @IBOutlet weak var chatTextField: UITextField!
     @IBOutlet weak var sendButton: CustomButton!
     
+    static var drawing: Drawing?
+    
+    //MARK: Timer Setting
     func setTimer() {
         let timer = TimerSetting(label: timerLabel)
         timer.on()
     }
     
-    //MARK: Keyboard management
+    //MARK: Keyboard Management
     func registerForKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -56,6 +64,8 @@ class GuessingViewController: UIViewController {
     }
     
     func configure() {
+        GuessingViewController.drawing = Drawing(canvasView: canvasView, canvas: canvas, templeCanvas: templeCanvas)
+        
         setTimer()
         
         setChatTextFieldAttributes()

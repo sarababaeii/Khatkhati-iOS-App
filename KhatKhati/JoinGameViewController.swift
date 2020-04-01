@@ -17,10 +17,26 @@ class JoinGameViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func randomGameAction(_ sender: Any) {
         print("^^^^^^^^")
-        SocketIOManager.sharedInstance.getPlayer()
+        SocketIOManager.sharedInstance.getPlayers()
+//        SocketIOManager.sharedInstance.getPlayers(completion: {(userList) -> Void in
+//            for user in userList! {
+//                print(user)
+//            }
+//        })
+        
+//        SocketIOManager.sharedInstance.connectToServerWithNickname(self.nickname, completionHandler: { (userList) -> Void in
+//            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//                if userList != nil {
+//                    self.users = userList
+//                    self.tblUserList.reloadData()
+//                    self.tblUserList.hidden = false
+//                }
+//            })
+//        })
         print("^^^^^^^^")
         
     }
+    
     //MARK: Keyboard management
     func registerForKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)

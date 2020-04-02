@@ -16,17 +16,14 @@ class SocketIOManager: NSObject {
      var socket: SocketIOClient?
 
     var users = [String]()
-    var draw = [String : Any]()
-    var words = [String : Any]()
-    var play = [String : String]()
-    
+    var words = [String]()
+//    var play = [String : String]()
     
     //MARK: Connecting
     func establishConnection() {
         guard let socket = manager?.defaultSocket else{
             return
         }
-
         socket.connect()
     }
     
@@ -34,7 +31,6 @@ class SocketIOManager: NSObject {
         guard let socket = manager?.defaultSocket else{
             return
         }
-        
         socket.disconnect()
     }
     
@@ -50,14 +46,41 @@ class SocketIOManager: NSObject {
         for user in users {
             print(user)
         }
-        
     }
     
     func addHandlers() {
         socket?.on("players_list") { data, ack in
-            let kuft = data[0] as! [String : Any]
-            self.users = kuft["users"] as! [String]
-            return
+            print("^^^^^RECEIVING PLAYERS^^^^^^")
+            
+            let temp = data[0] as! [String : Any]
+            self.users = temp["users"] as! [String]
+//            return
+        }
+        
+        socket?.on("conversation_private") { data, ack in
+            print("^^^^^RECEIVING DRAW^^^^^^")
+            
+            var temp = data[0] as! [String : Any]
+            temp = temp["data"] as! [String : Any]
+            
+            if let roomID = GameConstants.roomID {
+                if roomID == temp["room"] as! String {
+                    self.receiveDrawing(state: temp["state"] as! String, point: temp["point"] as! [CGFloat])
+                }
+            }
+//            return
+        }
+         //TODO: is it correct?!
+        socket?.on("start_game") { data, ack in
+            print("^^^^^RECEIVING WORDS^^^^^^")
+            
+            let temp = data[0] as! [String : Any]
+            
+            if let username = GameConstants.username,
+                username == temp["username"] as! String {
+                    self.words = temp["words"] as! [String]
+            }
+    //      return
         }
     }
     
@@ -69,16 +92,16 @@ class SocketIOManager: NSObject {
     }
     
     func receiveDrawing(state: String, point: [CGFloat]) {
-//        switch state {
-//        case "start":
-////
-//        case "moving":
-//
-//        case "end":
-//
-//        default:
-//            <#code#>
-//        }
+        switch state {
+        case "start":
+            GuessingViewController.drawing?.touchesBegan(CGPoint(x: point[0], y: point[1]))
+        case "moving":
+            GuessingViewController.drawing?.touchesMoved(CGPoint(x: point[0], y: point[1]))
+        case "end":
+            GuessingViewController.drawing?.touchesEnded()
+        default:
+            print("Error in receiving draw")
+        }
     }
     
     //MARK: Choosing word
@@ -89,8 +112,8 @@ class SocketIOManager: NSObject {
         }
     }
     
-    func receiveWords() {
-        
+    func receiveWords() -> [String] {
+        return words
     }
     
     //MARK: Chatting

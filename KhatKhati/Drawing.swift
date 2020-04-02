@@ -51,22 +51,14 @@ class Drawing {
         UIGraphicsEndImageContext()
     }
     
-    func touchesBegan(_ touches: Set<UITouch>) {
-        guard let touch = touches.first else {
-            return
-        }
-        
+    func touchesBegan(_ touch: CGPoint) {
         swiped = false
-        lastPoint = touch.location(in: canvasView)
+        lastPoint = touch
     }
     
-    func touchesMoved(_ touches: Set<UITouch>) {
-        guard let touch = touches.first else {
-            return
-        }
-        
+    func touchesMoved(_ touch: CGPoint) {
         swiped = true
-        let currentPoint = touch.location(in: canvasView)
+        let currentPoint = touch
         drawLine(from: lastPoint, to: currentPoint)
         lastPoint = currentPoint
     }

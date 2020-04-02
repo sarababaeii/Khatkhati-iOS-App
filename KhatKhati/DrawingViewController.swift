@@ -127,9 +127,13 @@ class DrawingViewController: UIViewController {
         }
     }
     
-    //MARK: Drawing management]
+    //MARK: Drawing management
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        drawing?.touchesBegan(touches)
+        guard let touch = touches.first else {
+            return
+        }
+        
+        drawing?.touchesBegan(touch.location(in: canvasView))
         
         if let roomID = GameConstants.roomID {
             SocketIOManager.sharedInstance.sendDrawing(roomID: roomID, state: "start", point: [(drawing?.lastPoint.x)!, (drawing?.lastPoint.y)!])
@@ -137,7 +141,11 @@ class DrawingViewController: UIViewController {
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        drawing?.touchesMoved(touches)
+        guard let touch = touches.first else {
+            return
+        }
+        
+        drawing?.touchesMoved(touch.location(in: canvasView))
         
         if let roomID = GameConstants.roomID {
             SocketIOManager.sharedInstance.sendDrawing(roomID: roomID, state: "moving", point: [(drawing?.lastPoint.x)!, (drawing?.lastPoint.y)!])

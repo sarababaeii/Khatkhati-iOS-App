@@ -1024,6 +1024,21 @@
             </objects>
             <point key="canvasLocation" x="1936.8" y="506.89655172413796"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="cRd-r7-a2W">
+            <objects>
+                <viewController id="sa1-BW-iGt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GTP-rW-Wwf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="0.15683433219178072" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="UUp-j4-zJ0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eV6-Q2-XCp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2804" y="1240"/>
+        </scene>
         <!--Guessing View Controller-->
         <scene sceneID="gHT-E0-16c">
             <objects>
@@ -1063,6 +1078,9 @@
                                                     <constraint firstAttribute="width" secondItem="qPm-cR-0gq" secondAttribute="height" multiplier="35:20" id="1fr-8c-NBV"/>
                                                 </constraints>
                                                 <state key="normal" image="Group"/>
+                                                <connections>
+                                                    <segue destination="sa1-BW-iGt" kind="presentation" modalPresentationStyle="fullScreen" id="8Xf-qi-kil"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1279,7 +1297,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z5s-8q-oaz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1980" y="-173"/>
+            <point key="canvasLocation" x="1937" y="-173"/>
         </scene>
         <!--Join Game View Controller-->
         <scene sceneID="eDi-vc-8eK">
@@ -1474,7 +1492,7 @@
         <image name="paint‌Brush" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sV0-CN-hUk"/>
+        <segue reference="sbc-o3-ODR"/>
         <segue reference="VT4-2O-IYQ"/>
         <segue reference="9kx-zI-YcT"/>
         <segue reference="B02-37-tGE"/>

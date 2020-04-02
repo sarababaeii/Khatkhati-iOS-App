@@ -16,23 +16,12 @@ class JoinGameViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var joinButton: CustomButton!
     
     @IBAction func randomGameAction(_ sender: Any) {
+        let words: [String] = SocketIOManager.sharedInstance.receiveWords()
         print("^^^^^^^^")
-        SocketIOManager.sharedInstance.getPlayers()
-//        SocketIOManager.sharedInstance.getPlayers(completion: {(userList) -> Void in
-//            for user in userList! {
-//                print(user)
-//            }
-//        })
-        
-//        SocketIOManager.sharedInstance.connectToServerWithNickname(self.nickname, completionHandler: { (userList) -> Void in
-//            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//                if userList != nil {
-//                    self.users = userList
-//                    self.tblUserList.reloadData()
-//                    self.tblUserList.hidden = false
-//                }
-//            })
-//        })
+//        SocketIOManager.sharedInstance.getPlayers()
+        for word in words {
+            print(word)
+        }
         print("^^^^^^^^")
         
     }

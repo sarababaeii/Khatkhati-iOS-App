@@ -32,6 +32,8 @@
 		03C544BD2424EF3B00C4049C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C544BC2424EF3B00C4049C /* Color.swift */; };
 		03C544BF2424F0C200C4049C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C544BE2424F0C200C4049C /* Colors.swift */; };
 		03C727282426584300334429 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C727272426584300334429 /* GradientView.swift */; };
+		03D2FF3F2437503F008D9CB7 /* ChoosingWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D2FF3E2437503F008D9CB7 /* ChoosingWordViewController.swift */; };
+		03D2FF412437A875008D9CB7 /* ScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D2FF402437A875008D9CB7 /* ScoresViewController.swift */; };
 		03D5526E24245D8300969560 /* JoinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5526D24245D8300969560 /* JoinGameViewController.swift */; };
 		03F287DD2423D9FB0024937C /* NewLobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F287DC2423D9FB0024937C /* NewLobbyViewController.swift */; };
 		03F287DF2423F2320024937C /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F287DE2423F2320024937C /* CustomLabel.swift */; };
@@ -89,6 +91,8 @@
 		03C544BC2424EF3B00C4049C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		03C544BE2424F0C200C4049C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		03C727272426584300334429 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		03D2FF3E2437503F008D9CB7 /* ChoosingWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosingWordViewController.swift; sourceTree = "<group>"; };
+		03D2FF402437A875008D9CB7 /* ScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresViewController.swift; sourceTree = "<group>"; };
 		03D5526D24245D8300969560 /* JoinGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGameViewController.swift; sourceTree = "<group>"; };
 		03F287DC2423D9FB0024937C /* NewLobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLobbyViewController.swift; sourceTree = "<group>"; };
 		03F287DE2423F2320024937C /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
@@ -205,6 +209,8 @@
 				032B6D372426B40E00F7AA13 /* LoadingViewController.swift */,
 				033602422427AF4B00925975 /* DrawingViewController.swift */,
 				03B100E7242973E7009418D2 /* GuessingViewController.swift */,
+				03D2FF3E2437503F008D9CB7 /* ChoosingWordViewController.swift */,
+				03D2FF402437A875008D9CB7 /* ScoresViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -521,7 +527,9 @@
 				03B6DD352422CDEB00CC0B7F /* AppDelegate.swift in Sources */,
 				03506C02243257EE0052DE06 /* TimerSetting.swift in Sources */,
 				03506C0424329D990052DE06 /* GameConstants.swift in Sources */,
+				03D2FF3F2437503F008D9CB7 /* ChoosingWordViewController.swift in Sources */,
 				03B6DD372422CDEB00CC0B7F /* SceneDelegate.swift in Sources */,
+				03D2FF412437A875008D9CB7 /* ScoresViewController.swift in Sources */,
 				03B100E8242973E7009418D2 /* GuessingViewController.swift in Sources */,
 				03B6DD3F2422CDEB00CC0B7F /* KhatKhati.xcdatamodeld in Sources */,
 				03C544BF2424F0C200C4049C /* Colors.swift in Sources */,

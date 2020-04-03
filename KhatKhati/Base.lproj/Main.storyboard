@@ -18,6 +18,9 @@
         <array key="Vazir-Medium.ttf">
             <string>Vazir-Medium</string>
         </array>
+        <array key="Vazir-Thin.ttf">
+            <string>Vazir-Thin</string>
+        </array>
         <array key="Vazir.ttf">
             <string>Vazir</string>
         </array>
@@ -324,7 +327,7 @@
                                 <rect key="frame" x="32" y="347" width="311" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="دعوت دوستان" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMa-c6-F7L">
-                                        <rect key="frame" x="105.5" y="0.0" width="100" height="28.5"/>
+                                        <rect key="frame" x="105.5" y="0.0" width="100" height="28"/>
                                         <fontDescription key="fontDescription" name="Vazir-Medium" family="Vazir" pointSize="18"/>
                                         <color key="textColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -381,7 +384,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="FH5-3d-izd" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="82G-jU-yN3"/>
+                                            <segue destination="qaP-Jh-xiv" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="qhN-1K-jrZ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -458,9 +461,6 @@
                                                     <constraint firstAttribute="width" secondItem="z56-Tt-x43" secondAttribute="height" multiplier="28:20" id="17V-PZ-Fga"/>
                                                 </constraints>
                                                 <state key="normal" image="Menu"/>
-                                                <connections>
-                                                    <segue destination="I4V-oy-IXb" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="9kx-zI-YcT"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQW-jO-cMq">
                                                 <rect key="frame" x="304.5" y="31" width="38.5" height="22"/>
@@ -468,9 +468,6 @@
                                                     <constraint firstAttribute="width" secondItem="mQW-jO-cMq" secondAttribute="height" multiplier="35:20" id="ZRM-wV-vhb"/>
                                                 </constraints>
                                                 <state key="normal" image="Group"/>
-                                                <connections>
-                                                    <segue destination="gNB-0m-c18" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="ixS-pH-Pm3"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1022,22 +1019,179 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ifY-c0-FlE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1936.8" y="506.89655172413796"/>
+            <point key="canvasLocation" x="2785" y="-173"/>
         </scene>
-        <!--View Controller-->
+        <!--Choosing Word View Controller-->
         <scene sceneID="cRd-r7-a2W">
             <objects>
-                <viewController id="sa1-BW-iGt" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GTP-rW-Wwf">
+                <viewController id="sa1-BW-iGt" customClass="ChoosingWordViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="GTP-rW-Wwf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="0.15683433219178072" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H3l-Ch-Wyf" userLabel="View0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
+                                <subviews>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۰:۶۰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjI-xr-ldf">
+                                        <rect key="frame" x="156" y="17" width="63" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ZjI-xr-ldf" secondAttribute="height" multiplier="63:50" id="QD1-rv-DJ7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Vazir-Black" family="Vazir" pointSize="32"/>
+                                        <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clock" translatesAutoresizingMaskIntoConstraints="NO" id="shx-U9-7F7">
+                                        <rect key="frame" x="171" y="25.5" width="33" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="shx-U9-7F7" secondAttribute="height" multiplier="1:1" id="MQe-9o-9h0"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="33" id="eG7-dk-bDl"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ZjI-xr-ldf" firstAttribute="centerY" secondItem="shx-U9-7F7" secondAttribute="centerY" id="2uX-58-EQs"/>
+                                    <constraint firstAttribute="width" secondItem="H3l-Ch-Wyf" secondAttribute="height" multiplier="375:67" id="3YQ-cU-iu9"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZjI-xr-ldf" secondAttribute="bottom" id="eQm-vr-MMm"/>
+                                    <constraint firstItem="shx-U9-7F7" firstAttribute="centerX" secondItem="H3l-Ch-Wyf" secondAttribute="centerX" id="oHa-LU-dZg"/>
+                                    <constraint firstItem="ZjI-xr-ldf" firstAttribute="centerX" secondItem="H3l-Ch-Wyf" secondAttribute="centerX" id="yth-XQ-r7e"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۰:۱۰" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oA1-4I-tY1">
+                                <rect key="frame" x="156" y="67" width="63" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="oA1-4I-tY1" secondAttribute="height" multiplier="63:50" id="1Lb-3w-PqC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Vazir-Black" family="Vazir" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7w-0i-Mn6" userLabel="View1">
+                                <rect key="frame" x="70" y="171" width="235" height="325"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="02K-3b-gKN" userLabel="View1.0">
+                                        <rect key="frame" x="0.0" y="0.0" width="235" height="85"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نوبت توئه" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dph-fc-JAa">
+                                                <rect key="frame" x="42.5" y="0.0" width="150" height="57"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="dph-fc-JAa" secondAttribute="height" multiplier="147:56" id="UMu-1p-QU9"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="36"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="یک کلمه برای کشیدن انتخاب کن." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eIs-3t-Lpz">
+                                                <rect key="frame" x="-0.5" y="56.5" width="236" height="28.5"/>
+                                                <fontDescription key="fontDescription" name="Vazir-Thin" family="Vazir" pointSize="18"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="02K-3b-gKN" secondAttribute="height" multiplier="235:85" id="2vj-PX-Smj"/>
+                                            <constraint firstItem="dph-fc-JAa" firstAttribute="centerX" secondItem="02K-3b-gKN" secondAttribute="centerX" id="7AW-DS-KJI"/>
+                                            <constraint firstItem="dph-fc-JAa" firstAttribute="top" secondItem="02K-3b-gKN" secondAttribute="top" id="Pal-GQ-uOY"/>
+                                            <constraint firstAttribute="bottom" secondItem="eIs-3t-Lpz" secondAttribute="bottom" id="SGS-yY-Sp3"/>
+                                            <constraint firstItem="eIs-3t-Lpz" firstAttribute="centerX" secondItem="02K-3b-gKN" secondAttribute="centerX" id="ksW-gE-bx3"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ljN-Hn-hyI" userLabel="View1.1">
+                                        <rect key="frame" x="4" y="113" width="227" height="212"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwG-KI-wAf" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="227" height="59.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="kwG-KI-wAf" secondAttribute="height" multiplier="225:59" id="f4i-5r-lRq"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="20"/>
+                                                <state key="normal" title="رنگین کمان">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="chooseWord:" destination="sa1-BW-iGt" eventType="touchUpInside" id="I4O-ls-Sfv"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkb-Nw-uiK" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="152.5" width="227" height="59.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Xkb-Nw-uiK" secondAttribute="height" multiplier="225:59" id="OTq-RW-d0c"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="20"/>
+                                                <state key="normal" title="کفش ‌دوزک">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="chooseWord:" destination="sa1-BW-iGt" eventType="touchUpInside" id="NIV-OO-yGQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgW-rx-npD" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="76.5" width="227" height="59.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="LgW-rx-npD" secondAttribute="height" multiplier="225:59" id="mzt-gC-kw2"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="20"/>
+                                                <state key="normal" title="قهوه">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="chooseWord:" destination="sa1-BW-iGt" eventType="touchUpInside" id="mb1-Ew-cd4"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Xkb-Nw-uiK" secondAttribute="trailing" id="0Tm-mC-NhB"/>
+                                            <constraint firstItem="Xkb-Nw-uiK" firstAttribute="leading" secondItem="ljN-Hn-hyI" secondAttribute="leading" id="8jI-DU-TEy"/>
+                                            <constraint firstItem="LgW-rx-npD" firstAttribute="leading" secondItem="ljN-Hn-hyI" secondAttribute="leading" id="PCr-ha-fjE"/>
+                                            <constraint firstAttribute="width" secondItem="ljN-Hn-hyI" secondAttribute="height" multiplier="225:210" id="VWh-rE-xvI"/>
+                                            <constraint firstItem="kwG-KI-wAf" firstAttribute="top" secondItem="ljN-Hn-hyI" secondAttribute="top" id="WCv-Ej-pVP"/>
+                                            <constraint firstAttribute="trailing" secondItem="kwG-KI-wAf" secondAttribute="trailing" id="Z3C-qn-xMx"/>
+                                            <constraint firstAttribute="trailing" secondItem="LgW-rx-npD" secondAttribute="trailing" id="bZb-Zh-Q3q"/>
+                                            <constraint firstItem="LgW-rx-npD" firstAttribute="centerY" secondItem="ljN-Hn-hyI" secondAttribute="centerY" id="cGw-KJ-0vf"/>
+                                            <constraint firstAttribute="bottom" secondItem="Xkb-Nw-uiK" secondAttribute="bottom" id="pkV-6t-zeV"/>
+                                            <constraint firstItem="kwG-KI-wAf" firstAttribute="leading" secondItem="ljN-Hn-hyI" secondAttribute="leading" id="up1-WC-tEx"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ljN-Hn-hyI" firstAttribute="centerX" secondItem="d7w-0i-Mn6" secondAttribute="centerX" id="54V-n3-t5o"/>
+                                    <constraint firstAttribute="bottom" secondItem="ljN-Hn-hyI" secondAttribute="bottom" id="IL3-av-hY2"/>
+                                    <constraint firstItem="ljN-Hn-hyI" firstAttribute="leading" secondItem="d7w-0i-Mn6" secondAttribute="leading" constant="4" id="NBr-e6-VQv"/>
+                                    <constraint firstItem="02K-3b-gKN" firstAttribute="centerX" secondItem="d7w-0i-Mn6" secondAttribute="centerX" id="VZd-Xm-l03"/>
+                                    <constraint firstItem="02K-3b-gKN" firstAttribute="top" secondItem="d7w-0i-Mn6" secondAttribute="top" id="jTE-2r-Z9r"/>
+                                    <constraint firstItem="02K-3b-gKN" firstAttribute="leading" secondItem="d7w-0i-Mn6" secondAttribute="leading" id="qcF-Uq-4cy"/>
+                                    <constraint firstAttribute="width" secondItem="d7w-0i-Mn6" secondAttribute="height" multiplier="235:325" id="tdl-Qq-9bo"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="0.83636130136986298" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="oA1-4I-tY1" firstAttribute="centerX" secondItem="GTP-rW-Wwf" secondAttribute="centerX" id="C6o-qa-fvM"/>
+                            <constraint firstItem="oA1-4I-tY1" firstAttribute="top" secondItem="H3l-Ch-Wyf" secondAttribute="bottom" id="Xvj-YD-mAl"/>
+                            <constraint firstItem="d7w-0i-Mn6" firstAttribute="leading" secondItem="UUp-j4-zJ0" secondAttribute="leading" constant="70" id="bh4-DK-NRm"/>
+                            <constraint firstItem="H3l-Ch-Wyf" firstAttribute="centerX" secondItem="GTP-rW-Wwf" secondAttribute="centerX" id="frG-2Z-HHC"/>
+                            <constraint firstItem="H3l-Ch-Wyf" firstAttribute="top" secondItem="UUp-j4-zJ0" secondAttribute="top" id="gsP-oS-qcg"/>
+                            <constraint firstItem="H3l-Ch-Wyf" firstAttribute="leading" secondItem="UUp-j4-zJ0" secondAttribute="leading" id="pk8-Mk-clY"/>
+                            <constraint firstItem="d7w-0i-Mn6" firstAttribute="centerX" secondItem="GTP-rW-Wwf" secondAttribute="centerX" id="snz-mH-E3C"/>
+                            <constraint firstItem="d7w-0i-Mn6" firstAttribute="centerY" secondItem="GTP-rW-Wwf" secondAttribute="centerY" id="wfU-Op-Web"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="UUp-j4-zJ0"/>
                     </view>
+                    <navigationItem key="navigationItem" id="cCF-eA-dHk"/>
+                    <connections>
+                        <outlet property="firstWordButton" destination="kwG-KI-wAf" id="LrI-xI-cfX"/>
+                        <outlet property="secondWordButton" destination="LgW-rx-npD" id="rhZ-F4-WtC"/>
+                        <outlet property="thirdWordButton" destination="Xkb-Nw-uiK" id="viB-8v-ZLr"/>
+                        <outlet property="timerLabel" destination="oA1-4I-tY1" id="4jM-qe-BwZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eV6-Q2-XCp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2804" y="1240"/>
+            <point key="canvasLocation" x="3652" y="-173"/>
         </scene>
         <!--Guessing View Controller-->
         <scene sceneID="gHT-E0-16c">
@@ -1068,9 +1222,6 @@
                                                     <constraint firstAttribute="width" secondItem="WOw-X4-Y2c" secondAttribute="height" multiplier="28:20" id="eZA-sf-C4F"/>
                                                 </constraints>
                                                 <state key="normal" image="Menu"/>
-                                                <connections>
-                                                    <segue destination="FH5-3d-izd" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="VT4-2O-IYQ"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPm-cR-0gq">
                                                 <rect key="frame" x="304.5" y="31" width="38.5" height="22"/>
@@ -1078,9 +1229,6 @@
                                                     <constraint firstAttribute="width" secondItem="qPm-cR-0gq" secondAttribute="height" multiplier="35:20" id="1fr-8c-NBV"/>
                                                 </constraints>
                                                 <state key="normal" image="Group"/>
-                                                <connections>
-                                                    <segue destination="sa1-BW-iGt" kind="presentation" modalPresentationStyle="fullScreen" id="8Xf-qi-kil"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1193,7 +1341,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYO-UJ-82M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2804" y="507"/>
+            <point key="canvasLocation" x="2785" y="507"/>
+        </scene>
+        <!--Scores View Controller-->
+        <scene sceneID="VVr-eC-hAJ">
+            <objects>
+                <viewController id="TiS-ax-bgr" customClass="ScoresViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="uUH-dX-KJ4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="0.84061964897260277" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="FYP-SH-hSi"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="93C-ou-CEa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3652" y="507"/>
         </scene>
         <!--Loading View Controller-->
         <scene sceneID="xHR-cn-yQd">
@@ -1222,9 +1385,6 @@
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="alm-cz-b32"/>
                                                 </constraints>
                                                 <state key="normal" image="BackButton"/>
-                                                <connections>
-                                                    <segue destination="Fsv-bJ-ERM" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="sbc-o3-ODR"/>
-                                                </connections>
                                             </button>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ورود به بازی" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0du-ar-2kL">
                                                 <rect key="frame" x="112.5" y="16.5" width="150" height="58.5"/>
@@ -1246,13 +1406,13 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="در حال جست و جو" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejs-Zg-4iA">
-                                        <rect key="frame" x="84" y="257" width="207.5" height="44"/>
+                                        <rect key="frame" x="84" y="257" width="207" height="44"/>
                                         <fontDescription key="fontDescription" name="Vazir-Black" family="Vazir" pointSize="28"/>
                                         <color key="textColor" red="0.23137254901960785" green="0.22352941176470587" blue="0.34901960784313724" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="موتور خلاقیتتو گرم کن..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X56-TE-fbA">
-                                        <rect key="frame" x="71" y="310" width="233" height="37.5"/>
+                                        <rect key="frame" x="71" y="310" width="233" height="37"/>
                                         <fontDescription key="fontDescription" name="Vazir" family="Vazir" pointSize="24"/>
                                         <color key="textColor" red="0.19215686274509802" green="0.19215686274509802" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1297,7 +1457,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z5s-8q-oaz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1937" y="-173"/>
+            <point key="canvasLocation" x="1935" y="115"/>
         </scene>
         <!--Join Game View Controller-->
         <scene sceneID="eDi-vc-8eK">
@@ -1425,6 +1585,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="joinGameAction:" destination="Fsv-bJ-ERM" eventType="touchUpInside" id="haC-pY-1bW"/>
+                                                    <segue destination="qaP-Jh-xiv" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="10T-yV-O8z"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1482,6 +1643,7 @@
     <resources>
         <image name="BackButton" width="33" height="28"/>
         <image name="Background" width="375" height="232"/>
+        <image name="Clock" width="33" height="33"/>
         <image name="Group" width="34" height="20"/>
         <image name="KhatKhatiName" width="330" height="118"/>
         <image name="LoadBackground" width="375" height="316"/>
@@ -1492,9 +1654,7 @@
         <image name="paint‌Brush" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sbc-o3-ODR"/>
-        <segue reference="VT4-2O-IYQ"/>
-        <segue reference="9kx-zI-YcT"/>
+        <segue reference="10T-yV-O8z"/>
         <segue reference="B02-37-tGE"/>
     </inferredMetricsTieBreakers>
 </document>

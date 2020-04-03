@@ -25,7 +25,7 @@ class GuessingViewController: UIViewController {
     
     //MARK: Timer Setting
     func setTimer() {
-        let timer = TimerSetting(label: timerLabel)
+        let timer = TimerSetting(label: timerLabel, time: 60)
         timer.on()
     }
     

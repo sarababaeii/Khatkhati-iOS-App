@@ -17,7 +17,6 @@ class SocketIOManager: NSObject {
 
     var users = [String]()
     var words = [String]()
-//    var play = [String : String]()
     
     //MARK: Connecting
     func establishConnection() {
@@ -42,7 +41,6 @@ class SocketIOManager: NSObject {
     }
     
     func getPlayers() {
-        print("hereeeee")
         for user in users {
             print(user)
         }
@@ -54,7 +52,7 @@ class SocketIOManager: NSObject {
             
             let temp = data[0] as! [String : Any]
             self.users = temp["users"] as! [String]
-//            return
+            //return
         }
         
         socket?.on("conversation_private") { data, ack in
@@ -68,7 +66,7 @@ class SocketIOManager: NSObject {
                     self.receiveDrawing(state: temp["state"] as! String, point: temp["point"] as! [CGFloat])
                 }
             }
-//            return
+            //return
         }
          //TODO: is it correct?!
         socket?.on("start_game") { data, ack in
@@ -80,7 +78,7 @@ class SocketIOManager: NSObject {
                 username == temp["username"] as! String {
                     self.words = temp["words"] as! [String]
             }
-    //      return
+            //return
         }
     }
     
@@ -126,6 +124,12 @@ class SocketIOManager: NSObject {
     
     func receiveMessage() {
 
+    }
+    
+    func showNextPage(nextViewController: UIViewController) {
+//        let preViewController : UIStoryboard = UIStoryboard(name: "UserBoard", bundle:nil)
+//        let homeView  = sampleStoryBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+//        LoadingViewController.presentViewController(nextViewController, animated:true, completion:nil)
     }
     
     func shareStatus() {

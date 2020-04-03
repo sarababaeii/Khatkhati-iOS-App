@@ -11,10 +11,11 @@ import UIKit
 
 class TimerSetting {
     var label: UILabel
-    var counter = 60
+    var counter: Int
     
-    init(label: UILabel) {
+    init(label: UILabel, time: Int) {
         self.label = label
+        self.counter = time
     }
     
     func on() {

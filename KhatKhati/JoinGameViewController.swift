@@ -27,6 +27,10 @@ class JoinGameViewController: UIViewController, UITextFieldDelegate {
     }
     
     //MARK: Keyboard management
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        lobbyCodeTextField.resignFirstResponder()
+    }
+    
     func registerForKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -43,6 +47,7 @@ class JoinGameViewController: UIViewController, UITextFieldDelegate {
     
     func adjustLayoutForKeyboard(targetHight: CGFloat){
 //        tableView.contentInset.bottom = targetHight
+        //TODO: joinButton.bottom = targetHight
     }
     
     @IBAction func joinGameAction(_ sender: Any) {

@@ -126,12 +126,6 @@ class SocketIOManager: NSObject {
 
     }
     
-    func showNextPage(nextViewController: UIViewController) {
-//        let preViewController : UIStoryboard = UIStoryboard(name: "UserBoard", bundle:nil)
-//        let homeView  = sampleStoryBoard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-//        LoadingViewController.presentViewController(nextViewController, animated:true, completion:nil)
-    }
-    
     func shareStatus() {
         let status = socket?.status
         
@@ -150,7 +144,7 @@ class SocketIOManager: NSObject {
     }
     
     private func configure() {
-        guard let url = URL(string: "http://thechain.ir:3000") else {
+        guard let url = URL(string: "http://37.221.114.125:3000") else {
             return
         }
 

@@ -13,8 +13,7 @@ class NewLobbyViewController: UIViewController {
     
     @IBOutlet weak var lobbyNameTextField: UITextField!
     @IBOutlet weak var copyButton: CustomButton!
-//    @IBOutlet weak var nameLabel: CustomLabel!
-    @IBOutlet weak var telegramView: CustomButton!
+    @IBOutlet weak var shareView: CustomButton!
    
     @IBOutlet weak var roundsNumberLabel: CustomLabel!
     @IBOutlet weak var lobbyTypeLabel: CustomLabel!
@@ -24,6 +23,44 @@ class NewLobbyViewController: UIViewController {
     
     @IBOutlet weak var startGameButton: CustomButton!
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        lobbyNameTextField.resignFirstResponder()
+    }
+    
+    //MARK: Sharing Lobby Name
+    @IBAction func copyLobbyName(_ sender: Any) {
+        if let lobbyName = fetchInput() {
+            UIPasteboard.general.string = lobbyName
+            lobbyNameTextField.resignFirstResponder()
+        }
+    }
+    
+    @IBAction func shareLobbyName(_ sender: Any) {
+        if let lobbyName = fetchInput() {
+            displaySharingOption(lobbyName: lobbyName)
+        }
+    }
+    
+    func displaySharingOption(lobbyName: String){
+        let note = "بیا خط‌خطی!\n"
+        let items = [note as Any, lobbyName as Any]
+
+        let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = view
+
+//        activityViewController.excludedActivityTypes = [UIActivity.ActivityType.message]
+
+        present(activityViewController, animated: true, completion: nil)
+    }
+    
+    func fetchInput() -> String? {
+        if let caption = lobbyNameTextField.text?.trimmingCharacters(in: .whitespaces) {
+            return caption.count > 0 ? caption : nil
+        }
+        return nil
+    }
+    
+    //MARK: Game Properties
     @IBAction func changeRoundsNumber(_ sender: Any) {
         let currentRoundNumber = roundsNumberButton.titleLabel?.text
         var nextRoundNumber: String
@@ -60,6 +97,7 @@ class NewLobbyViewController: UIViewController {
         lobbyTypeButton.setTitle(nextLobbyType, for: .normal)
     }
     
+    //MARK: UI Handling
     func setCopyButtonAttributes() {
         copyButton.setCornerRadius(radius: 20.5)
         copyButton.setShadowColor(color: Colors.pink.componentColor!)
@@ -68,14 +106,12 @@ class NewLobbyViewController: UIViewController {
     
     func setLobbyNameTextFieldAttributes() {
         lobbyNameTextField.layer.cornerRadius = 43
-//        lobbyNameTextField.setCornerRadius(radius: 43)
-//        lobbyNameTextField.setBackgroundColor(color: Colors.gray.componentColor!)
     }
     
-    func setTelegramViewAttributes() {
-        telegramView.setCornerRadius(radius: 20)
-        telegramView.setShadowColor(color: Colors.green.componentColor!)
-        telegramView.setBackgroundColor(color: Colors.green.componentColor!)
+    func setShareViewAttributes() {
+        shareView.setCornerRadius(radius: 20)
+        shareView.setShadowColor(color: Colors.green.componentColor!)
+        shareView.setBackgroundColor(color: Colors.green.componentColor!)
     }
     
     func setRoundsNumberLabelAttributes() {
@@ -91,18 +127,6 @@ class NewLobbyViewController: UIViewController {
     func setRoundsNumberButtonAttributes() {
         roundsNumberButton.setCornerRadius(radius: 22.5)
         roundsNumberButton.setBackgroundColor(color: Colors.yellow.componentColor!)
-
-        
-//        let gradientView1 = GradientView(gradientStartColor: Colors.yellow.topBackground, gradientEndColor: Colors.yellow.bottomBackground)
-//        
-//                
-//        gradientView1.translatesAutoresizingMaskIntoConstraints = false
-//        let horizontalConstraint = gradientView1.centerXAnchor.constraint(equalTo: roundsNumberButton.centerXAnchor)
-//        let verticalConstraint = gradientView1.centerYAnchor.constraint(equalTo: roundsNumberButton.centerYAnchor)
-//        let widthConstraint = gradientView1.widthAnchor.constraint(equalToConstant: 100)
-//        let heightConstraint = gradientView1.heightAnchor.constraint(equalToConstant: 100)
-//        
-//        view.addConstraints([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
     }
     
     func setLobbyTypeButtonAttributes() {
@@ -119,7 +143,7 @@ class NewLobbyViewController: UIViewController {
     func configure() {
         setCopyButtonAttributes()
         setLobbyNameTextFieldAttributes()
-        setTelegramViewAttributes()
+        setShareViewAttributes()
         
         setRoundsNumberLabelAttributes()
         setLobbyTypeLabelAttributes()
@@ -137,7 +161,6 @@ class NewLobbyViewController: UIViewController {
         configure()
 
         SocketIOManager.sharedInstance.shareStatus()
-       }
+    }
 }
-
-//TODO: Keyboard management, sharing, copy
+//TODO: Keyboard management

@@ -43,6 +43,7 @@ class Drawing {
         context.setBlendMode(.normal)
         context.setLineWidth(brushWidth)
         context.setStrokeColor(brushColor.cgColor)
+        context.setAllowsAntialiasing(true)
         context.strokePath()
 
         templeCanvas.image = UIGraphicsGetImageFromCurrentImageContext()

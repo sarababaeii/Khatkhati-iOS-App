@@ -34,6 +34,7 @@ class ChoosingWordViewController: UIViewController {
         words = SocketIOManager.sharedInstance.receiveWords()
     }
     
+    //MARK: UI Handling
     func setButtonsAttributes() {
         for button in buttons {
             button.setCornerRadius(radius: 30.5)

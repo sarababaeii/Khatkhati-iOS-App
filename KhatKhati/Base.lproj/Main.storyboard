@@ -29,7 +29,7 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="HomeViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,7 +131,7 @@
         <!--New Lobby View Controller-->
         <scene sceneID="cMa-fK-lfE">
             <objects>
-                <viewController id="I4V-oy-IXb" customClass="NewLobbyViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewLobbyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="I4V-oy-IXb" customClass="NewLobbyViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lr2-JM-3nM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -394,7 +394,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="qaP-Jh-xiv" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="qhN-1K-jrZ"/>
+                                            <action selector="startGame:" destination="I4V-oy-IXb" eventType="touchUpInside" id="JHl-C4-Nya"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -445,7 +445,7 @@
         <!--Drawing View Controller-->
         <scene sceneID="LlO-3T-uyb">
             <objects>
-                <viewController id="FH5-3d-izd" customClass="DrawingViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DrawingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FH5-3d-izd" customClass="DrawingViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3rT-84-p3Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1026,7 +1026,7 @@
         <!--Choosing Word View Controller-->
         <scene sceneID="cRd-r7-a2W">
             <objects>
-                <viewController id="sa1-BW-iGt" customClass="ChoosingWordViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChoosingWordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sa1-BW-iGt" customClass="ChoosingWordViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="GTP-rW-Wwf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1198,7 +1198,7 @@
         <!--Guessing View Controller-->
         <scene sceneID="gHT-E0-16c">
             <objects>
-                <viewController id="gNB-0m-c18" customClass="GuessingViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GuessingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gNB-0m-c18" customClass="GuessingViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GlI-9K-a7e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1288,7 +1288,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R0O-h4-5fd" userLabel="View3">
                                 <rect key="frame" x="0.0" y="611" width="375" height="56"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="تایپ کن" textAlignment="right" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FpN-E9-7s3">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="تایپ کن" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FpN-E9-7s3">
                                         <rect key="frame" x="81.5" y="8" width="283.5" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="FpN-E9-7s3" secondAttribute="height" multiplier="312:44" id="Qek-m9-tfd"/>
@@ -1348,7 +1348,7 @@
         <!--Scores View Controller-->
         <scene sceneID="VVr-eC-hAJ">
             <objects>
-                <viewController id="TiS-ax-bgr" customClass="ScoresViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScoresViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TiS-ax-bgr" customClass="ScoresViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="uUH-dX-KJ4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1363,7 +1363,7 @@
         <!--Loading View Controller-->
         <scene sceneID="xHR-cn-yQd">
             <objects>
-                <viewController id="qaP-Jh-xiv" customClass="LoadingViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoadingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qaP-Jh-xiv" customClass="LoadingViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oks-5M-0Uc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1388,7 +1388,7 @@
                                                 </constraints>
                                                 <state key="normal" image="BackButton"/>
                                                 <connections>
-                                                    <segue destination="FH5-3d-izd" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="zl0-rj-Pee"/>
+                                                    <action selector="back:" destination="qaP-Jh-xiv" eventType="touchUpInside" id="HHU-XP-Inn"/>
                                                 </connections>
                                             </button>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ورود به بازی" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0du-ar-2kL">
@@ -1467,7 +1467,7 @@
         <!--Join Game View Controller-->
         <scene sceneID="eDi-vc-8eK">
             <objects>
-                <viewController id="Fsv-bJ-ERM" customClass="JoinGameViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JoinGameViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fsv-bJ-ERM" customClass="JoinGameViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0a6-TS-gjj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1547,7 +1547,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="randomGameAction:" destination="Fsv-bJ-ERM" eventType="touchUpInside" id="oG8-eo-BHM"/>
-                                                    <segue destination="qaP-Jh-xiv" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="2R5-S7-aH0"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1590,7 +1589,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="joinGameAction:" destination="Fsv-bJ-ERM" eventType="touchUpInside" id="haC-pY-1bW"/>
-                                                    <segue destination="qaP-Jh-xiv" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="10T-yV-O8z"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1659,7 +1657,6 @@
         <image name="paint‌Brush" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qhN-1K-jrZ"/>
         <segue reference="B02-37-tGE"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -17,13 +17,37 @@ class SocketIOManager: NSObject {
 
     var users = [String]()
     var words = [String]()
+    var nextViewControllerIdentifier = ""
     
-    //MARK: Connecting
+    //MARK: Initializing
+    override init() {
+        super.init()
+
+        configure()
+    }
+    
+    private func configure() {
+        guard let url = URL(string: "http://37.221.114.125:3000") else {
+            return
+        }
+
+        manager = SocketManager(socketURL: url, config: [.log(true), .compress])
+
+        guard let manager = manager else {
+            return
+        }
+
+        socket = manager.defaultSocket
+    }
+    
+    //MARK: Connection Management
     func establishConnection() {
         guard let socket = manager?.defaultSocket else{
             return
         }
         socket.connect()
+        
+        addHandlers()
     }
     
     func closeConnection() {
@@ -33,19 +57,24 @@ class SocketIOManager: NSObject {
         socket.disconnect()
     }
     
-    func joinGame(roomID: String, username: String) {
-        let data = ["room_id" : roomID, "username" : username]
-        socket?.emit("subscribe", data)
+    func shareStatus() {
+        let status = socket?.status
         
-        addHandlers()
-    }
-    
-    func getPlayers() {
-        for user in users {
-            print(user)
+        switch status {
+        case .connected:
+            print("Yaaaaay    Connected!!!!")
+        case .connecting:
+            print("Good    is Connecting....")
+        case .notConnected:
+            print("Oops :(    not Connected________")
+        case .disconnected:
+            print("Shit    disconnected ^^^^^^^")
+        default:
+            print("Default")
         }
     }
     
+    //MARK: Adding Handlers
     func addHandlers() {
         socket?.on("players_list") { data, ack in
             print("^^^^^RECEIVING PLAYERS^^^^^^")
@@ -69,16 +98,40 @@ class SocketIOManager: NSObject {
             //return
         }
          //TODO: is it correct?!
+        // vaghti in umad be loading elam kone ke bere safhe bad
         socket?.on("start_game") { data, ack in
             print("^^^^^RECEIVING WORDS^^^^^^")
             
             let temp = data[0] as! [String : Any]
             
-            if let username = GameConstants.username,
-                username == temp["username"] as! String {
-                    self.words = temp["words"] as! [String]
-            }
+            self.words = temp["words"] as! [String]
+            self.determiningNextPage(username: temp["username"] as! String)
+            
+//            if let username = GameConstants.username,
+//                username == temp["username"] as! String {
+//                    self.words = temp["words"] as! [String]
+//            }
             //return
+        }
+    }
+    
+    func determiningNextPage(username: String) {
+        if GameConstants.username! == username {
+            nextViewControllerIdentifier = "DrawingViewController"
+        } else {
+            nextViewControllerIdentifier = "GuessingViewController"
+        }
+    }
+    
+    //MARK: Joining Game
+    func joinGame(roomID: String, username: String) {
+        let data = ["room_id" : roomID, "username" : username]
+        socket?.emit("subscribe", data)
+    }
+    
+    func getPlayers() {
+        for user in users {
+            print(user)
         }
     }
     
@@ -124,42 +177,5 @@ class SocketIOManager: NSObject {
     
     func receiveMessage() {
 
-    }
-    
-    func shareStatus() {
-        let status = socket?.status
-        
-        switch status {
-        case .connected:
-            print("Yaaaaay    Connected!!!!")
-        case .connecting:
-            print("Good    is Connecting....")
-        case .notConnected:
-            print("Oops :(    not Connected________")
-        case .disconnected:
-            print("Shit    disconnected ^^^^^^^")
-        default:
-            print("Default")
-        }
-    }
-    
-    private func configure() {
-        guard let url = URL(string: "http://37.221.114.125:3000") else {
-            return
-        }
-
-        manager = SocketManager(socketURL: url, config: [.log(true), .compress])
-
-        guard let manager = manager else {
-            return
-        }
-
-        socket = manager.defaultSocket
-    }
-    
-    override init() {
-        super.init()
-
-        configure()
     }
 }

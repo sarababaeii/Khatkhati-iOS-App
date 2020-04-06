@@ -12,66 +12,54 @@ import SwiftGifOrigin
 
 class LoadingViewController: UIViewController {
 
+    static var parentStoryboardID: String?
+    
     @IBOutlet weak var loadingBackgroundImage: UIImageView!
     
-    var counter = 3
+    @IBAction func back(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: LoadingViewController.parentStoryboardID!) as UIViewController
+        controller.modalPresentationStyle = .fullScreen
+        controller.modalTransitionStyle = .flipHorizontal
+        present(controller, animated: true, completion: nil)
+    }
     
+    func determiningNextPage(username: String) {
+        if GameConstants.username! == username {
+            showNextPage("DrawingViewController")
+        } else {
+            showNextPage("GuessingViewController")
+        }
+    }
+    
+    func showNextPage(_ identifier: String) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: identifier) as UIViewController
+        controller.modalPresentationStyle = .fullScreen
+        controller.modalTransitionStyle = .coverVertical
+        present(controller, animated: true, completion: nil)
+    }
+    
+    //MARK: UI Handling
     func setLoadingBackgroundGif() {
         loadingBackgroundImage.loadGif(asset: "loading")
     }
     
-    func on() {
-        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
-    }
-    
-    @objc func updateCounter() {
-        if counter > 0 {
-            counter -= 1
-        }
-        
-        if counter == 0 {
-            showNextPage()
-        }
-    }
-    
-    func showNextPage() {
-        
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let controller = storyboard.instantiateViewController(withIdentifier: "DrawingViewController")
-//        self.present(controller, animated: true, completion: nil)
-
-        // Safe Present
-        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DrawingViewController") as? DrawingViewController
-        {
-            present(vc, animated: true, completion: nil)
-        }
+//    var counter = 3
 //
-        
-        
-//        let VC = self.storyboard?.instantiateViewController(withIdentifier: "DrawingViewController") as! DrawingViewController
-//        
-//        self.present(VC, animated: true, completion: nil)
-        
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        if #available(iOS 13.0, *) {
-//            let secondVC = storyboard.instantiateViewController(identifier: "DrawingViewController")
+//    func on() {
+//        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+//    }
 //
-//            show(secondVC, sender: self)
-//        } else {
-//            // Fallback on earlier versions
-//            print("NASHOD")
+//    @objc func updateCounter() {
+//        if counter > 0 {
+//            counter -= 1
 //        }
-
-        
-        
-//        let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "DrawingViewController") as! DrawingViewController
-//        present(nextViewController, animated: true, completion: nil)
-
-        
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let nextViewController  = storyBoard.instantiateViewController(withIdentifier: "DrawingViewController") as! DrawingViewController
-//        self.present(nextViewController, animated: true, completion: nil)
-    }
+//
+//        if counter == 0 {
+//            showNextPage()
+//        }
+//    }
     
     func configure() {
         setLoadingBackgroundGif()

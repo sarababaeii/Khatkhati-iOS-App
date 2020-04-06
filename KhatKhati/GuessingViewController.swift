@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class GuessingViewController: UIViewController {
-    //MARK: Defenitions
+    
     @IBOutlet weak var timerLabel: UILabel!
     
     @IBOutlet weak var canvasView: UIView!
@@ -54,6 +54,7 @@ class GuessingViewController: UIViewController {
 //        messageView.bottom = targetHight
     }
     
+    //MARK: UI Handling
     func setChatTextFieldAttributes(){
         chatTextField.layer.cornerRadius = 22
     }

@@ -15,9 +15,10 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func createLobbyAction(_ sender: Any) {
-        createLobbyButton.layer.masksToBounds = true
+        createLobbyButton.layer.masksToBounds = true //to showing button selected
     }
     
+    //MARK: UI Handling
     func setJoinGameButtonAttributes(){
         joinGameButton.setCornerRadius(radius: 30.5)
         joinGameButton.setShadowColor(color: Colors.yellow.componentColor!)

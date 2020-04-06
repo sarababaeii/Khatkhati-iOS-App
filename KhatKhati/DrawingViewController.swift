@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class DrawingViewController: UIViewController {
-    //MARK: Defenitions
+    
     @IBOutlet weak var timerLabel: UILabel!
     
     @IBOutlet weak var canvasView: UIView!
@@ -166,7 +166,7 @@ class DrawingViewController: UIViewController {
         colorPicked(redColorButton!)
     }
     
-    //MARK: Setting Colors
+    //MARK: UI Handling
     func setRedColorAttributes() {
         redColorButton.setCornerRadius(radius: 10)
         redColorButton.setBackgroundColor(color: Colors.red.drawingColor!)

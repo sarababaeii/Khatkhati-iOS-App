@@ -47,9 +47,7 @@ class NewLobbyViewController: UIViewController {
 
         let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = view
-
 //        activityViewController.excludedActivityTypes = [UIActivity.ActivityType.message]
-
         present(activityViewController, animated: true, completion: nil)
     }
     
@@ -95,6 +93,22 @@ class NewLobbyViewController: UIViewController {
         }
         
         lobbyTypeButton.setTitle(nextLobbyType, for: .normal)
+    }
+    
+    //MARK: Starting Game
+    @IBAction func startGame(_ sender: Any) {
+        presentLoadingViewController()
+    }
+    
+    func presentLoadingViewController() {
+        LoadingViewController.parentStoryboardID = "NewLobbyViewController"
+
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoadingViewController") as UIViewController
+
+        controller.modalPresentationStyle = .fullScreen
+        controller.modalTransitionStyle = .coverVertical
+
+        present(controller, animated: true, completion: nil)
     }
     
     //MARK: UI Handling
@@ -155,12 +169,13 @@ class NewLobbyViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-           super.viewDidLoad()
-           // Do any additional setup after loading the view.
+       super.viewDidLoad()
+       // Do any additional setup after loading the view.
         
         configure()
 
         SocketIOManager.sharedInstance.shareStatus()
     }
 }
-//TODO: Keyboard management
+
+//TODO: Keyboard management, if lobbyNameTextField was empty?!

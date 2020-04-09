@@ -121,6 +121,14 @@ class SocketIOManager: NSObject {
         } else {
             nextViewControllerIdentifier = "GuessingViewController"
         }
+        
+        if let topController = UIApplication.topViewController() {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: nextViewControllerIdentifier) as UIViewController
+            controller.modalPresentationStyle = .fullScreen
+            controller.modalTransitionStyle = .coverVertical
+            topController.present(controller, animated: true, completion: nil)
+        }
     }
     
     //MARK: Joining Game
@@ -133,6 +141,12 @@ class SocketIOManager: NSObject {
         for user in users {
             print(user)
         }
+    }
+    
+    //MARK: Starting Game
+    func startGame(roomID: String) {
+        let data = ["room_id" : roomID]
+        socket?.emit("start_game_on", data)
     }
     
     //MARK: Drawing

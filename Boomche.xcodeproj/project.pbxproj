@@ -29,9 +29,11 @@
 		03B6DD762422F4B700CC0B7F /* Vazir.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03B6DD712422F4B600CC0B7F /* Vazir.ttf */; };
 		03B6DD772422F4B700CC0B7F /* Vazir-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03B6DD722422F4B700CC0B7F /* Vazir-Medium.ttf */; };
 		03BA7664243548E200E0B345 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BA7663243548E200E0B345 /* Drawing.swift */; };
+		03BB1E88243E531C00459FDE /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BB1E87243E531C00459FDE /* MessageTableViewCell.swift */; };
 		03C544BD2424EF3B00C4049C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C544BC2424EF3B00C4049C /* Color.swift */; };
 		03C544BF2424F0C200C4049C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C544BE2424F0C200C4049C /* Colors.swift */; };
 		03C727282426584300334429 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C727272426584300334429 /* GradientView.swift */; };
+		03CA7C65243C69D600578B60 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CA7C64243C69D600578B60 /* UIApplication.swift */; };
 		03D2FF3F2437503F008D9CB7 /* ChoosingWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D2FF3E2437503F008D9CB7 /* ChoosingWordViewController.swift */; };
 		03D2FF412437A875008D9CB7 /* ScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D2FF402437A875008D9CB7 /* ScoresViewController.swift */; };
 		03D5526E24245D8300969560 /* JoinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5526D24245D8300969560 /* JoinGameViewController.swift */; };
@@ -66,7 +68,7 @@
 		03506C01243257EE0052DE06 /* TimerSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSetting.swift; sourceTree = "<group>"; };
 		03506C0324329D990052DE06 /* GameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConstants.swift; sourceTree = "<group>"; };
 		03B100E7242973E7009418D2 /* GuessingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessingViewController.swift; sourceTree = "<group>"; };
-		03B6DD312422CDEB00CC0B7F /* KhatKhati.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KhatKhati.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		03B6DD312422CDEB00CC0B7F /* Boomche.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boomche.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03B6DD342422CDEB00CC0B7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03B6DD362422CDEB00CC0B7F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		03B6DD382422CDEB00CC0B7F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -88,9 +90,11 @@
 		03B6DD712422F4B600CC0B7F /* Vazir.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Vazir.ttf; sourceTree = "<group>"; };
 		03B6DD722422F4B700CC0B7F /* Vazir-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vazir-Medium.ttf"; sourceTree = "<group>"; };
 		03BA7663243548E200E0B345 /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
+		03BB1E87243E531C00459FDE /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		03C544BC2424EF3B00C4049C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		03C544BE2424F0C200C4049C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		03C727272426584300334429 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		03CA7C64243C69D600578B60 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		03D2FF3E2437503F008D9CB7 /* ChoosingWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosingWordViewController.swift; sourceTree = "<group>"; };
 		03D2FF402437A875008D9CB7 /* ScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresViewController.swift; sourceTree = "<group>"; };
 		03D5526D24245D8300969560 /* JoinGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGameViewController.swift; sourceTree = "<group>"; };
@@ -150,7 +154,7 @@
 		03B6DD322422CDEB00CC0B7F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				03B6DD312422CDEB00CC0B7F /* KhatKhati.app */,
+				03B6DD312422CDEB00CC0B7F /* Boomche.app */,
 				03B6DD4A2422CDEC00CC0B7F /* KhatKhatiTests.xctest */,
 				03B6DD552422CDED00CC0B7F /* KhatKhatiUITests.xctest */,
 			);
@@ -235,6 +239,8 @@
 				03506C01243257EE0052DE06 /* TimerSetting.swift */,
 				03506C0324329D990052DE06 /* GameConstants.swift */,
 				03BA7663243548E200E0B345 /* Drawing.swift */,
+				03CA7C64243C69D600578B60 /* UIApplication.swift */,
+				03BB1E87243E531C00459FDE /* MessageTableViewCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -293,7 +299,7 @@
 			);
 			name = KhatKhati;
 			productName = KhatKhati;
-			productReference = 03B6DD312422CDEB00CC0B7F /* KhatKhati.app */;
+			productReference = 03B6DD312422CDEB00CC0B7F /* Boomche.app */;
 			productType = "com.apple.product-type.application";
 		};
 		03B6DD492422CDEC00CC0B7F /* KhatKhatiTests */ = {
@@ -358,7 +364,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 03B6DD2C2422CDEB00CC0B7F /* Build configuration list for PBXProject "KhatKhati" */;
+			buildConfigurationList = 03B6DD2C2422CDEB00CC0B7F /* Build configuration list for PBXProject "Boomche" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -533,6 +539,8 @@
 				03B100E8242973E7009418D2 /* GuessingViewController.swift in Sources */,
 				03B6DD3F2422CDEB00CC0B7F /* KhatKhati.xcdatamodeld in Sources */,
 				03C544BF2424F0C200C4049C /* Colors.swift in Sources */,
+				03BB1E88243E531C00459FDE /* MessageTableViewCell.swift in Sources */,
+				03CA7C65243C69D600578B60 /* UIApplication.swift in Sources */,
 				033602432427AF4B00925975 /* DrawingViewController.swift in Sources */,
 				03BA7664243548E200E0B345 /* Drawing.swift in Sources */,
 				03D5526E24245D8300969560 /* JoinGameViewController.swift in Sources */,
@@ -720,8 +728,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.aut.KhatKhati;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.aut.Boomche;
+				PRODUCT_NAME = Boomche;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -741,8 +749,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.aut.KhatKhati;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.aut.Boomche;
+				PRODUCT_NAME = Boomche;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -839,7 +847,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		03B6DD2C2422CDEB00CC0B7F /* Build configuration list for PBXProject "KhatKhati" */ = {
+		03B6DD2C2422CDEB00CC0B7F /* Build configuration list for PBXProject "Boomche" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03B6DD5C2422CDED00CC0B7F /* Debug */,

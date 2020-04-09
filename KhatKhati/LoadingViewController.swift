@@ -45,26 +45,26 @@ class LoadingViewController: UIViewController {
         loadingBackgroundImage.loadGif(asset: "loading")
     }
     
-//    var counter = 3
-//
-//    func on() {
-//        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
-//    }
-//
-//    @objc func updateCounter() {
-//        if counter > 0 {
-//            counter -= 1
-//        }
-//
-//        if counter == 0 {
-//            showNextPage()
-//        }
-//    }
+    var counter = 3
+
+    func on() {
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+    }
+
+    @objc func updateCounter() {
+        if counter > 0 {
+            counter -= 1
+        }
+
+        if counter == 0 {
+            SocketIOManager.sharedInstance.startGame(roomID: GameConstants.roomID!)
+        }
+    }
     
     func configure() {
         setLoadingBackgroundGif()
 
-//        on()
+        on()
     }
     
     override func viewDidLoad() {

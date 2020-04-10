@@ -10,5 +10,5 @@ import Foundation
 
 class GameConstants {
     static var roomID: String?
-    static var username: String?
+    static var username = "Player3"
 }

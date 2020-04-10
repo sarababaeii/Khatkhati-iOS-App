@@ -25,7 +25,7 @@ class LoadingViewController: UIViewController {
     }
     
     func determiningNextPage(username: String) {
-        if GameConstants.username! == username {
+        if GameConstants.username == username {
             showNextPage("DrawingViewController")
         } else {
             showNextPage("GuessingViewController")
@@ -57,7 +57,14 @@ class LoadingViewController: UIViewController {
         }
 
         if counter == 0 {
-            SocketIOManager.sharedInstance.startGame(roomID: GameConstants.roomID!)
+//            SocketIOManager.sharedInstance.startGame(roomID: GameConstants.roomID!)
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "GuessingViewController") as UIViewController
+//            let controller = storyboard.instantiateViewController(withIdentifier: "DrawingViewController") as UIViewController
+            controller.modalPresentationStyle = .fullScreen
+            controller.modalTransitionStyle = .coverVertical
+            present(controller, animated: true, completion: nil)
         }
     }
     

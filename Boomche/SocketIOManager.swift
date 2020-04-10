@@ -9,12 +9,18 @@
 import UIKit
 import SocketIO
 
+protocol MessageDelegate {
+    func showMessage(_ message: Message)
+}
+
 class SocketIOManager: NSObject {
     static let sharedInstance = SocketIOManager()
 
      var manager: SocketManager?
      var socket: SocketIOClient?
 
+    var messageDelegate: MessageDelegate?
+    
     var users = [String]()
     var words = [String]()
     var nextViewControllerIdentifier = ""
@@ -81,23 +87,22 @@ class SocketIOManager: NSObject {
             
             let temp = data[0] as! [String : Any]
             self.users = temp["users"] as! [String]
-            //return
         }
         
-        socket?.on("conversation_private") { data, ack in
-            print("^^^^^RECEIVING DRAW^^^^^^")
-            
-            var temp = data[0] as! [String : Any]
-            temp = temp["data"] as! [String : Any]
-            
-            if let roomID = GameConstants.roomID {
-                if roomID == temp["room"] as! String {
-                    self.receiveDrawing(state: temp["state"] as! String, point: temp["point"] as! [CGFloat])
-                }
-            }
-            //return
-        }
-         //TODO: is it correct?!
+//        socket?.on("conversation_private") { data, ack in
+//            print("^^^^^RECEIVING DRAW^^^^^^")
+//            
+//            var temp = data[0] as! [String : Any]
+//            temp = temp["data"] as! [String : Any]
+//            
+//            if let roomID = GameConstants.roomID {
+//                if roomID == temp["room"] as! String {
+//                    self.receiveDrawing(state: temp["state"] as! String, point: temp["point"] as! [CGFloat])
+//                }
+//            }
+//        }
+        
+        //TODO: is it correct?!
         // vaghti in umad be loading elam kone ke bere safhe bad
         socket?.on("start_game") { data, ack in
             print("^^^^^RECEIVING WORDS^^^^^^")
@@ -111,12 +116,23 @@ class SocketIOManager: NSObject {
 //                username == temp["username"] as! String {
 //                    self.words = temp["words"] as! [String]
 //            }
-            //return
+        }
+        
+        socket?.on("chat_and_guess") {data, ack in
+            print("^^^^^RECEIVING MESSAGE^^^^^^")
+            
+            let temp = data[0] as! [String : Any]
+            
+            let message = Message(username: temp["username"] as! String, content: temp["text"] as! String)
+            
+            print("@@@@@@ \(message.username): \(message.content)")
+            
+            self.receiveMessage(message)
         }
     }
     
     func determiningNextPage(username: String) {
-        if GameConstants.username! == username {
+        if GameConstants.username == username {
             nextViewControllerIdentifier = "DrawingViewController"
         } else {
             nextViewControllerIdentifier = "GuessingViewController"
@@ -151,26 +167,35 @@ class SocketIOManager: NSObject {
     
     //MARK: Drawing
     func sendDrawing(roomID: String, state: String, point: [CGFloat]) {
+        print(">>>>>SENDING DRAWING<<<<<")
         let data = ["room": roomID, "state": state, "point": point] as [String : Any]
         //color and brush size not defined
         socket?.emit("send_message", data)
     }
     
-    func receiveDrawing(state: String, point: [CGFloat]) {
-        switch state {
-        case "start":
-            GuessingViewController.drawing?.touchesBegan(CGPoint(x: point[0], y: point[1]))
-        case "moving":
-            GuessingViewController.drawing?.touchesMoved(CGPoint(x: point[0], y: point[1]))
-        case "end":
-            GuessingViewController.drawing?.touchesEnded()
-        default:
-            print("Error in receiving draw")
-        }
-    }
+//    func receiveDrawing(state: String, point: [CGFloat]) {
+//        switch state {
+//        case "start":
+////            print("!!!!!DRAWING started!!!!!")
+////            GuessingViewController.drawing?.touchesBegan(CGPoint(x: point[0], y: point[1]))
+//            drawDelegate?.begin(CGPoint(x: point[0], y: point[1]))
+////            GuessingViewController.sharedInstance!.begin()
+//        case "moving":
+////            print("!!!!!DRAWING moved!!!!!")
+////            GuessingViewController.drawing?.touchesMoved(CGPoint(x: point[0], y: point[1]))
+//            drawDelegate?.move(CGPoint(x: point[0], y: point[1]))
+//        case "end":
+////            print("!!!!!DRAWING ended!!!!!")
+////            GuessingViewController.drawing?.touchesEnded()
+//            drawDelegate?.end()
+//        default:
+//            print("Error in receiving draw")
+//        }
+//    }
     
     //MARK: Choosing word
     func sendWord(word: String) {
+        print(">>>>>SENDING WORD<<<<<")
         if let roomID = GameConstants.roomID {
             let data = ["room_id": roomID, "word": word]
             socket?.emit("lets_play_on", data)
@@ -183,13 +208,14 @@ class SocketIOManager: NSObject {
     
     //MARK: Chatting
     func sendMessage(message: String) {
+        print(">>>>>SENDING MESSAGE<<<<<")
         if let roomID = GameConstants.roomID {
-            let data = ["room_id": roomID, "text": message, "username": GameConstants.username!]
+            let data = ["room_id": roomID, "text": message, "username": GameConstants.username]
             socket?.emit("chat", data)
         }
     }
     
-    func receiveMessage() {
-
+    func receiveMessage(_ message: Message) {
+        messageDelegate?.showMessage(message)
     }
 }

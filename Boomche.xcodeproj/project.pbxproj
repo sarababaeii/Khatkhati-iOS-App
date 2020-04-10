@@ -12,6 +12,7 @@
 		033602432427AF4B00925975 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033602422427AF4B00925975 /* DrawingViewController.swift */; };
 		03506C02243257EE0052DE06 /* TimerSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03506C01243257EE0052DE06 /* TimerSetting.swift */; };
 		03506C0424329D990052DE06 /* GameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03506C0324329D990052DE06 /* GameConstants.swift */; };
+		0381AAB5243F6D7900C4E1DE /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0381AAB4243F6D7900C4E1DE /* Message.swift */; };
 		03B100E8242973E7009418D2 /* GuessingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B100E7242973E7009418D2 /* GuessingViewController.swift */; };
 		03B6DD352422CDEB00CC0B7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD342422CDEB00CC0B7F /* AppDelegate.swift */; };
 		03B6DD372422CDEB00CC0B7F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD362422CDEB00CC0B7F /* SceneDelegate.swift */; };
@@ -67,6 +68,7 @@
 		033602422427AF4B00925975 /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
 		03506C01243257EE0052DE06 /* TimerSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSetting.swift; sourceTree = "<group>"; };
 		03506C0324329D990052DE06 /* GameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConstants.swift; sourceTree = "<group>"; };
+		0381AAB4243F6D7900C4E1DE /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		03B100E7242973E7009418D2 /* GuessingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessingViewController.swift; sourceTree = "<group>"; };
 		03B6DD312422CDEB00CC0B7F /* Boomche.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boomche.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03B6DD342422CDEB00CC0B7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,10 +79,10 @@
 		03B6DD402422CDEC00CC0B7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03B6DD432422CDEC00CC0B7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03B6DD452422CDEC00CC0B7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03B6DD4A2422CDEC00CC0B7F /* KhatKhatiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KhatKhatiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		03B6DD4A2422CDEC00CC0B7F /* BoomcheTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoomcheTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03B6DD4E2422CDED00CC0B7F /* KhatKhatiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhatKhatiTests.swift; sourceTree = "<group>"; };
 		03B6DD502422CDED00CC0B7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03B6DD552422CDED00CC0B7F /* KhatKhatiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KhatKhatiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		03B6DD552422CDED00CC0B7F /* BoomcheUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoomcheUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03B6DD592422CDED00CC0B7F /* KhatKhatiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhatKhatiUITests.swift; sourceTree = "<group>"; };
 		03B6DD5B2422CDED00CC0B7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03B6DD6C2422E01000CC0B7F /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -142,9 +144,9 @@
 		03B6DD282422CDEB00CC0B7F = {
 			isa = PBXGroup;
 			children = (
-				03B6DD332422CDEB00CC0B7F /* KhatKhati */,
-				03B6DD4D2422CDEC00CC0B7F /* KhatKhatiTests */,
-				03B6DD582422CDED00CC0B7F /* KhatKhatiUITests */,
+				03B6DD332422CDEB00CC0B7F /* Boomche */,
+				03B6DD4D2422CDEC00CC0B7F /* BoomcheTests */,
+				03B6DD582422CDED00CC0B7F /* BoomcheUITests */,
 				03B6DD322422CDEB00CC0B7F /* Products */,
 				F83240421C8615772B5527E2 /* Pods */,
 				DF526716AF6B7993D46A59CA /* Frameworks */,
@@ -155,13 +157,13 @@
 			isa = PBXGroup;
 			children = (
 				03B6DD312422CDEB00CC0B7F /* Boomche.app */,
-				03B6DD4A2422CDEC00CC0B7F /* KhatKhatiTests.xctest */,
-				03B6DD552422CDED00CC0B7F /* KhatKhatiUITests.xctest */,
+				03B6DD4A2422CDEC00CC0B7F /* BoomcheTests.xctest */,
+				03B6DD552422CDED00CC0B7F /* BoomcheUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		03B6DD332422CDEB00CC0B7F /* KhatKhati */ = {
+		03B6DD332422CDEB00CC0B7F /* Boomche */ = {
 			isa = PBXGroup;
 			children = (
 				03B6DD6A2422CE5100CC0B7F /* Model */,
@@ -169,25 +171,25 @@
 				03B6DD682422CE4200CC0B7F /* Controller */,
 				03B6DD672422CE2F00CC0B7F /* SupportingFiles */,
 			);
-			path = KhatKhati;
+			path = Boomche;
 			sourceTree = "<group>";
 		};
-		03B6DD4D2422CDEC00CC0B7F /* KhatKhatiTests */ = {
+		03B6DD4D2422CDEC00CC0B7F /* BoomcheTests */ = {
 			isa = PBXGroup;
 			children = (
 				03B6DD4E2422CDED00CC0B7F /* KhatKhatiTests.swift */,
 				03B6DD502422CDED00CC0B7F /* Info.plist */,
 			);
-			path = KhatKhatiTests;
+			path = BoomcheTests;
 			sourceTree = "<group>";
 		};
-		03B6DD582422CDED00CC0B7F /* KhatKhatiUITests */ = {
+		03B6DD582422CDED00CC0B7F /* BoomcheUITests */ = {
 			isa = PBXGroup;
 			children = (
 				03B6DD592422CDED00CC0B7F /* KhatKhatiUITests.swift */,
 				03B6DD5B2422CDED00CC0B7F /* Info.plist */,
 			);
-			path = KhatKhatiUITests;
+			path = BoomcheUITests;
 			sourceTree = "<group>";
 		};
 		03B6DD672422CE2F00CC0B7F /* SupportingFiles */ = {
@@ -222,6 +224,11 @@
 		03B6DD692422CE4B00CC0B7F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				03C544BE2424F0C200C4049C /* Colors.swift */,
+				03B6DD6C2422E01000CC0B7F /* CustomButton.swift */,
+				03F287DE2423F2320024937C /* CustomLabel.swift */,
+				03C727272426584300334429 /* GradientView.swift */,
+				03BB1E87243E531C00459FDE /* MessageTableViewCell.swift */,
 				03B6DD3A2422CDEB00CC0B7F /* Main.storyboard */,
 			);
 			name = View;
@@ -230,17 +237,13 @@
 		03B6DD6A2422CE5100CC0B7F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				03B6DD6C2422E01000CC0B7F /* CustomButton.swift */,
-				03F287DE2423F2320024937C /* CustomLabel.swift */,
 				03C544BC2424EF3B00C4049C /* Color.swift */,
-				03C544BE2424F0C200C4049C /* Colors.swift */,
-				03C727272426584300334429 /* GradientView.swift */,
 				0323C15E242EB6A20074856A /* SocketIOManager.swift */,
 				03506C01243257EE0052DE06 /* TimerSetting.swift */,
 				03506C0324329D990052DE06 /* GameConstants.swift */,
 				03BA7663243548E200E0B345 /* Drawing.swift */,
 				03CA7C64243C69D600578B60 /* UIApplication.swift */,
-				03BB1E87243E531C00459FDE /* MessageTableViewCell.swift */,
+				0381AAB4243F6D7900C4E1DE /* Message.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -283,9 +286,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		03B6DD302422CDEB00CC0B7F /* KhatKhati */ = {
+		03B6DD302422CDEB00CC0B7F /* Boomche */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03B6DD5E2422CDED00CC0B7F /* Build configuration list for PBXNativeTarget "KhatKhati" */;
+			buildConfigurationList = 03B6DD5E2422CDED00CC0B7F /* Build configuration list for PBXNativeTarget "Boomche" */;
 			buildPhases = (
 				A1FC195D687533161FEF9A2E /* [CP] Check Pods Manifest.lock */,
 				03B6DD2D2422CDEB00CC0B7F /* Sources */,
@@ -297,14 +300,14 @@
 			);
 			dependencies = (
 			);
-			name = KhatKhati;
+			name = Boomche;
 			productName = KhatKhati;
 			productReference = 03B6DD312422CDEB00CC0B7F /* Boomche.app */;
 			productType = "com.apple.product-type.application";
 		};
-		03B6DD492422CDEC00CC0B7F /* KhatKhatiTests */ = {
+		03B6DD492422CDEC00CC0B7F /* BoomcheTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03B6DD612422CDED00CC0B7F /* Build configuration list for PBXNativeTarget "KhatKhatiTests" */;
+			buildConfigurationList = 03B6DD612422CDED00CC0B7F /* Build configuration list for PBXNativeTarget "BoomcheTests" */;
 			buildPhases = (
 				93697609A4876F99EFE07CA9 /* [CP] Check Pods Manifest.lock */,
 				03B6DD462422CDEC00CC0B7F /* Sources */,
@@ -316,14 +319,14 @@
 			dependencies = (
 				03B6DD4C2422CDEC00CC0B7F /* PBXTargetDependency */,
 			);
-			name = KhatKhatiTests;
+			name = BoomcheTests;
 			productName = KhatKhatiTests;
-			productReference = 03B6DD4A2422CDEC00CC0B7F /* KhatKhatiTests.xctest */;
+			productReference = 03B6DD4A2422CDEC00CC0B7F /* BoomcheTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		03B6DD542422CDED00CC0B7F /* KhatKhatiUITests */ = {
+		03B6DD542422CDED00CC0B7F /* BoomcheUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03B6DD642422CDED00CC0B7F /* Build configuration list for PBXNativeTarget "KhatKhatiUITests" */;
+			buildConfigurationList = 03B6DD642422CDED00CC0B7F /* Build configuration list for PBXNativeTarget "BoomcheUITests" */;
 			buildPhases = (
 				4940ED55EDC966F4B17CD602 /* [CP] Check Pods Manifest.lock */,
 				03B6DD512422CDED00CC0B7F /* Sources */,
@@ -336,9 +339,9 @@
 			dependencies = (
 				03B6DD572422CDED00CC0B7F /* PBXTargetDependency */,
 			);
-			name = KhatKhatiUITests;
+			name = BoomcheUITests;
 			productName = KhatKhatiUITests;
-			productReference = 03B6DD552422CDED00CC0B7F /* KhatKhatiUITests.xctest */;
+			productReference = 03B6DD552422CDED00CC0B7F /* BoomcheUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -377,9 +380,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				03B6DD302422CDEB00CC0B7F /* KhatKhati */,
-				03B6DD492422CDEC00CC0B7F /* KhatKhatiTests */,
-				03B6DD542422CDED00CC0B7F /* KhatKhatiUITests */,
+				03B6DD302422CDEB00CC0B7F /* Boomche */,
+				03B6DD492422CDEC00CC0B7F /* BoomcheTests */,
+				03B6DD542422CDED00CC0B7F /* BoomcheUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -541,6 +544,7 @@
 				03C544BF2424F0C200C4049C /* Colors.swift in Sources */,
 				03BB1E88243E531C00459FDE /* MessageTableViewCell.swift in Sources */,
 				03CA7C65243C69D600578B60 /* UIApplication.swift in Sources */,
+				0381AAB5243F6D7900C4E1DE /* Message.swift in Sources */,
 				033602432427AF4B00925975 /* DrawingViewController.swift in Sources */,
 				03BA7664243548E200E0B345 /* Drawing.swift in Sources */,
 				03D5526E24245D8300969560 /* JoinGameViewController.swift in Sources */,
@@ -570,12 +574,12 @@
 /* Begin PBXTargetDependency section */
 		03B6DD4C2422CDEC00CC0B7F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 03B6DD302422CDEB00CC0B7F /* KhatKhati */;
+			target = 03B6DD302422CDEB00CC0B7F /* Boomche */;
 			targetProxy = 03B6DD4B2422CDEC00CC0B7F /* PBXContainerItemProxy */;
 		};
 		03B6DD572422CDED00CC0B7F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 03B6DD302422CDEB00CC0B7F /* KhatKhati */;
+			target = 03B6DD302422CDEB00CC0B7F /* Boomche */;
 			targetProxy = 03B6DD562422CDED00CC0B7F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -722,7 +726,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.1;
 				DEVELOPMENT_TEAM = 3QN7DG53LR;
-				INFOPLIST_FILE = KhatKhati/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Boomche/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -743,7 +747,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.1;
 				DEVELOPMENT_TEAM = 3QN7DG53LR;
-				INFOPLIST_FILE = KhatKhati/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Boomche/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -775,7 +779,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KhatKhati.app/KhatKhati";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Boomche.app/Boomche";
 			};
 			name = Debug;
 		};
@@ -798,7 +802,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KhatKhati.app/KhatKhati";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Boomche.app/Boomche";
 			};
 			name = Release;
 		};
@@ -856,7 +860,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		03B6DD5E2422CDED00CC0B7F /* Build configuration list for PBXNativeTarget "KhatKhati" */ = {
+		03B6DD5E2422CDED00CC0B7F /* Build configuration list for PBXNativeTarget "Boomche" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03B6DD5F2422CDED00CC0B7F /* Debug */,
@@ -865,7 +869,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		03B6DD612422CDED00CC0B7F /* Build configuration list for PBXNativeTarget "KhatKhatiTests" */ = {
+		03B6DD612422CDED00CC0B7F /* Build configuration list for PBXNativeTarget "BoomcheTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03B6DD622422CDED00CC0B7F /* Debug */,
@@ -874,7 +878,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		03B6DD642422CDED00CC0B7F /* Build configuration list for PBXNativeTarget "KhatKhatiUITests" */ = {
+		03B6DD642422CDED00CC0B7F /* Build configuration list for PBXNativeTarget "BoomcheUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				03B6DD652422CDED00CC0B7F /* Debug */,

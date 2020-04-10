@@ -29,7 +29,7 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="HomeViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="HomeViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,7 +59,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UjV-wM-ia3">
                                 <rect key="frame" x="74" y="300" width="227" height="134"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQz-nJ-fMz" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQz-nJ-fMz" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="227" height="59"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="oQz-nJ-fMz" secondAttribute="height" multiplier="234:61" id="YeT-r0-0nJ"/>
@@ -74,7 +74,7 @@
                                             <segue destination="Fsv-bJ-ERM" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="sV0-CN-hUk"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nzj-VR-rcO" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nzj-VR-rcO" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="74.5" width="227" height="59.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Nzj-VR-rcO" secondAttribute="height" multiplier="234:61" id="dM1-xM-y2n"/>
@@ -131,7 +131,7 @@
         <!--New Lobby View Controller-->
         <scene sceneID="cMa-fK-lfE">
             <objects>
-                <viewController storyboardIdentifier="NewLobbyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="I4V-oy-IXb" customClass="NewLobbyViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewLobbyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="I4V-oy-IXb" customClass="NewLobbyViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lr2-JM-3nM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -185,7 +185,7 @@
                                                     <action selector="copyLobbyName:" destination="I4V-oy-IXb" eventType="primaryActionTriggered" id="UcV-He-Zvh"/>
                                                 </connections>
                                             </textField>
-                                            <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCA-yB-IrP" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCA-yB-IrP" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                 <rect key="frame" x="94.5" y="68.5" width="122" height="41"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="113" id="7eF-t0-dLg"/>
@@ -197,7 +197,7 @@
                                                     <action selector="copyLobbyName:" destination="I4V-oy-IXb" eventType="touchUpInside" id="jfI-yG-llQ"/>
                                                 </connections>
                                             </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q5g-eD-fq7" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q5g-eD-fq7" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                 <rect key="frame" x="252" y="24.5" width="40" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZh-1m-4Tb">
@@ -237,7 +237,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eqU-n0-RZ4" userLabel="View1.1">
                                         <rect key="frame" x="0.0" y="125.5" width="311" height="45.5"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xN2-Uh-qgA" customClass="CustomLabel" customModule="KhatKhati" customModuleProvider="target">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xN2-Uh-qgA" customClass="CustomLabel" customModule="Boomche" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="311" height="45.5"/>
                                                 <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
                                                 <attributedString key="attributedText">
@@ -250,7 +250,7 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1JI-0A-hBl" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1JI-0A-hBl" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="84" height="45.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="1JI-0A-hBl" secondAttribute="height" multiplier="81:44" id="L7j-uy-8kM"/>
@@ -278,7 +278,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4I-21-Mp8" userLabel="View1.2">
                                         <rect key="frame" x="0.0" y="182.5" width="311" height="45.5"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCp-lu-950" customClass="CustomLabel" customModule="KhatKhati" customModuleProvider="target">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCp-lu-950" customClass="CustomLabel" customModule="Boomche" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="311" height="45.5"/>
                                                 <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
                                                 <attributedString key="attributedText">
@@ -291,7 +291,7 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMV-g5-g8W" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMV-g5-g8W" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="84" height="45.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="gMV-g5-g8W" secondAttribute="height" multiplier="81:44" id="AxT-Vt-1PP"/>
@@ -383,7 +383,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n8t-dQ-rI2">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="181"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgK-QH-4B4" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgK-QH-4B4" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="75.5" y="0.0" width="224" height="59"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="59" id="1LJ-EE-gyR"/>
@@ -445,7 +445,7 @@
         <!--Drawing View Controller-->
         <scene sceneID="LlO-3T-uyb">
             <objects>
-                <viewController storyboardIdentifier="DrawingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FH5-3d-izd" customClass="DrawingViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DrawingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FH5-3d-izd" customClass="DrawingViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3rT-84-p3Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -541,13 +541,13 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBP-01-O8E" userLabel="View3.0.0">
                                                 <rect key="frame" x="0.0" y="0.0" width="40.5" height="40.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHx-HL-f8K" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHx-HL-f8K" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="40.5" height="40.5"/>
                                                         <connections>
                                                             <action selector="colorPicked:" destination="FH5-3d-izd" eventType="touchUpInside" id="ON4-ha-y8P"/>
                                                         </connections>
                                                     </button>
-                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y77-Sf-ks7" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y77-Sf-ks7" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="30.5" height="30.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
@@ -570,13 +570,13 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bl8-ZT-u2X" userLabel="View3.0.1">
                                                 <rect key="frame" x="52.5" y="0.0" width="40.5" height="40.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2n-oc-bsI" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2n-oc-bsI" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="40.5" height="40.5"/>
                                                         <connections>
                                                             <action selector="colorPicked:" destination="FH5-3d-izd" eventType="touchUpInside" id="4gA-dk-3Up"/>
                                                         </connections>
                                                     </button>
-                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLP-sj-uyw" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLP-sj-uyw" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="30.5" height="30.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
@@ -599,13 +599,13 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wfq-RA-Jvf" userLabel="View3.0.2">
                                                 <rect key="frame" x="105.5" y="0.0" width="40.5" height="40.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwu-eh-uOM" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwu-eh-uOM" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="40.5" height="40.5"/>
                                                         <connections>
                                                             <action selector="colorPicked:" destination="FH5-3d-izd" eventType="touchUpInside" id="c5U-3x-TEz"/>
                                                         </connections>
                                                     </button>
-                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNb-En-5H5" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNb-En-5H5" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="30.5" height="30.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
@@ -646,13 +646,13 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6KC-N3-3AV" userLabel="View3.1.0">
                                                 <rect key="frame" x="0.0" y="0.0" width="40.5" height="40.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzg-7T-eGc" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzg-7T-eGc" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="40.5" height="40.5"/>
                                                         <connections>
                                                             <action selector="colorPicked:" destination="FH5-3d-izd" eventType="touchUpInside" id="O6L-qG-Flj"/>
                                                         </connections>
                                                     </button>
-                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpr-Ai-1QO" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpr-Ai-1QO" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="30.5" height="30.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
@@ -675,13 +675,13 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KkW-ih-io6" userLabel="View3.1.1">
                                                 <rect key="frame" x="53" y="0.0" width="40.5" height="40.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="660-aV-u5K" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="660-aV-u5K" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="40.5" height="40.5"/>
                                                         <connections>
                                                             <action selector="colorPicked:" destination="FH5-3d-izd" eventType="touchUpInside" id="oec-16-wCK"/>
                                                         </connections>
                                                     </button>
-                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XxO-e5-og9" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XxO-e5-og9" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="30.5" height="30.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
@@ -704,13 +704,13 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Zh-HF-6fM" userLabel="View3.1.2">
                                                 <rect key="frame" x="105.5" y="0.0" width="40.5" height="40.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzx-qr-PzF" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzx-qr-PzF" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="40.5" height="40.5"/>
                                                         <connections>
                                                             <action selector="colorPicked:" destination="FH5-3d-izd" eventType="touchUpInside" id="Oc5-e0-lot"/>
                                                         </connections>
                                                     </button>
-                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pyr-8N-QnQ" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pyr-8N-QnQ" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="30.5" height="30.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
@@ -751,13 +751,13 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ye9-v8-VBj" userLabel="View3.2.0">
                                                 <rect key="frame" x="0.0" y="0.0" width="40.5" height="40.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skv-0G-erU" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skv-0G-erU" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="40.5" height="40.5"/>
                                                         <connections>
                                                             <action selector="colorPicked:" destination="FH5-3d-izd" eventType="touchUpInside" id="rbE-kw-Gq7"/>
                                                         </connections>
                                                     </button>
-                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Rt-KO-eZC" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Rt-KO-eZC" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="30.5" height="30.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
@@ -780,13 +780,13 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="azz-w6-Z1L" userLabel="View3.2.1">
                                                 <rect key="frame" x="52.5" y="0.0" width="40.5" height="40.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htb-bq-6KG" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htb-bq-6KG" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="40.5" height="40.5"/>
                                                         <connections>
                                                             <action selector="colorPicked:" destination="FH5-3d-izd" eventType="touchUpInside" id="nDo-0G-vD9"/>
                                                         </connections>
                                                     </button>
-                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVG-DN-1bW" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVG-DN-1bW" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="30.5" height="30.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
@@ -809,13 +809,13 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hlV-6v-OWm" userLabel="View3.2.2">
                                                 <rect key="frame" x="105.5" y="0.0" width="40.5" height="40.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPM-jS-0SA" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPM-jS-0SA" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="40.5" height="40.5"/>
                                                         <connections>
                                                             <action selector="colorPicked:" destination="FH5-3d-izd" eventType="touchUpInside" id="YdS-eB-As6"/>
                                                         </connections>
                                                     </button>
-                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8qg-Kh-p9J" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8qg-Kh-p9J" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="30.5" height="30.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
@@ -856,13 +856,13 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fqi-4e-Euf" userLabel="View3.3.0">
                                                 <rect key="frame" x="0.0" y="0.0" width="40.5" height="40.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFJ-XX-gxq" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFJ-XX-gxq" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="40.5" height="40.5"/>
                                                         <connections>
                                                             <action selector="colorPicked:" destination="FH5-3d-izd" eventType="touchUpInside" id="c9F-7c-dA9"/>
                                                         </connections>
                                                     </button>
-                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyP-ts-iur" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zyP-ts-iur" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="30.5" height="30.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <constraints>
@@ -885,7 +885,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cbF-cu-1aQ" userLabel="View3.3.1">
                                                 <rect key="frame" x="53" y="0.0" width="40.5" height="40.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbh-ga-iyU" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbh-ga-iyU" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="40.5" height="40.5"/>
                                                         <state key="normal" image="paint‌Brush"/>
                                                         <connections>
@@ -914,7 +914,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jYT-Qp-gqa" userLabel="View3.3.2">
                                                 <rect key="frame" x="105.5" y="0.0" width="40.5" height="40.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4M-5y-k7E" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4M-5y-k7E" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="40.5" height="40.5"/>
                                                         <state key="normal" image="eraser"/>
                                                         <connections>
@@ -1026,7 +1026,7 @@
         <!--Choosing Word View Controller-->
         <scene sceneID="cRd-r7-a2W">
             <objects>
-                <viewController storyboardIdentifier="ChoosingWordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sa1-BW-iGt" customClass="ChoosingWordViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChoosingWordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sa1-BW-iGt" customClass="ChoosingWordViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="GTP-rW-Wwf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1103,7 +1103,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ljN-Hn-hyI" userLabel="View1.1">
                                         <rect key="frame" x="4" y="113" width="227" height="212"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwG-KI-wAf" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwG-KI-wAf" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="227" height="59.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="kwG-KI-wAf" secondAttribute="height" multiplier="225:59" id="f4i-5r-lRq"/>
@@ -1116,7 +1116,7 @@
                                                     <action selector="chooseWord:" destination="sa1-BW-iGt" eventType="touchUpInside" id="I4O-ls-Sfv"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkb-Nw-uiK" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkb-Nw-uiK" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="152.5" width="227" height="59.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Xkb-Nw-uiK" secondAttribute="height" multiplier="225:59" id="OTq-RW-d0c"/>
@@ -1129,7 +1129,7 @@
                                                     <action selector="chooseWord:" destination="sa1-BW-iGt" eventType="touchUpInside" id="NIV-OO-yGQ"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgW-rx-npD" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgW-rx-npD" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="76.5" width="227" height="59.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="LgW-rx-npD" secondAttribute="height" multiplier="225:59" id="mzt-gC-kw2"/>
@@ -1198,7 +1198,7 @@
         <!--Guessing View Controller-->
         <scene sceneID="gHT-E0-16c">
             <objects>
-                <viewController storyboardIdentifier="GuessingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gNB-0m-c18" customClass="GuessingViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GuessingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gNB-0m-c18" customClass="GuessingViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GlI-9K-a7e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1265,10 +1265,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QRQ-G7-aZj" userLabel="View1">
                                 <rect key="frame" x="39" y="84" width="297" height="297"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9tQ-GQ-guS">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9tQ-GQ-guS">
                                         <rect key="frame" x="0.0" y="0.0" width="297" height="297"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D6E-Az-pTs">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D6E-Az-pTs">
                                         <rect key="frame" x="0.0" y="0.0" width="297" height="297"/>
                                     </imageView>
                                 </subviews>
@@ -1296,13 +1296,19 @@
                                         <color key="textColor" red="0.22745098039215686" green="0.22745098039215686" blue="0.22745098039215686" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Vazir" family="Vazir" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <action selector="sendMessage:" destination="gNB-0m-c18" eventType="primaryActionTriggered" id="LOI-eo-Aka"/>
+                                        </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pZ-7Z-Rj8" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pZ-7Z-Rj8" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="10" y="8" width="67.5" height="40"/>
                                         <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="16"/>
                                         <state key="normal" title="ارسال">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sendMessage:" destination="gNB-0m-c18" eventType="touchUpInside" id="4vz-9n-OgM"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
@@ -1319,7 +1325,7 @@
                             <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ttM-CE-B5g">
                                 <rect key="frame" x="39" y="396" width="297" height="200"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MessageCellID" id="Rrf-a9-uSR" customClass="MessageTableViewCell" customModule="KhatKhati" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MessageCellID" id="Rrf-a9-uSR" customClass="MessageTableViewCell" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="297" height="42.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rrf-a9-uSR" id="uZc-jH-D7v">
@@ -1383,7 +1389,7 @@
         <!--Scores View Controller-->
         <scene sceneID="VVr-eC-hAJ">
             <objects>
-                <viewController storyboardIdentifier="ScoresViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TiS-ax-bgr" customClass="ScoresViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScoresViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TiS-ax-bgr" customClass="ScoresViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="uUH-dX-KJ4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1398,7 +1404,7 @@
         <!--Loading View Controller-->
         <scene sceneID="xHR-cn-yQd">
             <objects>
-                <viewController storyboardIdentifier="LoadingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qaP-Jh-xiv" customClass="LoadingViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoadingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qaP-Jh-xiv" customClass="LoadingViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oks-5M-0Uc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1416,7 +1422,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RC3-yy-QeC">
-                                                <rect key="frame" x="32" y="31.5" width="33" height="33"/>
+                                                <rect key="frame" x="32" y="29" width="33" height="33"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="RC3-yy-QeC" secondAttribute="height" multiplier="1:1" id="LeS-66-L4T"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="alm-cz-b32"/>
@@ -1427,7 +1433,7 @@
                                                 </connections>
                                             </button>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ورود به بازی" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0du-ar-2kL">
-                                                <rect key="frame" x="119" y="21.5" width="137.5" height="53.5"/>
+                                                <rect key="frame" x="112.5" y="16.5" width="150" height="58.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="0du-ar-2kL" secondAttribute="height" multiplier="128:50" id="woO-A0-DSP"/>
                                                 </constraints>
@@ -1446,13 +1452,13 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="در حال جست و جو" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejs-Zg-4iA">
-                                        <rect key="frame" x="93.5" y="262.5" width="188" height="33"/>
+                                        <rect key="frame" x="84" y="257" width="207" height="44"/>
                                         <fontDescription key="fontDescription" name="Vazir-Black" family="Vazir" pointSize="28"/>
                                         <color key="textColor" red="0.23137254901960785" green="0.22352941176470587" blue="0.34901960784313724" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="موتور خلاقیتتو گرم کن..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X56-TE-fbA">
-                                        <rect key="frame" x="85.5" y="314.5" width="204" height="28"/>
+                                        <rect key="frame" x="71" y="309.5" width="233" height="38"/>
                                         <fontDescription key="fontDescription" name="Vazir" family="Vazir" pointSize="24"/>
                                         <color key="textColor" red="0.19215686274509802" green="0.19215686274509802" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1502,7 +1508,7 @@
         <!--Join Game View Controller-->
         <scene sceneID="eDi-vc-8eK">
             <objects>
-                <viewController storyboardIdentifier="JoinGameViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fsv-bJ-ERM" customClass="JoinGameViewController" customModule="KhatKhati" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JoinGameViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fsv-bJ-ERM" customClass="JoinGameViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0a6-TS-gjj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1574,7 +1580,7 @@
                                                     <constraint firstAttribute="width" secondItem="HaC-y9-cUr" secondAttribute="height" multiplier="1:1" id="2Vr-p5-h6T"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QD2-Yh-Qx6" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QD2-Yh-Qx6" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="60" width="250" height="60"/>
                                                 <fontDescription key="fontDescription" name="Vazir-Black" family="Vazir" pointSize="20"/>
                                                 <state key="normal" title="پیدا کردن بازی">
@@ -1613,7 +1619,7 @@
                                                     <action selector="joinGameAction:" destination="Fsv-bJ-ERM" eventType="primaryActionTriggered" id="Xrb-VY-vaL"/>
                                                 </connections>
                                             </textField>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jj-Cs-3MJ" customClass="CustomButton" customModule="KhatKhati" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jj-Cs-3MJ" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                 <rect key="frame" x="57.5" y="57.5" width="135" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="8jj-Cs-3MJ" secondAttribute="height" multiplier="120:40" id="xJj-BS-ssI"/>
@@ -1692,6 +1698,6 @@
         <image name="paint‌Brush" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="B02-37-tGE"/>
+        <segue reference="4nJ-e4-cP0"/>
     </inferredMetricsTieBreakers>
 </document>

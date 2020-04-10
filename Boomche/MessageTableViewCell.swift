@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+protocol MessageCellDelegate {
+    func messageCell(_ cell: MessageTableViewCell, message: Message)
+}
+
 class MessageTableViewCell: UITableViewCell {
     @IBOutlet weak var messageLabel: UILabel!
     

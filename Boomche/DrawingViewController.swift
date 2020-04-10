@@ -248,7 +248,7 @@ class DrawingViewController: UIViewController {
     }
     
     func configure() {
-        drawing = Drawing(canvasView: canvasView, canvas: canvas, templeCanvas: templeCanvas)
+        drawing = Drawing(canvasView: self.canvasView, canvas: self.canvas, templeCanvas: self.templeCanvas)
         
         setTimer()
         

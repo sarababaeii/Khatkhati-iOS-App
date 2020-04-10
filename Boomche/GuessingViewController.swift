@@ -21,7 +21,7 @@ class GuessingViewController: UIViewController {
     @IBOutlet weak var chatTextField: UITextField!
     @IBOutlet weak var sendButton: CustomButton!
     
-    static var drawing: Drawing?
+    var drawing: Drawing?
     
     //MARK: Timer Setting
     func setTimer() {
@@ -29,7 +29,25 @@ class GuessingViewController: UIViewController {
         timer.on()
     }
     
+    @IBAction func sendMessage(_ sender: Any) {
+        if let message = fetchInput() {
+            SocketIOManager.sharedInstance.sendMessage(message: message)
+            chatTextField.resignFirstResponder()
+        }
+    }
+    
+    func fetchInput() -> String? {
+        if let caption = chatTextField.text?.trimmingCharacters(in: .whitespaces) {
+            return caption.count > 0 ? caption : nil
+        }
+        return nil
+    }
+    
     //MARK: Keyboard Management
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        chatTextField.resignFirstResponder()
+    }
+    
     func registerForKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -44,7 +62,12 @@ class GuessingViewController: UIViewController {
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        adjustLayoutForKeyboard(targetHight: 0)
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+//        adjustLayoutForKeyboard(targetHight: 0)
     }
     
     func adjustLayoutForKeyboard(targetHight: CGFloat){
@@ -52,6 +75,34 @@ class GuessingViewController: UIViewController {
             messageView.frame.origin.y -= targetHight
 //        }
 //        messageView.bottom = targetHight
+    }
+    
+    //MARK: Socket Management
+    //It would be more clear if it was implemented in SocketIOManager class
+    func addSocketHandler() {
+        SocketIOManager.sharedInstance.socket?.on("conversation_private") { data, ack in
+            var temp = data[0] as! [String : Any]
+            temp = temp["data"] as! [String : Any]
+            
+            if let roomID = GameConstants.roomID {
+                if roomID == temp["room"] as! String {
+                    self.showDrawing(state: temp["state"] as! String, point: temp["point"] as! [CGFloat])
+                }
+            }
+        }
+    }
+    
+    func showDrawing(state: String, point: [CGFloat]) {
+        switch state {
+        case "start":
+            drawing?.touchesBegan(CGPoint(x: point[0], y: point[1]))
+        case "moving":
+            drawing?.touchesMoved(CGPoint(x: point[0], y: point[1]))
+        case "end":
+            drawing?.touchesEnded()
+        default:
+            print("Error in receiving draw")
+        }
     }
     
     //MARK: UI Handling
@@ -65,7 +116,7 @@ class GuessingViewController: UIViewController {
     }
     
     func configure() {
-        GuessingViewController.drawing = Drawing(canvasView: canvasView, canvas: canvas, templeCanvas: templeCanvas)
+        drawing = Drawing(canvasView: self.canvasView, canvas: self.canvas, templeCanvas: self.templeCanvas)
         
         setTimer()
         
@@ -73,6 +124,8 @@ class GuessingViewController: UIViewController {
         setSendButtonAttributes()
         
         registerForKeyboardNotifications()
+        
+        addSocketHandler()
     }
     
     override func viewDidLoad() {

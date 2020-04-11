@@ -16,5 +16,13 @@ protocol MessageCellDelegate {
 class MessageTableViewCell: UITableViewCell {
     @IBOutlet weak var messageLabel: UILabel!
     
+    func setCaption(_ message: Message) {
+        messageLabel.text = "\(message.username): \(message.content)"
+    }
+    
+    override func awakeFromNib(){
+        super.awakeFromNib()
+//        configure()
+    }
     
 }

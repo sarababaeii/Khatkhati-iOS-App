@@ -118,17 +118,17 @@ class SocketIOManager: NSObject {
 //            }
         }
         
-        socket?.on("chat_and_guess") {data, ack in
-            print("^^^^^RECEIVING MESSAGE^^^^^^")
-            
-            let temp = data[0] as! [String : Any]
-            
-            let message = Message(username: temp["username"] as! String, content: temp["text"] as! String)
-            
-            print("@@@@@@ \(message.username): \(message.content)")
-            
-            self.receiveMessage(message)
-        }
+//        socket?.on("chat_and_guess") {data, ack in
+//            print("^^^^^RECEIVING MESSAGE^^^^^^")
+//            
+//            let temp = data[0] as! [String : Any]
+//            
+//            let message = Message(username: temp["username"] as! String, content: temp["text"] as! String)
+//            
+//            print("@@@@@@ \(message.username): \(message.content)")
+//            
+//            self.receiveMessage(message)
+//        }
     }
     
     func determiningNextPage(username: String) {

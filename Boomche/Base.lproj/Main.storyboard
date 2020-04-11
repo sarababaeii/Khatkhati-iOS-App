@@ -1296,9 +1296,6 @@
                                         <color key="textColor" red="0.22745098039215686" green="0.22745098039215686" blue="0.22745098039215686" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Vazir" family="Vazir" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                                        <connections>
-                                            <action selector="sendMessage:" destination="gNB-0m-c18" eventType="primaryActionTriggered" id="LOI-eo-Aka"/>
-                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pZ-7Z-Rj8" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="10" y="8" width="67.5" height="40"/>
@@ -1375,6 +1372,7 @@
                     <connections>
                         <outlet property="canvas" destination="9tQ-GQ-guS" id="krZ-uK-193"/>
                         <outlet property="canvasView" destination="QRQ-G7-aZj" id="wBA-tu-JhT"/>
+                        <outlet property="chatTableView" destination="ttM-CE-B5g" id="Dd6-wa-w1V"/>
                         <outlet property="chatTextField" destination="FpN-E9-7s3" id="T95-Tf-tjE"/>
                         <outlet property="messageView" destination="R0O-h4-5fd" id="JYy-ne-wZs"/>
                         <outlet property="sendButton" destination="5pZ-7Z-Rj8" id="G4c-VZ-Ty1"/>

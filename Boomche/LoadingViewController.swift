@@ -24,6 +24,24 @@ class LoadingViewController: UIViewController {
         present(controller, animated: true, completion: nil)
     }
     
+    //MARK: Socket Management
+    //It would be more clear if it was implemented in SocketIOManager class
+    func addSocketHandler() {
+        SocketIOManager.sharedInstance.socket?.on("start_game") { data, ack in
+            print("^^^^^RECEIVING WORDS^^^^^^")
+            
+            let temp = data[0] as! [String : Any]
+                    
+            ChoosingWordViewController.words = temp["words"] as? [String]
+            self.determiningNextPage(username: temp["username"] as! String)
+                    
+//            if let username = GameConstants.username,
+//                username == temp["username"] as! String {
+//                    self.words = temp["words"] as! [String]
+//            }
+        }
+    }
+    
     func determiningNextPage(username: String) {
         if GameConstants.username == username {
             showNextPage("DrawingViewController")
@@ -71,6 +89,8 @@ class LoadingViewController: UIViewController {
     func configure() {
         setLoadingBackgroundGif()
 
+//        addSocketHandler()
+        
         on()
     }
     

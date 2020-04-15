@@ -104,19 +104,19 @@ class SocketIOManager: NSObject {
         
         //TODO: is it correct?!
         // vaghti in umad be loading elam kone ke bere safhe bad
-        socket?.on("start_game") { data, ack in
-            print("^^^^^RECEIVING WORDS^^^^^^")
-            
-            let temp = data[0] as! [String : Any]
-            
-            self.words = temp["words"] as! [String]
-            self.determiningNextPage(username: temp["username"] as! String)
-            
-//            if let username = GameConstants.username,
-//                username == temp["username"] as! String {
-//                    self.words = temp["words"] as! [String]
-//            }
-        }
+//        socket?.on("start_game") { data, ack in
+//            print("^^^^^RECEIVING WORDS^^^^^^")
+//            
+//            let temp = data[0] as! [String : Any]
+//            
+//            self.words = temp["words"] as! [String]
+//            self.determiningNextPage(username: temp["username"] as! String)
+//            
+////            if let username = GameConstants.username,
+////                username == temp["username"] as! String {
+////                    self.words = temp["words"] as! [String]
+////            }
+//        }
         
 //        socket?.on("chat_and_guess") {data, ack in
 //            print("^^^^^RECEIVING MESSAGE^^^^^^")

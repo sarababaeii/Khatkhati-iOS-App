@@ -10,6 +10,10 @@ import Foundation
 import UIKit
 
 class ScoresViewController: UIViewController {
+   
+    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var wordLabel: UILabel!
+    
     func configure() {
         
     }

@@ -17,7 +17,7 @@ class ChoosingWordViewController: UIViewController {
     @IBOutlet weak var thirdWordButton: CustomButton!
     
     var buttons = [CustomButton]()
-    var words: [String]?
+    static var words: [String]?
     
     @IBAction func chooseWord(_ sender: Any) {
         SocketIOManager.sharedInstance.sendWord(word: (sender as! UIButton).currentTitle!)
@@ -31,7 +31,7 @@ class ChoosingWordViewController: UIViewController {
     
     func initialize() {
         buttons = [firstWordButton, secondWordButton, thirdWordButton]
-        words = SocketIOManager.sharedInstance.receiveWords()
+        ChoosingWordViewController.words = SocketIOManager.sharedInstance.receiveWords()
     }
     
     //MARK: UI Handling
@@ -40,7 +40,7 @@ class ChoosingWordViewController: UIViewController {
             button.setCornerRadius(radius: 30.5)
             button.setBackgroundColor(color: Colors.yellow.componentColor!)
             
-            if let word = words?[button.tag] {
+            if let word = ChoosingWordViewController.words?[button.tag] {
                 button.setTitle(word, for: .normal)
             }
         }

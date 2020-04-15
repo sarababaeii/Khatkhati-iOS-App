@@ -46,6 +46,8 @@ class DrawingViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var brushView: UIImageView!
     @IBOutlet weak var eraserView: UIImageView!
     
+    var wordChose = false
+    
     var colorButtons = [CustomButton]()
     var colorViews = [CustomButton]()
     var colors = [Color]()
@@ -248,10 +250,23 @@ class DrawingViewController: UIViewController, UITableViewDelegate, UITableViewD
         addSocketHandler()
     }
     
+    func showChoosingWordViewController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "ChoosingWordViewController") as UIViewController
+        controller.modalPresentationStyle = .fullScreen
+        controller.modalTransitionStyle = .coverVertical
+        present(controller, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
      
+        if !wordChose {
+            showChoosingWordViewController()
+            wordChose = true
+        }
+        
         configure()
     }
 }

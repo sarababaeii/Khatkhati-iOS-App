@@ -9,13 +9,15 @@
 import Foundation
 import UIKit
 
-class DrawingViewController: UIViewController {
+class DrawingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var timerLabel: UILabel!
     
     @IBOutlet weak var canvasView: UIView!
     @IBOutlet weak var canvas: UIImageView!
     @IBOutlet weak var templeCanvas: UIImageView!
+    
+    @IBOutlet weak var chatTableView: UITableView!
     
     //MARK: ColorPalette:
     @IBOutlet weak var redColorButton: CustomButton!
@@ -44,12 +46,18 @@ class DrawingViewController: UIViewController {
     @IBOutlet weak var brushView: UIImageView!
     @IBOutlet weak var eraserView: UIImageView!
     
+    var colorButtons = [CustomButton]()
+    var colorViews = [CustomButton]()
+    var colors = [Color]()
+    
     var brushSelected: Bool = false
     
     var brushColorButton: CustomButton?
     var brushColorView: UIView?
     
     var drawing: Drawing?
+    
+    var messages = [Message]()
     
     //MARK: Timer Setting
     func setTimer() {
@@ -161,90 +169,67 @@ class DrawingViewController: UIViewController {
         }
     }
     
+    //MARK: TableView Delegates
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCellID", for: indexPath) as! MessageTableViewCell
+        let message = messageDataSource(indexPath: indexPath)
+        cell.setCaption(message!)
+        return cell
+    }
+    
+    func messageDataSource(indexPath: IndexPath) -> Message? {
+        return messages[indexPath.row]
+    }
+    
+    //MARK: Socket Management
+    //It would be more clear if it was implemented in SocketIOManager class
+    func addSocketHandler() {
+        SocketIOManager.sharedInstance.socket?.on("chat_and_guess") {data, ack in
+            print("^^^^^RECEIVING MESSAGE^^^^^^")
+            
+            let temp = data[0] as! [String : Any]
+            let message = Message(username: temp["username"] as! String, content: temp["text"] as! String)
+            self.insertMessage(message, at: IndexPath(row: self.messages.count, section: 0))
+        }
+    }
+    
+    func insertMessage(_ message: Message?, at indexPath: IndexPath?){
+        if let message = message, let indexPath = indexPath{
+            chatTableView.beginUpdates()
+            
+            messages.insert(message, at: indexPath.row)
+            chatTableView.insertRows(at: [indexPath], with: .automatic)
+        
+            chatTableView.endUpdates()
+        }
+    }
+    
     //MARK: Initializing
     func initializeBrush() {
         colorPicked(redColorButton!)
     }
     
     //MARK: UI Handling
-    func setRedColorAttributes() {
-        redColorButton.setCornerRadius(radius: 10)
-        redColorButton.setBackgroundColor(color: Colors.red.drawingColor!)
+    func initializeArrays() {
+        colorButtons = [redColorButton, greenColorButton, darkBlueColorButton, yellowColorButton, purpleColorButton, pinkColorButton, brownColorButton, lightBlueColorButton, blackColorButton, grayColorButton]
         
-        redColorView.setCornerRadius(radius: 10)
-        redColorView.setBackgroundColor(color: Colors.red.drawingColor!)
+         colorViews = [redColorView, greenColorView, darkBlueColorView, yellowColorView, purpleColorView, pinkColorView, brownColorView, lightBlueColorView, blackColorView, grayColorView]
+         
+         colors = [Colors.red.drawingColor!, Colors.green.drawingColor!, Colors.darkBlue.drawingColor!, Colors.yellow.drawingColor!, Colors.purple.drawingColor!, Colors.pink.drawingColor!, Colors.brown.drawingColor!, Colors.lightBlue.drawingColor!, Colors.black.drawingColor!, Colors.gray.drawingColor!]
     }
     
-    func setGreenColorAttributes() {
-        greenColorButton.setCornerRadius(radius: 10)
-        greenColorButton.setBackgroundColor(color: Colors.green.drawingColor!)
-        
-        greenColorView.setCornerRadius(radius: 10)
-        greenColorView.setBackgroundColor(color: Colors.green.drawingColor!)
-    }
-    
-    func setDarkBlueColorAttributes() {
-        darkBlueColorButton.setCornerRadius(radius: 10)
-        darkBlueColorButton.setBackgroundColor(color: Colors.darkBlue.drawingColor!)
-        
-        darkBlueColorView.setCornerRadius(radius: 10)
-        darkBlueColorView.setBackgroundColor(color: Colors.darkBlue.drawingColor!)
-    }
-    
-    func setYellowColorAttributes() {
-        yellowColorButton.setCornerRadius(radius: 10)
-        yellowColorButton.setBackgroundColor(color: Colors.yellow.drawingColor!)
-        
-        yellowColorView.setCornerRadius(radius: 10)
-        yellowColorView.setBackgroundColor(color: Colors.yellow.drawingColor!)
-    }
-    
-    func setPurpleColorAttributes() {
-        purpleColorButton.setCornerRadius(radius: 10)
-        purpleColorButton.setBackgroundColor(color: Colors.purple.drawingColor!)
-        
-        purpleColorView.setCornerRadius(radius: 10)
-        purpleColorView.setBackgroundColor(color: Colors.purple.drawingColor!)
-    }
-    
-    func setPinkColorAttributes() {
-        pinkColorButton.setCornerRadius(radius: 10)
-        pinkColorButton.setBackgroundColor(color: Colors.pink.drawingColor!)
-        
-        pinkColorView.setCornerRadius(radius: 10)
-        pinkColorView.setBackgroundColor(color: Colors.pink.drawingColor!)
-    }
-    
-    func setBrownColorAttributes() {
-        brownColorButton.setCornerRadius(radius: 10)
-        brownColorButton.setBackgroundColor(color: Colors.brown.drawingColor!)
-        
-        brownColorView.setCornerRadius(radius: 10)
-        brownColorView.setBackgroundColor(color: Colors.brown.drawingColor!)
-    }
-    
-    func setLightBlueColorAttributes() {
-        lightBlueColorButton.setCornerRadius(radius: 10)
-        lightBlueColorButton.setBackgroundColor(color: Colors.lightBlue.drawingColor!)
-        
-        lightBlueColorView.setCornerRadius(radius: 10)
-        lightBlueColorView.setBackgroundColor(color: Colors.lightBlue.drawingColor!)
-    }
-    
-    func setBlackColorAttributes() {
-        blackColorButton.setCornerRadius(radius: 10)
-        blackColorButton.setBackgroundColor(color: Colors.black.drawingColor!)
-        
-        blackColorView.setCornerRadius(radius: 10)
-        blackColorView.setBackgroundColor(color: Colors.black.drawingColor!)
-    }
-    
-    func setGrayColorAttributes() {
-        grayColorButton.setCornerRadius(radius: 10)
-        grayColorButton.setBackgroundColor(color: Colors.gray.drawingColor!)
-        
-        grayColorView.setCornerRadius(radius: 10)
-        grayColorView.setBackgroundColor(color: Colors.gray.drawingColor!)
+    func setColorPaletteAttributes() {
+        for i in 0..<colors.count {
+            colorButtons[i].setCornerRadius(radius: 10)
+            colorButtons[i].setBackgroundColor(color: colors[i])
+            
+            colorViews[i].setCornerRadius(radius: 10)
+            colorViews[i].setBackgroundColor(color: colors[i])
+        }
     }
     
     func configure() {
@@ -252,18 +237,15 @@ class DrawingViewController: UIViewController {
         
         setTimer()
         
-        setRedColorAttributes()
-        setGreenColorAttributes()
-        setDarkBlueColorAttributes()
-        setYellowColorAttributes()
-        setPurpleColorAttributes()
-        setPinkColorAttributes()
-        setBrownColorAttributes()
-        setLightBlueColorAttributes()
-        setBlackColorAttributes()
-        setGrayColorAttributes()
+        initializeArrays()
+        setColorPaletteAttributes()
         
         initializeBrush()
+        
+        chatTableView.delegate = self
+        chatTableView.dataSource = self
+        
+        addSocketHandler()
     }
     
     override func viewDidLoad() {

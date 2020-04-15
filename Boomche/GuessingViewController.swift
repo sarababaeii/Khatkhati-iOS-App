@@ -51,13 +51,8 @@ class GuessingViewController: UIViewController, UITableViewDelegate, UITableView
             print("^^^^^RECEIVING MESSAGE^^^^^^")
             
             let temp = data[0] as! [String : Any]
-            
             let message = Message(username: temp["username"] as! String, content: temp["text"] as! String)
-            
-            print("@@@@@@ \(message.username): \(message.content)")
-            
             self.insertMessage(message, at: IndexPath(row: self.messages.count, section: 0))
-            //row should be last
         }
     }
     
@@ -138,6 +133,7 @@ class GuessingViewController: UIViewController, UITableViewDelegate, UITableView
     @objc func keyboardWillHide(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y != 0 {
+//                self.view.frame.origin.y += keyboardSize.height
                 self.view.frame.origin.y = 0
             }
         }
@@ -169,7 +165,7 @@ class GuessingViewController: UIViewController, UITableViewDelegate, UITableView
         setSendButtonAttributes()
         
         chatTableView.delegate = self
-        chatTableView .dataSource = self
+        chatTableView.dataSource = self
         
         registerForKeyboardNotifications()
         

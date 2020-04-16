@@ -22,6 +22,7 @@ enum Colors {
     case lightBlue
     case black
     case white
+    case orange
     
     var componentColor: Color? {
         switch self {
@@ -82,6 +83,25 @@ enum Colors {
                               bottomBackground: UIColor(red: 183/255, green: 183/255, blue: 183/255, alpha: 1))
         case .white:
             return Color.init(UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1))
+        default:
+            return nil
+        }
+    }
+    
+    var playerColor: Color? {
+        switch self {
+        case .red:
+            return Color.init(UIColor(red: 255/255, green: 53/255, blue: 95/255, alpha: 1))
+        case .green:
+            return Color.init(UIColor(red: 0/255, green: 191/255, blue: 125/255, alpha: 1))
+        case .orange:
+            return Color.init(UIColor(red: 251/255, green: 120/255, blue: 67/255, alpha: 1))
+        case .purple:
+            return Color.init(UIColor(red: 199/255, green: 2/255, blue: 254/255, alpha: 1))
+        case .darkBlue:
+            return Color.init(UIColor(red: 67/255, green: 104/255, blue: 251/255, alpha: 1))
+        case .lightBlue:
+            return Color.init(UIColor(red: 109/255, green: 210/255, blue: 255/255, alpha: 1))
         default:
             return nil
         }

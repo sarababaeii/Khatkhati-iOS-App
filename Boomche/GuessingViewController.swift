@@ -23,6 +23,8 @@ class GuessingViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var chatTextField: UITextField!
     @IBOutlet weak var sendButton: CustomButton!
     
+    var wordChose = false
+    
     var drawing: Drawing?
     
     var messages = [Message]()
@@ -172,10 +174,29 @@ class GuessingViewController: UIViewController, UITableViewDelegate, UITableView
         addSocketHandler()
     }
     
+    func showWaitingViewController() {
+        print("HAHAHAHAHA")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let controller = storyboard.instantiateViewController(withIdentifier: "WaitingViewController") as UIViewController
+        let controller = storyboard.instantiateViewController(withIdentifier: "ScoresViewController") as UIViewController
+        controller.modalPresentationStyle = .overCurrentContext
+        controller.modalTransitionStyle = .coverVertical
+        present(controller, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-     
+        
         configure()
+        
+//        if !wordChose {
+            
+//            wordChose = true
+//        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        showWaitingViewController()
     }
 }

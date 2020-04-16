@@ -60,7 +60,7 @@ class LoadingViewController: UIViewController {
     
     //MARK: UI Handling
     func setLoadingBackgroundGif() {
-        loadingBackgroundImage.loadGif(asset: "loading")
+        loadingBackgroundImage.loadGif(asset: "LoadingGif")
     }
     
     var counter = 3

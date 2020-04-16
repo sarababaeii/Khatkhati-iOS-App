@@ -12,6 +12,9 @@
 		033602432427AF4B00925975 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033602422427AF4B00925975 /* DrawingViewController.swift */; };
 		03506C02243257EE0052DE06 /* TimerSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03506C01243257EE0052DE06 /* TimerSetting.swift */; };
 		03506C0424329D990052DE06 /* GameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03506C0324329D990052DE06 /* GameConstants.swift */; };
+		037582F22448AD5800B67C3C /* WaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037582F12448AD5800B67C3C /* WaitingViewController.swift */; };
+		037582F42448CF7D00B67C3C /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037582F32448CF7D00B67C3C /* ScoreTableViewCell.swift */; };
+		037582F62448EA2600B67C3C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037582F52448EA2600B67C3C /* Player.swift */; };
 		0381AAB5243F6D7900C4E1DE /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0381AAB4243F6D7900C4E1DE /* Message.swift */; };
 		03B100E8242973E7009418D2 /* GuessingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B100E7242973E7009418D2 /* GuessingViewController.swift */; };
 		03B6DD352422CDEB00CC0B7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD342422CDEB00CC0B7F /* AppDelegate.swift */; };
@@ -68,6 +71,9 @@
 		033602422427AF4B00925975 /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
 		03506C01243257EE0052DE06 /* TimerSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSetting.swift; sourceTree = "<group>"; };
 		03506C0324329D990052DE06 /* GameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConstants.swift; sourceTree = "<group>"; };
+		037582F12448AD5800B67C3C /* WaitingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingViewController.swift; sourceTree = "<group>"; };
+		037582F32448CF7D00B67C3C /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
+		037582F52448EA2600B67C3C /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		0381AAB4243F6D7900C4E1DE /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		03B100E7242973E7009418D2 /* GuessingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessingViewController.swift; sourceTree = "<group>"; };
 		03B6DD312422CDEB00CC0B7F /* Boomche.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boomche.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +222,7 @@
 				033602422427AF4B00925975 /* DrawingViewController.swift */,
 				03B100E7242973E7009418D2 /* GuessingViewController.swift */,
 				03D2FF3E2437503F008D9CB7 /* ChoosingWordViewController.swift */,
+				037582F12448AD5800B67C3C /* WaitingViewController.swift */,
 				03D2FF402437A875008D9CB7 /* ScoresViewController.swift */,
 			);
 			name = Controller;
@@ -229,6 +236,7 @@
 				03F287DE2423F2320024937C /* CustomLabel.swift */,
 				03C727272426584300334429 /* GradientView.swift */,
 				03BB1E87243E531C00459FDE /* MessageTableViewCell.swift */,
+				037582F32448CF7D00B67C3C /* ScoreTableViewCell.swift */,
 				03B6DD3A2422CDEB00CC0B7F /* Main.storyboard */,
 			);
 			name = View;
@@ -244,6 +252,7 @@
 				03BA7663243548E200E0B345 /* Drawing.swift */,
 				03CA7C64243C69D600578B60 /* UIApplication.swift */,
 				0381AAB4243F6D7900C4E1DE /* Message.swift */,
+				037582F52448EA2600B67C3C /* Player.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -527,6 +536,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				037582F42448CF7D00B67C3C /* ScoreTableViewCell.swift in Sources */,
 				03F287DF2423F2320024937C /* CustomLabel.swift in Sources */,
 				0323C15F242EB6A20074856A /* SocketIOManager.swift in Sources */,
 				03C544BD2424EF3B00C4049C /* Color.swift in Sources */,
@@ -535,6 +545,7 @@
 				03F287DD2423D9FB0024937C /* NewLobbyViewController.swift in Sources */,
 				03B6DD352422CDEB00CC0B7F /* AppDelegate.swift in Sources */,
 				03506C02243257EE0052DE06 /* TimerSetting.swift in Sources */,
+				037582F22448AD5800B67C3C /* WaitingViewController.swift in Sources */,
 				03506C0424329D990052DE06 /* GameConstants.swift in Sources */,
 				03D2FF3F2437503F008D9CB7 /* ChoosingWordViewController.swift in Sources */,
 				03B6DD372422CDEB00CC0B7F /* SceneDelegate.swift in Sources */,
@@ -543,6 +554,7 @@
 				03B6DD3F2422CDEB00CC0B7F /* KhatKhati.xcdatamodeld in Sources */,
 				03C544BF2424F0C200C4049C /* Colors.swift in Sources */,
 				03BB1E88243E531C00459FDE /* MessageTableViewCell.swift in Sources */,
+				037582F62448EA2600B67C3C /* Player.swift in Sources */,
 				03CA7C65243C69D600578B60 /* UIApplication.swift in Sources */,
 				0381AAB5243F6D7900C4E1DE /* Message.swift in Sources */,
 				033602432427AF4B00925975 /* DrawingViewController.swift in Sources */,

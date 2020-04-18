@@ -25,18 +25,7 @@ class TimerSetting {
     @objc func updateCounter() {
         if counter > 0 {
             counter -= 1
-            label.text = "۰:\(convertEnglishNumToPersianNum(num: "\(counter)"))"
+            label.text = "۰:\(StringExtension.convertEnglishNumToPersianNum(num: "\(counter)"))"
         }
-    }
-    
-    func convertEnglishNumToPersianNum(num: String) -> String {
-        //let number = NSNumber(value: Int(num)!)
-        let format = NumberFormatter()
-        format.locale = Locale(identifier: "fa_IR")
-        
-        let number =   format.number(from: num)
-        let faNumber = format.string(from: number!)
-        
-        return faNumber!
     }
 }

@@ -11,6 +11,8 @@ import UIKit
 
 class ScoreTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var wholeView: UIView!
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var currentScoreLabel: UILabel!
     @IBOutlet weak var totalScoreLabel: UILabel!
@@ -21,8 +23,8 @@ class ScoreTableViewCell: UITableViewCell {
     
     func setAttributes(player: Player){
         nameLabel.text = player.username
-        currentScoreLabel.text = "\(convertEnglishNumToPersianNum(num: String(player.currentScore))) امتیاز"
-        totalScoreLabel.text = convertEnglishNumToPersianNum(num: String(player.totalScore))
+        currentScoreLabel.text = "+\(StringExtension.convertEnglishNumToPersianNum(num: String(player.currentScore))) امتیاز"
+        totalScoreLabel.text = StringExtension.convertEnglishNumToPersianNum(num: String(player.totalScore))
         nameLabel.textColor = player.color.topBackground
         colorView.backgroundColor = player.color.topBackground
         
@@ -34,20 +36,13 @@ class ScoreTableViewCell: UITableViewCell {
         }
     }
     
-    func convertEnglishNumToPersianNum(num: String) -> String {
-        //let number = NSNumber(value: Int(num)!)
-        let format = NumberFormatter()
-        format.locale = Locale(identifier: "fa_IR")
-        
-        let number =   format.number(from: num)
-        let faNumber = format.string(from: number!)
-        
-        return faNumber!
+    func configure() {
+        wholeView.layer.cornerRadius = 5
+        colorView.layer.cornerRadius = 5
     }
     
     override func awakeFromNib(){
         super.awakeFromNib()
-//        configure()
+        configure()
     }
-    
 }

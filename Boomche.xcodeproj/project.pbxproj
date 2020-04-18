@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		031F857C244B76CE00C8B947 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031F857B244B76CE00C8B947 /* StringExtension.swift */; };
 		0323C15F242EB6A20074856A /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0323C15E242EB6A20074856A /* SocketIOManager.swift */; };
 		032B6D382426B40E00F7AA13 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B6D372426B40E00F7AA13 /* LoadingViewController.swift */; };
 		033602432427AF4B00925975 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033602422427AF4B00925975 /* DrawingViewController.swift */; };
@@ -66,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		031F857B244B76CE00C8B947 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		0323C15E242EB6A20074856A /* SocketIOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
 		032B6D372426B40E00F7AA13 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		033602422427AF4B00925975 /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				03CA7C64243C69D600578B60 /* UIApplication.swift */,
 				0381AAB4243F6D7900C4E1DE /* Message.swift */,
 				037582F52448EA2600B67C3C /* Player.swift */,
+				031F857B244B76CE00C8B947 /* StringExtension.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 				0323C15F242EB6A20074856A /* SocketIOManager.swift in Sources */,
 				03C544BD2424EF3B00C4049C /* Color.swift in Sources */,
 				03C727282426584300334429 /* GradientView.swift in Sources */,
+				031F857C244B76CE00C8B947 /* StringExtension.swift in Sources */,
 				03B6DD392422CDEB00CC0B7F /* HomeViewController.swift in Sources */,
 				03F287DD2423D9FB0024937C /* NewLobbyViewController.swift in Sources */,
 				03B6DD352422CDEB00CC0B7F /* AppDelegate.swift in Sources */,

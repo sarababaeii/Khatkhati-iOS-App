@@ -32,9 +32,6 @@ class ScoresViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: "ScoreCellID", for: indexPath) as! ScoreTableViewCell
         let player = playerDataSource(indexPath: indexPath)
         cell.setAttributes(player: player!)
-        cell.layer.borderWidth = 4
-//        cell.layer.borderColor = UIColor.clear.cgColor
-        cell.layer.borderColor = UIColor(red: 37/255, green: 37/255, blue: 37/255, alpha: 0.84).cgColor
         return cell
     }
     
@@ -73,4 +70,4 @@ class ScoresViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 }
 
-//TODO: Border, corner, clean
+//TODO: clean

@@ -69,5 +69,3 @@ class ScoresViewController: UIViewController, UITableViewDelegate, UITableViewDa
         configure()
     }
 }
-
-//TODO: clean

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		031F857C244B76CE00C8B947 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031F857B244B76CE00C8B947 /* StringExtension.swift */; };
+		031F857E244B990C00C8B947 /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031F857D244B990C00C8B947 /* EndGameViewController.swift */; };
 		0323C15F242EB6A20074856A /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0323C15E242EB6A20074856A /* SocketIOManager.swift */; };
 		032B6D382426B40E00F7AA13 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B6D372426B40E00F7AA13 /* LoadingViewController.swift */; };
 		033602432427AF4B00925975 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033602422427AF4B00925975 /* DrawingViewController.swift */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		031F857B244B76CE00C8B947 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		031F857D244B990C00C8B947 /* EndGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameViewController.swift; sourceTree = "<group>"; };
 		0323C15E242EB6A20074856A /* SocketIOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
 		032B6D372426B40E00F7AA13 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		033602422427AF4B00925975 /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				03D2FF3E2437503F008D9CB7 /* ChoosingWordViewController.swift */,
 				037582F12448AD5800B67C3C /* WaitingViewController.swift */,
 				03D2FF402437A875008D9CB7 /* ScoresViewController.swift */,
+				031F857D244B990C00C8B947 /* EndGameViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				0381AAB5243F6D7900C4E1DE /* Message.swift in Sources */,
 				033602432427AF4B00925975 /* DrawingViewController.swift in Sources */,
 				03BA7664243548E200E0B345 /* Drawing.swift in Sources */,
+				031F857E244B990C00C8B947 /* EndGameViewController.swift in Sources */,
 				03D5526E24245D8300969560 /* JoinGameViewController.swift in Sources */,
 				03B6DD6D2422E01000CC0B7F /* CustomButton.swift in Sources */,
 				032B6D382426B40E00F7AA13 /* LoadingViewController.swift in Sources */,

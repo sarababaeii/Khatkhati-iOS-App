@@ -24,6 +24,7 @@ enum Colors {
     case white
     case orange
     
+    //MARK: Component Colors
     var componentColor: Color? {
         switch self {
         case .blue:
@@ -43,7 +44,9 @@ enum Colors {
                               bottomBackground: UIColor(red: 8/255, green: 186/255, blue: 12/255, alpha: 1),
                               shadow: UIColor(red: 29/255, green: 198/255, blue: 6/255, alpha: 0.5))
         case .gray:
-            return Color.init(UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1))
+            return Color.init(topBackground: UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1),
+                              shadow: UIColor(red: 138/255, green: 138/255, blue: 138/255, alpha: 0.35))
+
         default:
             return nil
         }

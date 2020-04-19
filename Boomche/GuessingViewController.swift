@@ -55,6 +55,7 @@ class GuessingViewController: UIViewController, UITableViewDelegate, UITableView
             let temp = data[0] as! [String : Any]
             let message = Message(username: temp["username"] as! String, content: temp["text"] as! String)
             self.insertMessage(message, at: IndexPath(row: self.messages.count, section: 0))
+//            self.insertMessage(message, at: IndexPath(row: 0, section: 0))
         }
     }
     
@@ -201,6 +202,6 @@ class GuessingViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        showWaitingViewController()
+//        showWaitingViewController()
     }
 }

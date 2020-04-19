@@ -18,6 +18,11 @@ class Color {
         topBackground = color
     }
     
+    convenience init(topBackground: UIColor, shadow: UIColor) {
+        self.init(topBackground)
+        self.shadow = shadow
+    }
+    
     convenience init(topBackground: UIColor, bottomBackground: UIColor) {
         self.init(topBackground)
         self.bottomBackground = bottomBackground

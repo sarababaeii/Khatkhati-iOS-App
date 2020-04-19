@@ -91,3 +91,5 @@ class EndGameViewController: UIViewController {
         configure()
     }
 }
+
+//TODO: button actions, homeButton image

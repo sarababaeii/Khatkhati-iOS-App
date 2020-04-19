@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class NewLobbyViewController: UIViewController {
+class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var lobbyNameTextField: UITextField!
     @IBOutlet weak var copyButton: CustomButton!
@@ -21,8 +21,43 @@ class NewLobbyViewController: UIViewController {
     @IBOutlet weak var roundsNumberButton: CustomButton!
     @IBOutlet weak var lobbyTypeButton: CustomButton!
     
+    @IBOutlet weak var playersCollectionView: UICollectionView!
+    
     @IBOutlet weak var startGameButton: CustomButton!
     
+    var players = [Player]()
+    
+    //MARK: CollectionView Delegates
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return players.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlayerCellID", for: indexPath) as! PlayerCollectionViewCell
+        let player = playerDataSource(indexPath: indexPath)
+        cell.setAttributes(player: player!)
+        return cell
+    }
+    
+    func playerDataSource(indexPath: IndexPath) -> Player? {
+        return players[indexPath.row]
+    }
+    
+    func initialPlayers() {
+        players.removeAll()
+        
+        players.append(Player(username: "سارا", color: Colors.red.playerColor!, totalScore: 210, currentScore: 25))
+        players.append(Player(username: "Mohammad", color: Colors.green.playerColor!, totalScore: 190, currentScore: 0))
+        players.append(Player(username: "عماد", color: Colors.orange.playerColor!, totalScore: 150, currentScore: 10))
+        players.append(Player(username: "iamarshiamajidi", color: Colors.purple.playerColor!, totalScore: 130, currentScore: 35))
+        players.append(Player(username: "امیر", color: Colors.darkBlue.playerColor!, totalScore: 100, currentScore: 0))
+        players.append(Player(username: "سجاد رضایی‌پور", color: Colors.lightBlue.playerColor!, totalScore: 50, currentScore: 5))
+        
+        players[2].isPainter = true
+        players[3].isFirstGuesser = true
+    }
+    
+    //MARK: Keyboard Management
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         lobbyNameTextField.resignFirstResponder()
     }
@@ -155,6 +190,11 @@ class NewLobbyViewController: UIViewController {
     }
     
     func configure() {
+        playersCollectionView.delegate = self
+        playersCollectionView.dataSource = self
+        
+        initialPlayers()
+        
         setCopyButtonAttributes()
         setLobbyNameTextFieldAttributes()
         setShareViewAttributes()

@@ -25,17 +25,23 @@ class SignUpViewController: UIViewController {
     }
     
     func setNameTextFieldAttributes() {
-        nameTextField.borderStyle = .none
+        nameTextField.layer.borderWidth = 0
     }
     
     func setEmailTextFieldAttributes() {
         emailTextField.setLeftIcon(icon: UIImage(named: "Email")!, padding: 24)
         emailTextField.layer.cornerRadius = 29
+        
+        emailTextField.layer.borderWidth = 1
+        emailTextField.layer.borderColor = Colors.gray.componentColor?.border?.cgColor
     }
     
     func setPasswordTextFieldAttributes() {
         passwordTextField.setLeftIcon(icon: UIImage(named: "Lock")!, padding: 24)
         passwordTextField.layer.cornerRadius = 29
+
+        passwordTextField.layer.borderWidth = 1
+        passwordTextField.layer.borderColor = Colors.gray.componentColor?.border?.cgColor
     }
     
     func setStartButtonAttributes() {

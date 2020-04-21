@@ -13,14 +13,16 @@ class Color {
     var topBackground: UIColor
     var bottomBackground: UIColor?
     var shadow: UIColor?
+    var border: UIColor?
     
     init(_ color: UIColor) {
         topBackground = color
     }
     
-    convenience init(topBackground: UIColor, shadow: UIColor) {
+    convenience init(topBackground: UIColor, shadow: UIColor, border: UIColor) {
         self.init(topBackground)
         self.shadow = shadow
+        self.border = border
     }
     
     convenience init(topBackground: UIColor, bottomBackground: UIColor) {

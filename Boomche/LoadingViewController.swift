@@ -79,7 +79,7 @@ class LoadingViewController: UIViewController {
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //            let controller = storyboard.instantiateViewController(withIdentifier: "GuessingViewController") as UIViewController
-            let controller = storyboard.instantiateViewController(withIdentifier: "SignUpViewController") as UIViewController
+            let controller = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as UIViewController
 //            let controller = storyboard.instantiateViewController(withIdentifier: "DrawingViewController") as UIViewController
             controller.modalPresentationStyle = .fullScreen
             controller.modalTransitionStyle = .coverVertical

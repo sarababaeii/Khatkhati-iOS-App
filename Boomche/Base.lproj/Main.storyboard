@@ -352,7 +352,6 @@
                                         </state>
                                         <connections>
                                             <action selector="createLobbyAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iP4-6R-Jl9"/>
-                                            <segue destination="I4V-oy-IXb" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="BXf-KN-ZBA"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -442,7 +441,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZm-zH-hhY" userLabel="View1.0">
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="89"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="نام اتاق" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gXE-TU-uIa">
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="نام اتاق" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gXE-TU-uIa">
                                                 <rect key="frame" x="0.0" y="0.0" width="311" height="89"/>
                                                 <color key="backgroundColor" red="0.91968107876712324" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
@@ -2078,7 +2077,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="پایان بازی!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qj5-FY-O7Y">
-                                        <rect key="frame" x="125.5" y="28" width="124.5" height="47"/>
+                                        <rect key="frame" x="121.5" y="25" width="132" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Qj5-FY-O7Y" secondAttribute="height" multiplier="132:50" id="DmE-b1-tXA"/>
                                         </constraints>
@@ -2107,13 +2106,13 @@
                                         <rect key="frame" x="86" y="158" width="93" height="95"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سارا" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVG-he-LMM">
-                                                <rect key="frame" x="17" y="0.0" width="59.5" height="67"/>
+                                                <rect key="frame" x="18.5" y="0.0" width="56.5" height="57.5"/>
                                                 <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="36"/>
                                                 <color key="textColor" red="1" green="0.26875725388526917" blue="0.42695242166519165" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="برنده شد!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiy-uV-B9i">
-                                                <rect key="frame" x="0.0" y="67" width="93" height="28"/>
+                                                <rect key="frame" x="0.0" y="57.5" width="93" height="37.5"/>
                                                 <fontDescription key="fontDescription" name="Vazir-Thin" family="Vazir" pointSize="24"/>
                                                 <color key="textColor" red="0.21862572429999999" green="0.21085071559999999" blue="0.3258422017" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2131,10 +2130,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xam-d0-BKh" userLabel="View1.1">
-                                        <rect key="frame" x="7" y="216.5" width="45" height="45"/>
+                                        <rect key="frame" x="7" y="211.5" width="45" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۲۱۰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Om-0N-afu">
-                                                <rect key="frame" x="8" y="10.5" width="29.5" height="23.5"/>
+                                                <rect key="frame" x="10" y="7" width="25" height="31.5"/>
                                                 <fontDescription key="fontDescription" name="Vazir-Black" family="Vazir" pointSize="20"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2169,7 +2168,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۱۹۰" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZN9-sC-kfo">
-                                                <rect key="frame" x="20.5" y="9.5" width="35" height="41.5"/>
+                                                <rect key="frame" x="22" y="11.5" width="32" height="37.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ZN9-sC-kfo" secondAttribute="height" multiplier="32:38" id="xTB-7E-Jyx"/>
                                                 </constraints>
@@ -2178,7 +2177,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="امتیاز" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qhn-39-GqG">
-                                                <rect key="frame" x="27" y="51" width="22.5" height="13"/>
+                                                <rect key="frame" x="26.5" y="49" width="23.5" height="17.5"/>
                                                 <fontDescription key="fontDescription" name="Vazir-Thin" family="Vazir" pointSize="11"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2219,7 +2218,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۱۵۰" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kk1-Oi-qki">
-                                                <rect key="frame" x="20.5" y="9.5" width="35" height="41.5"/>
+                                                <rect key="frame" x="22" y="11" width="32.5" height="38.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Kk1-Oi-qki" secondAttribute="height" multiplier="32:38" id="Ptw-4S-OOi"/>
                                                 </constraints>
@@ -2228,7 +2227,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="امتیاز" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z37-Fz-gEz">
-                                                <rect key="frame" x="27" y="51" width="22.5" height="13"/>
+                                                <rect key="frame" x="26.5" y="49.5" width="23.5" height="17.5"/>
                                                 <fontDescription key="fontDescription" name="Vazir-Thin" family="Vazir" pointSize="11"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2244,7 +2243,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عماد" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ni-bm-WcQ">
-                                        <rect key="frame" x="261" y="22" width="34" height="32"/>
+                                        <rect key="frame" x="257" y="22" width="38" height="32"/>
                                         <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="21"/>
                                         <color key="textColor" red="0.98431372549999996" green="0.47058823529999999" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2459,7 +2458,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ورود به بازی" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZP-dY-NCy">
-                                        <rect key="frame" x="112.5" y="16.5" width="150" height="58.5"/>
+                                        <rect key="frame" x="119" y="21.5" width="137.5" height="53.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="WZP-dY-NCy" secondAttribute="height" multiplier="128:50" id="YJF-bZ-ZCh"/>
                                         </constraints>
@@ -2468,7 +2467,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGo-Mb-wQx">
-                                        <rect key="frame" x="32" y="29" width="33" height="33"/>
+                                        <rect key="frame" x="32" y="31.5" width="33" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="JGo-Mb-wQx" secondAttribute="height" multiplier="1:1" id="Ktr-IV-K1x"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="i2B-Yw-OgB"/>
@@ -2556,7 +2555,7 @@
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jj-Cs-3MJ" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
-                                                <rect key="frame" x="57.5" y="57.5" width="135" height="45"/>
+                                                <rect key="frame" x="69.5" y="61.5" width="111" height="37"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="8jj-Cs-3MJ" secondAttribute="height" multiplier="120:40" id="xJj-BS-ssI"/>
                                                 </constraints>
@@ -2641,6 +2640,6 @@
         <image name="paint‌Brush" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4nJ-e4-cP0"/>
+        <segue reference="B02-37-tGE"/>
     </inferredMetricsTieBreakers>
 </document>

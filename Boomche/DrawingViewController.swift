@@ -237,7 +237,7 @@ class DrawingViewController: UIViewController, UITableViewDelegate, UITableViewD
     func configure() {
         drawing = Drawing(canvasView: self.canvasView, canvas: self.canvas, templeCanvas: self.templeCanvas)
         
-        setTimer()
+//        setTimer()
         
         initializeArrays()
         setColorPaletteAttributes()
@@ -253,7 +253,7 @@ class DrawingViewController: UIViewController, UITableViewDelegate, UITableViewD
     func showChoosingWordViewController() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "ChoosingWordViewController") as UIViewController
-        controller.modalPresentationStyle = .fullScreen
+        controller.modalPresentationStyle = .overCurrentContext
         controller.modalTransitionStyle = .coverVertical
         present(controller, animated: true, completion: nil)
     }
@@ -262,11 +262,21 @@ class DrawingViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         // Do any additional setup after loading the view.
      
+        
+        
+        configure()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         if !wordChose {
             showChoosingWordViewController()
             wordChose = true
         }
         
-        configure()
+        if wordChose {
+            setTimer()
+        }
     }
 }
+
+//TODO: Timer

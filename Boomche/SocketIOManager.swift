@@ -33,7 +33,7 @@ class SocketIOManager: NSObject {
     }
     
     private func configure() {
-        guard let url = URL(string: "http://37.221.114.125:3000") else {
+        guard let url = URL(string: "http://boomche.ir:3000") else {
             return
         }
 
@@ -53,7 +53,7 @@ class SocketIOManager: NSObject {
         }
         socket.connect()
         
-        addHandlers()
+//        addHandlers()
     }
     
     func closeConnection() {
@@ -80,118 +80,33 @@ class SocketIOManager: NSObject {
         }
     }
     
-    //MARK: Adding Handlers
-    func addHandlers() {
-        socket?.on("players_list") { data, ack in
-            print("^^^^^RECEIVING PLAYERS^^^^^^")
-            
-            let temp = data[0] as! [String : Any]
-            self.users = temp["users"] as! [String]
-        }
-        
-//        socket?.on("conversation_private") { data, ack in
-//            print("^^^^^RECEIVING DRAW^^^^^^")
-//            
-//            var temp = data[0] as! [String : Any]
-//            temp = temp["data"] as! [String : Any]
-//            
-//            if let roomID = GameConstants.roomID {
-//                if roomID == temp["room"] as! String {
-//                    self.receiveDrawing(state: temp["state"] as! String, point: temp["point"] as! [CGFloat])
-//                }
-//            }
-//        }
-        
-        //TODO: is it correct?!
-        // vaghti in umad be loading elam kone ke bere safhe bad
-//        socket?.on("start_game") { data, ack in
-//            print("^^^^^RECEIVING WORDS^^^^^^")
-//            
-//            let temp = data[0] as! [String : Any]
-//            
-//            self.words = temp["words"] as! [String]
-//            self.determiningNextPage(username: temp["username"] as! String)
-//            
-////            if let username = GameConstants.username,
-////                username == temp["username"] as! String {
-////                    self.words = temp["words"] as! [String]
-////            }
-//        }
-        
-//        socket?.on("chat_and_guess") {data, ack in
-//            print("^^^^^RECEIVING MESSAGE^^^^^^")
-//            
-//            let temp = data[0] as! [String : Any]
-//            
-//            let message = Message(username: temp["username"] as! String, content: temp["text"] as! String)
-//            
-//            print("@@@@@@ \(message.username): \(message.content)")
-//            
-//            self.receiveMessage(message)
-//        }
-    }
-    
-    func determiningNextPage(username: String) {
-        if GameConstants.username == username {
-            nextViewControllerIdentifier = "DrawingViewController"
-        } else {
-            nextViewControllerIdentifier = "GuessingViewController"
-        }
-        
-        if let topController = UIApplication.topViewController() {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: nextViewControllerIdentifier) as UIViewController
-            controller.modalPresentationStyle = .fullScreen
-            controller.modalTransitionStyle = .coverVertical
-            topController.present(controller, animated: true, completion: nil)
-        }
+    //MARK: Creating Lobby
+    func creatLobby() {
+        socket?.emit("send_generate_key")
     }
     
     //MARK: Joining Game
-    func joinGame(roomID: String, username: String) {
-        let data = ["room_id" : roomID, "username" : username]
+    func joinGame() {
+        let data = ["room_id" : GameConstants.roomID, "username" : GameConstants.username]
         socket?.emit("subscribe", data)
     }
     
-    func getPlayers() {
-        for user in users {
-            print(user)
-        }
+    //MARK: Game Settings
+    func gameSetting(name: String, value: Int) {
+        let data = ["name" : name, "val" : value, "room_id" : GameConstants.roomID!] as [String : Any]
+        socket?.emit("send_room_settings", data)
     }
     
     //MARK: Starting Game
-    func startGame(roomID: String) {
-        let data = ["room_id" : roomID]
-        socket?.emit("start_game_on", data)
+    func startGame() {
+//        let data = ["room_id" : GameConstants.roomID]
+        socket?.emit("start_game_on", GameConstants.roomID!)
     }
     
-    //MARK: Drawing
-    func sendDrawing(roomID: String, state: String, point: [CGFloat]) {
-        print(">>>>>SENDING DRAWING<<<<<")
-        let data = ["room": roomID, "state": state, "point": point] as [String : Any]
-        //color and brush size not defined
-        socket?.emit("send_message", data)
+    func playAgain() {
+        let data = ["room_id" : GameConstants.roomID]
+        socket?.emit("send_play_again", data)
     }
-    
-//    func receiveDrawing(state: String, point: [CGFloat]) {
-//        switch state {
-//        case "start":
-////            print("!!!!!DRAWING started!!!!!")
-////            GuessingViewController.drawing?.touchesBegan(CGPoint(x: point[0], y: point[1]))
-//            drawDelegate?.begin(CGPoint(x: point[0], y: point[1]))
-////            GuessingViewController.sharedInstance!.begin()
-//        case "moving":
-////            print("!!!!!DRAWING moved!!!!!")
-////            GuessingViewController.drawing?.touchesMoved(CGPoint(x: point[0], y: point[1]))
-//            drawDelegate?.move(CGPoint(x: point[0], y: point[1]))
-//        case "end":
-////            print("!!!!!DRAWING ended!!!!!")
-////            GuessingViewController.drawing?.touchesEnded()
-//            drawDelegate?.end()
-//        default:
-//            print("Error in receiving draw")
-//        }
-//    }
     
     //MARK: Choosing word
     func sendWord(word: String) {
@@ -202,8 +117,12 @@ class SocketIOManager: NSObject {
         }
     }
     
-    func receiveWords() -> [String] {
-        return words
+    //MARK: Drawing
+    func sendDrawing(roomID: String, state: String, point: [CGFloat]) {
+        print(">>>>>SENDING DRAWING<<<<<")
+        let data = ["room": roomID, "state": state, "point": point] as [String : Any]
+        //color and brush size not defined
+        socket?.emit("send_message", data)
     }
     
     //MARK: Chatting
@@ -214,8 +133,11 @@ class SocketIOManager: NSObject {
             socket?.emit("chat", data)
         }
     }
+//    func receiveWords() -> [String] {
+//        return words
+//    }
     
-    func receiveMessage(_ message: Message) {
-        messageDelegate?.showMessage(message)
-    }
+//    func receiveMessage(_ message: Message) {
+//        messageDelegate?.showMessage(message)
+//    }
 }

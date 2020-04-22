@@ -64,5 +64,3 @@ class SignUpViewController: UIViewController {
         configure()
     }
 }
-
-//TODO: blue line, functionality, border of textFields

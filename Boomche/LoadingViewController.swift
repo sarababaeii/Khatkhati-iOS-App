@@ -30,10 +30,12 @@ class LoadingViewController: UIViewController {
         SocketIOManager.sharedInstance.socket?.on("start_game") { data, ack in
             print("^^^^^RECEIVING WORDS^^^^^^")
             
+            
             let temp = data[0] as! [String : Any]
-                    
-            ChoosingWordViewController.words = temp["words"] as? [String]
-            self.determiningNextPage(username: temp["username"] as! String)
+               
+            print("YOOHOO \(temp)")
+//            ChoosingWordViewController.words = temp["words"] as? [String]
+//            self.determiningNextPage(username: temp["username"] as! String)
                     
 //            if let username = GameConstants.username,
 //                username == temp["username"] as! String {
@@ -78,8 +80,8 @@ class LoadingViewController: UIViewController {
 //            SocketIOManager.sharedInstance.startGame(roomID: GameConstants.roomID!)
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let controller = storyboard.instantiateViewController(withIdentifier: "GuessingViewController") as UIViewController
-            let controller = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as UIViewController
+            let controller = storyboard.instantiateViewController(withIdentifier: "GuessingViewController") as UIViewController
+//            let controller = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as UIViewController
 //            let controller = storyboard.instantiateViewController(withIdentifier: "DrawingViewController") as UIViewController
             controller.modalPresentationStyle = .fullScreen
             controller.modalTransitionStyle = .coverVertical
@@ -90,7 +92,7 @@ class LoadingViewController: UIViewController {
     func configure() {
         setLoadingBackgroundGif()
 
-//        addSocketHandler()
+        addSocketHandler()
         
         on()
     }

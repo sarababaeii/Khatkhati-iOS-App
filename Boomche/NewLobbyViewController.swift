@@ -27,6 +27,56 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     var players = [Player]()
     
+    //MARK: Socket Management
+    func addSocketHandler() {
+        SocketIOManager.sharedInstance.socket?.on("init_data") { data, ack in
+            print("^^^^^RECEIVING ROOM_DATA^^^^^^")
+            
+            let temp = data[0] as! [String : Any]
+            let users = temp["users"] as! [String]
+            self.updatePlayers(users: users)
+            
+            let settings = temp["settings"] as! [String : Any]
+//                let time = settings["time"] as! Int
+            let round = settings["round"] as! Int
+            
+            GameConstants.roundNumber = round
+            self.roundsNumberButton.setTitle(String(round).convertEnglishNumToPersianNum(), for: .normal)
+        }
+        
+        SocketIOManager.sharedInstance.socket?.on("get_room_settings") { data, ack in
+            print("^^^^^RECEIVING ROOM_DATA^^^^^^")
+            
+            var temp = data[0] as! [String : Any]
+            temp = temp["data"] as! [String : Any]
+            
+            if GameConstants.roomID == (temp["room_id"] as! String) {
+                let value = temp["val"] as! Int
+                
+                if (temp["name"] as! String) == "round"{
+                    GameConstants.roundNumber = value
+                    self.roundsNumberButton.setTitle(String(value).convertEnglishNumToPersianNum(), for: .normal)
+                }
+            }
+        }
+        
+        SocketIOManager.sharedInstance.socket?.on("start_game") { data, ack in
+            print("^^^^^RECEIVING WORDS^^^^^^")
+            
+            let temp = data[0] as! [String : Any]
+            //TODO: Should get socket id
+            
+            if (temp["username"] as! String) == GameConstants.username {
+                ChoosingWordViewController.words = temp["words"] as? [String]
+                self.showNextPage(identifier: "DrawingViewController")
+            }
+            else{
+                WaitingViewController.chooserName = temp["username"] as! String
+                self.showNextPage(identifier: "GuessingViewController")
+            }
+        }
+    }
+    
     //MARK: CollectionView Delegates
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return players.count
@@ -43,18 +93,12 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
         return players[indexPath.row]
     }
     
-    func initialPlayers() {
+    func updatePlayers(users: [String]) { //doesn't show
         players.removeAll()
         
-        players.append(Player(username: "سارا", color: Colors.red.playerColor!, totalScore: 210, currentScore: 25))
-        players.append(Player(username: "Mohammad", color: Colors.green.playerColor!, totalScore: 190, currentScore: 0))
-        players.append(Player(username: "عماد", color: Colors.orange.playerColor!, totalScore: 150, currentScore: 10))
-        players.append(Player(username: "iamarshiamajidi", color: Colors.purple.playerColor!, totalScore: 130, currentScore: 35))
-        players.append(Player(username: "امیر", color: Colors.darkBlue.playerColor!, totalScore: 100, currentScore: 0))
-        players.append(Player(username: "سجاد رضایی‌پور", color: Colors.lightBlue.playerColor!, totalScore: 50, currentScore: 5))
-        
-        players[2].isPainter = true
-        players[3].isFirstGuesser = true
+        for user in users {
+            players.append(Player(username: user, color: Colors.red.playerColor!))
+        }
     }
     
     //MARK: Keyboard Management
@@ -77,7 +121,7 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func displaySharingOption(lobbyName: String){
-        let note = "بیا خط‌خطی!\n"
+        let note = "بیا بوم‌چه\n"
         let items = [note as Any, lobbyName as Any]
 
         let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: nil)
@@ -96,22 +140,30 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
     //MARK: Game Properties
     @IBAction func changeRoundsNumber(_ sender: Any) {
         let currentRoundNumber = roundsNumberButton.titleLabel?.text
-        var nextRoundNumber: String
+        var nextRoundNumberText: String
+        var nextRoundNumber: Int
         
         switch currentRoundNumber! {
         case "۳":
-            nextRoundNumber = "۴"
+            nextRoundNumberText = "۴"
+            nextRoundNumber = 4
         case "۴":
-            nextRoundNumber = "۵"
+            nextRoundNumberText = "۵"
+            nextRoundNumber = 5
         case "۵":
-            nextRoundNumber = "۶"
+            nextRoundNumberText = "۶"
+            nextRoundNumber = 6
         case "۶":
-            nextRoundNumber = "۳"
+            nextRoundNumberText = "۳"
+            nextRoundNumber = 3
         default:
-            nextRoundNumber = "۳"
+            nextRoundNumberText = "۳"
+            nextRoundNumber = 3
         }
         
-        roundsNumberButton.setTitle(nextRoundNumber, for: .normal)
+        SocketIOManager.sharedInstance.gameSetting(name: "round", value: nextRoundNumber)
+        
+        roundsNumberButton.setTitle(nextRoundNumberText, for: .normal)
     }
     
     @IBAction func changeLobbyType(_ sender: Any) {
@@ -127,18 +179,22 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
             nextLobbyType = "عمومی"
         }
         
+        //Socket
         lobbyTypeButton.setTitle(nextLobbyType, for: .normal)
     }
     
     //MARK: Starting Game
     @IBAction func startGame(_ sender: Any) {
-        presentLoadingViewController()
+        SocketIOManager.sharedInstance.startGame()
+//        showNextPage(identifier: "LoadingViewController")
     }
     
-    func presentLoadingViewController() {
-        LoadingViewController.parentStoryboardID = "NewLobbyViewController"
-
-        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoadingViewController") as UIViewController
+    func showNextPage(identifier: String) {
+        if identifier == "LoadingViewController" {
+            LoadingViewController.parentStoryboardID = "NewLobbyViewController"
+        }
+        
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: identifier) as UIViewController
 
         controller.modalPresentationStyle = .fullScreen
         controller.modalTransitionStyle = .coverVertical
@@ -155,6 +211,7 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func setLobbyNameTextFieldAttributes() {
         lobbyNameTextField.layer.cornerRadius = 43
+        lobbyNameTextField.text = GameConstants.roomID
     }
     
     func setShareViewAttributes() {
@@ -190,10 +247,11 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func configure() {
+        
         playersCollectionView.delegate = self
         playersCollectionView.dataSource = self
         
-        initialPlayers()
+//        initialPlayers()
         
         setCopyButtonAttributes()
         setLobbyNameTextFieldAttributes()
@@ -206,6 +264,8 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
         setLobbyTypeButtonAttributes()
         
         setStartGameButtonAttributes()
+        
+        addSocketHandler()
     }
     
     override func viewDidLoad() {
@@ -218,4 +278,4 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
 }
 
-//TODO: Keyboard management, if lobbyNameTextField was empty?!
+//TODO: Clickable & unclickable

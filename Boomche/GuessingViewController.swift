@@ -176,14 +176,8 @@ class GuessingViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func showWaitingViewController() {
-        EndGameViewController.winnerPlayer = Player(username: "سارا", color: Colors.red.playerColor!, totalScore: 210, currentScore: 0)
-        EndGameViewController.secondPlacePlayer = Player(username: "Mohammad", color: Colors.green.playerColor!, totalScore: 190, currentScore: 0)
-        EndGameViewController.thirdPlacePlayer = Player(username: "عماد", color: Colors.orange.playerColor!, totalScore: 150, currentScore: 10)
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let controller = storyboard.instantiateViewController(withIdentifier: "WaitingViewController") as UIViewController
-//        let controller = storyboard.instantiateViewController(withIdentifier: "ScoresViewController") as UIViewController
-        let controller = storyboard.instantiateViewController(withIdentifier: "EndGameViewController") as UIViewController
+        let controller = storyboard.instantiateViewController(withIdentifier: "WaitingViewController") as UIViewController
         controller.modalPresentationStyle = .overCurrentContext
         controller.modalTransitionStyle = .coverVertical
         present(controller, animated: true, completion: nil)
@@ -194,14 +188,12 @@ class GuessingViewController: UIViewController, UITableViewDelegate, UITableView
         // Do any additional setup after loading the view.
         
         configure()
-        
-//        if !wordChose {
-            
-//            wordChose = true
-//        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
-//        showWaitingViewController()
+        if !wordChose {
+            showWaitingViewController()
+            wordChose = true
+        }
     }
 }

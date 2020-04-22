@@ -17,9 +17,15 @@ class Player {
     var isPainter = false
     var isFirstGuesser = false
     
-    init(username: String, color: Color, totalScore: Int, currentScore: Int) {
+    init(username: String, color: Color) {
         self.username = username
         self.color = color
+        self.totalScore = 0
+        self.currentScore = 0
+    }
+    
+    convenience init(username: String, color: Color, totalScore: Int, currentScore: Int) {
+        self.init(username: username, color: color)
         self.totalScore = totalScore
         self.currentScore = currentScore
     }

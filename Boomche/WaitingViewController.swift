@@ -15,8 +15,17 @@ class WaitingViewController: UIViewController {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var chooserNameLabel: UILabel!
     
-    var chooserName = "سارا"
+    static var chooserName = "سارا"
     
+    //MARK: Socket Management
+    func addSocketHandler() {
+        SocketIOManager.sharedInstance.socket?.on("lets_play") { data, ack in
+            print("^^^^^GAME STARTED^^^^^^")
+            
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+
     //MARK: Timer Setting
     func setTimer() {
         let timer = TimerSetting(label: timerLabel, time: 10)
@@ -29,7 +38,7 @@ class WaitingViewController: UIViewController {
     
     func setChooserNameLabelAttributes() {
         //TODO: Setting name and color of chooser given from server
-        chooserNameLabel.text = chooserName
+        chooserNameLabel.text = WaitingViewController.chooserName
     }
     
     func configure() {
@@ -37,6 +46,8 @@ class WaitingViewController: UIViewController {
         setChooserNameLabelAttributes()
         
         setTimer()
+        
+        addSocketHandler()
     }
     
     override func viewDidLoad() {

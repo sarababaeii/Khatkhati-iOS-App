@@ -11,4 +11,6 @@ import Foundation
 class GameConstants {
     static var roomID: String?
     static var username = "Shayan"
+    static var roundNumber = 3
+    static var lobbyType = "Private"
 }

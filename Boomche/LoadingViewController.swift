@@ -26,38 +26,19 @@ class LoadingViewController: UIViewController {
     
     //MARK: Socket Management
     //It would be more clear if it was implemented in SocketIOManager class
-    func addSocketHandler() {
-        SocketIOManager.sharedInstance.socket?.on("start_game") { data, ack in
-            print("^^^^^RECEIVING WORDS^^^^^^")
-            
-            
-            let temp = data[0] as! [String : Any]
-               
-            print("YOOHOO \(temp)")
-//            ChoosingWordViewController.words = temp["words"] as? [String]
-//            self.determiningNextPage(username: temp["username"] as! String)
-                    
-//            if let username = GameConstants.username,
-//                username == temp["username"] as! String {
-//                    self.words = temp["words"] as! [String]
-//            }
-        }
-    }
+//    func addSocketHandler() {
+//        SocketIOManager.sharedInstance.socket?.on("start_game") { data, ack in
+//            print("^^^^^RECEIVING WORDS^^^^^^")
+////            let temp = data[0] as! [String : Any]
+//        }
+//    }
     
     func determiningNextPage(username: String) {
         if GameConstants.username == username {
-            showNextPage("DrawingViewController")
+            showNextPage(identifier: "DrawingViewController")
         } else {
-            showNextPage("GuessingViewController")
+            showNextPage(identifier: "GuessingViewController")
         }
-    }
-    
-    func showNextPage(_ identifier: String) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: identifier) as UIViewController
-        controller.modalPresentationStyle = .fullScreen
-        controller.modalTransitionStyle = .coverVertical
-        present(controller, animated: true, completion: nil)
     }
     
     //MARK: UI Handling
@@ -77,22 +58,18 @@ class LoadingViewController: UIViewController {
         }
 
         if counter == 0 {
-//            SocketIOManager.sharedInstance.startGame(roomID: GameConstants.roomID!)
-            
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "GuessingViewController") as UIViewController
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //            let controller = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as UIViewController
-//            let controller = storyboard.instantiateViewController(withIdentifier: "DrawingViewController") as UIViewController
-            controller.modalPresentationStyle = .fullScreen
-            controller.modalTransitionStyle = .coverVertical
-            present(controller, animated: true, completion: nil)
+//            controller.modalPresentationStyle = .fullScreen
+//            controller.modalTransitionStyle = .coverVertical
+//            present(controller, animated: true, completion: nil)
         }
     }
     
     func configure() {
         setLoadingBackgroundGif()
 
-        addSocketHandler()
+//        addSocketHandler()
         
         on()
     }

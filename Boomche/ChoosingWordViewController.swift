@@ -38,8 +38,7 @@ class ChoosingWordViewController: UIViewController {
     }
     
     func initialize() {
-        buttons = [firstWordButton, secondWordButton, thirdWordButton]
-//        ChoosingWordViewController.words = SocketIOManager.sharedInstance.receiveWords()
+            buttons = [firstWordButton, secondWordButton, thirdWordButton]
     }
     
     //MARK: UI Handling

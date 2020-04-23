@@ -40,7 +40,7 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
 //                let time = settings["time"] as! Int
             let round = settings["round"] as! Int
             
-            GameConstants.roundNumber = round
+//            GameConstants.roundNumber = round
             self.roundsNumberButton.setTitle(String(round).convertEnglishNumToPersianNum(), for: .normal)
         }
         
@@ -51,11 +51,11 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
             temp = temp["data"] as! [String : Any]
             
             if GameConstants.roomID == (temp["room_id"] as! String) {
-                let value = temp["val"] as! Int
+                let value = temp["val"] as! String
                 
                 if (temp["name"] as! String) == "round"{
-                    GameConstants.roundNumber = value
-                    self.roundsNumberButton.setTitle(String(value).convertEnglishNumToPersianNum(), for: .normal)
+//                    GameConstants.roundNumber = value
+                    self.roundsNumberButton.setTitle(value.convertEnglishNumToPersianNum(), for: .normal)
                 }
             }
         }
@@ -63,17 +63,7 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
         SocketIOManager.sharedInstance.socket?.on("start_game") { data, ack in
             print("^^^^^RECEIVING WORDS^^^^^^")
             
-            let temp = data[0] as! [String : Any]
-            //TODO: Should get socket id
-            
-            if (temp["username"] as! String) == GameConstants.username {
-                ChoosingWordViewController.words = temp["words"] as? [String]
-                self.showNextPage(identifier: "DrawingViewController")
-            }
-            else{
-                WaitingViewController.chooserName = temp["username"] as! String
-                self.showNextPage(identifier: "GuessingViewController")
-            }
+            SocketIOManager.sharedInstance.receiveWords(from: self, data: data[0] as! [String : Any])
         }
     }
     
@@ -98,8 +88,36 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         for user in users {
             players.append(Player(username: user, color: Colors.red.playerColor!))
+            print("&&&&&&& \(user) &&&&&&")
+        }
+        players.append(Player(username: "شایان", color: Colors.orange.playerColor!))
+        players.append(Player(username: "ارشیا", color: Colors.orange.playerColor!))
+    }
+    
+    func initialPlayers() {
+        players.removeAll()
+        
+        players.append(Player(username: "سارا", color: Colors.orange.playerColor!))
+        players.append(Player(username: "ارشیا", color: Colors.orange.playerColor!))
+    }
+    
+    var counter = 3
+
+    func on() {
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+    }
+
+    @objc func updateCounter() {
+        if counter > 0 {
+            counter -= 1
+        }
+
+        if counter == 0 {
+            players.append(Player(username: "شایان", color: Colors.orange.playerColor!))
+            print("DID IT&&&&&&&")
         }
     }
+    
     
     //MARK: Keyboard Management
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -161,7 +179,7 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
             nextRoundNumber = 3
         }
         
-        SocketIOManager.sharedInstance.gameSetting(name: "round", value: nextRoundNumber)
+        SocketIOManager.sharedInstance.gameSetting(name: "round", value: String(nextRoundNumber))
         
         roundsNumberButton.setTitle(nextRoundNumberText, for: .normal)
     }
@@ -187,19 +205,6 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBAction func startGame(_ sender: Any) {
         SocketIOManager.sharedInstance.startGame()
 //        showNextPage(identifier: "LoadingViewController")
-    }
-    
-    func showNextPage(identifier: String) {
-        if identifier == "LoadingViewController" {
-            LoadingViewController.parentStoryboardID = "NewLobbyViewController"
-        }
-        
-        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: identifier) as UIViewController
-
-        controller.modalPresentationStyle = .fullScreen
-        controller.modalTransitionStyle = .coverVertical
-
-        present(controller, animated: true, completion: nil)
     }
     
     //MARK: UI Handling
@@ -251,7 +256,8 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
         playersCollectionView.delegate = self
         playersCollectionView.dataSource = self
         
-//        initialPlayers()
+        initialPlayers()
+//        on()
         
         setCopyButtonAttributes()
         setLobbyNameTextFieldAttributes()
@@ -278,4 +284,4 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
 }
 
-//TODO: Clickable & unclickable
+//TODO: Clickable & unclickable, add insertPlayer function (insertMessage) for dynamic collection view

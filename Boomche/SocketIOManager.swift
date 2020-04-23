@@ -92,7 +92,7 @@ class SocketIOManager: NSObject {
     }
     
     //MARK: Game Settings
-    func gameSetting(name: String, value: Int) {
+    func gameSetting(name: String, value: String) {
         let data = ["name" : name, "val" : value, "room_id" : GameConstants.roomID!] as [String : Any]
         socket?.emit("send_room_settings", data)
     }
@@ -103,12 +103,40 @@ class SocketIOManager: NSObject {
         socket?.emit("start_game_on", GameConstants.roomID!)
     }
     
+    func endOfRound(data: [String : Any]) {
+//        var temp = data[0] as! [String : Any]
+        //TODO: end of game
+
+        if (data["endOfGame"] as! Int) == 1 {
+            ScoresViewController.isLastRound = true
+        }
+        
+        var temp = data["data"] as! [String : Any]
+        ScoresViewController.users = temp["users"] as! [[String : Any]]
+
+        temp = temp["room"] as! [String : Any]
+        ScoresViewController.word = (temp["word"] as? String)!
+    }
+    
     func playAgain() {
         let data = ["room_id" : GameConstants.roomID]
         socket?.emit("send_play_again", data)
     }
     
     //MARK: Choosing word
+    func receiveWords(from viewController: UIViewController, data: [String : Any]) {
+        //TODO: Should get socket id
+        
+        if (data["username"] as! String) == GameConstants.username {
+            ChoosingWordViewController.words = data["words"] as? [String]
+            viewController.showNextPage(identifier: "DrawingViewController")
+        }
+        else{
+            WaitingViewController.chooserName = data["username"] as! String
+            viewController.showNextPage(identifier: "GuessingViewController")
+        }
+    }
+    
     func sendWord(word: String) {
         print(">>>>>SENDING WORD<<<<<")
         if let roomID = GameConstants.roomID {
@@ -133,9 +161,8 @@ class SocketIOManager: NSObject {
             socket?.emit("chat", data)
         }
     }
-//    func receiveWords() -> [String] {
-//        return words
-//    }
+    
+    
     
 //    func receiveMessage(_ message: Message) {
 //        messageDelegate?.showMessage(message)

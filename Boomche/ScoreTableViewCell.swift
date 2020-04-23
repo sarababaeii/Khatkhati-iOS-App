@@ -23,8 +23,8 @@ class ScoreTableViewCell: UITableViewCell {
     
     func setAttributes(player: Player){
         nameLabel.text = player.username
-        currentScoreLabel.text = "+\(StringExtension.convertEnglishNumToPersianNum(num: String(player.currentScore))) امتیاز"
-        totalScoreLabel.text = StringExtension.convertEnglishNumToPersianNum(num: String(player.totalScore))
+        currentScoreLabel.text = "+\(String(player.currentScore).convertEnglishNumToPersianNum()) امتیاز"
+        totalScoreLabel.text = String(player.totalScore).convertEnglishNumToPersianNum()
         nameLabel.textColor = player.color.topBackground
         colorView.backgroundColor = player.color.topBackground
         

@@ -41,7 +41,9 @@ class EndGameViewController: UIViewController {
         winnerNameLabel.textColor = EndGameViewController.winnerPlayer?.color.topBackground
         winnerScoreView.backgroundColor = EndGameViewController.winnerPlayer?.color.topBackground
         
-        winnerScoreLabel.text = StringExtension.convertEnglishNumToPersianNum(num: String(EndGameViewController.winnerPlayer!.totalScore))
+        if let winner = EndGameViewController.winnerPlayer {
+            winnerScoreLabel.text = String(winner.totalScore).convertEnglishNumToPersianNum()
+        }
     }
     
     func setSecondPlaceAttributes() {
@@ -51,7 +53,9 @@ class EndGameViewController: UIViewController {
         secondPlaceNameLabel.textColor = EndGameViewController.secondPlacePlayer?.color.topBackground
         secondPlaceScoreView.backgroundColor = EndGameViewController.secondPlacePlayer?.color.topBackground
         
-        secondPlaceScoreLabel.text = StringExtension.convertEnglishNumToPersianNum(num: String(EndGameViewController.secondPlacePlayer!.totalScore))
+        if let second = EndGameViewController.secondPlacePlayer {
+            secondPlaceScoreLabel.text = String(second.totalScore).convertEnglishNumToPersianNum()
+        }
     }
     
     func setThirdPlaceAttributes() {
@@ -61,7 +65,9 @@ class EndGameViewController: UIViewController {
         thirdPlaceNameLabel.textColor = EndGameViewController.thirdPlacePlayer?.color.topBackground
         thirdPlaceScoreView.backgroundColor = EndGameViewController.thirdPlacePlayer?.color.topBackground
         
-        thirdPlaceScoreLabel.text = StringExtension.convertEnglishNumToPersianNum(num: String(EndGameViewController.thirdPlacePlayer!.totalScore))
+        if let third = EndGameViewController.thirdPlacePlayer {
+            thirdPlaceScoreLabel.text = String(third.totalScore).convertEnglishNumToPersianNum()
+        }
     }
     
     func setAgianButtonAttributes() {

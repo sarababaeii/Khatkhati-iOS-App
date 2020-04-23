@@ -15,16 +15,8 @@ class JoinGameViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lobbyCodeTextField: UITextField!
     @IBOutlet weak var joinButton: CustomButton!
     
-    func showNextPage(_ identifier: String){
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: identifier) as UIViewController
-        controller.modalPresentationStyle = .fullScreen
-        controller.modalTransitionStyle = .coverVertical
-        present(controller, animated: true, completion: nil)
-    }
-    
     @IBAction func randomGameAction(_ sender: Any) {
-        showNextPage("LoadingViewController")
+        showNextPage(identifier: "LoadingViewController")
     }
     
     @IBAction func joinGameAction(_ sender: Any) {
@@ -33,7 +25,7 @@ class JoinGameViewController: UIViewController, UITextFieldDelegate {
             SocketIOManager.sharedInstance.joinGame()
             lobbyCodeTextField.resignFirstResponder()
             
-            self.showNextPage("NewLobbyViewController")
+            self.showNextPage(identifier: "NewLobbyViewController")
         }
     }
     

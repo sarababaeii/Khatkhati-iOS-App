@@ -10,7 +10,7 @@
 		031F857C244B76CE00C8B947 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031F857B244B76CE00C8B947 /* StringExtension.swift */; };
 		031F857E244B990C00C8B947 /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031F857D244B990C00C8B947 /* EndGameViewController.swift */; };
 		0323C15F242EB6A20074856A /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0323C15E242EB6A20074856A /* SocketIOManager.swift */; };
-		03275162244E49C1005D4474 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03275161244E49C1005D4474 /* CustomTextField.swift */; };
+		03275162244E49C1005D4474 /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03275161244E49C1005D4474 /* TextFieldExtension.swift */; };
 		032B6D382426B40E00F7AA13 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B6D372426B40E00F7AA13 /* LoadingViewController.swift */; };
 		033602432427AF4B00925975 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033602422427AF4B00925975 /* DrawingViewController.swift */; };
 		03506C02243257EE0052DE06 /* TimerSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03506C01243257EE0052DE06 /* TimerSetting.swift */; };
@@ -19,6 +19,7 @@
 		037582F42448CF7D00B67C3C /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037582F32448CF7D00B67C3C /* ScoreTableViewCell.swift */; };
 		037582F62448EA2600B67C3C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037582F52448EA2600B67C3C /* Player.swift */; };
 		0381AAB5243F6D7900C4E1DE /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0381AAB4243F6D7900C4E1DE /* Message.swift */; };
+		03849DBE2451EAB900166C5A /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03849DBD2451EAB900166C5A /* UIViewControllerExtension.swift */; };
 		03B100E8242973E7009418D2 /* GuessingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B100E7242973E7009418D2 /* GuessingViewController.swift */; };
 		03B6DD352422CDEB00CC0B7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD342422CDEB00CC0B7F /* AppDelegate.swift */; };
 		03B6DD372422CDEB00CC0B7F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD362422CDEB00CC0B7F /* SceneDelegate.swift */; };
@@ -75,7 +76,7 @@
 		031F857B244B76CE00C8B947 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		031F857D244B990C00C8B947 /* EndGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameViewController.swift; sourceTree = "<group>"; };
 		0323C15E242EB6A20074856A /* SocketIOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
-		03275161244E49C1005D4474 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		03275161244E49C1005D4474 /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		032B6D372426B40E00F7AA13 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		033602422427AF4B00925975 /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
 		03506C01243257EE0052DE06 /* TimerSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSetting.swift; sourceTree = "<group>"; };
@@ -84,6 +85,7 @@
 		037582F32448CF7D00B67C3C /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
 		037582F52448EA2600B67C3C /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		0381AAB4243F6D7900C4E1DE /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		03849DBD2451EAB900166C5A /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		03B100E7242973E7009418D2 /* GuessingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessingViewController.swift; sourceTree = "<group>"; };
 		03B6DD312422CDEB00CC0B7F /* Boomche.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boomche.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03B6DD342422CDEB00CC0B7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -249,7 +251,8 @@
 				03C544BE2424F0C200C4049C /* Colors.swift */,
 				03B6DD6C2422E01000CC0B7F /* CustomButton.swift */,
 				03F287DE2423F2320024937C /* CustomLabel.swift */,
-				03275161244E49C1005D4474 /* CustomTextField.swift */,
+				03275161244E49C1005D4474 /* TextFieldExtension.swift */,
+				03849DBD2451EAB900166C5A /* UIViewControllerExtension.swift */,
 				03C727272426584300334429 /* GradientView.swift */,
 				03BB1E87243E531C00459FDE /* MessageTableViewCell.swift */,
 				037582F32448CF7D00B67C3C /* ScoreTableViewCell.swift */,
@@ -574,7 +577,8 @@
 				03B100E8242973E7009418D2 /* GuessingViewController.swift in Sources */,
 				03B6DD3F2422CDEB00CC0B7F /* KhatKhati.xcdatamodeld in Sources */,
 				03B6ECE4244CCA6600D7498D /* LoginViewController.swift in Sources */,
-				03275162244E49C1005D4474 /* CustomTextField.swift in Sources */,
+				03849DBE2451EAB900166C5A /* UIViewControllerExtension.swift in Sources */,
+				03275162244E49C1005D4474 /* TextFieldExtension.swift in Sources */,
 				03C544BF2424F0C200C4049C /* Colors.swift in Sources */,
 				03BB1E88243E531C00459FDE /* MessageTableViewCell.swift in Sources */,
 				037582F62448EA2600B67C3C /* Player.swift in Sources */,

@@ -29,16 +29,8 @@ class HomeViewController: UIViewController {
             GameConstants.roomID = (temp["key"] as! String)
             SocketIOManager.sharedInstance.joinGame()
             
-            self.showNextPage("NewLobbyViewController")
+            self.showNextPage(identifier: "NewLobbyViewController")
         }
-    }
-    
-    func showNextPage(_ identifier: String){
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: identifier) as UIViewController
-        controller.modalPresentationStyle = .fullScreen
-        controller.modalTransitionStyle = .coverVertical
-        present(controller, animated: true, completion: nil)
     }
     
     //MARK: UI Handling

@@ -194,8 +194,20 @@ class DrawingViewController: UIViewController, UITableViewDelegate, UITableViewD
             print("^^^^^RECEIVING MESSAGE^^^^^^")
             
             let temp = data[0] as! [String : Any]
-            let message = Message(username: temp["username"] as! String, content: temp["text"] as! String)
+            
+            var message: Message
+            if (temp["correct"] as! Int) == 1 {
+                message = Message(username: temp["username"] as! String, content: "درست حدس زد!")
+            } else {
+                message = Message(username: temp["username"] as! String, content: temp["text"] as! String)
+            }
+            
             self.insertMessage(message, at: IndexPath(row: self.messages.count, section: 0))
+        }
+        
+        SocketIOManager.sharedInstance.socket?.on("end_of_the_round") { data, ack in
+            SocketIOManager.sharedInstance.endOfRound(data: data[0] as! [String : Any])
+            self.showNextPage(identifier: "ScoresViewController")
         }
     }
     

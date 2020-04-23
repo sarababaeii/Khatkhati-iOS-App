@@ -1809,10 +1809,7 @@
                                         <rect key="frame" x="42" y="171.5" width="191" height="94.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عرفان" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYV-sj-pRp">
-                                                <rect key="frame" x="53" y="0.0" width="85" height="56"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="OYV-sj-pRp" secondAttribute="height" multiplier="85:56" id="udg-q9-Ti8"/>
-                                                </constraints>
+                                                <rect key="frame" x="55" y="0.0" width="81.5" height="56"/>
                                                 <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="36"/>
                                                 <color key="textColor" red="0.0" green="0.74901960784313726" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1831,9 +1828,9 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="xNC-rv-bsF" secondAttribute="height" multiplier="190:94" id="0Wy-58-krn"/>
                                             <constraint firstAttribute="trailing" secondItem="Tca-41-BzE" secondAttribute="trailing" id="6kz-ms-uvi"/>
+                                            <constraint firstItem="OYV-sj-pRp" firstAttribute="top" secondItem="xNC-rv-bsF" secondAttribute="top" id="7iE-iZ-duQ"/>
                                             <constraint firstAttribute="bottom" secondItem="Tca-41-BzE" secondAttribute="bottom" id="CjO-J1-OOV"/>
                                             <constraint firstItem="OYV-sj-pRp" firstAttribute="centerX" secondItem="xNC-rv-bsF" secondAttribute="centerX" id="NWd-J2-Wc6"/>
-                                            <constraint firstItem="OYV-sj-pRp" firstAttribute="top" secondItem="xNC-rv-bsF" secondAttribute="top" id="YrP-OW-PEP"/>
                                             <constraint firstItem="OYV-sj-pRp" firstAttribute="bottom" secondItem="Tca-41-BzE" secondAttribute="top" id="e93-fL-HZ4"/>
                                             <constraint firstItem="Tca-41-BzE" firstAttribute="leading" secondItem="xNC-rv-bsF" secondAttribute="leading" id="tLc-3A-M7A"/>
                                         </constraints>
@@ -2458,7 +2455,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ورود به بازی" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZP-dY-NCy">
-                                        <rect key="frame" x="119" y="21.5" width="137.5" height="53.5"/>
+                                        <rect key="frame" x="112.5" y="16.5" width="150" height="58.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="WZP-dY-NCy" secondAttribute="height" multiplier="128:50" id="YJF-bZ-ZCh"/>
                                         </constraints>
@@ -2467,7 +2464,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JGo-Mb-wQx">
-                                        <rect key="frame" x="32" y="31.5" width="33" height="33"/>
+                                        <rect key="frame" x="32" y="29" width="33" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="JGo-Mb-wQx" secondAttribute="height" multiplier="1:1" id="Ktr-IV-K1x"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="i2B-Yw-OgB"/>
@@ -2555,7 +2552,7 @@
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jj-Cs-3MJ" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
-                                                <rect key="frame" x="69.5" y="61.5" width="111" height="37"/>
+                                                <rect key="frame" x="57.5" y="57.5" width="135" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="8jj-Cs-3MJ" secondAttribute="height" multiplier="120:40" id="xJj-BS-ssI"/>
                                                 </constraints>

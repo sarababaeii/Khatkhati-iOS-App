@@ -9,17 +9,11 @@
 import UIKit
 import SocketIO
 
-protocol MessageDelegate {
-    func showMessage(_ message: Message)
-}
-
 class SocketIOManager: NSObject {
     static let sharedInstance = SocketIOManager()
 
      var manager: SocketManager?
      var socket: SocketIOClient?
-
-    var messageDelegate: MessageDelegate?
     
     var users = [String]()
     var words = [String]()
@@ -161,8 +155,6 @@ class SocketIOManager: NSObject {
             socket?.emit("chat", data)
         }
     }
-    
-    
     
 //    func receiveMessage(_ message: Message) {
 //        messageDelegate?.showMessage(message)

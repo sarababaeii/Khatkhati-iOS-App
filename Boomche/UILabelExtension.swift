@@ -9,16 +9,12 @@
 import Foundation
 import UIKit
 
-class CustomLabel: UILabel {
+extension UILabel {
     func setCornerRadius(radius: CGFloat){
             self.layer.cornerRadius = radius
     }
     
     func setBackgroundColor(color: Color){
         self.backgroundColor = color.topBackground
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
     }
 }

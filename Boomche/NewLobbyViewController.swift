@@ -15,8 +15,8 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var copyButton: CustomButton!
     @IBOutlet weak var shareView: CustomButton!
    
-    @IBOutlet weak var roundsNumberLabel: CustomLabel!
-    @IBOutlet weak var lobbyTypeLabel: CustomLabel!
+    @IBOutlet weak var roundsNumberLabel: UILabel!
+    @IBOutlet weak var lobbyTypeLabel: UILabel!
     
     @IBOutlet weak var roundsNumberButton: CustomButton!
     @IBOutlet weak var lobbyTypeButton: CustomButton!
@@ -83,45 +83,36 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
         return players[indexPath.row]
     }
     
-    func updatePlayers(users: [String]) { //doesn't show
-        players.removeAll()
+    func updatePlayers(users: [String]) {//should be more efficient
+        while players.count > 0 {
+            deletePlayer(at: IndexPath(item: players.count - 1, section: 0))
+        }
         
-        for user in users {
-            players.append(Player(username: user, color: Colors.red.playerColor!))
-            print("&&&&&&& \(user) &&&&&&")
-        }
-        players.append(Player(username: "شایان", color: Colors.orange.playerColor!))
-        players.append(Player(username: "ارشیا", color: Colors.orange.playerColor!))
-    }
-    
-    func initialPlayers() {
-        players.removeAll()
-        
-        players.append(Player(username: "سارا", color: Colors.orange.playerColor!))
-        players.append(Player(username: "ارشیا", color: Colors.orange.playerColor!))
-    }
-    
-    var counter = 3
-
-    func on() {
-        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
-    }
-
-    @objc func updateCounter() {
-        if counter > 0 {
-            counter -= 1
-        }
-
-        if counter == 0 {
-            players.append(Player(username: "شایان", color: Colors.orange.playerColor!))
-            print("DID IT&&&&&&&")
+        for i in 0 ..< users.count {
+            insertPlayer(Player(username: users[i], color: Colors.red.playerColor!), at: IndexPath(item: players.count, section: 0))
         }
     }
     
-    
-    //MARK: Keyboard Management
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        lobbyNameTextField.resignFirstResponder()
+    func insertPlayer(_ player: Player?, at indexPath: IndexPath?){
+        if let player = player, let indexPath = indexPath {
+            playersCollectionView.performBatchUpdates( {
+                
+                players.insert(player, at: indexPath.item)
+                playersCollectionView.insertItems(at: [indexPath])
+                
+            }, completion: nil)
+        }
+    }
+
+    func deletePlayer(at indexPath: IndexPath?){
+        if let indexPath = indexPath {
+            playersCollectionView.performBatchUpdates({
+                
+                players.remove(at: indexPath.item)
+                playersCollectionView.deleteItems(at: [indexPath])
+                
+            }, completion: nil)
+        }
     }
     
     //MARK: Sharing Lobby Name
@@ -158,30 +149,23 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
     //MARK: Game Properties
     @IBAction func changeRoundsNumber(_ sender: Any) {
         let currentRoundNumber = roundsNumberButton.titleLabel?.text
-        var nextRoundNumberText: String
         var nextRoundNumber: Int
         
         switch currentRoundNumber! {
         case "۳":
-            nextRoundNumberText = "۴"
             nextRoundNumber = 4
         case "۴":
-            nextRoundNumberText = "۵"
             nextRoundNumber = 5
         case "۵":
-            nextRoundNumberText = "۶"
             nextRoundNumber = 6
         case "۶":
-            nextRoundNumberText = "۳"
             nextRoundNumber = 3
         default:
-            nextRoundNumberText = "۳"
             nextRoundNumber = 3
         }
         
         SocketIOManager.sharedInstance.gameSetting(name: "round", value: String(nextRoundNumber))
-        
-        roundsNumberButton.setTitle(nextRoundNumberText, for: .normal)
+        roundsNumberButton.setTitle(String(nextRoundNumber).convertEnglishNumToPersianNum(), for: .normal)
     }
     
     @IBAction func changeLobbyType(_ sender: Any) {
@@ -256,9 +240,6 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
         playersCollectionView.delegate = self
         playersCollectionView.dataSource = self
         
-        initialPlayers()
-//        on()
-        
         setCopyButtonAttributes()
         setLobbyNameTextFieldAttributes()
         setShareViewAttributes()
@@ -279,9 +260,7 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
        // Do any additional setup after loading the view.
         
         configure()
-
-        SocketIOManager.sharedInstance.shareStatus()
     }
 }
 
-//TODO: Clickable & unclickable, add insertPlayer function (insertMessage) for dynamic collection view
+//TODO: Clickable & unclickable

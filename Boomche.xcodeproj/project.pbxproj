@@ -49,7 +49,7 @@
 		03D2FF412437A875008D9CB7 /* ScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D2FF402437A875008D9CB7 /* ScoresViewController.swift */; };
 		03D5526E24245D8300969560 /* JoinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5526D24245D8300969560 /* JoinGameViewController.swift */; };
 		03F287DD2423D9FB0024937C /* NewLobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F287DC2423D9FB0024937C /* NewLobbyViewController.swift */; };
-		03F287DF2423F2320024937C /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F287DE2423F2320024937C /* CustomLabel.swift */; };
+		03F287DF2423F2320024937C /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F287DE2423F2320024937C /* UILabelExtension.swift */; };
 		4D02B8C3C2CE97CE9F61814F /* Pods_KhatKhati_KhatKhatiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D4CE308C1B1455638C26E06 /* Pods_KhatKhati_KhatKhatiUITests.framework */; };
 		904009CC2792C786C28E523F /* Pods_KhatKhatiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EB2108E0BB2FC31CD3C84C /* Pods_KhatKhatiTests.framework */; };
 		F51C49F67F5291DC0F0E58D9 /* Pods_KhatKhati.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4C524938FE9A8BF7EFEE00 /* Pods_KhatKhati.framework */; };
@@ -121,7 +121,7 @@
 		03D2FF402437A875008D9CB7 /* ScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresViewController.swift; sourceTree = "<group>"; };
 		03D5526D24245D8300969560 /* JoinGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGameViewController.swift; sourceTree = "<group>"; };
 		03F287DC2423D9FB0024937C /* NewLobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLobbyViewController.swift; sourceTree = "<group>"; };
-		03F287DE2423F2320024937C /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		03F287DE2423F2320024937C /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		08EB2108E0BB2FC31CD3C84C /* Pods_KhatKhatiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KhatKhatiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B4C524938FE9A8BF7EFEE00 /* Pods_KhatKhati.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KhatKhati.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E44E5E8761B87A77EA99321 /* Pods-KhatKhati.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KhatKhati.release.xcconfig"; path = "Target Support Files/Pods-KhatKhati/Pods-KhatKhati.release.xcconfig"; sourceTree = "<group>"; };
@@ -250,7 +250,7 @@
 			children = (
 				03C544BE2424F0C200C4049C /* Colors.swift */,
 				03B6DD6C2422E01000CC0B7F /* CustomButton.swift */,
-				03F287DE2423F2320024937C /* CustomLabel.swift */,
+				03F287DE2423F2320024937C /* UILabelExtension.swift */,
 				03275161244E49C1005D4474 /* TextFieldExtension.swift */,
 				03849DBD2451EAB900166C5A /* UIViewControllerExtension.swift */,
 				03C727272426584300334429 /* GradientView.swift */,
@@ -558,7 +558,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				037582F42448CF7D00B67C3C /* ScoreTableViewCell.swift in Sources */,
-				03F287DF2423F2320024937C /* CustomLabel.swift in Sources */,
+				03F287DF2423F2320024937C /* UILabelExtension.swift in Sources */,
 				0323C15F242EB6A20074856A /* SocketIOManager.swift in Sources */,
 				03C544BD2424EF3B00C4049C /* Color.swift in Sources */,
 				03C727282426584300334429 /* GradientView.swift in Sources */,

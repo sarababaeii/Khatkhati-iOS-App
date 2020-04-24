@@ -33,6 +33,24 @@ class EndGameViewController: UIViewController {
     static var secondPlacePlayer: Player?
     static var thirdPlacePlayer: Player?
     
+    
+    @IBAction func playAgainAction(_ sender: Any) {
+        SocketIOManager.sharedInstance.playAgain()
+    }
+    
+    @IBAction func homeAction(_ sender: Any) {
+        self.showNextPage(identifier: "HomeViewController")
+    }
+    
+    //MARK: Socket Management
+    func addSocketHandler() {
+        SocketIOManager.sharedInstance.socket?.on("start_game") { data, ack in
+            print("^^^^^RECEIVING WORDS^^^^^^")
+            
+            SocketIOManager.sharedInstance.receiveWords(from: self, data: data[0] as! [String : Any])
+        }
+    }
+    
     //MARK: UI Handling
     func setWinnerAttributes() {
         winnerView.layer.cornerRadius = 29
@@ -82,6 +100,8 @@ class EndGameViewController: UIViewController {
     }
     
     func configure() {
+        addSocketHandler()
+        
         setWinnerAttributes()
         setSecondPlaceAttributes()
         setThirdPlaceAttributes()

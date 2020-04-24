@@ -42,5 +42,4 @@ class PlayerCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         configure()
     }
-    
 }

@@ -97,10 +97,8 @@ class SocketIOManager: NSObject {
         socket?.emit("start_game_on", GameConstants.roomID!)
     }
     
+    //MARK: Ending Game
     func endOfRound(data: [String : Any]) {
-//        var temp = data[0] as! [String : Any]
-        //TODO: end of game
-
         if (data["endOfGame"] as! Int) == 1 {
             ScoresViewController.isLastRound = true
         }
@@ -113,8 +111,8 @@ class SocketIOManager: NSObject {
     }
     
     func playAgain() {
-        let data = ["room_id" : GameConstants.roomID]
-        socket?.emit("send_play_again", data)
+//        let data = ["room_id" : GameConstants.roomID]
+        socket?.emit("send_play_again", GameConstants.roomID!)
     }
     
     //MARK: Choosing word
@@ -155,8 +153,4 @@ class SocketIOManager: NSObject {
             socket?.emit("chat", data)
         }
     }
-    
-//    func receiveMessage(_ message: Message) {
-//        messageDelegate?.showMessage(message)
-//    }
 }

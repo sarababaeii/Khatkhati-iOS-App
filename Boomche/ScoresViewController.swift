@@ -22,20 +22,11 @@ class ScoresViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var players = [Player]()
     
-    //MARK: Socket Management
-    func addSocketHandler() {
-        SocketIOManager.sharedInstance.socket?.on("start_game") { data, ack in
-            print("^^^^^RECEIVING WORDS^^^^^^")
-            
-            SocketIOManager.sharedInstance.receiveWords(from: self, data: data[0] as! [String : Any])
-        }
-    }
-    
     //MARK: Timer Setting
     func setTimer() {
         let timer = TimerSetting(label: timerLabel, time: 10)
         if ScoresViewController.isLastRound {
-            timer.from = self
+            timer.from = self   //TODO: Clean it
         }
         timer.on()
     }
@@ -64,7 +55,9 @@ class ScoresViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         if ScoresViewController.isLastRound {
-            EndGameViewController.winnerPlayer = players[0]
+            if players.count > 0 {
+                EndGameViewController.winnerPlayer = players[0]
+            }
             if players.count > 1 {
                 EndGameViewController.secondPlacePlayer = players[1]
             }
@@ -72,15 +65,6 @@ class ScoresViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 EndGameViewController.thirdPlacePlayer = players[2]
             }
         }
-//        players.append(Player(username: "سارا", color: Colors.red.playerColor!, totalScore: 210, currentScore: 25))
-//        players.append(Player(username: "Mohammad", color: Colors.green.playerColor!, totalScore: 190, currentScore: 0))
-//        players.append(Player(username: "عماد", color: Colors.orange.playerColor!, totalScore: 150, currentScore: 10))
-//        players.append(Player(username: "iamarshiamajidi", color: Colors.purple.playerColor!, totalScore: 130, currentScore: 35))
-//        players.append(Player(username: "امیر", color: Colors.darkBlue.playerColor!, totalScore: 100, currentScore: 0))
-//        players.append(Player(username: "سجاد رضایی‌پور", color: Colors.lightBlue.playerColor!, totalScore: 50, currentScore: 5))
-//
-//        players[2].isPainter = true
-//        players[3].isFirstGuesser = true
     }
     
     //MARK: UI Handling
@@ -97,8 +81,6 @@ class ScoresViewController: UIViewController, UITableViewDelegate, UITableViewDa
         initialPlayers()
         
         setTimer()
-        
-        addSocketHandler()
     }
     
     override func viewDidLoad() {

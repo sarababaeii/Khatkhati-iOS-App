@@ -16,15 +16,6 @@ class WaitingViewController: UIViewController {
     @IBOutlet weak var chooserNameLabel: UILabel!
     
     static var chooserName = "سارا"
-    
-    //MARK: Socket Management
-    func addSocketHandler() {
-        SocketIOManager.sharedInstance.socket?.on("lets_play") { data, ack in
-            print("^^^^^GAME STARTED^^^^^^")
-            
-            self.dismiss(animated: true, completion: nil)
-        }
-    }
 
     //MARK: Timer Setting
     func setTimer() {
@@ -46,8 +37,6 @@ class WaitingViewController: UIViewController {
         setChooserNameLabelAttributes()
         
         setTimer()
-        
-        addSocketHandler()
     }
     
     override func viewDidLoad() {

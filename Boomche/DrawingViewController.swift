@@ -146,9 +146,7 @@ class DrawingViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         drawing?.touchesBegan(touch.location(in: canvasView))
         
-        if let roomID = GameConstants.roomID {
-            SocketIOManager.sharedInstance.sendDrawing(roomID: roomID, state: "start", point: [(drawing?.lastPoint.x)!, (drawing?.lastPoint.y)!])
-        }
+        SocketIOManager.sharedInstance.sendDrawing(state: "start", point: [(drawing?.lastPoint.x)!, (drawing?.lastPoint.y)!])
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -158,17 +156,13 @@ class DrawingViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         drawing?.touchesMoved(touch.location(in: canvasView))
         
-        if let roomID = GameConstants.roomID {
-            SocketIOManager.sharedInstance.sendDrawing(roomID: roomID, state: "moving", point: [(drawing?.lastPoint.x)!, (drawing?.lastPoint.y)!])
-        }
+        SocketIOManager.sharedInstance.sendDrawing(state: "moving", point: [(drawing?.lastPoint.x)!, (drawing?.lastPoint.y)!])
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         drawing?.touchesEnded()
         
-        if let roomID = GameConstants.roomID {
-            SocketIOManager.sharedInstance.sendDrawing(roomID: roomID, state: "end", point: [(drawing?.lastPoint.x)!, (drawing?.lastPoint.y)!])
-        }
+        SocketIOManager.sharedInstance.sendDrawing(state: "end", point: [(drawing?.lastPoint.x)!, (drawing?.lastPoint.y)!])
     }
     
     //MARK: TableView Delegates
@@ -203,11 +197,6 @@ class DrawingViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
             
             self.insertMessage(message, at: IndexPath(row: self.messages.count, section: 0))
-        }
-        
-        SocketIOManager.sharedInstance.socket?.on("end_of_the_round") { data, ack in
-            SocketIOManager.sharedInstance.endOfRound(data: data[0] as! [String : Any])
-            self.showNextPage(identifier: "ScoresViewController")
         }
     }
     
@@ -249,8 +238,6 @@ class DrawingViewController: UIViewController, UITableViewDelegate, UITableViewD
     func configure() {
         drawing = Drawing(canvasView: self.canvasView, canvas: self.canvas, templeCanvas: self.templeCanvas)
         
-//        setTimer()
-        
         initializeArrays()
         setColorPaletteAttributes()
         
@@ -262,26 +249,16 @@ class DrawingViewController: UIViewController, UITableViewDelegate, UITableViewD
         addSocketHandler()
     }
     
-    func showChoosingWordViewController() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "ChoosingWordViewController") as UIViewController
-        controller.modalPresentationStyle = .overCurrentContext
-        controller.modalTransitionStyle = .coverVertical
-        present(controller, animated: true, completion: nil)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
      
-        
-        
         configure()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         if !wordChose {
-            showChoosingWordViewController()
+            showNextPage(identifier: "ChoosingWordViewController")
             wordChose = true
         }
         

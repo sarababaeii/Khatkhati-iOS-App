@@ -19,20 +19,6 @@ class HomeViewController: UIViewController {
         createLobbyButton.layer.masksToBounds = true //to showing button selected
     }
     
-    //MARK: Socket Management
-    //It would be more clear if it was implemented in SocketIOManager class
-    func addSocketHandler() {
-        SocketIOManager.sharedInstance.socket?.on("get_generate_key") { data, ack in
-            print("^^^^^RECEIVING ROOM_ID^^^^^^")
-            
-            let temp = data[0] as! [String : Any]
-            GameConstants.roomID = (temp["key"] as! String)
-            SocketIOManager.sharedInstance.joinGame()
-            
-            self.showNextPage(identifier: "NewLobbyViewController")
-        }
-    }
-    
     //MARK: UI Handling
     func setJoinGameButtonAttributes(){
         joinGameButton.setCornerRadius(radius: 30.5)
@@ -54,11 +40,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        SocketIOManager.sharedInstance.establishConnection()
-        
+    
         configure()
-        
-        addSocketHandler()
+        SocketIOManager.sharedInstance.shareStatus()
     }
 }

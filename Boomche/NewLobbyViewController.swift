@@ -27,6 +27,9 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     var players = [Player]()
     
+    static var roundsButton : CustomButton?
+    static var typeButton : CustomButton?
+    
     //MARK: Socket Management
     func addSocketHandler() {
         SocketIOManager.sharedInstance.socket?.on("init_data") { data, ack in
@@ -40,31 +43,8 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
 //                let time = settings["time"] as! Int
             let round = settings["round"] as! Int
             
-//            GameConstants.roundNumber = round
             self.roundsNumberButton.setTitle(String(round).convertEnglishNumToPersianNum(), for: .normal)
-        }
-        
-        SocketIOManager.sharedInstance.socket?.on("get_room_settings") { data, ack in
-            print("^^^^^RECEIVING ROOM_DATA^^^^^^")
-            
-            var temp = data[0] as! [String : Any]
-            temp = temp["data"] as! [String : Any]
-            
-            if GameConstants.roomID == (temp["room_id"] as! String) {
-                let value = temp["val"] as! String
-                
-                if (temp["name"] as! String) == "round"{
-//                    GameConstants.roundNumber = value
-                    self.roundsNumberButton.setTitle(value.convertEnglishNumToPersianNum(), for: .normal)
-                }
-            }
-        }
-        
-        SocketIOManager.sharedInstance.socket?.on("start_game") { data, ack in
-            print("^^^^^RECEIVING WORDS^^^^^^")
-            
-            SocketIOManager.sharedInstance.receiveWords(from: self, data: data[0] as! [String : Any])
-        }
+        } //TODO: init_data and game settings be united
     }
     
     //MARK: CollectionView Delegates
@@ -164,8 +144,8 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
             nextRoundNumber = 3
         }
         
-        SocketIOManager.sharedInstance.gameSetting(name: "round", value: String(nextRoundNumber))
-        roundsNumberButton.setTitle(String(nextRoundNumber).convertEnglishNumToPersianNum(), for: .normal)
+        SocketIOManager.sharedInstance.sendGameSetting(name: "round", value: String(nextRoundNumber))
+        NewLobbyViewController.setButtonTitle(button: roundsNumberButton, title: String(nextRoundNumber).convertEnglishNumToPersianNum())
     }
     
     @IBAction func changeLobbyType(_ sender: Any) {
@@ -182,13 +162,23 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
         
         //Socket
-        lobbyTypeButton.setTitle(nextLobbyType, for: .normal)
+        NewLobbyViewController.setButtonTitle(button: lobbyTypeButton, title: nextLobbyType)
+    }
+    
+    static func setButtonTitle(button: CustomButton, title: String) {
+        button.setTitle(title, for: .normal)
     }
     
     //MARK: Starting Game
     @IBAction func startGame(_ sender: Any) {
-        SocketIOManager.sharedInstance.startGame()
+        SocketIOManager.sharedInstance.sendStartGame()
 //        showNextPage(identifier: "LoadingViewController")
+    }
+    
+    //MARK: Initializing
+    func initialize() {
+        NewLobbyViewController.roundsButton = roundsNumberButton
+        NewLobbyViewController.typeButton = lobbyTypeButton
     }
     
     //MARK: UI Handling
@@ -200,7 +190,7 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func setLobbyNameTextFieldAttributes() {
         lobbyNameTextField.layer.cornerRadius = 43
-        lobbyNameTextField.text = GameConstants.roomID
+        lobbyNameTextField.text = Game.sharedInstance.roomID
     }
     
     func setShareViewAttributes() {
@@ -236,6 +226,9 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func configure() {
+        initialize()
+        
+        addSocketHandler()
         
         playersCollectionView.delegate = self
         playersCollectionView.dataSource = self
@@ -251,8 +244,6 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
         setLobbyTypeButtonAttributes()
         
         setStartGameButtonAttributes()
-        
-        addSocketHandler()
     }
     
     override func viewDidLoad() {

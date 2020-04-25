@@ -8,10 +8,13 @@
 
 import Foundation
 
-class GameConstants {
-    static var roomID: String?
-    static var username = "سارا"
+class Game {
+    static var sharedInstance = Game()
+    
+    var roomID: String?
+    var username = "سارا"
+    
 //    static var roundNumber = 3
-    static var lobbyType = "Private"
+//    var lobbyType = "Private"
 }
         

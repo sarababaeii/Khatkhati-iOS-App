@@ -42,7 +42,7 @@ class GuessingViewController: UIViewController, UITableViewDelegate, UITableView
             var temp = data[0] as! [String : Any]
             temp = temp["data"] as! [String : Any]
             
-            if let roomID = GameConstants.roomID {
+            if let roomID = Game.sharedInstance.roomID {
                 if roomID == temp["room"] as! String {
                     self.showDrawing(state: temp["state"] as! String, point: temp["point"] as! [CGFloat])
                 }
@@ -62,12 +62,6 @@ class GuessingViewController: UIViewController, UITableViewDelegate, UITableView
             }
            
             self.insertMessage(message, at: IndexPath(row: self.messages.count, section: 0))
-//            self.insertMessage(message, at: IndexPath(row: 0, section: 0))
-        }
-        
-        SocketIOManager.sharedInstance.socket?.on("end_of_the_round") { data, ack in
-            SocketIOManager.sharedInstance.endOfRound(data: data[0] as! [String : Any])
-            self.showNextPage(identifier: "ScoresViewController")
         }
     }
     
@@ -173,9 +167,7 @@ class GuessingViewController: UIViewController, UITableViewDelegate, UITableView
     
     func configure() {
         drawing = Drawing(canvasView: self.canvasView, canvas: self.canvas, templeCanvas: self.templeCanvas)
-        
-//        setTimer()
-        
+     
         setChatTextFieldAttributes()
         setSendButtonAttributes()
         
@@ -187,14 +179,6 @@ class GuessingViewController: UIViewController, UITableViewDelegate, UITableView
         addSocketHandler()
     }
     
-    func showWaitingViewController() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "WaitingViewController") as UIViewController
-        controller.modalPresentationStyle = .overCurrentContext
-        controller.modalTransitionStyle = .coverVertical
-        present(controller, animated: true, completion: nil)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -204,7 +188,7 @@ class GuessingViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidAppear(_ animated: Bool) {
         if !wordChose {
-            showWaitingViewController()
+            showNextPage(identifier: "WaitingViewController")
             wordChose = true
         }
         

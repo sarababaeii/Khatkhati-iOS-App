@@ -23,14 +23,6 @@ class ChoosingWordViewController: UIViewController {
         SocketIOManager.sharedInstance.sendWord(word: (sender as! UIButton).currentTitle!)
     }
     
-    //MARK: Socket Management
-    func addSocketHandler() {
-        SocketIOManager.sharedInstance.socket?.on("lets_play") { data, ack in
-            print("^^^^^GAME STARTED^^^^^^")
-            self.dismiss(animated: true, completion: nil)
-        }
-    }
-    
     //MARK: Timer Setting
     func setTimer() {
         let timer = TimerSetting(label: timerLabel, time: 10)
@@ -59,8 +51,6 @@ class ChoosingWordViewController: UIViewController {
         setButtonsAttributes()
         
         setTimer()
-        
-        addSocketHandler()
     }
     
     override func viewDidLoad() {

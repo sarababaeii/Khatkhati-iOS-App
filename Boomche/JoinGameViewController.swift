@@ -21,7 +21,7 @@ class JoinGameViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func joinGameAction(_ sender: Any) {
         if let caption = fetchInput() {
-            GameConstants.roomID = caption
+            Game.sharedInstance.roomID = caption
             SocketIOManager.sharedInstance.joinGame()
             lobbyCodeTextField.resignFirstResponder()
             
@@ -82,8 +82,6 @@ class JoinGameViewController: UIViewController, UITextFieldDelegate {
         setRandomGameButtonAttributes()
         setLobbyCodeTextFieldAttributes()
         setJoinButtonAttributrs()
-        
-        lobbyCodeTextField.delegate = self
     }
     
     override func viewDidLoad() {
@@ -91,7 +89,5 @@ class JoinGameViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
      
         configure()
-        
-        SocketIOManager.sharedInstance.shareStatus()
     }
 }

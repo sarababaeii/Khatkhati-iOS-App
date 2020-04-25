@@ -34,7 +34,7 @@ class LoadingViewController: UIViewController {
 //    }
     
     func determiningNextPage(username: String) {
-        if GameConstants.username == username {
+        if Game.sharedInstance.username == username {
             showNextPage(identifier: "DrawingViewController")
         } else {
             showNextPage(identifier: "GuessingViewController")

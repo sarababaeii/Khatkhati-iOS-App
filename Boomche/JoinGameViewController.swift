@@ -82,6 +82,8 @@ class JoinGameViewController: UIViewController, UITextFieldDelegate {
         setRandomGameButtonAttributes()
         setLobbyCodeTextFieldAttributes()
         setJoinButtonAttributrs()
+        
+        Game.sharedInstance.isLobbyLeader = false
     }
     
     override func viewDidLoad() {

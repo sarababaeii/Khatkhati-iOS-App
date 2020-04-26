@@ -212,17 +212,29 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
     func setRoundsNumberButtonAttributes() {
         roundsNumberButton.setCornerRadius(radius: 22.5)
         roundsNumberButton.setBackgroundColor(color: Colors.yellow.componentColor!)
+        
+        if !Game.sharedInstance.isLobbyLeader {
+            roundsNumberButton.isEnabled = false
+        }
     }
     
     func setLobbyTypeButtonAttributes() {
         lobbyTypeButton.setCornerRadius(radius: 22.5)
         lobbyTypeButton.setBackgroundColor(color: Colors.blue.componentColor!)
+        
+        if !Game.sharedInstance.isLobbyLeader {
+            lobbyTypeButton.isEnabled = false
+        }
     }
     
     func setStartGameButtonAttributes() {
         startGameButton.setCornerRadius(radius: 30)
         startGameButton.setShadowColor(color: Colors.blue.componentColor!)
         startGameButton.setBackgroundColor(color: Colors.blue.componentColor!)
+        
+        if !Game.sharedInstance.isLobbyLeader {
+            startGameButton.isEnabled = false
+        }
     }
     
     func configure() {

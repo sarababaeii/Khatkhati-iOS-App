@@ -12,7 +12,8 @@ class Game {
     static var sharedInstance = Game()
     
     var roomID: String?
-    var username = "سارا"
+    var username = "شایان"
+    var isLobbyLeader = false
     
 //    static var roundNumber = 3
 //    var lobbyType = "Private"

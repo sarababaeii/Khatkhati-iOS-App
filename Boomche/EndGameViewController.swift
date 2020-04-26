@@ -87,6 +87,16 @@ class EndGameViewController: UIViewController {
     func setHomeButtonAttributes() {
         homeButton.setCornerRadius(radius: 15)
         homeButton.setBackgroundColor(color: Colors.yellow.componentColor!)
+        
+//        let img = UIImage(named: "Home")
+//        let outerView = UIView(frame: CGRect(x: 0, y: 0, width: img.size.width, height: img.size.height) )
+//        let iconView  = UIImageView(frame: CGRect(x: padding, y: 0, width: img.size.width, height: img.size.height))
+//        
+//        iconView.image = img
+//        outerView.addSubview(iconView)
+//        
+//        homeButton.gradientLayer
+        
         homeButton.setImage(UIImage(named: "Home"), for: .normal)
     }
     

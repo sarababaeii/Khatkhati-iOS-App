@@ -33,6 +33,8 @@ class HomeViewController: UIViewController {
     }
     
     func configure(){
+        Game.sharedInstance.isLobbyLeader = false
+        
         setJoinGameButtonAttributes()
         setCreateLobbyButtonAttributes()
     }

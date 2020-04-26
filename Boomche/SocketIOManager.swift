@@ -113,6 +113,8 @@ class SocketIOManager: NSObject {
         Game.sharedInstance.roomID = (data["key"] as! String)
         joinGame()
                                                      
+        Game.sharedInstance.isLobbyLeader = true
+        
         UIApplication.topViewController()?.showNextPage(identifier: "NewLobbyViewController")
     }
     

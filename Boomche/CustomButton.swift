@@ -12,6 +12,7 @@ import UIKit
 class CustomButton: UIButton {
     
     var color: UIColor?
+    let gradientLayer = CAGradientLayer()
     
     func setCornerRadius(radius: CGFloat){
             self.layer.cornerRadius = radius
@@ -21,7 +22,7 @@ class CustomButton: UIButton {
         self.color = color.topBackground
         
         if let bottomBackground = color.bottomBackground {
-            let gradientLayer = CAGradientLayer()
+            
 //            gradientLayer.type = .radial
             gradientLayer.frame = self.bounds
             gradientLayer.cornerRadius = self.layer.cornerRadius //must be called after setCornerRadius

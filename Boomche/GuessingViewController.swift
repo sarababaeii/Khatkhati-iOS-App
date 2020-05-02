@@ -27,7 +27,7 @@ class GuessingViewController: UIViewController, UITableViewDelegate, UITableView
     
     var drawing: Drawing?
     
-    var messages = [Message]()
+    static var chatTableViewDelegates: MessageTableViewDelegates?
     
     //MARK: Timer Setting
     func setTimer() {
@@ -36,7 +36,6 @@ class GuessingViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     //MARK: Socket Management
-    //It would be more clear if it was implemented in SocketIOManager class
     func addSocketHandler() {
         SocketIOManager.sharedInstance.socket?.on("conversation_private") { data, ack in
             var temp = data[0] as! [String : Any]
@@ -47,21 +46,6 @@ class GuessingViewController: UIViewController, UITableViewDelegate, UITableView
                     self.showDrawing(state: temp["state"] as! String, point: temp["point"] as! [CGFloat])
                 }
             }
-        }
-        
-        SocketIOManager.sharedInstance.socket?.on("chat_and_guess") {data, ack in
-            print("^^^^^RECEIVING MESSAGE^^^^^^")
-            
-            let temp = data[0] as! [String : Any]
-            
-            var message: Message
-            if (temp["correct"] as! Int) == 1 {
-                message = Message(username: temp["username"] as! String, content: "درست حدس زد!")
-            } else {
-                message = Message(username: temp["username"] as! String, content: temp["text"] as! String)
-            }
-           
-            self.insertMessage(message, at: IndexPath(row: self.messages.count, section: 0))
         }
     }
     
@@ -78,31 +62,17 @@ class GuessingViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-    func insertMessage(_ message: Message?, at indexPath: IndexPath?){
-        if let message = message, let indexPath = indexPath{
-            chatTableView.beginUpdates()
-            messages.insert(message, at: indexPath.row)
-        
-            chatTableView.insertRows(at: [indexPath], with: .automatic)
-        
-            chatTableView.endUpdates()
-        }
-    }
-    
     //MARK: TableView Delegates
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messages.count
+            return (GuessingViewController.chatTableViewDelegates?.tableView(tableView, numberOfRowsInSection: section))!
     }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCellID", for: indexPath) as! MessageTableViewCell
-        let message = messageDataSource(indexPath: indexPath)
-        cell.setCaption(message!)
-        return cell
+        return (GuessingViewController.chatTableViewDelegates?.tableView(tableView, cellForRowAt: indexPath))!
     }
     
     func messageDataSource(indexPath: IndexPath) -> Message? {
-        return messages[indexPath.row]
+        GuessingViewController.chatTableViewDelegates?.messageDataSource(indexPath: indexPath)
     }
     
     //MARK: Sending Message
@@ -170,6 +140,8 @@ class GuessingViewController: UIViewController, UITableViewDelegate, UITableView
      
         setChatTextFieldAttributes()
         setSendButtonAttributes()
+    
+        GuessingViewController.chatTableViewDelegates = MessageTableViewDelegates(chatTableView: chatTableView)
         
         chatTableView.delegate = self
         chatTableView.dataSource = self
@@ -187,13 +159,13 @@ class GuessingViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        if wordChose {
+            setTimer()
+        }
+        
         if !wordChose {
             showNextPage(identifier: "WaitingViewController")
             wordChose = true
-        }
-        
-        if wordChose {
-            setTimer()
         }
     }
 }

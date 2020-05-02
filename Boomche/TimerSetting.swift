@@ -1,5 +1,5 @@
 //
-//  Timer.swift
+//  TimerSetting.swift
 //  KhatKhati
 //
 //  Created by Sara Babaei on 3/30/20.
@@ -22,6 +22,7 @@ class TimerSetting {
     
     func on() {
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+        
     }
     
     @objc func updateCounter() {

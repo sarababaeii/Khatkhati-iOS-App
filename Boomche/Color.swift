@@ -1,5 +1,5 @@
 //
-//  ComponentColor.swift
+//  Color.swift
 //  KhatKhati
 //
 //  Created by Sara Babaei on 3/20/20.

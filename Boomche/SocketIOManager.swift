@@ -40,11 +40,10 @@ class SocketIOManager: NSObject {
     
     //MARK: Connection Management
     func establishConnection() {
-        guard let socket = manager?.defaultSocket else{
+        guard let socket = manager?.defaultSocket, socket.status != .connected else{
             return
         }
         socket.connect()
-        
         addHandlers()
     }
     
@@ -52,6 +51,7 @@ class SocketIOManager: NSObject {
         guard let socket = manager?.defaultSocket else{
             return
         }
+        socket.removeAllHandlers()
         socket.disconnect()
     }
     
@@ -94,9 +94,15 @@ class SocketIOManager: NSObject {
             self.getStartGame()
         }
         
+        SocketIOManager.sharedInstance.socket?.on("chat_and_guess") {data, ack in
+         print("^^^^^RECEIVING MESSAGE^^^^^^")
+            self.receiveMessage(data: data[0] as! [String : Any])
+        }
+        
         SocketIOManager.sharedInstance.socket?.on("end_of_the_round") { data, ack in
             print("^^^^^ RECEIVING ROUND DATA ^^^^^^")
             self.endOfRound(data: data[0] as! [String : Any])
+            self.clearDelegates()
         }
     }
     
@@ -182,6 +188,11 @@ class SocketIOManager: NSObject {
         UIApplication.topViewController()?.showNextPage(identifier: "ScoresViewController")
     }
     
+    func clearDelegates() {
+        DrawingViewController.chatTableViewDelegates = nil
+        GuessingViewController.chatTableViewDelegates = nil
+    }
+    
     func playAgain() {
         socket?.emit("send_play_again", Game.sharedInstance.roomID!)
     }
@@ -219,5 +230,20 @@ class SocketIOManager: NSObject {
     func sendMessage(message: String) {
         let data = ["room_id": Game.sharedInstance.roomID!, "text": message, "username": Game.sharedInstance.username]
         socket?.emit("chat", data)
+    }
+    
+    func receiveMessage(data: [String : Any]) {
+        var message: Message
+         if (data["correct"] as! Int) == 1 {
+             message = Message(username: data["username"] as! String, content: "درست حدس زد!")
+         } else {
+             message = Message(username: data["username"] as! String, content: data["text"] as! String)
+         }
+        
+        if UIApplication.topViewController()?.restorationIdentifier == "DrawingViewController" {
+            DrawingViewController.chatTableViewDelegates?.insertMessage(message)
+        } else if UIApplication.topViewController()?.restorationIdentifier == "GuessingViewController" {
+            GuessingViewController.chatTableViewDelegates?.insertMessage(message)
+        }
     }
 }

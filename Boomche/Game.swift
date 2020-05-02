@@ -1,5 +1,5 @@
 //
-//  GameConstants.swift
+//  Game.swift
 //  KhatKhati
 //
 //  Created by Sara Babaei on 3/31/20.
@@ -12,7 +12,7 @@ class Game {
     static var sharedInstance = Game()
     
     var roomID: String?
-    var username = "شایان"
+    var username = "سارا"
     var isLobbyLeader = false
     
 //    static var roundNumber = 3

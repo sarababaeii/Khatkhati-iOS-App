@@ -78,6 +78,11 @@ class SocketIOManager: NSObject {
             self.getRoomID(data: data[0] as! [String : Any])
         }
         
+        SocketIOManager.sharedInstance.socket?.on("init_data") { data, ack in
+            print("^^^^^RECEIVING ROOM_DATA^^^^^^")
+            self.getGameProperties(data: data[0] as! [String : Any])
+        } //TODO: init_data and game settings be united
+        
         SocketIOManager.sharedInstance.socket?.on("get_room_settings") { data, ack in
             print("^^^^^RECEIVING ROOM_DATA^^^^^^")
             let temp = data[0] as! [String : Any]
@@ -102,7 +107,6 @@ class SocketIOManager: NSObject {
         SocketIOManager.sharedInstance.socket?.on("end_of_the_round") { data, ack in
             print("^^^^^ RECEIVING ROUND DATA ^^^^^^")
             self.endOfRound(data: data[0] as! [String : Any])
-            self.clearDelegates()
         }
     }
     
@@ -128,6 +132,16 @@ class SocketIOManager: NSObject {
     func joinGame() {
         let data = ["room_id" : Game.sharedInstance.roomID, "username" : Game.sharedInstance.username]
         socket?.emit("subscribe", data)
+    }
+    
+    func getGameProperties(data: [String : Any]) {
+        NewLobbyViewController.playersCollectionViewDelegates?.updatePlayers(users: data["users"] as! [String])
+        
+        let settings = data["settings"] as! [String : Any]
+//        let time = settings["time"] as! Int
+        let round = settings["round"] as! Int
+        
+        NewLobbyViewController.setButtonTitle(button: (NewLobbyViewController.roundsButton)!, title: String(round).convertEnglishNumToPersianNum())
     }
     
     //MARK: Game Settings
@@ -186,11 +200,6 @@ class SocketIOManager: NSObject {
         ScoresViewController.word = (temp["word"] as? String)!
         
         UIApplication.topViewController()?.showNextPage(identifier: "ScoresViewController")
-    }
-    
-    func clearDelegates() {
-        DrawingViewController.chatTableViewDelegates = nil
-        GuessingViewController.chatTableViewDelegates = nil
     }
     
     func playAgain() {

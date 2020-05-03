@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class NewLobbyViewController: UIViewController {
     
     @IBOutlet weak var lobbyNameTextField: UITextField!
     @IBOutlet weak var copyButton: CustomButton!
@@ -25,75 +25,9 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     @IBOutlet weak var startGameButton: CustomButton!
     
-    var players = [Player]()
-    
     static var roundsButton : CustomButton?
     static var typeButton : CustomButton?
-    
-    //MARK: Socket Management
-    func addSocketHandler() {
-        SocketIOManager.sharedInstance.socket?.on("init_data") { data, ack in
-            print("^^^^^RECEIVING ROOM_DATA^^^^^^")
-            
-            let temp = data[0] as! [String : Any]
-            let users = temp["users"] as! [String]
-            self.updatePlayers(users: users)
-            
-            let settings = temp["settings"] as! [String : Any]
-//                let time = settings["time"] as! Int
-            let round = settings["round"] as! Int
-            
-            self.roundsNumberButton.setTitle(String(round).convertEnglishNumToPersianNum(), for: .normal)
-        } //TODO: init_data and game settings be united
-    }
-    
-    //MARK: CollectionView Delegates
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return players.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlayerCellID", for: indexPath) as! PlayerCollectionViewCell
-        let player = playerDataSource(indexPath: indexPath)
-        cell.setAttributes(player: player!)
-        return cell
-    }
-    
-    func playerDataSource(indexPath: IndexPath) -> Player? {
-        return players[indexPath.row]
-    }
-    
-    func updatePlayers(users: [String]) {//should be more efficient
-        while players.count > 0 {
-            deletePlayer(at: IndexPath(item: players.count - 1, section: 0))
-        }
-        
-        for i in 0 ..< users.count {
-            insertPlayer(Player(username: users[i], color: Colors.red.playerColor!), at: IndexPath(item: players.count, section: 0))
-        }
-    }
-    
-    func insertPlayer(_ player: Player?, at indexPath: IndexPath?){
-        if let player = player, let indexPath = indexPath {
-            playersCollectionView.performBatchUpdates( {
-                
-                players.insert(player, at: indexPath.item)
-                playersCollectionView.insertItems(at: [indexPath])
-                
-            }, completion: nil)
-        }
-    }
-
-    func deletePlayer(at indexPath: IndexPath?){
-        if let indexPath = indexPath {
-            playersCollectionView.performBatchUpdates({
-                
-                players.remove(at: indexPath.item)
-                playersCollectionView.deleteItems(at: [indexPath])
-                
-            }, completion: nil)
-        }
-    }
+    static var playersCollectionViewDelegates: PlayersCollectionViewDelegates?
     
     //MARK: Sharing Lobby Name
     @IBAction func copyLobbyName(_ sender: Any) {
@@ -176,9 +110,19 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     //MARK: Initializing
-    func initialize() {
+    func initializeVariables() {
         NewLobbyViewController.roundsButton = roundsNumberButton
         NewLobbyViewController.typeButton = lobbyTypeButton
+        NewLobbyViewController.playersCollectionViewDelegates = PlayersCollectionViewDelegates(playersCollectionView: playersCollectionView)
+        
+        playersCollectionView.delegate = NewLobbyViewController.playersCollectionViewDelegates
+        playersCollectionView.dataSource = NewLobbyViewController.playersCollectionViewDelegates
+    }
+    
+    func clearVariables() {
+        NewLobbyViewController.roundsButton = nil
+        NewLobbyViewController.typeButton = nil
+        NewLobbyViewController.playersCollectionViewDelegates = nil
     }
     
     //MARK: UI Handling
@@ -238,12 +182,7 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func configure() {
-        initialize()
-        
-        addSocketHandler()
-        
-        playersCollectionView.delegate = self
-        playersCollectionView.dataSource = self
+        initializeVariables()
         
         setCopyButtonAttributes()
         setLobbyNameTextFieldAttributes()
@@ -264,6 +203,8 @@ class NewLobbyViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         configure()
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        clearVariables()
+    }
 }
-
-//TODO: Clickable & unclickable

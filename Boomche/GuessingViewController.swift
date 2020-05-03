@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class GuessingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class GuessingViewController: UIViewController {
     
     @IBOutlet weak var timerLabel: UILabel!
     
@@ -35,7 +35,7 @@ class GuessingViewController: UIViewController, UITableViewDelegate, UITableView
         timer.on()
     }
     
-    //MARK: Socket Management
+    //MARK: Socket Management For Drawing
     func addSocketHandler() {
         SocketIOManager.sharedInstance.socket?.on("conversation_private") { data, ack in
             var temp = data[0] as! [String : Any]
@@ -60,19 +60,6 @@ class GuessingViewController: UIViewController, UITableViewDelegate, UITableView
         default:
             print("Error in receiving draw")
         }
-    }
-    
-    //MARK: TableView Delegates
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return (GuessingViewController.chatTableViewDelegates?.tableView(tableView, numberOfRowsInSection: section))!
-    }
-        
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return (GuessingViewController.chatTableViewDelegates?.tableView(tableView, cellForRowAt: indexPath))!
-    }
-    
-    func messageDataSource(indexPath: IndexPath) -> Message? {
-        GuessingViewController.chatTableViewDelegates?.messageDataSource(indexPath: indexPath)
     }
     
     //MARK: Sending Message
@@ -125,6 +112,19 @@ class GuessingViewController: UIViewController, UITableViewDelegate, UITableView
 //        }
     }
     
+    //MARK: Initializing
+    func initializeVariables() {
+        drawing = Drawing(canvasView: self.canvasView, canvas: self.canvas, templeCanvas: self.templeCanvas)
+        GuessingViewController.chatTableViewDelegates = MessageTableViewDelegates(chatTableView: chatTableView)
+        
+        chatTableView.delegate = GuessingViewController.chatTableViewDelegates
+        chatTableView.dataSource = GuessingViewController.chatTableViewDelegates
+    }
+    
+    func clearVariables() { //drawing?!
+        GuessingViewController.chatTableViewDelegates = nil
+    }
+    
     //MARK: UI Handling
     func setChatTextFieldAttributes(){
         chatTextField.layer.cornerRadius = 22
@@ -136,15 +136,8 @@ class GuessingViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func configure() {
-        drawing = Drawing(canvasView: self.canvasView, canvas: self.canvas, templeCanvas: self.templeCanvas)
-     
         setChatTextFieldAttributes()
         setSendButtonAttributes()
-    
-        GuessingViewController.chatTableViewDelegates = MessageTableViewDelegates(chatTableView: chatTableView)
-        
-        chatTableView.delegate = self
-        chatTableView.dataSource = self
         
         registerForKeyboardNotifications()
         
@@ -161,11 +154,16 @@ class GuessingViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidAppear(_ animated: Bool) {
         if wordChose {
             setTimer()
+            initializeVariables()
         }
         
         if !wordChose {
             showNextPage(identifier: "WaitingViewController")
             wordChose = true
         }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        clearVariables()
     }
 }

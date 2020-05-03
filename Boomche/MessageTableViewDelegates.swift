@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MessageTableViewDelegates {
+class MessageTableViewDelegates: NSObject, UITableViewDelegate, UITableViewDataSource {
     var chatTableView: UITableView
     
     var messages = [Message]()

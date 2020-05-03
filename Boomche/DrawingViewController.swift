@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class DrawingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DrawingViewController: UIViewController {
     
     @IBOutlet weak var timerLabel: UILabel!
     
@@ -60,7 +60,6 @@ class DrawingViewController: UIViewController, UITableViewDelegate, UITableViewD
     var drawing: Drawing?
     
     static var chatTableViewDelegates: MessageTableViewDelegates?
-    static var isFirstAppear = true
     
     //MARK: Timer Setting
     func setTimer() {
@@ -166,22 +165,21 @@ class DrawingViewController: UIViewController, UITableViewDelegate, UITableViewD
         SocketIOManager.sharedInstance.sendDrawing(state: "end", point: [(drawing?.lastPoint.x)!, (drawing?.lastPoint.y)!])
     }
     
-    //MARK: TableView Delegates
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (DrawingViewController.chatTableViewDelegates?.tableView(tableView, numberOfRowsInSection: section))!
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return (DrawingViewController.chatTableViewDelegates?.tableView(tableView, cellForRowAt: indexPath))!
-    }
-    
-    func messageDataSource(indexPath: IndexPath) -> Message? {
-        DrawingViewController.chatTableViewDelegates?.messageDataSource(indexPath: indexPath)
-    }
-    
     //MARK: Initializing
     func initializeBrush() {
         colorPicked(redColorButton!)
+    }
+    
+    func initializeVariables() {
+        drawing = Drawing(canvasView: self.canvasView, canvas: self.canvas, templeCanvas: self.templeCanvas)
+        DrawingViewController.chatTableViewDelegates = MessageTableViewDelegates(chatTableView: chatTableView)
+        
+        chatTableView.delegate = DrawingViewController.chatTableViewDelegates
+        chatTableView.dataSource = DrawingViewController.chatTableViewDelegates
+    }
+    
+    func clearVariables() { //drawing?!
+        DrawingViewController.chatTableViewDelegates = nil
     }
     
     //MARK: UI Handling
@@ -204,17 +202,10 @@ class DrawingViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func configure() {
-        drawing = Drawing(canvasView: self.canvasView, canvas: self.canvas, templeCanvas: self.templeCanvas)
-        
         initializeArrays()
         setColorPaletteAttributes()
         
         initializeBrush()
-
-        DrawingViewController.chatTableViewDelegates = MessageTableViewDelegates(chatTableView: chatTableView)
-        
-        chatTableView.delegate = self
-        chatTableView.dataSource = self
     }
     
     override func viewDidLoad() {
@@ -225,14 +216,18 @@ class DrawingViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     override func viewDidAppear(_ animated: Bool) {
-      
         if wordChose {
             setTimer()
+            initializeVariables()
         }
         
         if !wordChose {
             showNextPage(identifier: "ChoosingWordViewController")
             wordChose = true
         }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        clearVariables()
     }
 }

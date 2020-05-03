@@ -49,6 +49,7 @@
 		03D2FF3F2437503F008D9CB7 /* ChoosingWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D2FF3E2437503F008D9CB7 /* ChoosingWordViewController.swift */; };
 		03D2FF412437A875008D9CB7 /* ScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D2FF402437A875008D9CB7 /* ScoresViewController.swift */; };
 		03D5526E24245D8300969560 /* JoinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5526D24245D8300969560 /* JoinGameViewController.swift */; };
+		03E6742B245EAD7500DB92DC /* PlayersCollectionViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E6742A245EAD7500DB92DC /* PlayersCollectionViewDelegates.swift */; };
 		03F287DD2423D9FB0024937C /* NewLobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F287DC2423D9FB0024937C /* NewLobbyViewController.swift */; };
 		03F287DF2423F2320024937C /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F287DE2423F2320024937C /* UILabelExtension.swift */; };
 		4D02B8C3C2CE97CE9F61814F /* Pods_KhatKhati_KhatKhatiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D4CE308C1B1455638C26E06 /* Pods_KhatKhati_KhatKhatiUITests.framework */; };
@@ -122,6 +123,7 @@
 		03D2FF3E2437503F008D9CB7 /* ChoosingWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosingWordViewController.swift; sourceTree = "<group>"; };
 		03D2FF402437A875008D9CB7 /* ScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresViewController.swift; sourceTree = "<group>"; };
 		03D5526D24245D8300969560 /* JoinGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGameViewController.swift; sourceTree = "<group>"; };
+		03E6742A245EAD7500DB92DC /* PlayersCollectionViewDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersCollectionViewDelegates.swift; sourceTree = "<group>"; };
 		03F287DC2423D9FB0024937C /* NewLobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLobbyViewController.swift; sourceTree = "<group>"; };
 		03F287DE2423F2320024937C /* UILabelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
 		08EB2108E0BB2FC31CD3C84C /* Pods_KhatKhatiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KhatKhatiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -277,6 +279,7 @@
 				037582F52448EA2600B67C3C /* Player.swift */,
 				031F857B244B76CE00C8B947 /* StringExtension.swift */,
 				0332F485245733960006F18E /* MessageTableViewDelegates.swift */,
+				03E6742A245EAD7500DB92DC /* PlayersCollectionViewDelegates.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				03D2FF412437A875008D9CB7 /* ScoresViewController.swift in Sources */,
 				03B6ECE6244CCAB700D7498D /* SignUpViewController.swift in Sources */,
 				03B100E8242973E7009418D2 /* GuessingViewController.swift in Sources */,
+				03E6742B245EAD7500DB92DC /* PlayersCollectionViewDelegates.swift in Sources */,
 				03B6DD3F2422CDEB00CC0B7F /* KhatKhati.xcdatamodeld in Sources */,
 				03B6ECE4244CCA6600D7498D /* LoginViewController.swift in Sources */,
 				03849DBE2451EAB900166C5A /* UIViewControllerExtension.swift in Sources */,

@@ -222,6 +222,7 @@ class DrawingViewController: UIViewController {
         }
         
         if !wordChose {
+            ChoosingWordViewController.parentViewController = self
             showNextPage(identifier: "ChoosingWordViewController")
             wordChose = true
         }

@@ -29,7 +29,7 @@
         <!--Login View Controller-->
         <scene sceneID="dNW-k0-pHD">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ysL-m2-TyN" customClass="LoginViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ysL-m2-TyN" customClass="LoginViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dSD-Pr-f27">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,7 +154,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="5Qj-bN-xXP">
             <objects>
-                <viewController storyboardIdentifier="SignUpViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vFc-mI-NUa" customClass="SignUpViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vFc-mI-NUa" customClass="SignUpViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gUa-mj-WYc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -296,7 +296,7 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="HomeViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="HomeViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -397,7 +397,7 @@
         <!--New Lobby View Controller-->
         <scene sceneID="cMa-fK-lfE">
             <objects>
-                <viewController storyboardIdentifier="NewLobbyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="I4V-oy-IXb" customClass="NewLobbyViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewLobbyViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="I4V-oy-IXb" customClass="NewLobbyViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lr2-JM-3nM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -750,7 +750,7 @@
         <!--Drawing View Controller-->
         <scene sceneID="LlO-3T-uyb">
             <objects>
-                <viewController storyboardIdentifier="DrawingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FH5-3d-izd" customClass="DrawingViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DrawingViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FH5-3d-izd" customClass="DrawingViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3rT-84-p3Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1392,7 +1392,7 @@
         <!--Choosing Word View Controller-->
         <scene sceneID="cRd-r7-a2W">
             <objects>
-                <viewController storyboardIdentifier="ChoosingWordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sa1-BW-iGt" customClass="ChoosingWordViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChoosingWordViewController" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sa1-BW-iGt" customClass="ChoosingWordViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="GTP-rW-Wwf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1564,7 +1564,7 @@
         <!--Guessing View Controller-->
         <scene sceneID="gHT-E0-16c">
             <objects>
-                <viewController storyboardIdentifier="GuessingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gNB-0m-c18" customClass="GuessingViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GuessingViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gNB-0m-c18" customClass="GuessingViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GlI-9K-a7e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1753,7 +1753,7 @@
         <!--Waiting View Controller-->
         <scene sceneID="EAA-BG-InG">
             <objects>
-                <viewController restorationIdentifier="WaitingViewController" storyboardIdentifier="WaitingViewController" id="piz-CP-Ssb" customClass="WaitingViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="WaitingViewController" storyboardIdentifier="WaitingViewController" modalPresentationStyle="overCurrentContext" id="piz-CP-Ssb" customClass="WaitingViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="vXV-Le-1tO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1874,7 +1874,7 @@
         <!--Scores View Controller-->
         <scene sceneID="VVr-eC-hAJ">
             <objects>
-                <viewController storyboardIdentifier="ScoresViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TiS-ax-bgr" customClass="ScoresViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScoresViewController" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TiS-ax-bgr" customClass="ScoresViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="uUH-dX-KJ4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2064,7 +2064,7 @@
         <!--End Game View Controller-->
         <scene sceneID="nrg-Wx-aOU">
             <objects>
-                <viewController storyboardIdentifier="EndGameViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BNU-Pt-hRf" customClass="EndGameViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EndGameViewController" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BNU-Pt-hRf" customClass="EndGameViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="F7B-tj-8Hz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2341,7 +2341,7 @@
         <!--Loading View Controller-->
         <scene sceneID="xHR-cn-yQd">
             <objects>
-                <viewController storyboardIdentifier="LoadingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qaP-Jh-xiv" customClass="LoadingViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoadingViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qaP-Jh-xiv" customClass="LoadingViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oks-5M-0Uc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2445,7 +2445,7 @@
         <!--Join Game View Controller-->
         <scene sceneID="eDi-vc-8eK">
             <objects>
-                <viewController storyboardIdentifier="JoinGameViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fsv-bJ-ERM" customClass="JoinGameViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JoinGameViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fsv-bJ-ERM" customClass="JoinGameViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0a6-TS-gjj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

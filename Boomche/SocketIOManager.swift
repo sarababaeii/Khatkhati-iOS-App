@@ -15,7 +15,7 @@ class SocketIOManager: NSObject {
     var manager: SocketManager?
     var socket: SocketIOClient?
     
-//    var socketID: String?
+    var socketID: String?
     
     //MARK: Initializing
     override init() {
@@ -73,38 +73,47 @@ class SocketIOManager: NSObject {
     }
     
     func addHandlers() {
-        SocketIOManager.sharedInstance.socket?.on("get_generate_key") { data, ack in
+        guard let socket = manager?.defaultSocket else{
+            return
+        }
+        
+        socket.on(clientEvent: .connect) { data, ack in
+            print("^^^^^ CONNECTED ^^^^^")
+            self.socketID = socket.sid
+        }
+        
+        socket.on("get_generate_key") { data, ack in
             print("^^^^^ RECEIVING ROOM_ID ^^^^^^")
             self.getRoomID(data: data[0] as! [String : Any])
         }
         
-        SocketIOManager.sharedInstance.socket?.on("init_data") { data, ack in
+        socket.on("init_data") { data, ack in
             print("^^^^^RECEIVING ROOM_DATA^^^^^^")
             self.getGameProperties(data: data[0] as! [String : Any])
         } //TODO: init_data and game settings be united
         
-        SocketIOManager.sharedInstance.socket?.on("get_room_settings") { data, ack in
+        socket.on("get_room_settings") { data, ack in
             print("^^^^^RECEIVING ROOM_DATA^^^^^^")
             let temp = data[0] as! [String : Any]
             self.getGameSettings(data: temp["data"] as! [String : Any])
         }
         
-        SocketIOManager.sharedInstance.socket?.on("start_game") { data, ack in
+        socket.on("start_game") { data, ack in
             print("^^^^^ RECEIVING WORDS ^^^^^^")
             self.getWords(data: data[0] as! [String : Any])
         }
         
-        SocketIOManager.sharedInstance.socket?.on("lets_play") { data, ack in
+        socket.on("lets_play") { data, ack in
             print("^^^^^GAME STARTED^^^^^^")
             self.getStartGame()
         }
         
-        SocketIOManager.sharedInstance.socket?.on("chat_and_guess") {data, ack in
+        socket.on("chat_and_guess") {data, ack in
          print("^^^^^RECEIVING MESSAGE^^^^^^")
             self.receiveMessage(data: data[0] as! [String : Any])
         }
         
-        SocketIOManager.sharedInstance.socket?.on("end_of_the_round") { data, ack in
+        socket.on("end_of_the_round") { data, ack in
             print("^^^^^ RECEIVING ROUND DATA ^^^^^^")
             self.endOfRound(data: data[0] as! [String : Any])
         }
@@ -174,36 +183,17 @@ class SocketIOManager: NSObject {
     }
     
     func getStartGame() {
-        guard UIApplication.topViewController()?.restorationIdentifier == "ChoosingWordViewController" ||
-           UIApplication.topViewController()?.restorationIdentifier == "WaitingViewController" else {
+        let topViewController = UIApplication.topViewController()
+        
+        if topViewController?.restorationIdentifier == "ChoosingWordViewController" {
+            ChoosingWordViewController.parentViewController?.viewDidAppear(false)
+        } else if topViewController?.restorationIdentifier == "WaitingViewController" {
+            WaitingViewController.parentViewController?.viewDidAppear(false)
+        } else {
             return
         }
         
-        UIApplication.topViewController()?.dismiss(animated: true, completion: nil)
-    }
-    
-    //MARK: Ending Game
-    func endOfRound(data: [String : Any]) {
-        guard UIApplication.topViewController()?.restorationIdentifier == "DrawingViewController" ||
-           UIApplication.topViewController()?.restorationIdentifier == "GuessingViewController" else {
-            return
-        }
-        
-        if (data["endOfGame"] as! Int) == 1 {
-            ScoresViewController.isLastRound = true
-        }
-        
-        var temp = data["data"] as! [String : Any]
-        ScoresViewController.users = temp["users"] as! [[String : Any]]
-
-        temp = temp["room"] as! [String : Any]
-        ScoresViewController.word = (temp["word"] as? String)!
-        
-        UIApplication.topViewController()?.showNextPage(identifier: "ScoresViewController")
-    }
-    
-    func playAgain() {
-        socket?.emit("send_play_again", Game.sharedInstance.roomID!)
+        topViewController?.dismiss(animated: true, completion: nil)
     }
     
     //MARK: Choosing word
@@ -218,8 +208,7 @@ class SocketIOManager: NSObject {
         //TODO: guard
         let viewController = UIApplication.topViewController()
         
-        //TODO: Should get socket id
-        if (data["username"] as! String) == Game.sharedInstance.username {
+        if (data["socket_id"] as! String) == socketID {
             ChoosingWordViewController.words = data["words"] as? [String]
             viewController?.showNextPage(identifier: "DrawingViewController")
         } else {
@@ -254,5 +243,29 @@ class SocketIOManager: NSObject {
         } else if UIApplication.topViewController()?.restorationIdentifier == "GuessingViewController" {
             GuessingViewController.chatTableViewDelegates?.insertMessage(message)
         }
+    }
+    
+    //MARK: Ending Game
+    func endOfRound(data: [String : Any]) {
+        guard UIApplication.topViewController()?.restorationIdentifier == "DrawingViewController" ||
+           UIApplication.topViewController()?.restorationIdentifier == "GuessingViewController" else {
+            return
+        }
+        
+        if (data["endOfGame"] as! Int) == 1 {
+            ScoresViewController.isLastRound = true
+        }
+        
+        var temp = data["data"] as! [String : Any]
+        ScoresViewController.users = temp["users"] as! [[String : Any]]
+
+        temp = temp["room"] as! [String : Any]
+        ScoresViewController.word = (temp["word"] as? String)!
+        
+        UIApplication.topViewController()?.showNextPage(identifier: "ScoresViewController")
+    }
+    
+    func playAgain() {
+        socket?.emit("send_play_again", Game.sharedInstance.roomID!)
     }
 }

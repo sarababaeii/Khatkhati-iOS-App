@@ -158,6 +158,7 @@ class GuessingViewController: UIViewController {
         }
         
         if !wordChose {
+            WaitingViewController.parentViewController = self
             showNextPage(identifier: "WaitingViewController")
             wordChose = true
         }

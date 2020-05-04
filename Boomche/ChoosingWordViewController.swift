@@ -19,6 +19,8 @@ class ChoosingWordViewController: UIViewController {
     var buttons = [CustomButton]()
     static var words: [String]?
     
+    static var parentViewController: UIViewController?
+    
     @IBAction func chooseWord(_ sender: Any) {
         SocketIOManager.sharedInstance.sendWord(word: (sender as! UIButton).currentTitle!)
     }

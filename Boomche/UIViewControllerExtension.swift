@@ -16,10 +16,6 @@ extension UIViewController {
         }
         
         let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: identifier) as UIViewController
-
-        controller.modalPresentationStyle = .fullScreen
-        controller.modalTransitionStyle = .coverVertical
-
         self.present(controller, animated: true, completion: nil)
     }
 }

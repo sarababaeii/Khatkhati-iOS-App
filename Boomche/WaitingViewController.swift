@@ -17,6 +17,8 @@ class WaitingViewController: UIViewController {
     
     static var chooserName = "سارا"
 
+    static var parentViewController: UIViewController?
+    
     //MARK: Timer Setting
     func setTimer() {
         let timer = TimerSetting(label: timerLabel, time: 10)

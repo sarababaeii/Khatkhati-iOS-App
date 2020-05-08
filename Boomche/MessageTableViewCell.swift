@@ -13,6 +13,9 @@ class MessageTableViewCell: UITableViewCell {
     @IBOutlet weak var messageLabel: UILabel!
     
     func setCaption(_ message: Message) {
+        if message.senderHasGuessed == true {
+            messageLabel.textColor = Colors.lightBlue.playerColor?.topBackground
+        }
         messageLabel.text = "\(message.username): \(message.content)"
     }
     

@@ -92,6 +92,11 @@ class SocketIOManager: NSObject {
             self.getGameProperties(data: data[0] as! [String : Any])
         } //TODO: init_data and game settings be united
         
+        socket.on("find_room_on") {data, ack in
+            print("^^^^^ RECEIVING RANDOM GAME ^^^^^^")
+            self.receiveRandomGame(data: data[0] as! [String : Any])
+        }
+        
         socket.on("get_room_settings") { data, ack in
             print("^^^^^RECEIVING ROOM_DATA^^^^^^")
             let temp = data[0] as! [String : Any]
@@ -144,6 +149,10 @@ class SocketIOManager: NSObject {
     }
     
     func getGameProperties(data: [String : Any]) {
+        guard UIApplication.topViewController()?.restorationIdentifier == "NewLobbyViewController" else {
+            return
+        }
+        
         NewLobbyViewController.playersCollectionViewDelegates?.updatePlayers(users: data["users"] as! [String])
         
         let settings = data["settings"] as! [String : Any]
@@ -151,6 +160,21 @@ class SocketIOManager: NSObject {
         let round = settings["round"] as! Int
         
         NewLobbyViewController.setButtonTitle(button: (NewLobbyViewController.roundsButton)!, title: String(round).convertEnglishNumToPersianNum())
+    }
+    
+    //MARK: Random Game
+    func findGame() {
+        socket?.emit("find_room_emit")
+    }
+    
+    func receiveRandomGame(data: [String : Any]) {
+        if let roomID = data["hash"] as? String {
+            Game.sharedInstance.roomID = roomID
+            joinGame()
+            UIApplication.topViewController()?.showNextPage(identifier: "GuessingViewController")
+        } else {
+            print("NO PUBLIC ROOM")
+        }
     }
     
     //MARK: Game Settings
@@ -171,6 +195,8 @@ class SocketIOManager: NSObject {
         switch property {
         case "round":
             NewLobbyViewController.setButtonTitle(button: (NewLobbyViewController.roundsButton)!, title: value.convertEnglishNumToPersianNum())
+        case "room-type":
+            NewLobbyViewController.setButtonTitle(button: (NewLobbyViewController.typeButton)!, title: value)
 //            case "time":
         default:
             return
@@ -226,27 +252,56 @@ class SocketIOManager: NSObject {
     
     //MARK: Chatting
     func sendMessage(message: String) {
-        let data = ["room_id": Game.sharedInstance.roomID!, "text": message, "username": Game.sharedInstance.username]
+        let data = ["room_id": Game.sharedInstance.roomID!, "text": message, "username": Game.sharedInstance.username, "socket_id": socketID]
         socket?.emit("chat", data)
     }
     
     func receiveMessage(data: [String : Any]) {
+        let senderID = data["socket_id"] as! String
+        let senderUsername = data["username"] as! String
         var message: Message
-         if (data["correct"] as! Int) == 1 {
-             message = Message(username: data["username"] as! String, content: "درست حدس زد!")
+        
+        let senderHasGuessed = Game.sharedInstance.personsHaveGuessed.contains(senderID)
+        
+         if (data["correct"] as! Int) == 1 &&  !senderHasGuessed{
+            message = receiveAnswer(senderID: senderID, senderUsername: senderUsername)
          } else {
-             message = Message(username: data["username"] as! String, content: data["text"] as! String)
+             message = receiveNormalText(senderID: senderID, senderUsername: senderUsername, text: data["text"] as! String, senderHasGuessed: senderHasGuessed)
          }
         
-        if UIApplication.topViewController()?.restorationIdentifier == "DrawingViewController" {
+        switch UIApplication.topViewController()?.restorationIdentifier {
+        case "DrawingViewController":
             DrawingViewController.chatTableViewDelegates?.insertMessage(message)
-        } else if UIApplication.topViewController()?.restorationIdentifier == "GuessingViewController" {
+        case "GuessingViewController" :
             GuessingViewController.chatTableViewDelegates?.insertMessage(message)
+        default:
+            return
         }
+    }
+    
+    func receiveAnswer(senderID: String, senderUsername: String) -> Message {
+        let message = Message(username: senderUsername, content: "درست حدس زد!")
+        
+        Game.sharedInstance.personsHaveGuessed.append(senderID)
+        if socketID == senderID {
+            Game.sharedInstance.hasGuessed = true
+        }
+        
+        return message
+    }
+    
+    func receiveNormalText(senderID: String, senderUsername: String, text: String, senderHasGuessed: Bool) -> Message {
+        let message = Message(username: senderUsername, content: text)
+        message.senderHasGuessed = senderHasGuessed
+        
+        return message
     }
     
     //MARK: Ending Game
     func endOfRound(data: [String : Any]) {
+        Game.sharedInstance.hasGuessed = false
+        Game.sharedInstance.personsHaveGuessed.removeAll()
+        
         guard UIApplication.topViewController()?.restorationIdentifier == "DrawingViewController" ||
            UIApplication.topViewController()?.restorationIdentifier == "GuessingViewController" else {
             return
@@ -269,3 +324,15 @@ class SocketIOManager: NSObject {
         socket?.emit("send_play_again", Game.sharedInstance.roomID!)
     }
 }
+
+
+//SocketIOClient{/}: Handling event: find_room_on with data: [{
+//    hash = abcd;
+//    "last_start_time" = 1588785777;
+//    name = "my room";
+//    restTime = 55;
+//    round = 1;
+//    time = 60;
+//    "which_round" = 1;
+//    word = blueberry;
+//}]

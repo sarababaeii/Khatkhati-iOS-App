@@ -51,6 +51,7 @@ class EndGameViewController: UIViewController {
         winnerScoreView.backgroundColor = EndGameViewController.winnerPlayer?.color.topBackground
         
         if let winner = EndGameViewController.winnerPlayer {
+            winnerNameLabel.text = winner.username
             winnerScoreLabel.text = String(winner.totalScore).convertEnglishNumToPersianNum()
         }
     }
@@ -63,6 +64,7 @@ class EndGameViewController: UIViewController {
         secondPlaceScoreView.backgroundColor = EndGameViewController.secondPlacePlayer?.color.topBackground
         
         if let second = EndGameViewController.secondPlacePlayer {
+            secondPlaceNameLabel.text = second.username
             secondPlaceScoreLabel.text = String(second.totalScore).convertEnglishNumToPersianNum()
         }
     }
@@ -75,6 +77,7 @@ class EndGameViewController: UIViewController {
         thirdPlaceScoreView.backgroundColor = EndGameViewController.thirdPlacePlayer?.color.topBackground
         
         if let third = EndGameViewController.thirdPlacePlayer {
+            thirdPlaceNameLabel.text = third.username
             thirdPlaceScoreLabel.text = String(third.totalScore).convertEnglishNumToPersianNum()
         }
     }

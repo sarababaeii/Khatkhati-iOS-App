@@ -24,9 +24,9 @@ class Player {
         self.currentScore = 0
     }
     
-    convenience init(username: String, color: Color, totalScore: Int, currentScore: Int) {
+    convenience init(username: String, color: Color, totalScore: Double, currentScore: Double) {
         self.init(username: username, color: color)
-        self.totalScore = totalScore
-        self.currentScore = currentScore
+        self.totalScore = Int(totalScore)
+        self.currentScore = Int(currentScore)
     }
 }

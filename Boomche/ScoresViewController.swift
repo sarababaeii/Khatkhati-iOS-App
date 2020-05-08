@@ -51,19 +51,44 @@ class ScoresViewController: UIViewController, UITableViewDelegate, UITableViewDa
         players.removeAll()
         
         for user in ScoresViewController.users {
-            players.append(Player(username: user["name"] as! String, color: Colors.red.playerColor!, totalScore: user["score"] as! Int, currentScore: user["current_score"] as! Int))
+            let newPlayer = Player(username: user["name"] as! String, color: Colors.red.playerColor!, totalScore: user["score"] as! Double, currentScore: user["current_score"] as! Double)
+            
+            if (user["is_drawer"] as? Int) == 1 {
+                newPlayer.isPainter = true
+            }
+            
+            players.append(newPlayer)
         }
         
+        findFirstGuesser()
+        
         if ScoresViewController.isLastRound {
-            if players.count > 0 {
-                EndGameViewController.winnerPlayer = players[0]
+            setWinners()
+        }
+    }
+    
+    func findFirstGuesser() {
+        var maxCurrentScoreIndex = 0
+        
+        for i in 0 ..< players.count {
+            if !players[i].isPainter && players[i].currentScore > players[maxCurrentScoreIndex].currentScore {
+                maxCurrentScoreIndex = i
             }
-            if players.count > 1 {
-                EndGameViewController.secondPlacePlayer = players[1]
-            }
-            if players.count > 2 {
-                EndGameViewController.thirdPlacePlayer = players[2]
-            }
+        }
+        if players[maxCurrentScoreIndex].currentScore > 0 {
+            players[maxCurrentScoreIndex].isFirstGuesser = true
+        }
+    }
+    
+    func setWinners() {
+        if players.count > 0 {
+            EndGameViewController.winnerPlayer = players[0]
+        }
+        if players.count > 1 {
+            EndGameViewController.secondPlacePlayer = players[1]
+        }
+        if players.count > 2 {
+            EndGameViewController.thirdPlacePlayer = players[2]
         }
     }
     

@@ -35,6 +35,10 @@ class MessageTableViewDelegates: NSObject, UITableViewDelegate, UITableViewDataS
     
     func insertMessage(_ message: Message?){
         if let message = message {
+            if Game.sharedInstance.hasGuessed == false && message.senderHasGuessed == true {
+                return
+            }
+            
             let indexPath = IndexPath(row: messages.count, section: 0)
             
             chatTableView.beginUpdates()

@@ -1950,17 +1950,20 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEq-mK-ITg">
                                                             <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۲۱۰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbB-Zj-xAr">
-                                                                    <rect key="frame" x="22" y="13" width="32" height="37.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۲۱۰" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbB-Zj-xAr">
+                                                                    <rect key="frame" x="23" y="13" width="30" height="38"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" secondItem="pbB-Zj-xAr" secondAttribute="height" multiplier="32:38" id="hxs-q5-cwx"/>
+                                                                        <constraint firstAttribute="height" constant="38" id="KFO-oI-q0w"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="Vazir-Black" family="Vazir" pointSize="24"/>
                                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="امتیاز" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJB-V6-dBu">
-                                                                    <rect key="frame" x="22" y="50.5" width="32" height="17.5"/>
+                                                                    <rect key="frame" x="26" y="51" width="24" height="17.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="ZfG-aG-KWf"/>
+                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" name="Vazir-Thin" family="Vazir" pointSize="11"/>
                                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -1968,9 +1971,8 @@
                                                             </subviews>
                                                             <color key="backgroundColor" red="1" green="0.20784313725490194" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
-                                                                <constraint firstItem="uJB-V6-dBu" firstAttribute="trailing" secondItem="pbB-Zj-xAr" secondAttribute="trailing" id="Hfj-5K-wnz"/>
+                                                                <constraint firstItem="uJB-V6-dBu" firstAttribute="centerX" secondItem="rEq-mK-ITg" secondAttribute="centerX" id="A9b-xc-xh4"/>
                                                                 <constraint firstItem="pbB-Zj-xAr" firstAttribute="centerX" secondItem="rEq-mK-ITg" secondAttribute="centerX" id="W9I-Jb-pZV"/>
-                                                                <constraint firstItem="uJB-V6-dBu" firstAttribute="leading" relation="lessThanOrEqual" secondItem="pbB-Zj-xAr" secondAttribute="leading" id="Xpd-Bh-RcN"/>
                                                                 <constraint firstAttribute="width" secondItem="rEq-mK-ITg" secondAttribute="height" multiplier="1:1" id="ax7-jK-6ny"/>
                                                                 <constraint firstItem="pbB-Zj-xAr" firstAttribute="top" secondItem="rEq-mK-ITg" secondAttribute="top" constant="13" id="bS0-Ms-DFo"/>
                                                                 <constraint firstItem="uJB-V6-dBu" firstAttribute="top" secondItem="pbB-Zj-xAr" secondAttribute="bottom" id="s7r-h9-oJz"/>
@@ -2164,16 +2166,16 @@
                                         <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۱۹۰" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZN9-sC-kfo">
-                                                <rect key="frame" x="22" y="11.5" width="32" height="37.5"/>
+                                                <rect key="frame" x="23.5" y="11.5" width="29.5" height="38"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="ZN9-sC-kfo" secondAttribute="height" multiplier="32:38" id="xTB-7E-Jyx"/>
+                                                    <constraint firstAttribute="height" constant="38" id="1XE-08-k8z"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Vazir-Black" family="Vazir" pointSize="24"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="امتیاز" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qhn-39-GqG">
-                                                <rect key="frame" x="26.5" y="49" width="23.5" height="17.5"/>
+                                                <rect key="frame" x="26.5" y="49.5" width="23.5" height="17.5"/>
                                                 <fontDescription key="fontDescription" name="Vazir-Thin" family="Vazir" pointSize="11"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2214,9 +2216,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۱۵۰" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kk1-Oi-qki">
-                                                <rect key="frame" x="22" y="11" width="32.5" height="38.5"/>
+                                                <rect key="frame" x="22" y="11.5" width="32.5" height="38"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Kk1-Oi-qki" secondAttribute="height" multiplier="32:38" id="Ptw-4S-OOi"/>
+                                                    <constraint firstAttribute="height" constant="38" id="oSb-c0-fVR"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Vazir-Black" family="Vazir" pointSize="24"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

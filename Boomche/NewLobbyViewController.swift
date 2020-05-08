@@ -95,7 +95,7 @@ class NewLobbyViewController: UIViewController {
             nextLobbyType = "عمومی"
         }
         
-        //Socket
+        SocketIOManager.sharedInstance.sendGameSetting(name: "room-type", value: String(nextLobbyType))
         NewLobbyViewController.setButtonTitle(button: lobbyTypeButton, title: nextLobbyType)
     }
     

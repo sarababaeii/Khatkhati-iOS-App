@@ -15,6 +15,10 @@ class Game {
     var username = "سارا"
     var isLobbyLeader = false
     
+    var hasGuessed = false
+//    var painter: String?
+    var personsHaveGuessed = [String]()
+    
 //    static var roundNumber = 3
 //    var lobbyType = "Private"
 }

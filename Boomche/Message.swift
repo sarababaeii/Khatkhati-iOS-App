@@ -11,6 +11,7 @@ import Foundation
 class Message {
     var username: String
     var content: String
+    var senderHasGuessed = false
     
     init(username: String, content: String) {
         self.username = username

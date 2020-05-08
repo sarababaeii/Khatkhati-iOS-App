@@ -16,6 +16,7 @@ class JoinGameViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var joinButton: CustomButton!
     
     @IBAction func randomGameAction(_ sender: Any) {
+        SocketIOManager.sharedInstance.findGame()
         showNextPage(identifier: "LoadingViewController")
     }
     

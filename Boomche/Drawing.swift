@@ -16,7 +16,7 @@ class Drawing {
     
     var lastPoint = CGPoint.zero
     var brushWidth: CGFloat = 6.0
-    var brushColor: UIColor = Colors.red.drawingColor!.topBackground
+    var brushColor: UIColor = Colors.black.drawingColor!.lightBackground
     
     var opacity: CGFloat = 1.0
     var swiped = false

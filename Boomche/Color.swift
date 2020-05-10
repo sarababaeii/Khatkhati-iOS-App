@@ -10,28 +10,28 @@ import Foundation
 import UIKit
 
 class Color {
-    var topBackground: UIColor
-    var bottomBackground: UIColor?
+    var lightBackground: UIColor
+    var darkBackground: UIColor?
     var shadow: UIColor?
     var border: UIColor?
     
     init(_ color: UIColor) {
-        topBackground = color
+        lightBackground = color
     }
     
-    convenience init(topBackground: UIColor, shadow: UIColor, border: UIColor) {
-        self.init(topBackground)
+    convenience init(lightBackground: UIColor, shadow: UIColor, border: UIColor) {
+        self.init(lightBackground)
         self.shadow = shadow
         self.border = border
     }
     
-    convenience init(topBackground: UIColor, bottomBackground: UIColor) {
-        self.init(topBackground)
-        self.bottomBackground = bottomBackground
+    convenience init(lightBackground: UIColor, darkBackground: UIColor) {
+        self.init(lightBackground)
+        self.darkBackground = darkBackground
     }
     
-    convenience init(topBackground: UIColor, bottomBackground: UIColor, shadow: UIColor) {
-        self.init(topBackground: topBackground, bottomBackground: bottomBackground)
+    convenience init(lightBackground: UIColor, darkBackground: UIColor, shadow: UIColor) {
+        self.init(lightBackground: lightBackground, darkBackground: darkBackground)
         self.shadow = shadow
     }
 }

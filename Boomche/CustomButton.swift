@@ -19,20 +19,20 @@ class CustomButton: UIButton {
         }
     
     func setBackgroundColor(color: Color) {
-        self.color = color.topBackground
+        self.color = color.lightBackground
         
-        if let bottomBackground = color.bottomBackground {
+        if let darkBackground = color.darkBackground {
             
 //            gradientLayer.type = .radial
             gradientLayer.frame = self.bounds
             gradientLayer.cornerRadius = self.layer.cornerRadius //must be called after setCornerRadius
             
-            gradientLayer.colors = [color.topBackground.cgColor, bottomBackground.cgColor]
+            gradientLayer.colors = [color.lightBackground.cgColor, darkBackground.cgColor]
             
             self.layer.insertSublayer(gradientLayer, at: 0)
         }
         else {
-            self.layer.backgroundColor = color.topBackground.cgColor
+            self.layer.backgroundColor = color.lightBackground.cgColor
         }
     }
     

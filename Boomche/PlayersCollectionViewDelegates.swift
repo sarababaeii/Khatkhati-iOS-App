@@ -55,13 +55,25 @@ class PlayersCollectionViewDelegates: NSObject, UICollectionViewDelegate, UIColl
         }
     }
     
-    func updatePlayers(users: [String]) {//should be more efficient with socket_id
+    func updatePlayers(users: [[String : Any]]) {//should be more efficient with socket_id
         while players.count > 0 {
             deletePlayer(at: IndexPath(item: players.count - 1, section: 0))
         }
         
         for i in 0 ..< users.count {
-            insertPlayer(Player(username: users[i], color: Colors.red.playerColor!), at: IndexPath(item: players.count, section: 0))
+            var color: Color
+            switch i {
+            case 0:
+                color = Colors.red.playerColor!
+            case 1:
+                color = Colors.green.playerColor!
+            case 2:
+                color = Colors.orange.playerColor!
+            default:
+                color = Colors.red.playerColor!
+            }
+            
+            insertPlayer(Player(username: users[i]["name"] as! String, color: color), at: IndexPath(item: players.count, section: 0))
         }
     }
 }

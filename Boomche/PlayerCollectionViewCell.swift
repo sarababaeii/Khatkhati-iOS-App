@@ -17,7 +17,7 @@ class PlayerCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     
     func setAttributes(player: Player) {
-        colorView.backgroundColor = player.color.topBackground
+        colorView.backgroundColor = player.color.lightBackground
         alphabetLabel.text = player.username[0]
         nameLabel.text = player.username
     }

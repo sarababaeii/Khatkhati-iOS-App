@@ -23,11 +23,15 @@ class GuessingViewController: UIViewController {
     @IBOutlet weak var chatTextField: UITextField!
     @IBOutlet weak var sendButton: CustomButton!
     
-    var wordChose = false
+    static var wordChose = false
     
-    var drawing: Drawing?
+    static var drawing: Drawing?
     
     static var chatTableViewDelegates: MessageTableViewDelegates?
+    
+    var kuft = 0
+    
+    
     
     //MARK: Timer Setting
     func setTimer() {
@@ -52,11 +56,12 @@ class GuessingViewController: UIViewController {
     func showDrawing(state: String, point: [CGFloat]) {
         switch state {
         case "start":
-            drawing?.touchesBegan(CGPoint(x: point[0], y: point[1]))
+            GuessingViewController.drawing?.touchesBegan(CGPoint(x: point[0], y: point[1]))
         case "moving":
-            drawing?.touchesMoved(CGPoint(x: point[0], y: point[1]))
+            GuessingViewController.drawing?.touchesMoved(CGPoint(x: point[0], y: point[1]))
         case "end":
-            drawing?.touchesEnded()
+            kuft += 1
+            GuessingViewController.drawing?.touchesEnded()
         default:
             print("Error in receiving draw")
         }
@@ -114,7 +119,7 @@ class GuessingViewController: UIViewController {
     
     //MARK: Initializing
     func initializeVariables() {
-        drawing = Drawing(canvasView: self.canvasView, canvas: self.canvas, templeCanvas: self.templeCanvas)
+        GuessingViewController.drawing = Drawing(canvasView: self.canvasView, canvas: self.canvas, templeCanvas: self.templeCanvas)
         GuessingViewController.chatTableViewDelegates = MessageTableViewDelegates(chatTableView: chatTableView)
         
         chatTableView.delegate = GuessingViewController.chatTableViewDelegates
@@ -123,6 +128,7 @@ class GuessingViewController: UIViewController {
     
     func clearVariables() { //drawing?!
         GuessingViewController.chatTableViewDelegates = nil
+        GuessingViewController.wordChose = false
     }
     
     //MARK: UI Handling
@@ -152,19 +158,20 @@ class GuessingViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if wordChose {
+        if GuessingViewController.wordChose {
             setTimer()
             initializeVariables()
         }
         
-        if !wordChose {
+        if !GuessingViewController.wordChose {
             WaitingViewController.parentViewController = self
             showNextPage(identifier: "WaitingViewController")
-            wordChose = true
+            GuessingViewController.wordChose = true
         }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         clearVariables()
+        print(" heeeeeeeeeeeeeeeeeeeeeey \(kuft) uuiuuuuuuuuuuu")
     }
 }

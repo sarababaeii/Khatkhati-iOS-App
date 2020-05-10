@@ -25,8 +25,8 @@ class ScoreTableViewCell: UITableViewCell {
         nameLabel.text = player.username
         currentScoreLabel.text = "+\(String(player.currentScore).convertEnglishNumToPersianNum()) امتیاز"
         totalScoreLabel.text = String(player.totalScore).convertEnglishNumToPersianNum()
-        nameLabel.textColor = player.color.topBackground
-        colorView.backgroundColor = player.color.topBackground
+        nameLabel.textColor = player.color.lightBackground
+        colorView.backgroundColor = player.color.lightBackground
         
         if player.isPainter {
             bonusImage.image = UIImage(named: "Brush")

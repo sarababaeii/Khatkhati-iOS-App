@@ -47,8 +47,8 @@ class EndGameViewController: UIViewController {
         winnerView.layer.cornerRadius = 29
         winnerScoreView.layer.cornerRadius = 22.5
         
-        winnerNameLabel.textColor = EndGameViewController.winnerPlayer?.color.topBackground
-        winnerScoreView.backgroundColor = EndGameViewController.winnerPlayer?.color.topBackground
+        winnerNameLabel.textColor = EndGameViewController.winnerPlayer?.color.lightBackground
+        winnerScoreView.backgroundColor = EndGameViewController.winnerPlayer?.color.lightBackground
         
         if let winner = EndGameViewController.winnerPlayer {
             winnerNameLabel.text = winner.username
@@ -60,8 +60,8 @@ class EndGameViewController: UIViewController {
         secondPlaceView.layer.cornerRadius = 5
         secondPlaceScoreView.layer.cornerRadius = 5
         
-        secondPlaceNameLabel.textColor = EndGameViewController.secondPlacePlayer?.color.topBackground
-        secondPlaceScoreView.backgroundColor = EndGameViewController.secondPlacePlayer?.color.topBackground
+        secondPlaceNameLabel.textColor = EndGameViewController.secondPlacePlayer?.color.lightBackground
+        secondPlaceScoreView.backgroundColor = EndGameViewController.secondPlacePlayer?.color.lightBackground
         
         if let second = EndGameViewController.secondPlacePlayer {
             secondPlaceNameLabel.text = second.username
@@ -73,8 +73,8 @@ class EndGameViewController: UIViewController {
         thirdPlaceView.layer.cornerRadius = 5
         thirdPlaceScoreView.layer.cornerRadius = 5
         
-        thirdPlaceNameLabel.textColor = EndGameViewController.thirdPlacePlayer?.color.topBackground
-        thirdPlaceScoreView.backgroundColor = EndGameViewController.thirdPlacePlayer?.color.topBackground
+        thirdPlaceNameLabel.textColor = EndGameViewController.thirdPlacePlayer?.color.lightBackground
+        thirdPlaceScoreView.backgroundColor = EndGameViewController.thirdPlacePlayer?.color.lightBackground
         
         if let third = EndGameViewController.thirdPlacePlayer {
             thirdPlaceNameLabel.text = third.username

@@ -51,13 +51,12 @@ class DrawingViewController: UIViewController {
     var colorButtons = [CustomButton]()
     var colorViews = [CustomButton]()
     var colors = [Color]()
-    
-    var brushSelected: Bool = false
+   
+    var drawing: Drawing?
+    var isBrushSelected: Bool = false
     
     var brushColorButton: CustomButton?
     var brushColorView: UIView?
-    
-    var drawing: Drawing?
     
     static var chatTableViewDelegates: MessageTableViewDelegates?
     
@@ -69,53 +68,56 @@ class DrawingViewController: UIViewController {
     
     //MARK: Color picking
     @IBAction func colorPicked(_ sender: Any) {
-        unselectedColor()
+        unselectColor()
         
         brushColorButton = (sender as! CustomButton)
         
         if let siblings = (sender as! UIButton).superview?.subviews {
             for component in siblings {
                 if component != sender as! UIView {
-                    component.isHidden = false
+                    showSelected(willShowComponent: component, willHideComponent: sender)
                     brushColorView = component
                 }
             }
         }
-        (sender as! UIButton).isHidden = true
         
-        if !brushSelected {
-            coloring(brushButton!)
+        if !isBrushSelected {
+            selectBrush(brushButton!)
         }
         
         drawing?.brushColor = brushColorButton!.color!
+        SocketIOManager.sharedInstance.sendGameSetting(name: "color", value: (drawing?.brushColor.toHexString())!)
     }
     
-    @IBAction func coloring(_ sender: Any) {
+    @IBAction func selectBrush(_ sender: Any) {
         showSelected(willShowComponent: brushView!, willHideComponent: brushButton!)
     
         showSelected(willShowComponent: eraserButton!, willHideComponent: eraserView!)
 
-        brushSelected = true
+        isBrushSelected = true
         drawing?.brushWidth = 6.0
+        SocketIOManager.sharedInstance.sendGameSetting(name: "lineWidth", value: String(Float(drawing!.brushWidth)))
         
         if brushColorButton == nil {
-            colorPicked(redColorButton!)
+            colorPicked(blackColorButton!)
         }
     }
     
-    @IBAction func erasing(_ sender: Any) {
+    @IBAction func selectEraser(_ sender: Any) {
         showSelected(willShowComponent: eraserView!, willHideComponent: eraserButton!)
 
         showSelected(willShowComponent: brushButton!, willHideComponent: brushView!)
 
-        brushSelected = false
-        unselectedColor()
+        isBrushSelected = false
+        unselectColor()
         
         drawing?.brushWidth = 17.0 //TODO: good?!
-        drawing?.brushColor = Colors.white.drawingColor!.topBackground
+        SocketIOManager.sharedInstance.sendGameSetting(name: "lineWidth", value: String(Float(drawing!.brushWidth)))
+        drawing?.brushColor = Colors.white.drawingColor!.lightBackground
+        SocketIOManager.sharedInstance.sendGameSetting(name: "color", value: (Colors.white.drawingColor?.lightBackground.toHexString())!)
     }
     
-    func unselectedColor() {
+    func unselectColor() {
         if let brushColorButton = brushColorButton {
             showSelected(willShowComponent: brushColorButton, willHideComponent: brushColorView!)
         }
@@ -167,7 +169,7 @@ class DrawingViewController: UIViewController {
     
     //MARK: Initializing
     func initializeBrush() {
-        colorPicked(redColorButton!)
+        colorPicked(blackColorButton!)
     }
     
     func initializeVariables() {
@@ -204,8 +206,6 @@ class DrawingViewController: UIViewController {
     func configure() {
         initializeArrays()
         setColorPaletteAttributes()
-        
-        initializeBrush()
     }
     
     override func viewDidLoad() {
@@ -219,6 +219,7 @@ class DrawingViewController: UIViewController {
         if wordChose {
             setTimer()
             initializeVariables()
+            initializeBrush()
         }
         
         if !wordChose {

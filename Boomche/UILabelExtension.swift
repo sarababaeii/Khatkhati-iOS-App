@@ -15,6 +15,6 @@ extension UILabel {
     }
     
     func setBackgroundColor(color: Color){
-        self.backgroundColor = color.topBackground
+        self.backgroundColor = color.lightBackground
     }
 }

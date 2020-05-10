@@ -70,7 +70,7 @@ class JoinGameViewController: UIViewController, UITextFieldDelegate {
     
     func setLobbyCodeTextFieldAttributes() {
         lobbyCodeTextField.layer.cornerRadius = 20
-        lobbyCodeTextField.backgroundColor = Colors.gray.componentColor!.topBackground
+        lobbyCodeTextField.backgroundColor = Colors.gray.componentColor!.lightBackground
     }
     
     func setJoinButtonAttributrs() {

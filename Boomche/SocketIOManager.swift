@@ -153,10 +153,10 @@ class SocketIOManager: NSObject {
             return
         }
         
-        NewLobbyViewController.playersCollectionViewDelegates?.updatePlayers(users: data["users"] as! [String])
+        NewLobbyViewController.playersCollectionViewDelegates?.updatePlayers(users: data["users"] as! [[String : Any]])
         
         let settings = data["settings"] as! [String : Any]
-//        let time = settings["time"] as! Int
+        //TODO: round
         let round = settings["round"] as! Int
         
         NewLobbyViewController.setButtonTitle(button: (NewLobbyViewController.roundsButton)!, title: String(round).convertEnglishNumToPersianNum())
@@ -171,7 +171,21 @@ class SocketIOManager: NSObject {
         if let roomID = data["hash"] as? String {
             Game.sharedInstance.roomID = roomID
             joinGame()
-            UIApplication.topViewController()?.showNextPage(identifier: "GuessingViewController")
+            switch data["state"] as! Int {
+            case 0:
+                UIApplication.topViewController()?.showNextPage(identifier: "NewLobbyViewController")
+            case 1:
+                UIApplication.topViewController()?.showNextPage(identifier: "GuessingViewController")
+                GuessingViewController.wordChose = true
+            case 2:
+                UIApplication.topViewController()?.showNextPage(identifier: "ScoresViewController")
+                //TODO: score board
+            case 3:
+                UIApplication.topViewController()?.showNextPage(identifier: "GuessingViewController")
+                //TODO: name of painter?
+            default:
+                UIApplication.topViewController()?.showNextPage(identifier: "LoadingViewController")
+            }
         } else {
             print("NO PUBLIC ROOM")
         }
@@ -184,7 +198,8 @@ class SocketIOManager: NSObject {
     }
     
     func getGameSettings(data: [String : Any]) {
-        guard UIApplication.topViewController()?.restorationIdentifier == "NewLobbyViewController" &&
+        guard (UIApplication.topViewController()?.restorationIdentifier == "NewLobbyViewController" ||
+                UIApplication.topViewController()?.restorationIdentifier == "GuessingViewController") &&
             Game.sharedInstance.roomID == (data["room_id"] as! String) else {
             return
         }
@@ -197,7 +212,10 @@ class SocketIOManager: NSObject {
             NewLobbyViewController.setButtonTitle(button: (NewLobbyViewController.roundsButton)!, title: value.convertEnglishNumToPersianNum())
         case "room-type":
             NewLobbyViewController.setButtonTitle(button: (NewLobbyViewController.typeButton)!, title: value)
-//            case "time":
+        case "color":
+            GuessingViewController.drawing?.brushColor = UIColor(hexString: value)
+        case "lineWidth":
+            GuessingViewController.drawing?.brushWidth = CGFloat(Float(value)!)
         default:
             return
         }
@@ -325,14 +343,20 @@ class SocketIOManager: NSObject {
     }
 }
 
+// SocketIOClient{/}: Handling event: find_room_on with data: [{
+//     hash = abcd;
+//     "last_start_time" = 0;
+//     name = "my room";
+//     restTime = "-1588946596";
+//     round = 1;
+//     time = 60;
+//     "which_round" = 0;
+//     word = apple;
+// }]
 
-//SocketIOClient{/}: Handling event: find_room_on with data: [{
-//    hash = abcd;
-//    "last_start_time" = 1588785777;
-//    name = "my room";
-//    restTime = 55;
-//    round = 1;
-//    time = 60;
-//    "which_round" = 1;
-//    word = blueberry;
-//}]
+
+//data =     {
+//    name = color;
+//    "room_id" = 48p6;
+//    val = "#ff6573";
+//};

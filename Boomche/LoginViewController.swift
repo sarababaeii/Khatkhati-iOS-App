@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var startButton: CustomButton!
     
     @IBAction func textFieldSelected(_ sender: Any) {
-        (sender as! UITextField).layer.backgroundColor = Colors.yellow.componentColor?.topBackground.cgColor
+        (sender as! UITextField).layer.backgroundColor = Colors.yellow.componentColor?.lightBackground.cgColor
     }
     
     

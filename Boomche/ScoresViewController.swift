@@ -75,7 +75,7 @@ class ScoresViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 maxCurrentScoreIndex = i
             }
         }
-        if players[maxCurrentScoreIndex].currentScore > 0 {
+        if players.count > 0 && players[maxCurrentScoreIndex].currentScore > 0 {
             players[maxCurrentScoreIndex].isFirstGuesser = true
         }
     }

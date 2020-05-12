@@ -90,7 +90,7 @@ class SocketIOManager: NSObject {
         socket.on("init_data") { data, ack in
             print("^^^^^RECEIVING ROOM_DATA^^^^^^")
             self.getGameProperties(data: data[0] as! [String : Any])
-        } //TODO: init_data and game settings be united
+        }
         
         socket.on("find_room_on") {data, ack in
             print("^^^^^ RECEIVING RANDOM GAME ^^^^^^")
@@ -150,16 +150,25 @@ class SocketIOManager: NSObject {
     
     func getGameProperties(data: [String : Any]) {
         guard UIApplication.topViewController()?.restorationIdentifier == "NewLobbyViewController" else {
+            setPainter(users: data["users"] as! [[String : Any]])
             return
         }
         
         NewLobbyViewController.playersCollectionViewDelegates?.updatePlayers(users: data["users"] as! [[String : Any]])
         
         let settings = data["settings"] as! [String : Any]
-        //TODO: round
+        //TODO: type
         let round = settings["round"] as! Int
         
         NewLobbyViewController.setButtonTitle(button: (NewLobbyViewController.roundsButton)!, title: String(round).convertEnglishNumToPersianNum())
+    }
+    
+    func setPainter(users: [[String : Any]]) {
+        for user in users {
+            if (user["is_drawer"] as! Int) == 1 {
+                Game.sharedInstance.painter = user["name"] as! String
+            }
+        }
     }
     
     //MARK: Random Game
@@ -171,18 +180,18 @@ class SocketIOManager: NSObject {
         if let roomID = data["hash"] as? String {
             Game.sharedInstance.roomID = roomID
             joinGame()
+            //TODO: time
             switch data["state"] as! Int {
-            case 0:
+            case 0: //server?!
                 UIApplication.topViewController()?.showNextPage(identifier: "NewLobbyViewController")
             case 1:
                 UIApplication.topViewController()?.showNextPage(identifier: "GuessingViewController")
-                GuessingViewController.wordChose = true
+                Game.sharedInstance.wordChose = true
             case 2:
                 UIApplication.topViewController()?.showNextPage(identifier: "ScoresViewController")
                 //TODO: score board
             case 3:
                 UIApplication.topViewController()?.showNextPage(identifier: "GuessingViewController")
-                //TODO: name of painter?
             default:
                 UIApplication.topViewController()?.showNextPage(identifier: "LoadingViewController")
             }
@@ -227,6 +236,8 @@ class SocketIOManager: NSObject {
     }
     
     func getStartGame() {
+        Game.sharedInstance.wordChose = true
+        
         let topViewController = UIApplication.topViewController()
         
         if topViewController?.restorationIdentifier == "ChoosingWordViewController" {
@@ -244,6 +255,7 @@ class SocketIOManager: NSObject {
     func sendWord(word: String) {
         if let roomID = Game.sharedInstance.roomID {
             Game.sharedInstance.word = word
+            
             let data = ["room_id": roomID, "word": word]
             socket?.emit("lets_play_on", data)
         }
@@ -251,14 +263,15 @@ class SocketIOManager: NSObject {
     
     func getWords(data: [String : Any]) {
         //TODO: guard
+        Game.sharedInstance.painter = data["username"] as! String
+        
         let viewController = UIApplication.topViewController()
         
         if (data["socket_id"] as! String) == socketID {
-            ChoosingWordViewController.words = data["words"] as? [String]
+            Game.sharedInstance.wordList = (data["words"] as? [String])!
             viewController?.showNextPage(identifier: "DrawingViewController")
             Game.sharedInstance.hasGuessed = true
         } else {
-            WaitingViewController.chooserName = data["username"] as! String
             viewController?.showNextPage(identifier: "GuessingViewController")
         }
     }
@@ -319,9 +332,7 @@ class SocketIOManager: NSObject {
     
     //MARK: Ending Game
     func endOfRound(data: [String : Any]) {
-        Game.sharedInstance.word = ""
-        Game.sharedInstance.hasGuessed = false
-        Game.sharedInstance.personsHaveGuessed.removeAll()
+        Game.sharedInstance.resetRound()
         
         guard UIApplication.topViewController()?.restorationIdentifier == "DrawingViewController" ||
            UIApplication.topViewController()?.restorationIdentifier == "GuessingViewController" else {
@@ -356,10 +367,3 @@ class SocketIOManager: NSObject {
 //     "which_round" = 0;
 //     word = apple;
 // }]
-
-
-//data =     {
-//    name = color;
-//    "room_id" = 48p6;
-//    val = "#ff6573";
-//};

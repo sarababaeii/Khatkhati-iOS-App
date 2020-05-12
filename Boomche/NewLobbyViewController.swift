@@ -195,7 +195,6 @@ class NewLobbyViewController: UIViewController {
         setLobbyTypeButtonAttributes()
         
         setStartGameButtonAttributes()
-        print("############# \(String(describing: SocketIOManager.sharedInstance.socket?.sid)) #######")
     }
     
     override func viewDidLoad() {

@@ -17,7 +17,6 @@ class ChoosingWordViewController: UIViewController {
     @IBOutlet weak var thirdWordButton: CustomButton!
     
     var buttons = [CustomButton]()
-    static var words: [String]?
     
     static var parentViewController: UIViewController?
     
@@ -41,8 +40,8 @@ class ChoosingWordViewController: UIViewController {
             button.setCornerRadius(radius: 30.5)
             button.setBackgroundColor(color: Colors.yellow.componentColor!)
             
-            if let word = ChoosingWordViewController.words?[button.tag] {
-                button.setTitle(word, for: .normal)
+            if button.tag < Game.sharedInstance.wordList.count {
+                button.setTitle(Game.sharedInstance.wordList[button.tag], for: .normal)
             }
         }
     }

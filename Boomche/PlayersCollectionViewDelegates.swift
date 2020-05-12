@@ -61,19 +61,10 @@ class PlayersCollectionViewDelegates: NSObject, UICollectionViewDelegate, UIColl
         }
         
         for i in 0 ..< users.count {
-            var color: Color
-            switch i {
-            case 0:
-                color = Colors.red.playerColor!
-            case 1:
-                color = Colors.green.playerColor!
-            case 2:
-                color = Colors.orange.playerColor!
-            default:
-                color = Colors.red.playerColor!
-            }
-            
-            insertPlayer(Player(username: users[i]["name"] as! String, color: color), at: IndexPath(item: players.count, section: 0))
+            let color = Colors.red.playerColor! //TODO: get from server
+            let username = users[i]["name"] as! String
+           
+            insertPlayer(Player(username: username, color: color), at: IndexPath(item: players.count, section: 0))
         }
     }
 }

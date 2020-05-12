@@ -39,6 +39,7 @@ class EndGameViewController: UIViewController {
     }
     
     @IBAction func homeAction(_ sender: Any) {
+        Game.sharedInstance.resetRoom()
         self.showNextPage(identifier: "HomeViewController")
     }
     

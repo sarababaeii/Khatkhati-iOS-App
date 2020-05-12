@@ -143,7 +143,7 @@ class DrawingViewController: UIViewController {
     
     //MARK: Drawing management
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else {
+        guard let touch = touches.first, wordChose else {
             return
         }
         
@@ -153,7 +153,7 @@ class DrawingViewController: UIViewController {
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else {
+        guard let touch = touches.first, wordChose else {
             return
         }
         
@@ -163,6 +163,10 @@ class DrawingViewController: UIViewController {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard wordChose else {
+            return
+        }
+        
         drawing?.touchesEnded()
         
         SocketIOManager.sharedInstance.sendDrawing(state: "end", point: [(drawing?.lastPoint.x)!, (drawing?.lastPoint.y)!])
@@ -221,14 +225,12 @@ class DrawingViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if wordChose {
+        if Game.sharedInstance.wordChose {
             setTimer()
             initializeVariables()
             setWordLabelAttributes()
             initializeBrush()
-        }
-        
-        if !wordChose {
+        } else{
             ChoosingWordViewController.parentViewController = self
             showNextPage(identifier: "ChoosingWordViewController")
             wordChose = true

@@ -14,8 +14,6 @@ class WaitingViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var chooserNameLabel: UILabel!
-    
-    static var chooserName = "سارا"
 
     static var parentViewController: UIViewController?
     
@@ -31,7 +29,7 @@ class WaitingViewController: UIViewController {
     
     func setChooserNameLabelAttributes() {
         //TODO: Setting name and color of chooser given from server
-        chooserNameLabel.text = WaitingViewController.chooserName
+        chooserNameLabel.text = Game.sharedInstance.painter
     }
     
     func configure() {

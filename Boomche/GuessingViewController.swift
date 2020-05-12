@@ -23,15 +23,9 @@ class GuessingViewController: UIViewController {
     @IBOutlet weak var chatTextField: UITextField!
     @IBOutlet weak var sendButton: CustomButton!
     
-    static var wordChose = false
-    
     static var drawing: Drawing?
     
     static var chatTableViewDelegates: MessageTableViewDelegates?
-    
-    var kuft = 0
-    
-    
     
     //MARK: Timer Setting
     func setTimer() {
@@ -60,7 +54,6 @@ class GuessingViewController: UIViewController {
         case "moving":
             GuessingViewController.drawing?.touchesMoved(CGPoint(x: point[0], y: point[1]))
         case "end":
-            kuft += 1
             GuessingViewController.drawing?.touchesEnded()
         default:
             print("Error in receiving draw")
@@ -128,7 +121,6 @@ class GuessingViewController: UIViewController {
     
     func clearVariables() { //drawing?!
         GuessingViewController.chatTableViewDelegates = nil
-        GuessingViewController.wordChose = false
     }
     
     //MARK: UI Handling
@@ -158,20 +150,16 @@ class GuessingViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if GuessingViewController.wordChose {
+        if Game.sharedInstance.wordChose {
             setTimer()
             initializeVariables()
-        }
-        
-        if !GuessingViewController.wordChose {
+        } else {
             WaitingViewController.parentViewController = self
             showNextPage(identifier: "WaitingViewController")
-            GuessingViewController.wordChose = true
         }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         clearVariables()
-        print(" heeeeeeeeeeeeeeeeeeeeeey \(kuft) uuiuuuuuuuuuuu")
     }
 }

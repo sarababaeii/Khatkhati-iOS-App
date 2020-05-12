@@ -11,14 +11,35 @@ import Foundation
 class Game {
     static var sharedInstance = Game()
     
-    var roomID: String?
+    //MARK: Personal Information
     var username = "سارا"
-    var isLobbyLeader = false
     
-    var word = ""
+    var isLobbyLeader = false
     var hasGuessed = false
-//    var painter: String?
+    
+    //MARK: Game Information
+    var roomID: String?
+    
+    var painter = ""
+    var wordList = [String]()
+    var word: String?
+    var wordChose = false
     var personsHaveGuessed = [String]()
+    
+    func resetRoom() {
+        roomID = nil
+        isLobbyLeader = false
+        resetRound()
+    }
+    
+    func resetRound() {
+        painter = ""
+        wordList.removeAll()
+        word = nil
+        wordChose = false
+        hasGuessed = false
+        personsHaveGuessed.removeAll()
+    }
     
 //    static var roundNumber = 3
 //    var lobbyType = "Private"

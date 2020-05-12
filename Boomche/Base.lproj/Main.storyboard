@@ -782,9 +782,9 @@
                                             <constraint firstItem="E1e-nY-c6W" firstAttribute="centerX" secondItem="31P-Oo-Vjj" secondAttribute="centerX" id="vkF-3n-BMS"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-----" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVx-61-fWj">
-                                        <rect key="frame" x="168" y="67" width="39" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVx-61-fWj">
+                                        <rect key="frame" x="187.5" y="67" width="0.0" height="17"/>
+                                        <fontDescription key="fontDescription" name="Vazir" family="Vazir" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1367,6 +1367,7 @@
                         <outlet property="redColorView" destination="y77-Sf-ks7" id="cfz-xN-Hfy"/>
                         <outlet property="templeCanvas" destination="IhC-yN-VJX" id="cdJ-NC-z0X"/>
                         <outlet property="timerLabel" destination="E1e-nY-c6W" id="SPY-ju-qtB"/>
+                        <outlet property="wordLabel" destination="jVx-61-fWj" id="r62-GE-Ila"/>
                         <outlet property="yellowColorButton" destination="wzg-7T-eGc" id="Wkt-Gi-fPB"/>
                         <outlet property="yellowColorView" destination="hpr-Ai-1QO" id="mFT-Ni-zYP"/>
                     </connections>
@@ -2052,7 +2053,7 @@
         <!--End Game View Controller-->
         <scene sceneID="nrg-Wx-aOU">
             <objects>
-                <viewController storyboardIdentifier="EndGameViewController" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BNU-Pt-hRf" customClass="EndGameViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EndGameViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BNU-Pt-hRf" customClass="EndGameViewController" customModule="Boomche" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="F7B-tj-8Hz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

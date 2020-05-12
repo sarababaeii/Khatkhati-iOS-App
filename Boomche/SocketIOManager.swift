@@ -243,6 +243,7 @@ class SocketIOManager: NSObject {
     //MARK: Choosing word
     func sendWord(word: String) {
         if let roomID = Game.sharedInstance.roomID {
+            Game.sharedInstance.word = word
             let data = ["room_id": roomID, "word": word]
             socket?.emit("lets_play_on", data)
         }
@@ -255,6 +256,7 @@ class SocketIOManager: NSObject {
         if (data["socket_id"] as! String) == socketID {
             ChoosingWordViewController.words = data["words"] as? [String]
             viewController?.showNextPage(identifier: "DrawingViewController")
+            Game.sharedInstance.hasGuessed = true
         } else {
             WaitingViewController.chooserName = data["username"] as! String
             viewController?.showNextPage(identifier: "GuessingViewController")
@@ -317,6 +319,7 @@ class SocketIOManager: NSObject {
     
     //MARK: Ending Game
     func endOfRound(data: [String : Any]) {
+        Game.sharedInstance.word = ""
         Game.sharedInstance.hasGuessed = false
         Game.sharedInstance.personsHaveGuessed.removeAll()
         

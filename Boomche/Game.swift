@@ -15,6 +15,7 @@ class Game {
     var username = "سارا"
     var isLobbyLeader = false
     
+    var word = ""
     var hasGuessed = false
 //    var painter: String?
     var personsHaveGuessed = [String]()

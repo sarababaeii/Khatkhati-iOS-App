@@ -43,16 +43,20 @@ class EndGameViewController: UIViewController {
     }
     
     //MARK: UI Handling
+    func setRankingAttributes(player: Player, nameLabel: UILabel, scoreLabel: UILabel, scoreView: UIView) {
+        nameLabel.text = player.username
+        scoreLabel.text = String(player.totalScore).convertEnglishNumToPersianNum()
+        
+        nameLabel.textColor = player.color.lightBackground
+        scoreView.backgroundColor = player.color.lightBackground
+    }
+    
     func setWinnerAttributes() {
         winnerView.layer.cornerRadius = 29
         winnerScoreView.layer.cornerRadius = 22.5
         
-        winnerNameLabel.textColor = EndGameViewController.winnerPlayer?.color.lightBackground
-        winnerScoreView.backgroundColor = EndGameViewController.winnerPlayer?.color.lightBackground
-        
         if let winner = EndGameViewController.winnerPlayer {
-            winnerNameLabel.text = winner.username
-            winnerScoreLabel.text = String(winner.totalScore).convertEnglishNumToPersianNum()
+            setRankingAttributes(player: winner, nameLabel: winnerNameLabel, scoreLabel: winnerScoreLabel, scoreView: winnerScoreView)
         }
     }
     
@@ -60,12 +64,8 @@ class EndGameViewController: UIViewController {
         secondPlaceView.layer.cornerRadius = 5
         secondPlaceScoreView.layer.cornerRadius = 5
         
-        secondPlaceNameLabel.textColor = EndGameViewController.secondPlacePlayer?.color.lightBackground
-        secondPlaceScoreView.backgroundColor = EndGameViewController.secondPlacePlayer?.color.lightBackground
-        
         if let second = EndGameViewController.secondPlacePlayer {
-            secondPlaceNameLabel.text = second.username
-            secondPlaceScoreLabel.text = String(second.totalScore).convertEnglishNumToPersianNum()
+            setRankingAttributes(player: second, nameLabel: secondPlaceNameLabel, scoreLabel: secondPlaceScoreLabel, scoreView: secondPlaceScoreView)
         }
     }
     
@@ -73,12 +73,8 @@ class EndGameViewController: UIViewController {
         thirdPlaceView.layer.cornerRadius = 5
         thirdPlaceScoreView.layer.cornerRadius = 5
         
-        thirdPlaceNameLabel.textColor = EndGameViewController.thirdPlacePlayer?.color.lightBackground
-        thirdPlaceScoreView.backgroundColor = EndGameViewController.thirdPlacePlayer?.color.lightBackground
-        
         if let third = EndGameViewController.thirdPlacePlayer {
-            thirdPlaceNameLabel.text = third.username
-            thirdPlaceScoreLabel.text = String(third.totalScore).convertEnglishNumToPersianNum()
+            setRankingAttributes(player: third, nameLabel: thirdPlaceNameLabel, scoreLabel: thirdPlaceScoreLabel, scoreView: thirdPlaceScoreView)
         }
     }
     
@@ -90,17 +86,7 @@ class EndGameViewController: UIViewController {
     func setHomeButtonAttributes() {
         homeButton.setCornerRadius(radius: 15)
         homeButton.setBackgroundColor(color: Colors.yellow.componentColor!)
-        
-//        let img = UIImage(named: "Home")
-//        let outerView = UIView(frame: CGRect(x: 0, y: 0, width: img.size.width, height: img.size.height) )
-//        let iconView  = UIImageView(frame: CGRect(x: padding, y: 0, width: img.size.width, height: img.size.height))
-//        
-//        iconView.image = img
-//        outerView.addSubview(iconView)
-//        
-//        homeButton.gradientLayer
-        
-        homeButton.setImage(UIImage(named: "Home"), for: .normal)
+        homeButton.setImage(image: UIImage(named: "Home")!)
     }
     
     func configure() {
@@ -119,5 +105,3 @@ class EndGameViewController: UIViewController {
         configure()
     }
 }
-
-//TODO: homeButton image

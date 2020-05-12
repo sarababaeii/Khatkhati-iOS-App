@@ -15,8 +15,9 @@ class CustomButton: UIButton {
     let gradientLayer = CAGradientLayer()
     
     func setCornerRadius(radius: CGFloat){
-            self.layer.cornerRadius = radius
-        }
+        self.layer.cornerRadius = radius
+        gradientLayer.cornerRadius = radius
+    }
     
     func setBackgroundColor(color: Color) {
         self.color = color.lightBackground
@@ -25,7 +26,7 @@ class CustomButton: UIButton {
             
 //            gradientLayer.type = .radial
             gradientLayer.frame = self.bounds
-            gradientLayer.cornerRadius = self.layer.cornerRadius //must be called after setCornerRadius
+            gradientLayer.cornerRadius = self.layer.cornerRadius
             
             gradientLayer.colors = [color.lightBackground.cgColor, darkBackground.cgColor]
             
@@ -43,6 +44,16 @@ class CustomButton: UIButton {
         self.layer.masksToBounds = false
         
         self.layer.shadowColor = color.shadow?.cgColor
+    }
+    
+    func setImage(image: UIImage) {
+        let view = UIView()
+        view.frame = self.bounds
+        
+        let imageView = UIImageView(frame: CGRect(x: 15, y: 15, width: image.size.width, height: image.size.height))
+        imageView.image = image
+
+        self.insertSubview(imageView, aboveSubview: view)
     }
     
     override func awakeFromNib() {

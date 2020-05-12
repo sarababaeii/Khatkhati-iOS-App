@@ -12,6 +12,7 @@ import UIKit
 class DrawingViewController: UIViewController {
     
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var wordLabel: UILabel!
     
     @IBOutlet weak var canvasView: UIView!
     @IBOutlet weak var canvas: UIImageView!
@@ -203,6 +204,10 @@ class DrawingViewController: UIViewController {
         }
     }
     
+    func setWordLabelAttributes() {
+        wordLabel.text = Game.sharedInstance.word
+    }
+    
     func configure() {
         initializeArrays()
         setColorPaletteAttributes()
@@ -219,6 +224,7 @@ class DrawingViewController: UIViewController {
         if wordChose {
             setTimer()
             initializeVariables()
+            setWordLabelAttributes()
             initializeBrush()
         }
         

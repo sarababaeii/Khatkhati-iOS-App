@@ -10,6 +10,7 @@ import Foundation
 
 class Player {
     var username: String
+    var colorCode: Int
     var color: Color
     var totalScore: Int
     var currentScore: Int
@@ -17,16 +18,31 @@ class Player {
     var isPainter = false
     var isFirstGuesser = false
     
-    init(username: String, color: Color) {
+    init(username: String, colorCode: Int, totalScore: Double, currentScore: Double) {
         self.username = username
-        self.color = color
-        self.totalScore = 0
-        self.currentScore = 0
-    }
-    
-    convenience init(username: String, color: Color, totalScore: Double, currentScore: Double) {
-        self.init(username: username, color: color)
+        self.colorCode = colorCode
         self.totalScore = Int(totalScore)
         self.currentScore = Int(currentScore)
+        
+        switch colorCode {
+        case 1:
+            color = Colors.red.playerColor!
+        case 2:
+            color = Colors.green.playerColor!
+        case 3:
+            color = Colors.orange.playerColor!
+        case 4:
+            color = Colors.purple.playerColor!
+        case 5:
+            color = Colors.darkBlue.playerColor!
+        case 6:
+            color = Colors.lightBlue.playerColor!
+        default:
+            color = Colors.red.playerColor!
+        }
+    }
+    
+    convenience init(username: String, colorCode: Int) {
+        self.init(username: username, colorCode: colorCode, totalScore: 0, currentScore: 0)
     }
 }

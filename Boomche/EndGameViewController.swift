@@ -26,8 +26,8 @@ class EndGameViewController: UIViewController {
     @IBOutlet weak var thirdPlaceScoreView: UIView!
     @IBOutlet weak var thirdPlaceScoreLabel: UILabel!
     
-    @IBOutlet weak var homeButton: CustomButton!
-    @IBOutlet weak var againButton: CustomButton!
+    @IBOutlet weak var homeButton: UIButton!
+    @IBOutlet weak var againButton: UIButton!
     
     static var winnerPlayer: Player?
     static var secondPlacePlayer: Player?
@@ -80,13 +80,11 @@ class EndGameViewController: UIViewController {
     }
     
     func setAgianButtonAttributes() {
-        againButton.setCornerRadius(radius: 15)
-        againButton.setBackgroundColor(color: Colors.blue.componentColor!)
+        againButton.setAttributes(color: Colors.blue.componentColor!, radius: 15, hasShadow: false)
     }
     
     func setHomeButtonAttributes() {
-        homeButton.setCornerRadius(radius: 15)
-        homeButton.setBackgroundColor(color: Colors.yellow.componentColor!)
+        homeButton.setAttributes(color: Colors.yellow.componentColor!, radius: 15, hasShadow: false)
         homeButton.setImage(image: UIImage(named: "Home")!)
     }
     

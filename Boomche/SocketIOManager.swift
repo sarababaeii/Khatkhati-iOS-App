@@ -110,7 +110,7 @@ class SocketIOManager: NSObject {
         
         socket.on("lets_play") { data, ack in
             print("^^^^^GAME STARTED^^^^^^")
-            self.getStartGame()
+            self.getStartGame(data: data[0] as! [String : Any])
         }
         
         socket.on("chat_and_guess") {data, ack in
@@ -130,10 +130,6 @@ class SocketIOManager: NSObject {
     }
     
     func getRoomID(data: [String : Any]) {
-        guard UIApplication.topViewController()?.restorationIdentifier == "HomeViewController" else {
-            return
-        }
-        
         Game.sharedInstance.roomID = (data["key"] as! String)
         joinGame()
                                                      
@@ -235,8 +231,8 @@ class SocketIOManager: NSObject {
         socket?.emit("start_game_on", Game.sharedInstance.roomID!)
     }
     
-    func getStartGame() {
-        Game.sharedInstance.wordChose = true
+    func getStartGame(data: [String : Any]) {
+        setWord(word: data["word"] as! String)
         
         let topViewController = UIApplication.topViewController()
         
@@ -251,18 +247,20 @@ class SocketIOManager: NSObject {
         topViewController?.dismiss(animated: true, completion: nil)
     }
     
+    func setWord(word: String) {
+        Game.sharedInstance.wordChose = true
+        Game.sharedInstance.word = word
+    }
+    
     //MARK: Choosing word
     func sendWord(word: String) {
         if let roomID = Game.sharedInstance.roomID {
-            Game.sharedInstance.word = word
-            
             let data = ["room_id": roomID, "word": word]
             socket?.emit("lets_play_on", data)
         }
     }
     
     func getWords(data: [String : Any]) {
-        //TODO: guard
         Game.sharedInstance.painter = data["username"] as! String
         
         let viewController = UIApplication.topViewController()
@@ -279,7 +277,6 @@ class SocketIOManager: NSObject {
     //MARK: Drawing
     func sendDrawing(state: String, point: [CGFloat]) {
         let data = ["room": Game.sharedInstance.roomID!, "state": state, "point": point] as [String : Any]
-        //color and brush size not defined
         socket?.emit("send_message", data)
     }
     
@@ -333,11 +330,6 @@ class SocketIOManager: NSObject {
     //MARK: Ending Game
     func endOfRound(data: [String : Any]) {
         Game.sharedInstance.resetRound()
-        
-        guard UIApplication.topViewController()?.restorationIdentifier == "DrawingViewController" ||
-           UIApplication.topViewController()?.restorationIdentifier == "GuessingViewController" else {
-            return
-        }
         
         if (data["endOfGame"] as! Int) == 1 {
             ScoresViewController.isLastRound = true

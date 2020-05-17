@@ -9,35 +9,36 @@
 import Foundation
 import UIKit
 
-class CustomButton: UIButton {
-    
-    var color: UIColor?
-    let gradientLayer = CAGradientLayer()
-    
-    func setCornerRadius(radius: CGFloat){
+extension UIButton {
+    func setAttributes(color: Color, radius: CGFloat, hasShadow: Bool) {
         self.layer.cornerRadius = radius
-        gradientLayer.cornerRadius = radius
+        
+        setBackground(color: color, radius: radius)
+        
+        if hasShadow {
+            setShadowColor(color)
+        }
     }
     
-    func setBackgroundColor(color: Color) {
-        self.color = color.lightBackground
-        
-        if let darkBackground = color.darkBackground {
-            
-//            gradientLayer.type = .radial
-            gradientLayer.frame = self.bounds
-            gradientLayer.cornerRadius = self.layer.cornerRadius
-            
-            gradientLayer.colors = [color.lightBackground.cgColor, darkBackground.cgColor]
-            
-            self.layer.insertSublayer(gradientLayer, at: 0)
-        }
-        else {
+    func setBackground(color: Color, radius: CGFloat) {
+        if let _ = color.darkBackground {
+            setGradientBackground(color: color, radius: radius)
+        } else {
             self.layer.backgroundColor = color.lightBackground.cgColor
         }
     }
     
-    func setShadowColor(color: Color){
+    func setGradientBackground(color: Color, radius: CGFloat) {
+        let gradientLayer = CAGradientLayer()
+//        gradientLayer.type = .radial
+        gradientLayer.frame = self.bounds
+        gradientLayer.cornerRadius = radius
+        gradientLayer.colors = [color.lightBackground.cgColor, color.darkBackground!.cgColor]
+        
+        self.layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+    func setShadowColor(_ color: Color){
         self.layer.shadowOffset = CGSize(width: 0.0, height: 5.0)
         self.layer.shadowOpacity = 1.0
         self.layer.shadowRadius = 8.0
@@ -54,9 +55,5 @@ class CustomButton: UIButton {
         imageView.image = image
 
         self.insertSubview(imageView, aboveSubview: view)
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
     }
 }

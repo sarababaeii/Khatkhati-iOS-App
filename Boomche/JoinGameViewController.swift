@@ -11,9 +11,9 @@ import UIKit
 
 class JoinGameViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var randomGameButton: CustomButton!
+    @IBOutlet weak var randomGameButton: UIButton!
     @IBOutlet weak var lobbyCodeTextField: UITextField!
-    @IBOutlet weak var joinButton: CustomButton!
+    @IBOutlet weak var joinButton: UIButton!
     
     @IBAction func randomGameAction(_ sender: Any) {
         SocketIOManager.sharedInstance.findGame()
@@ -62,27 +62,14 @@ class JoinGameViewController: UIViewController, UITextFieldDelegate {
     }
     
     //MARK: UI handling
-    func setRandomGameButtonAttributes() {
-        randomGameButton.setCornerRadius(radius: 30)
-        randomGameButton.setShadowColor(color: Colors.blue.componentColor!)
-        randomGameButton.setBackgroundColor(color: Colors.blue.componentColor!)
-    }
-    
-    func setLobbyCodeTextFieldAttributes() {
-        lobbyCodeTextField.layer.cornerRadius = 20
-        lobbyCodeTextField.backgroundColor = Colors.gray.componentColor!.lightBackground
-    }
-    
-    func setJoinButtonAttributrs() {
-        joinButton.setCornerRadius(radius: 20.5)
-        joinButton.setShadowColor(color: Colors.pink.componentColor!)
-        joinButton.setBackgroundColor(color: Colors.pink.componentColor!)
+    func setUIComponentsAttributes() {
+        randomGameButton.setAttributes(color: Colors.blue.componentColor!, radius: 15, hasShadow: false)
+        lobbyCodeTextField.setAttributes(backgroundColor: Colors.gray.componentColor!, cornerRadius: 20)
+        joinButton.setAttributes(color: Colors.pink.componentColor!, radius: 15, hasShadow: true)
     }
     
     func configure() {
-        setRandomGameButtonAttributes()
-        setLobbyCodeTextFieldAttributes()
-        setJoinButtonAttributrs()
+        setUIComponentsAttributes()
         
         Game.sharedInstance.isLobbyLeader = false
     }

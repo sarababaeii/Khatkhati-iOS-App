@@ -28,6 +28,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Vazir.ttf</string>
+		<string>Vazir-Light.ttf</string>
 		<string>Vazir-Thin.ttf</string>
 		<string>Vazir-Medium.ttf</string>
 		<string>Vazir-Bold.ttf</string>

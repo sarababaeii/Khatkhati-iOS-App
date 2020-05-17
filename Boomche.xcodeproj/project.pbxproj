@@ -16,6 +16,9 @@
 		033602432427AF4B00925975 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033602422427AF4B00925975 /* DrawingViewController.swift */; };
 		03506C02243257EE0052DE06 /* TimerSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03506C01243257EE0052DE06 /* TimerSetting.swift */; };
 		03506C0424329D990052DE06 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03506C0324329D990052DE06 /* Game.swift */; };
+		035087A62471791D00CF8AE8 /* ColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035087A52471791D00CF8AE8 /* ColorButton.swift */; };
+		035087A82471798600CF8AE8 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035087A72471798600CF8AE8 /* ColorCollectionViewCell.swift */; };
+		035087AA24718F6D00CF8AE8 /* Vazir-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 035087A924718F6D00CF8AE8 /* Vazir-Light.ttf */; };
 		037582F22448AD5800B67C3C /* WaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037582F12448AD5800B67C3C /* WaitingViewController.swift */; };
 		037582F42448CF7D00B67C3C /* ScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037582F32448CF7D00B67C3C /* ScoreTableViewCell.swift */; };
 		037582F62448EA2600B67C3C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037582F52448EA2600B67C3C /* Player.swift */; };
@@ -31,7 +34,7 @@
 		03B6DD442422CDEC00CC0B7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B6DD422422CDEC00CC0B7F /* LaunchScreen.storyboard */; };
 		03B6DD4F2422CDED00CC0B7F /* KhatKhatiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD4E2422CDED00CC0B7F /* KhatKhatiTests.swift */; };
 		03B6DD5A2422CDED00CC0B7F /* KhatKhatiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD592422CDED00CC0B7F /* KhatKhatiUITests.swift */; };
-		03B6DD6D2422E01000CC0B7F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD6C2422E01000CC0B7F /* CustomButton.swift */; };
+		03B6DD6D2422E01000CC0B7F /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6DD6C2422E01000CC0B7F /* UIButtonExtension.swift */; };
 		03B6DD732422F4B700CC0B7F /* Vazir-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03B6DD6E2422F4B600CC0B7F /* Vazir-Bold.ttf */; };
 		03B6DD742422F4B700CC0B7F /* Vazir-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03B6DD6F2422F4B600CC0B7F /* Vazir-Black.ttf */; };
 		03B6DD752422F4B700CC0B7F /* Vazir-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03B6DD702422F4B600CC0B7F /* Vazir-Thin.ttf */; };
@@ -84,6 +87,9 @@
 		033602422427AF4B00925975 /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
 		03506C01243257EE0052DE06 /* TimerSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSetting.swift; sourceTree = "<group>"; };
 		03506C0324329D990052DE06 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		035087A52471791D00CF8AE8 /* ColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorButton.swift; sourceTree = "<group>"; };
+		035087A72471798600CF8AE8 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
+		035087A924718F6D00CF8AE8 /* Vazir-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vazir-Light.ttf"; sourceTree = "<group>"; };
 		037582F12448AD5800B67C3C /* WaitingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingViewController.swift; sourceTree = "<group>"; };
 		037582F32448CF7D00B67C3C /* ScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTableViewCell.swift; sourceTree = "<group>"; };
 		037582F52448EA2600B67C3C /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -105,7 +111,7 @@
 		03B6DD552422CDED00CC0B7F /* BoomcheUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoomcheUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03B6DD592422CDED00CC0B7F /* KhatKhatiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KhatKhatiUITests.swift; sourceTree = "<group>"; };
 		03B6DD5B2422CDED00CC0B7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03B6DD6C2422E01000CC0B7F /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		03B6DD6C2422E01000CC0B7F /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		03B6DD6E2422F4B600CC0B7F /* Vazir-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vazir-Bold.ttf"; sourceTree = "<group>"; };
 		03B6DD6F2422F4B600CC0B7F /* Vazir-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vazir-Black.ttf"; sourceTree = "<group>"; };
 		03B6DD702422F4B600CC0B7F /* Vazir-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vazir-Thin.ttf"; sourceTree = "<group>"; };
@@ -253,7 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				03C544BE2424F0C200C4049C /* Colors.swift */,
-				03B6DD6C2422E01000CC0B7F /* CustomButton.swift */,
+				03B6DD6C2422E01000CC0B7F /* UIButtonExtension.swift */,
 				03F287DE2423F2320024937C /* UILabelExtension.swift */,
 				03275161244E49C1005D4474 /* TextFieldExtension.swift */,
 				03849DBD2451EAB900166C5A /* UIViewControllerExtension.swift */,
@@ -261,6 +267,7 @@
 				03BB1E87243E531C00459FDE /* MessageTableViewCell.swift */,
 				037582F32448CF7D00B67C3C /* ScoreTableViewCell.swift */,
 				03B6ECE1244C968200D7498D /* PlayerCollectionViewCell.swift */,
+				035087A72471798600CF8AE8 /* ColorCollectionViewCell.swift */,
 				03B6DD3A2422CDEB00CC0B7F /* Main.storyboard */,
 			);
 			name = View;
@@ -280,6 +287,7 @@
 				031F857B244B76CE00C8B947 /* StringExtension.swift */,
 				0332F485245733960006F18E /* MessageTableViewDelegates.swift */,
 				03E6742A245EAD7500DB92DC /* PlayersCollectionViewDelegates.swift */,
+				035087A52471791D00CF8AE8 /* ColorButton.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -287,6 +295,7 @@
 		03F287DB2423D5AA0024937C /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				035087A924718F6D00CF8AE8 /* Vazir-Light.ttf */,
 				03B6DD6F2422F4B600CC0B7F /* Vazir-Black.ttf */,
 				03B6DD6E2422F4B600CC0B7F /* Vazir-Bold.ttf */,
 				03B6DD722422F4B700CC0B7F /* Vazir-Medium.ttf */,
@@ -433,6 +442,7 @@
 				03B6DD752422F4B700CC0B7F /* Vazir-Thin.ttf in Resources */,
 				03B6DD762422F4B700CC0B7F /* Vazir.ttf in Resources */,
 				03B6DD412422CDEC00CC0B7F /* Assets.xcassets in Resources */,
+				035087AA24718F6D00CF8AE8 /* Vazir-Light.ttf in Resources */,
 				03B6DD742422F4B700CC0B7F /* Vazir-Black.ttf in Resources */,
 				03B6DD772422F4B700CC0B7F /* Vazir-Medium.ttf in Resources */,
 				03B6DD3C2422CDEB00CC0B7F /* Main.storyboard in Resources */,
@@ -578,12 +588,14 @@
 				037582F22448AD5800B67C3C /* WaitingViewController.swift in Sources */,
 				03506C0424329D990052DE06 /* Game.swift in Sources */,
 				03D2FF3F2437503F008D9CB7 /* ChoosingWordViewController.swift in Sources */,
+				035087A62471791D00CF8AE8 /* ColorButton.swift in Sources */,
 				03B6DD372422CDEB00CC0B7F /* SceneDelegate.swift in Sources */,
 				03D2FF412437A875008D9CB7 /* ScoresViewController.swift in Sources */,
 				03B6ECE6244CCAB700D7498D /* SignUpViewController.swift in Sources */,
 				03B100E8242973E7009418D2 /* GuessingViewController.swift in Sources */,
 				03E6742B245EAD7500DB92DC /* PlayersCollectionViewDelegates.swift in Sources */,
 				03B6DD3F2422CDEB00CC0B7F /* KhatKhati.xcdatamodeld in Sources */,
+				035087A82471798600CF8AE8 /* ColorCollectionViewCell.swift in Sources */,
 				03B6ECE4244CCA6600D7498D /* LoginViewController.swift in Sources */,
 				03849DBE2451EAB900166C5A /* UIViewControllerExtension.swift in Sources */,
 				03275162244E49C1005D4474 /* TextFieldExtension.swift in Sources */,
@@ -596,7 +608,7 @@
 				03BA7664243548E200E0B345 /* Drawing.swift in Sources */,
 				031F857E244B990C00C8B947 /* EndGameViewController.swift in Sources */,
 				03D5526E24245D8300969560 /* JoinGameViewController.swift in Sources */,
-				03B6DD6D2422E01000CC0B7F /* CustomButton.swift in Sources */,
+				03B6DD6D2422E01000CC0B7F /* UIButtonExtension.swift in Sources */,
 				032B6D382426B40E00F7AA13 /* LoadingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,6 +12,7 @@ import UIKit
 class GuessingViewController: UIViewController {
     
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var wordLabel: UILabel!
     
     @IBOutlet weak var canvasView: UIView!
     @IBOutlet weak var canvas: UIImageView!
@@ -21,7 +22,7 @@ class GuessingViewController: UIViewController {
     
     @IBOutlet weak var messageView: UIView!
     @IBOutlet weak var chatTextField: UITextField!
-    @IBOutlet weak var sendButton: CustomButton!
+    @IBOutlet weak var sendButton: UIButton!
     
     static var drawing: Drawing?
     
@@ -129,8 +130,7 @@ class GuessingViewController: UIViewController {
     }
     
     func setSendButtonAttributes(){
-        sendButton.setCornerRadius(radius: 18)
-        sendButton.setBackgroundColor(color: Colors.blue.componentColor!)
+        sendButton.setAttributes(color: Colors.blue.componentColor!, radius: 18, hasShadow: false)
     }
     
     func configure() {

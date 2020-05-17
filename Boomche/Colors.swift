@@ -10,11 +10,12 @@ import Foundation
 import UIKit
 
 enum Colors {
-    case blue
     case yellow
+    case blue
     case pink
     case green
     case gray
+    case dusk
     case red
     case darkBlue
     case purple
@@ -44,9 +45,13 @@ enum Colors {
                               darkBackground: UIColor(red: 8/255, green: 186/255, blue: 12/255, alpha: 1),
                               shadow: UIColor(red: 29/255, green: 198/255, blue: 6/255, alpha: 0.5))
         case .gray:
-            return Color.init(lightBackground: UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1),
-                              shadow: UIColor(red: 138/255, green: 138/255, blue: 138/255, alpha: 0.35),
-                              border: UIColor(red: 241/255, green: 244/255, blue: 255/255, alpha: 1))
+            return Color.init(lightBackground: UIColor(red: 241/255, green: 244/255, blue: 255/255, alpha: 1),
+                              shadow: UIColor(red: 138/255, green: 138/255, blue: 138/255, alpha: 1),
+                              border: UIColor(red: 210/255, green: 208/255, blue: 244/255, alpha: 1))
+        case .dusk:
+            return Color.init(UIColor(red: 59/255, green: 57/255, blue: 89/255, alpha: 1))
+        case .white:
+            return Color.init(UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1))
         default:
             return nil
         }

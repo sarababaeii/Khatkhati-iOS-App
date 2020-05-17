@@ -51,7 +51,7 @@ class ScoresViewController: UIViewController, UITableViewDelegate, UITableViewDa
         players.removeAll()
         
         for user in ScoresViewController.users {
-            let newPlayer = Player(username: user["name"] as! String, color: Colors.red.playerColor!, totalScore: user["score"] as! Double, currentScore: user["current_score"] as! Double)
+            let newPlayer = Player(username: user["name"] as! String, colorCode: user["color"] as! Int, totalScore: user["score"] as! Double, currentScore: user["current_score"] as! Double)
             
             if (user["is_drawer"] as? Int) == 1 {
                 newPlayer.isPainter = true

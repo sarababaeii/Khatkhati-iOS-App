@@ -12,21 +12,31 @@ import UIKit
 class NewLobbyViewController: UIViewController {
     
     @IBOutlet weak var lobbyNameTextField: UITextField!
-    @IBOutlet weak var copyButton: CustomButton!
-    @IBOutlet weak var shareView: CustomButton!
+    @IBOutlet weak var copyButton: UIButton!
+    @IBOutlet weak var shareView: UIButton!
    
     @IBOutlet weak var roundsNumberLabel: UILabel!
-    @IBOutlet weak var lobbyTypeLabel: UILabel!
+    @IBOutlet weak var roundsNumberButton6: UIButton!
+    @IBOutlet weak var roundsNumberButton5: UIButton!
+    @IBOutlet weak var roundsNumberButton4: UIButton!
+    @IBOutlet weak var roundsNumberButton3: UIButton!
     
-    @IBOutlet weak var roundsNumberButton: CustomButton!
-    @IBOutlet weak var lobbyTypeButton: CustomButton!
+    @IBOutlet weak var lobbyTypeLabel: UILabel!
+    @IBOutlet weak var privateLobbyTypeButton: UIButton!
+    @IBOutlet weak var publicLobbyTypeButton: UIButton!
     
     @IBOutlet weak var playersCollectionView: UICollectionView!
     
-    @IBOutlet weak var startGameButton: CustomButton!
+    @IBOutlet weak var startGameButton: UIButton!
     
-    static var roundsButton : CustomButton?
-    static var typeButton : CustomButton?
+    
+    var lobbyTypeButtons = [UIButton]()
+    var roundsNumberButtons = [UIButton]()
+    
+    
+    
+    static var roundsButton : UIButton?
+    static var typeButton : UIButton?
     static var playersCollectionViewDelegates: PlayersCollectionViewDelegates?
     
     //MARK: Sharing Lobby Name
@@ -62,57 +72,65 @@ class NewLobbyViewController: UIViewController {
     
     //MARK: Game Properties
     @IBAction func changeRoundsNumber(_ sender: Any) {
-        let currentRoundNumber = roundsNumberButton.titleLabel?.text
-        var nextRoundNumber: Int
-        
-        switch currentRoundNumber! {
-        case "۳":
-            nextRoundNumber = 4
-        case "۴":
-            nextRoundNumber = 5
-        case "۵":
-            nextRoundNumber = 6
-        case "۶":
-            nextRoundNumber = 3
-        default:
-            nextRoundNumber = 3
+        for button in lobbyTypeButtons {
+            if isSelected(button: button) {
+                unselectButton(button: button)
+            }
         }
-        
-        SocketIOManager.sharedInstance.sendGameSetting(name: "round", value: String(nextRoundNumber))
-        NewLobbyViewController.setButtonTitle(button: roundsNumberButton, title: String(nextRoundNumber).convertEnglishNumToPersianNum())
+        selectButton(button: sender as! UIButton, isTypeButton: false)
+        SocketIOManager.sharedInstance.sendGameSetting(name: "round", value: String((sender as! UIButton).titleLabel!.text!))
     }
     
     @IBAction func changeLobbyType(_ sender: Any) {
-        let currentLobbyType = lobbyTypeButton.titleLabel?.text
-        var nextLobbyType: String
-        
-        switch currentLobbyType! {
-        case "عمومی":
-            nextLobbyType = "خودمونی"
-        case "خودمونی":
-            nextLobbyType = "عمومی"
-        default:
-            nextLobbyType = "عمومی"
+        for button in lobbyTypeButtons {
+            if isSelected(button: button) {
+                unselectButton(button: button)
+            }
         }
-        
-        SocketIOManager.sharedInstance.sendGameSetting(name: "room-type", value: String(nextLobbyType))
-        NewLobbyViewController.setButtonTitle(button: lobbyTypeButton, title: nextLobbyType)
+        selectButton(button: sender as! UIButton, isTypeButton: true)
+        SocketIOManager.sharedInstance.sendGameSetting(name: "room-type", value: String((sender as! UIButton).titleLabel!.text!))
     }
     
-    static func setButtonTitle(button: CustomButton, title: String) {
+    func selectButton(button: UIButton, isTypeButton: Bool) {
+        button.titleLabel?.textColor = Colors.white.componentColor?.lightBackground
+        button.isEnabled = false
+        if isTypeButton {
+            button.setAttributes(color: Colors.blue.componentColor!, radius: 15, hasShadow: false)
+        } else {
+            button.setAttributes(color: Colors.yellow.componentColor!, radius: 20, hasShadow: false)
+        }
+    }
+    
+    func unselectButton(button: UIButton) {
+        button.layer.backgroundColor = Colors.gray.componentColor?.lightBackground.cgColor
+        button.titleLabel?.textColor = Colors.dusk.componentColor?.lightBackground
+        button.isEnabled = true
+    }
+    
+    func isSelected(button: UIButton) -> Bool {
+        if button.titleLabel?.textColor == Colors.white.componentColor?.lightBackground {
+            return true
+        }
+        return false
+    }
+    
+    static func setButtonTitle(button: UIButton, title: String) {
         button.setTitle(title, for: .normal)
     }
     
     //MARK: Starting Game
     @IBAction func startGame(_ sender: Any) {
         SocketIOManager.sharedInstance.sendStartGame()
-//        showNextPage(identifier: "LoadingViewController")
     }
     
     //MARK: Initializing
     func initializeVariables() {
-        NewLobbyViewController.roundsButton = roundsNumberButton
-        NewLobbyViewController.typeButton = lobbyTypeButton
+        roundsNumberButtons = [roundsNumberButton3, roundsNumberButton4, roundsNumberButton5, roundsNumberButton6]
+        lobbyTypeButtons = [privateLobbyTypeButton, publicLobbyTypeButton]
+        
+        
+        NewLobbyViewController.roundsButton = roundsNumberButton6
+        NewLobbyViewController.typeButton = privateLobbyTypeButton
         NewLobbyViewController.playersCollectionViewDelegates = PlayersCollectionViewDelegates(playersCollectionView: playersCollectionView)
         
         playersCollectionView.delegate = NewLobbyViewController.playersCollectionViewDelegates
@@ -127,54 +145,46 @@ class NewLobbyViewController: UIViewController {
     
     //MARK: UI Handling
     func setCopyButtonAttributes() {
-        copyButton.setCornerRadius(radius: 20.5)
-        copyButton.setShadowColor(color: Colors.pink.componentColor!)
-        copyButton.setBackgroundColor(color: Colors.pink.componentColor!)
+        copyButton.setAttributes(color: Colors.pink.componentColor!, radius: 15, hasShadow: true)
     }
     
     func setLobbyNameTextFieldAttributes() {
-        lobbyNameTextField.layer.cornerRadius = 43
+        lobbyNameTextField.layer.cornerRadius = 15
         lobbyNameTextField.text = Game.sharedInstance.roomID
     }
     
     func setShareViewAttributes() {
-        shareView.setCornerRadius(radius: 20)
-        shareView.setShadowColor(color: Colors.green.componentColor!)
-        shareView.setBackgroundColor(color: Colors.green.componentColor!)
+        shareView.setAttributes(color: Colors.green.componentColor!, radius: 20, hasShadow: true)
     }
     
     func setRoundsNumberLabelAttributes() {
-        roundsNumberLabel.setCornerRadius(radius: 22.5)
+        roundsNumberLabel.setCornerRadius(radius: 28)
         roundsNumberLabel.setBackgroundColor(color: Colors.gray.componentColor!)
     }
     
     func setLobbyTypeLabelAttributes() {
-        lobbyTypeLabel.setCornerRadius(radius: 22.5)
+        lobbyTypeLabel.setCornerRadius(radius: 28)
         lobbyTypeLabel.setBackgroundColor(color: Colors.gray.componentColor!)
     }
     
     func setRoundsNumberButtonAttributes() {
-        roundsNumberButton.setCornerRadius(radius: 22.5)
-        roundsNumberButton.setBackgroundColor(color: Colors.yellow.componentColor!)
+        roundsNumberButton6.setAttributes(color: Colors.yellow.componentColor!, radius: 20, hasShadow: false)
         
         if !Game.sharedInstance.isLobbyLeader {
-            roundsNumberButton.isEnabled = false
+            roundsNumberButton6.isEnabled = false
         }
     }
     
     func setLobbyTypeButtonAttributes() {
-        lobbyTypeButton.setCornerRadius(radius: 22.5)
-        lobbyTypeButton.setBackgroundColor(color: Colors.blue.componentColor!)
-        
+        privateLobbyTypeButton.setAttributes(color: Colors.blue.componentColor!, radius: 15, hasShadow: false)
+       
         if !Game.sharedInstance.isLobbyLeader {
-            lobbyTypeButton.isEnabled = false
+            privateLobbyTypeButton.isEnabled = false
         }
     }
     
     func setStartGameButtonAttributes() {
-        startGameButton.setCornerRadius(radius: 30)
-        startGameButton.setShadowColor(color: Colors.blue.componentColor!)
-        startGameButton.setBackgroundColor(color: Colors.blue.componentColor!)
+        startGameButton.setAttributes(color: Colors.blue.componentColor!, radius: 15, hasShadow: false)
         
         if !Game.sharedInstance.isLobbyLeader {
             startGameButton.isEnabled = false

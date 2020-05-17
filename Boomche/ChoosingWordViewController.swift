@@ -12,13 +12,13 @@ import UIKit
 class ChoosingWordViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     
-    @IBOutlet weak var firstWordButton: CustomButton!
-    @IBOutlet weak var secondWordButton: CustomButton!
-    @IBOutlet weak var thirdWordButton: CustomButton!
+    @IBOutlet weak var firstWordButton: UIButton!
+    @IBOutlet weak var secondWordButton: UIButton!
+    @IBOutlet weak var thirdWordButton: UIButton!
     
-    var buttons = [CustomButton]()
+    var buttons = [UIButton]()
     
-    static var parentViewController: UIViewController?
+    static var parentViewController: UIViewController?  //TODO: be clear
     
     @IBAction func chooseWord(_ sender: Any) {
         SocketIOManager.sharedInstance.sendWord(word: (sender as! UIButton).currentTitle!)
@@ -30,15 +30,15 @@ class ChoosingWordViewController: UIViewController {
         timer.on()
     }
     
+    //MARK: Initializing
     func initialize() {
             buttons = [firstWordButton, secondWordButton, thirdWordButton]
     }
     
     //MARK: UI Handling
-    func setButtonsAttributes() {
+    func setUIComponentsAttributes() {
         for button in buttons {
-            button.setCornerRadius(radius: 30.5)
-            button.setBackgroundColor(color: Colors.yellow.componentColor!)
+            button.setAttributes(color: Colors.yellow.componentColor!, radius: 15, hasShadow: false)
             
             if button.tag < Game.sharedInstance.wordList.count {
                 button.setTitle(Game.sharedInstance.wordList[button.tag], for: .normal)
@@ -49,7 +49,7 @@ class ChoosingWordViewController: UIViewController {
     func configure() {
         initialize()
         
-        setButtonsAttributes()
+        setUIComponentsAttributes()
         
         setTimer()
     }

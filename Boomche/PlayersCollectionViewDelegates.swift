@@ -61,10 +61,10 @@ class PlayersCollectionViewDelegates: NSObject, UICollectionViewDelegate, UIColl
         }
         
         for i in 0 ..< users.count {
-            let color = Colors.red.playerColor! //TODO: get from server
+            let colorCode = users[i]["color"] as! Int
             let username = users[i]["name"] as! String
            
-            insertPlayer(Player(username: username, color: color), at: IndexPath(item: players.count, section: 0))
+            insertPlayer(Player(username: username, colorCode: colorCode), at: IndexPath(item: players.count, section: 0))
         }
     }
 }

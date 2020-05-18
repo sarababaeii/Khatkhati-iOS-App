@@ -23,17 +23,12 @@ class WaitingViewController: UIViewController {
         timer.on()
     }
     
-    func setMainViewAttributes() {
-        mainView.layer.cornerRadius = 29
-    }
-    
     func setChooserNameLabelAttributes() {
         //TODO: Setting name and color of chooser given from server
         chooserNameLabel.text = Game.sharedInstance.painter
     }
     
     func configure() {
-        setMainViewAttributes()
         setChooserNameLabelAttributes()
         
         setTimer()

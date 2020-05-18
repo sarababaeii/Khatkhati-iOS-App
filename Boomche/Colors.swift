@@ -71,7 +71,7 @@ enum Colors {
             return Color.init(UIColor(red: 32/255, green: 136/255, blue: 192/255, alpha: 1))
         case .red:
             return Color.init(UIColor(red: 244/255, green: 58/255, blue: 59/255, alpha: 1))
-        case .pink:
+        case .orange:
             return Color.init(UIColor(red: 250/255, green: 132/255, blue: 62/255, alpha: 1))
         case .yellow:
             return Color.init(UIColor(red: 255/255, green: 223/255, blue: 70/255, alpha: 1))

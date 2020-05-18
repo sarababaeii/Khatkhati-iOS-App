@@ -15,7 +15,6 @@ class ScoresViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var scoresTableView: UITableView!
     
-    static var word = ""
     static var users = [[String : Any]]()
     
     static var isLastRound = false
@@ -94,7 +93,7 @@ class ScoresViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     //MARK: UI Handling
     func setWordLabelAttributes() {
-        wordLabel.text = ScoresViewController.word
+        wordLabel.text = Game.sharedInstance.word
     }
     
     func configure() {

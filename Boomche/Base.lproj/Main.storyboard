@@ -67,23 +67,53 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JRl-Dl-JfI" userLabel="View1">
                                 <rect key="frame" x="32" y="174" width="311" height="132"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" background="Email" translatesAutoresizingMaskIntoConstraints="NO" id="oX5-0c-pbz">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oX5-0c-pbz" customClass="CustomTextField" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="58"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="oX5-0c-pbz" secondAttribute="height" multiplier="311:58" id="zde-dh-WxK"/>
                                         </constraints>
-                                        <color key="textColor" red="0.23137254900000001" green="0.22352941179999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.2302554846" green="0.2225066423" blue="0.34847956899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" textContentType="email"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="Email"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iconPadding">
+                                                <real key="value" value="24"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.82352941176470584" green="0.81568627450980391" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="APq-uQ-OcX">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="APq-uQ-OcX" customClass="CustomTextField" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="74" width="311" height="58"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="APq-uQ-OcX" secondAttribute="height" multiplier="311:58" id="D6n-Jy-zL3"/>
                                         </constraints>
-                                        <color key="textColor" red="0.23137254900000001" green="0.22352941179999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.2302554846" green="0.2225066423" blue="0.34847956899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="Lock"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iconPadding">
+                                                <real key="value" value="24"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.82352941180000006" green="0.81568627449999997" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -100,7 +130,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FbX-Fd-R0y" userLabel="View2">
                                 <rect key="frame" x="32" y="342" width="311" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyY-Kr-Eg9">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyY-Kr-Eg9" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="127" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="jyY-Kr-Eg9" secondAttribute="height" multiplier="127:50" id="l9T-Y1-MME"/>
@@ -109,6 +139,17 @@
                                         <state key="normal" title="شروع" image="Start">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lightGradientColor">
+                                                <color key="value" red="1" green="0.84215241669999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="darkGradientColor">
+                                                <color key="value" red="0.99651390309999999" green="0.74282366040000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JmE-qg-Abw">
                                         <rect key="frame" x="215" y="6.5" width="96" height="37"/>
@@ -175,7 +216,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Cx-Qc-xcm" userLabel="View0">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="238"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="unW-St-Cxa" userLabel="View0.0">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="unW-St-Cxa" userLabel="View0.0" customClass="CustomView" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="119" y="26.5" width="137" height="137"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="31T-6s-bu8">
@@ -192,6 +233,11 @@
                                             <constraint firstItem="31T-6s-bu8" firstAttribute="leading" secondItem="unW-St-Cxa" secondAttribute="leading" constant="37" id="bn9-4u-fmh"/>
                                             <constraint firstItem="31T-6s-bu8" firstAttribute="centerX" secondItem="unW-St-Cxa" secondAttribute="centerX" id="uB2-7d-Oya"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="68.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="اسم شما" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dfR-kA-Qom">
                                         <rect key="frame" x="139" y="187" width="97" height="44"/>
@@ -223,21 +269,53 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vu9-XW-hZP" userLabel="View1">
                                 <rect key="frame" x="32" y="267.5" width="311" height="132"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="sarababaei212@gmail.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TG5-Fq-3X5">
+                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="sarababaei212@gmail.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TG5-Fq-3X5" customClass="CustomTextField" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="58"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="TG5-Fq-3X5" secondAttribute="height" multiplier="311:58" id="wvJ-Tw-MAb"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.2302554846" green="0.2225066423" blue="0.34847956899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" textContentType="email"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.82352941180000006" green="0.81568627449999997" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="Email"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iconPadding">
+                                                <real key="value" value="24"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ioi2018" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Fl-Vu-Pmr">
+                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ioi2018" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Fl-Vu-Pmr" customClass="CustomTextField" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="74" width="311" height="58"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="1Fl-Vu-Pmr" secondAttribute="height" multiplier="311:58" id="LI8-0Q-Bm8"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.2302554846" green="0.2225066423" blue="0.34847956899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.82352941180000006" green="0.81568627449999997" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="Lock"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="iconPadding">
+                                                <real key="value" value="24"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -257,7 +335,7 @@
                                     <constraint firstAttribute="width" secondItem="toI-7O-bFk" secondAttribute="height" multiplier="372:180" id="t7K-5c-QW0"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjB-aD-iUX">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjB-aD-iUX" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                 <rect key="frame" x="98" y="425.5" width="179" height="49.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="RjB-aD-iUX" secondAttribute="height" multiplier="180:50" id="xJB-oy-28y"/>
@@ -266,6 +344,17 @@
                                 <state key="normal" title="بزن بریم">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lightGradientColor">
+                                        <color key="value" red="1" green="0.84215241669999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="darkGradientColor">
+                                        <color key="value" red="0.99651390309999999" green="0.74282366040000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -314,22 +403,31 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UjV-wM-ia3">
                                 <rect key="frame" x="74" y="283" width="227" height="134"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQz-nJ-fMz">
+                                    <button clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQz-nJ-fMz" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="227" height="59.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="oQz-nJ-fMz" secondAttribute="height" multiplier="234:61" id="YeT-r0-0nJ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Vazir-Black" family="Vazir" pointSize="20"/>
-                                        <size key="titleShadowOffset" width="50" height="50"/>
                                         <state key="normal" title="ورود به بازی">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17" scale="default"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lightGradientColor">
+                                                <color key="value" red="1" green="0.84215241669999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="darkGradientColor">
+                                                <color key="value" red="0.99651390314102173" green="0.74282366037368774" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="Fsv-bJ-ERM" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="sV0-CN-hUk"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nzj-VR-rcO">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nzj-VR-rcO" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="75" width="227" height="59"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Nzj-VR-rcO" secondAttribute="height" multiplier="234:61" id="dM1-xM-y2n"/>
@@ -338,6 +436,17 @@
                                         <state key="normal" title="ایجاد بازی">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lightGradientColor">
+                                                <color key="value" red="0.0" green="0.69279295206069946" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="darkGradientColor">
+                                                <color key="value" red="0.011259603314101696" green="0.54098916053771973" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="createLobbyAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iP4-6R-Jl9"/>
                                         </connections>
@@ -431,12 +540,17 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZm-zH-hhY" userLabel="View1.0">
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="85.5"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="نام اتاق" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gXE-TU-uIa">
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="نام اتاق" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gXE-TU-uIa" customClass="CustomTextField" customModule="Boomche" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="311" height="85.5"/>
                                                 <color key="backgroundColor" red="0.94410854578018188" green="0.95810431241989136" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="textColor" red="0.23025548458099365" green="0.22250664234161377" blue="0.34847956895828247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Vazir-Black" family="Vazir" pointSize="24"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="copyLobbyName:" destination="I4V-oy-IXb" eventType="primaryActionTriggered" id="UcV-He-Zvh"/>
                                                 </connections>
@@ -449,6 +563,30 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="18"/>
                                                 <state key="normal" title="کپی"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="lightGradientColor">
+                                                        <color key="value" red="1" green="0.0" blue="0.95810431241989136" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="darkGradientColor">
+                                                        <color key="value" red="0.88092923164367676" green="0.044820412993431091" blue="0.58827483654022217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="maskToBounds" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                        <color key="value" red="0.94117647059999998" green="0.023529411760000001" blue="0.7725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowAlpha">
+                                                        <real key="value" value="0.37"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowSize">
+                                                        <size key="value" width="0.0" height="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowBlur">
+                                                        <real key="value" value="7.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="copyLobbyName:" destination="I4V-oy-IXb" eventType="touchUpInside" id="jfI-yG-llQ"/>
                                                 </connections>
@@ -475,6 +613,17 @@
                                                     <constraint firstAttribute="width" secondItem="Q5g-eD-fq7" secondAttribute="height" multiplier="1:1" id="oC2-1o-GUk"/>
                                                     <constraint firstAttribute="width" constant="40" id="vqm-hA-Sz2"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="lightGradientColor">
+                                                        <color key="value" red="0.11372549019607843" green="0.82352941176470584" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="darkGradientColor">
+                                                        <color key="value" red="0.10980392156862745" green="0.72941176470588232" blue="0.047058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -493,7 +642,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eqU-n0-RZ4" userLabel="View1.1">
                                         <rect key="frame" x="0.0" y="120" width="311" height="55"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xN2-Uh-qgA">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xN2-Uh-qgA" customClass="CustomLabel" customModule="Boomche" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="311" height="55"/>
                                                 <color key="backgroundColor" red="0.94410854578018188" green="0.95810431241989136" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <attributedString key="attributedText">
@@ -506,6 +655,11 @@
                                                     </fragment>
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="28"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1JI-0A-hBl" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                 <rect key="frame" x="6" y="8" width="39" height="39"/>
@@ -516,11 +670,22 @@
                                                 <state key="normal" title="۶">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="lightGradientColor">
+                                                        <color key="value" red="1" green="0.84215241670608521" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="darkGradientColor">
+                                                        <color key="value" red="0.99651390314102173" green="0.74282366037368774" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="changeRoundsNumber:" destination="I4V-oy-IXb" eventType="touchUpInside" id="ajR-eE-mAN"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNE-PC-8nl">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNE-PC-8nl" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                 <rect key="frame" x="45" y="8" width="39.5" height="39"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="VNE-PC-8nl" secondAttribute="height" multiplier="1:1" id="dhi-4N-4vG"/>
@@ -529,11 +694,16 @@
                                                 <state key="normal" title="۵">
                                                     <color key="titleColor" red="0.23137254901960785" green="0.22250664234161377" blue="0.34847956895828247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="changeRoundsNumber:" destination="I4V-oy-IXb" eventType="touchUpInside" id="vir-vF-YIN"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBt-uD-Nnv">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBt-uD-Nnv" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                 <rect key="frame" x="84.5" y="8" width="39" height="39"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="zBt-uD-Nnv" secondAttribute="height" multiplier="1:1" id="gzi-44-ClL"/>
@@ -542,11 +712,16 @@
                                                 <state key="normal" title="۴">
                                                     <color key="titleColor" red="0.2302554846" green="0.2225066423" blue="0.34847956899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="changeRoundsNumber:" destination="I4V-oy-IXb" eventType="touchUpInside" id="oNf-sR-TIJ"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPe-rQ-BP6">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPe-rQ-BP6" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                 <rect key="frame" x="123.5" y="8" width="39" height="39"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="hPe-rQ-BP6" secondAttribute="height" multiplier="1:1" id="i8T-i7-CBV"/>
@@ -555,6 +730,11 @@
                                                 <state key="normal" title="۳">
                                                     <color key="titleColor" red="0.23025548458099365" green="0.22250664234161377" blue="0.34847956895828247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="changeRoundsNumber:" destination="I4V-oy-IXb" eventType="touchUpInside" id="N4o-gQ-l9b"/>
                                                 </connections>
@@ -583,7 +763,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4I-21-Mp8" userLabel="View1.2">
                                         <rect key="frame" x="0.0" y="181" width="311" height="55"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCp-lu-950">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCp-lu-950" customClass="CustomLabel" customModule="Boomche" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="311" height="55"/>
                                                 <color key="backgroundColor" red="0.94410854580000003" green="0.95810431240000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <attributedString key="attributedText">
@@ -596,6 +776,11 @@
                                                     </fragment>
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="28"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMV-g5-g8W" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                 <rect key="frame" x="6" y="8" width="78.5" height="39"/>
@@ -606,11 +791,22 @@
                                                 <state key="normal" title="خودمونی">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="lightGradientColor">
+                                                        <color key="value" red="0.0" green="0.69279295210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="darkGradientColor">
+                                                        <color key="value" red="0.01125960331" green="0.54098916050000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="18"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="changeLobbyType:" destination="I4V-oy-IXb" eventType="touchUpInside" id="20d-Vm-vMS"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yuj-8I-I6y">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yuj-8I-I6y" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                 <rect key="frame" x="84.5" y="8" width="78" height="39"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Yuj-8I-I6y" secondAttribute="height" multiplier="80:40" id="Yny-xz-36v"/>
@@ -619,6 +815,11 @@
                                                 <state key="normal" title="عمومی">
                                                     <color key="titleColor" red="0.23025548458099365" green="0.22250664234161377" blue="0.34847956895828247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="18"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="changeLobbyType:" destination="I4V-oy-IXb" eventType="touchUpInside" id="aTn-TC-BAI"/>
                                                 </connections>
@@ -685,7 +886,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="67" height="104"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rmp-BF-bL8" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rmp-BF-bL8" customClass="CustomView" customModule="Boomche" customModuleProvider="target">
                                                             <rect key="frame" x="0.5" y="16" width="66" height="66"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ا" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yz3-yR-Eke">
@@ -701,6 +902,30 @@
                                                                 <constraint firstItem="Yz3-yR-Eke" firstAttribute="centerY" secondItem="rmp-BF-bL8" secondAttribute="centerY" id="KpR-k6-fVi"/>
                                                                 <constraint firstAttribute="width" secondItem="rmp-BF-bL8" secondAttribute="height" multiplier="1:1" id="feC-h9-7iG"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="33"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                                    <color key="value" red="0.54117647058823526" green="0.54117647058823526" blue="0.54117647058823526" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowAlpha">
+                                                                    <real key="value" value="0.34999999999999998"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="size" keyPath="shadowSize">
+                                                                    <size key="value" width="0.0" height="4"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="maskToBounds" value="NO"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowBlur">
+                                                                    <real key="value" value="3"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                    <color key="value" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <real key="value" value="3"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Crown" translatesAutoresizingMaskIntoConstraints="NO" id="DzE-kw-Mim">
                                                             <rect key="frame" x="20" y="0.0" width="27" height="21"/>
@@ -763,6 +988,17 @@
                                         <state key="normal" title="بزن بریم">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lightGradientColor">
+                                                <color key="value" red="0.0" green="0.69279295210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="darkGradientColor">
+                                                <color key="value" red="0.01125960331" green="0.54098916050000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="startGame:" destination="I4V-oy-IXb" eventType="touchUpInside" id="JHl-C4-Nya"/>
                                         </connections>
@@ -942,13 +1178,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wk6-aL-jSg" userLabel="View2">
                                 <rect key="frame" x="24" y="561" width="327" height="90"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="r7n-f5-ZMn">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="r7n-f5-ZMn">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="40"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="r7n-f5-ZMn" secondAttribute="height" multiplier="327:40" id="2Mb-5T-7dz"/>
                                         </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bkj-8K-Oud">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bkj-8K-Oud">
                                             <size key="itemSize" width="42" height="42"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -956,37 +1192,41 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ColorCellID" id="8jy-4b-xOY" customClass="ColorCollectionViewCell" customModule="Boomche" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="41" height="41"/>
+                                                <rect key="frame" x="0.0" y="-0.5" width="41" height="41"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hvl-9N-4so">
                                                     <rect key="frame" x="0.0" y="0.0" width="41" height="41"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jNt-aY-lEr">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jNt-aY-lEr" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="41" height="41"/>
+                                                            <color key="backgroundColor" red="0.95810431240000005" green="0.22638320919999999" blue="0.2302554846" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                    <color key="value" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <real key="value" value="0.0"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="colorPicked:" destination="8jy-4b-xOY" eventType="touchUpInside" id="0WR-WB-uPg"/>
+                                                            </connections>
                                                         </button>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kF4-yd-Zwg">
-                                                            <rect key="frame" x="5" y="5" width="31" height="31"/>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" secondItem="kF4-yd-Zwg" secondAttribute="height" multiplier="1:1" id="Jcg-cZ-h3p"/>
-                                                            </constraints>
-                                                        </view>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="kF4-yd-Zwg" firstAttribute="centerY" secondItem="hvl-9N-4so" secondAttribute="centerY" id="AuS-px-nSE"/>
                                                         <constraint firstAttribute="trailing" secondItem="jNt-aY-lEr" secondAttribute="trailing" id="BlA-Sj-jNG"/>
-                                                        <constraint firstItem="kF4-yd-Zwg" firstAttribute="centerX" secondItem="hvl-9N-4so" secondAttribute="centerX" id="LL3-ca-PkL"/>
                                                         <constraint firstAttribute="bottom" secondItem="jNt-aY-lEr" secondAttribute="bottom" id="Pol-St-rhN"/>
                                                         <constraint firstItem="jNt-aY-lEr" firstAttribute="leading" secondItem="hvl-9N-4so" secondAttribute="leading" id="p28-Tm-RGl"/>
                                                         <constraint firstItem="jNt-aY-lEr" firstAttribute="top" secondItem="hvl-9N-4so" secondAttribute="top" id="q0b-7h-Tv3"/>
-                                                        <constraint firstItem="kF4-yd-Zwg" firstAttribute="leading" secondItem="hvl-9N-4so" secondAttribute="leading" constant="5" id="ybZ-rO-1tZ"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="41" height="41"/>
                                                 <connections>
                                                     <outlet property="colorButton" destination="jNt-aY-lEr" id="xIS-ds-yCL"/>
-                                                    <outlet property="colorView" destination="kF4-yd-Zwg" id="m12-5T-KaQ"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -1062,6 +1302,7 @@
                         <outlet property="canvas" destination="OK3-yE-8Z9" id="wKt-n7-yy3"/>
                         <outlet property="canvasView" destination="yek-85-i8W" id="vBO-cv-B9s"/>
                         <outlet property="chatTableView" destination="6Ag-Ar-g10" id="8cn-Bw-psa"/>
+                        <outlet property="colorsCollectionView" destination="r7n-f5-ZMn" id="k28-4L-M7d"/>
                         <outlet property="templeCanvas" destination="IhC-yN-VJX" id="cdJ-NC-z0X"/>
                         <outlet property="timerLabel" destination="E1e-nY-c6W" id="SPY-ju-qtB"/>
                         <outlet property="wordLabel" destination="jVx-61-fWj" id="r62-GE-Ila"/>
@@ -1151,7 +1392,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ljN-Hn-hyI" userLabel="View1.1">
                                         <rect key="frame" x="4" y="113" width="227" height="212"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwG-KI-wAf">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwG-KI-wAf" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="227" height="59.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="kwG-KI-wAf" secondAttribute="height" multiplier="225:59" id="f4i-5r-lRq"/>
@@ -1160,11 +1401,22 @@
                                                 <state key="normal" title="رنگین کمان">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="lightGradientColor">
+                                                        <color key="value" red="1" green="0.84215241670608521" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="darkGradientColor">
+                                                        <color key="value" red="0.99651390314102173" green="0.74282366037368774" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="chooseWord:" destination="sa1-BW-iGt" eventType="touchUpInside" id="I4O-ls-Sfv"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkb-Nw-uiK">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkb-Nw-uiK" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="152.5" width="227" height="59.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Xkb-Nw-uiK" secondAttribute="height" multiplier="225:59" id="OTq-RW-d0c"/>
@@ -1173,11 +1425,22 @@
                                                 <state key="normal" title="کفش ‌دوزک">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="lightGradientColor">
+                                                        <color key="value" red="1" green="0.84215241669999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="darkGradientColor">
+                                                        <color key="value" red="0.99651390309999999" green="0.74282366040000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="chooseWord:" destination="sa1-BW-iGt" eventType="touchUpInside" id="NIV-OO-yGQ"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgW-rx-npD">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgW-rx-npD" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="76.5" width="227" height="59.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="LgW-rx-npD" secondAttribute="height" multiplier="225:59" id="mzt-gC-kw2"/>
@@ -1186,6 +1449,17 @@
                                                 <state key="normal" title="قهوه">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="lightGradientColor">
+                                                        <color key="value" red="1" green="0.84215241669999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="darkGradientColor">
+                                                        <color key="value" red="0.99651390309999999" green="0.74282366040000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="chooseWord:" destination="sa1-BW-iGt" eventType="touchUpInside" id="mb1-Ew-cd4"/>
                                                 </connections>
@@ -1336,7 +1610,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R0O-h4-5fd" userLabel="View3">
                                 <rect key="frame" x="0.0" y="611" width="375" height="56"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="تایپ کن" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FpN-E9-7s3">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="تایپ کن" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FpN-E9-7s3" customClass="CustomTextField" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="81.5" y="8" width="283.5" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="FpN-E9-7s3" secondAttribute="height" multiplier="312:44" id="Qek-m9-tfd"/>
@@ -1344,19 +1618,35 @@
                                         <color key="textColor" red="0.22745098039215686" green="0.22745098039215686" blue="0.22745098039215686" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Vazir" family="Vazir" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pZ-7Z-Rj8">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pZ-7Z-Rj8" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="10" y="8" width="67.5" height="40"/>
                                         <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="16"/>
                                         <state key="normal" title="ارسال">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lightGradientColor">
+                                                <color key="value" red="0.0" green="0.69279295210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="darkGradientColor">
+                                                <color key="value" red="0.01125960331" green="0.54098916050000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="sendMessage:" destination="gNB-0m-c18" eventType="touchUpInside" id="4vz-9n-OgM"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.94410854580000003" green="0.95810431240000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="FpN-E9-7s3" firstAttribute="bottom" secondItem="5pZ-7Z-Rj8" secondAttribute="bottom" id="FGR-IW-nDz"/>
                                     <constraint firstItem="5pZ-7Z-Rj8" firstAttribute="leading" secondItem="R0O-h4-5fd" secondAttribute="leading" constant="10" id="IdS-u3-L2h"/>
@@ -1479,7 +1769,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0q-kV-ixb" userLabel="View1">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0q-kV-ixb" userLabel="View1" customClass="CustomView" customModule="Boomche" customModuleProvider="target">
                                 <rect key="frame" x="50" y="163" width="275" height="308"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Canvas" translatesAutoresizingMaskIntoConstraints="NO" id="7Kt-Rk-sUc">
@@ -1529,6 +1819,11 @@
                                     <constraint firstItem="7Kt-Rk-sUc" firstAttribute="centerX" secondItem="g0q-kV-ixb" secondAttribute="centerX" id="urv-mK-SEn"/>
                                     <constraint firstItem="xNC-rv-bsF" firstAttribute="leading" secondItem="g0q-kV-ixb" secondAttribute="leading" constant="42" id="zsD-kA-42c"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="29"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="0.83999999999999997" colorSpace="calibratedRGB"/>
@@ -1627,10 +1922,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="311" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gc3-Fo-PNZ">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gc3-Fo-PNZ" customClass="CustomView" customModule="Boomche" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="4" width="311" height="76"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEq-mK-ITg">
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEq-mK-ITg" customClass="CustomView" customModule="Boomche" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۲۱۰" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbB-Zj-xAr">
@@ -1661,6 +1956,11 @@
                                                                 <constraint firstItem="uJB-V6-dBu" firstAttribute="top" secondItem="pbB-Zj-xAr" secondAttribute="bottom" id="s7r-h9-oJz"/>
                                                                 <constraint firstAttribute="width" constant="76" id="xAo-eX-Q5t"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mS5-7e-2r2">
                                                             <rect key="frame" x="90" y="21" width="34" height="34"/>
@@ -1697,6 +1997,11 @@
                                                         <constraint firstItem="cpu-R9-5bB" firstAttribute="trailing" secondItem="71J-FJ-ewD" secondAttribute="trailing" id="vNz-aL-khR"/>
                                                         <constraint firstItem="mS5-7e-2r2" firstAttribute="top" secondItem="gc3-Fo-PNZ" secondAttribute="top" constant="21" id="xjN-eC-BBw"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="0.83999999999999997" colorSpace="calibratedRGB"/>
@@ -1774,7 +2079,7 @@
                                     <constraint firstAttribute="width" secondItem="93p-oR-9xt" secondAttribute="height" multiplier="375:75" id="fcX-i3-UV5"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ct5-70-rZ4">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ct5-70-rZ4" customClass="CustomView" customModule="Boomche" customModuleProvider="target">
                                 <rect key="frame" x="55" y="101" width="265" height="265"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GoldCup" translatesAutoresizingMaskIntoConstraints="NO" id="Ygl-aB-zUB">
@@ -1810,7 +2115,7 @@
                                             <constraint firstAttribute="width" secondItem="GTY-rL-OQs" secondAttribute="height" multiplier="92:94" id="thW-MA-AgC"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xam-d0-BKh" userLabel="View1.1">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xam-d0-BKh" userLabel="View1.1" customClass="CustomView" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="7" y="211.5" width="45" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۲۱۰" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Om-0N-afu">
@@ -1827,6 +2132,11 @@
                                             <constraint firstItem="6Om-0N-afu" firstAttribute="centerX" secondItem="Xam-d0-BKh" secondAttribute="centerX" id="dJ4-Ey-FZ0"/>
                                             <constraint firstItem="6Om-0N-afu" firstAttribute="centerY" secondItem="Xam-d0-BKh" secondAttribute="centerY" id="hIe-6B-ELp"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="22.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1841,11 +2151,16 @@
                                     <constraint firstItem="Ygl-aB-zUB" firstAttribute="centerX" secondItem="Ct5-70-rZ4" secondAttribute="centerX" id="mjp-Ls-VWl"/>
                                     <constraint firstAttribute="width" secondItem="Ct5-70-rZ4" secondAttribute="height" multiplier="1:1" id="udL-I6-LFr"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="29"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PEc-4a-keh">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PEc-4a-keh" customClass="CustomView" customModule="Boomche" customModuleProvider="target">
                                 <rect key="frame" x="32" y="395.5" width="311" height="76"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wl1-Xl-8iP">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wl1-Xl-8iP" customClass="CustomView" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۱۹۰" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZN9-sC-kfo">
@@ -1872,6 +2187,11 @@
                                             <constraint firstItem="ZN9-sC-kfo" firstAttribute="centerY" secondItem="wl1-Xl-8iP" secondAttribute="centerY" multiplier="0.8" id="awu-rd-py5"/>
                                             <constraint firstItem="ZN9-sC-kfo" firstAttribute="centerX" secondItem="wl1-Xl-8iP" secondAttribute="centerX" id="keA-yp-csK"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SilverCup" translatesAutoresizingMaskIntoConstraints="NO" id="cLE-ch-Qu9">
                                         <rect key="frame" x="92" y="20" width="30" height="36"/>
@@ -1900,11 +2220,16 @@
                                     <constraint firstItem="wl1-Xl-8iP" firstAttribute="top" secondItem="PEc-4a-keh" secondAttribute="top" id="mop-oS-3Uw"/>
                                     <constraint firstItem="cLE-ch-Qu9" firstAttribute="top" secondItem="PEc-4a-keh" secondAttribute="top" constant="20" id="yvA-kc-ciJ"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i9q-w6-E11">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i9q-w6-E11" customClass="CustomView" customModule="Boomche" customModuleProvider="target">
                                 <rect key="frame" x="32" y="479" width="311" height="76"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="htG-2N-7Ga">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="htG-2N-7Ga" customClass="CustomView" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۱۵۰" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kk1-Oi-qki">
@@ -1931,6 +2256,11 @@
                                             <constraint firstAttribute="width" secondItem="htG-2N-7Ga" secondAttribute="height" multiplier="1:1" id="qSf-pu-SjI"/>
                                             <constraint firstItem="Kk1-Oi-qki" firstAttribute="centerX" secondItem="htG-2N-7Ga" secondAttribute="centerX" id="r77-PT-OQe"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عماد" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ni-bm-WcQ">
                                         <rect key="frame" x="257" y="22" width="38" height="32"/>
@@ -1959,11 +2289,16 @@
                                     <constraint firstItem="htG-2N-7Ga" firstAttribute="top" secondItem="i9q-w6-E11" secondAttribute="top" id="pnb-yU-j2f"/>
                                     <constraint firstAttribute="bottom" secondItem="htG-2N-7Ga" secondAttribute="bottom" id="tvA-yF-qWe"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="et8-XH-Q58">
                                 <rect key="frame" x="32" y="570.5" width="311" height="60"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2UX-ig-fZZ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2UX-ig-fZZ" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="71" y="0.0" width="240" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="2UX-ig-fZZ" secondAttribute="height" multiplier="240:60" id="fJD-Cl-ucr"/>
@@ -1972,16 +2307,38 @@
                                         <state key="normal" title="بازی دوباره!">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lightGradientColor">
+                                                <color key="value" red="0.0" green="0.69279295206069946" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="darkGradientColor">
+                                                <color key="value" red="0.011259603314101696" green="0.54098916053771973" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="playAgainAction:" destination="BNU-Pt-hRf" eventType="touchUpInside" id="Ui3-ca-9G3"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1D-vT-cis">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1D-vT-cis" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="59" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="T1D-vT-cis" secondAttribute="height" multiplier="59:60" id="hav-r2-8h5"/>
                                         </constraints>
                                         <state key="normal" image="Home"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lightGradientColor">
+                                                <color key="value" red="1" green="0.84215241669999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="darkGradientColor">
+                                                <color key="value" red="0.99651390309999999" green="0.74282366040000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="homeAction:" destination="BNU-Pt-hRf" eventType="touchUpInside" id="e3K-sw-SqL"/>
                                         </connections>
@@ -2220,12 +2577,23 @@
                                                     <constraint firstAttribute="width" secondItem="HaC-y9-cUr" secondAttribute="height" multiplier="1:1" id="2Vr-p5-h6T"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QD2-Yh-Qx6">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QD2-Yh-Qx6" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="60" width="250" height="60"/>
                                                 <fontDescription key="fontDescription" name="Vazir-Black" family="Vazir" pointSize="20"/>
                                                 <state key="normal" title="پیدا کردن بازی">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="lightGradientColor">
+                                                        <color key="value" red="0.0" green="0.69279295210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="darkGradientColor">
+                                                        <color key="value" red="0.01125960331" green="0.54098916050000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="randomGameAction:" destination="Fsv-bJ-ERM" eventType="touchUpInside" id="oG8-eo-BHM"/>
                                                 </connections>
@@ -2246,7 +2614,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brA-VS-nim" userLabel="View1.2">
                                         <rect key="frame" x="0.0" y="205" width="250" height="100"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="نام اتاق" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Fj-sM-Crn">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="نام اتاق" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Fj-sM-Crn" customClass="CustomTextField" customModule="Boomche" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="80"/>
                                                 <color key="backgroundColor" red="0.94410854580000003" green="0.95810431240000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -2255,11 +2623,16 @@
                                                 <color key="textColor" red="0.23137254900000001" green="0.22352941179999999" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="24"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="join" enablesReturnKeyAutomatically="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="joinGameAction:" destination="Fsv-bJ-ERM" eventType="primaryActionTriggered" id="Xrb-VY-vaL"/>
                                                 </connections>
                                             </textField>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jj-Cs-3MJ">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jj-Cs-3MJ" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                                 <rect key="frame" x="57.5" y="57.5" width="135" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="8jj-Cs-3MJ" secondAttribute="height" multiplier="120:40" id="xJj-BS-ssI"/>
@@ -2268,6 +2641,36 @@
                                                 <state key="normal" title="ورود">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="lightGradientColor">
+                                                        <color key="value" red="1" green="0.0" blue="0.95810431241989136" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="darkGradientColor">
+                                                        <color key="value" red="0.88092923164367676" green="0.044820412993431091" blue="0.58827483654022217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                        <color key="value" red="0.94117647058823528" green="0.023529411764705882" blue="0.77254901960784317" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowAlpha">
+                                                        <real key="value" value="0.37"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowWith">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                                                        <real key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowBlur">
+                                                        <real key="value" value="7.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowSize">
+                                                        <size key="value" width="0.0" height="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="maskToBounds" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="joinGameAction:" destination="Fsv-bJ-ERM" eventType="touchUpInside" id="haC-pY-1bW"/>
                                                 </connections>
@@ -2336,6 +2739,7 @@
         <image name="Group" width="34" height="20"/>
         <image name="Home" width="30" height="29"/>
         <image name="LoadingBackground" width="375" height="316"/>
+        <image name="Lock" width="12" height="16"/>
         <image name="LoginBackground" width="375" height="232"/>
         <image name="MainBackground" width="375" height="232"/>
         <image name="Menu" width="28" height="20"/>

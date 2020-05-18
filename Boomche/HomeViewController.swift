@@ -18,16 +18,8 @@ class HomeViewController: UIViewController {
         createLobbyButton.layer.masksToBounds = true //to showing button selected
     }
     
-    //MARK: UI Handling
-    func setUIComponentsAttributes() {
-        joinGameButton.setAttributes(color: Colors.yellow.componentColor!, radius: 15, hasShadow: false)
-        createLobbyButton.setAttributes(color: Colors.blue.componentColor!, radius: 15, hasShadow: false)
-    }
-    
     func configure(){
-        Game.sharedInstance.isLobbyLeader = false
-        
-        setUIComponentsAttributes()
+        Game.sharedInstance.resetRoom()
     }
     
     override func viewDidLoad() {

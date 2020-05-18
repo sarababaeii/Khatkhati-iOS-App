@@ -38,8 +38,6 @@ class ChoosingWordViewController: UIViewController {
     //MARK: UI Handling
     func setUIComponentsAttributes() {
         for button in buttons {
-            button.setAttributes(color: Colors.yellow.componentColor!, radius: 15, hasShadow: false)
-            
             if button.tag < Game.sharedInstance.wordList.count {
                 button.setTitle(Game.sharedInstance.wordList[button.tag], for: .normal)
             }

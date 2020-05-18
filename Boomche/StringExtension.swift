@@ -9,7 +9,6 @@
 import Foundation
 
 extension String {
-
     var length: Int {
         return count
     }
@@ -44,15 +43,3 @@ extension String {
         return faNumber!
     }
 }
-
-//class StringExtension {
-//    static func convertEnglishNumToPersianNum(num: String) -> String {
-//        let format = NumberFormatter()
-//        format.locale = Locale(identifier: "fa_IR")
-//        
-//        let number =   format.number(from: num)
-//        let faNumber = format.string(from: number!)
-//        
-//        return faNumber!
-//    }
-//}

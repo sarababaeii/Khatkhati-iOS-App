@@ -11,7 +11,6 @@ import UIKit
 
 class MessageTableViewDelegates: NSObject, UITableViewDelegate, UITableViewDataSource {
     var chatTableView: UITableView
-    
     var messages = [Message]()
     
     init(chatTableView: UITableView) {

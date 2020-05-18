@@ -156,7 +156,7 @@ class SocketIOManager: NSObject {
         //TODO: type
         let round = settings["round"] as! Int
         
-        NewLobbyViewController.setButtonTitle(button: (NewLobbyViewController.roundsButton)!, title: String(round).convertEnglishNumToPersianNum())
+        changeRoundsNumber(to: String(round).convertEnglishNumToPersianNum())
     }
     
     func setPainter(users: [[String : Any]]) {
@@ -209,21 +209,100 @@ class SocketIOManager: NSObject {
             return
         }
         
-        let value = data["val"] as! String
         let property = data["name"] as! String
+        let value = data["val"] as! String
         
         switch property {
         case "round":
-            NewLobbyViewController.setButtonTitle(button: (NewLobbyViewController.roundsButton)!, title: value.convertEnglishNumToPersianNum())
+            changeRoundsNumber(to: value.convertEnglishNumToPersianNum())
         case "room-type":
-            NewLobbyViewController.setButtonTitle(button: (NewLobbyViewController.typeButton)!, title: value)
+            let type: String
+            switch value {
+            case "private":
+                type = "خودمونی"
+            case "public":
+                type = "عمومی"
+            default:
+                type = "خودمونی"
+            }
+            changeLobbyType(to: type)
         case "color":
-            GuessingViewController.drawing?.brushColor = UIColor(hexString: value)
+            Game.sharedInstance.drawing?.brushColor = UIColor(hexString: value)
         case "lineWidth":
-            GuessingViewController.drawing?.brushWidth = CGFloat(Float(value)!)
+            Game.sharedInstance.drawing?.brushWidth = CGFloat(Float(value)!)
         default:
             return
         }
+    }
+    
+    func changeRoundsNumber(to roundsNumber: String) {
+        for button in NewLobbyViewController.roundsNumberButtons {
+            if isSelected(button: button) {
+                unselectButton(button: button)
+            }
+        }
+        
+        let button: CustomButton
+        switch roundsNumber {
+        case "۳":
+            button = NewLobbyViewController.roundsNumberButtons[0]
+        case "۴":
+            button = NewLobbyViewController.roundsNumberButtons[1]
+        case "۵":
+            button = NewLobbyViewController.roundsNumberButtons[2]
+        case "۶":
+            button = NewLobbyViewController.roundsNumberButtons[3]
+        default:
+            button = NewLobbyViewController.roundsNumberButtons[0]
+        }
+        
+        selectButton(button: button, isTypeButton: false)
+    }
+    
+    func changeLobbyType(to type: String) {
+        for button in NewLobbyViewController.lobbyTypeButtons {
+            if isSelected(button: button) {
+                unselectButton(button: button)
+            }
+        }
+        
+        let button: CustomButton
+        switch type {
+        case "خودمونی":
+            button = NewLobbyViewController.lobbyTypeButtons[0]
+        case "عمومی":
+            button = NewLobbyViewController.lobbyTypeButtons[1]
+        default:
+            button = NewLobbyViewController.lobbyTypeButtons[0]
+        }
+        selectButton(button: button, isTypeButton: true)
+    }
+    
+    func selectButton(button: CustomButton, isTypeButton: Bool) {
+        button.setTitleColor(Colors.white.componentColor?.lightBackground, for: .normal)
+        button.isEnabled = false
+        if isTypeButton {
+            button.lightGradientColor = Colors.blue.componentColor!.lightBackground
+            button.darkGradientColor = Colors.blue.componentColor!.darkBackground!
+        } else {
+            button.lightGradientColor = Colors.yellow.componentColor!.lightBackground
+            button.darkGradientColor = Colors.yellow.componentColor!.darkBackground!
+        }
+    }
+    
+    func unselectButton(button: CustomButton) {
+        button.removeGradient()
+        button.setTitleColor(Colors.dusk.componentColor?.lightBackground, for: .normal)
+        if Game.sharedInstance.isLobbyLeader {
+            button.isEnabled = true
+        }
+    }
+    
+    func isSelected(button: UIButton) -> Bool {
+        if button.titleLabel?.textColor == Colors.white.componentColor?.lightBackground {
+            return true
+        }
+        return false
     }
     
     //MARK: Starting Game
@@ -299,14 +378,15 @@ class SocketIOManager: NSObject {
              message = receiveNormalText(senderID: senderID, senderUsername: senderUsername, text: data["text"] as! String, senderHasGuessed: senderHasGuessed)
          }
         
-        switch UIApplication.topViewController()?.restorationIdentifier {
-        case "DrawingViewController":
-            DrawingViewController.chatTableViewDelegates?.insertMessage(message)
-        case "GuessingViewController" :
-            GuessingViewController.chatTableViewDelegates?.insertMessage(message)
-        default:
-            return
-        }
+//        switch UIApplication.topViewController()?.restorationIdentifier {
+        Game.sharedInstance.chatTableViewDelegates?.insertMessage(message)
+//        case "DrawingViewController":
+//
+//        case "GuessingViewController" :
+//            GuessingViewController.chatTableViewDelegates?.insertMessage(message)
+//        default:
+//            return
+//        }
     }
     
     func receiveAnswer(senderID: String, senderUsername: String) -> Message {
@@ -339,7 +419,7 @@ class SocketIOManager: NSObject {
         ScoresViewController.users = temp["users"] as! [[String : Any]]
 
         temp = temp["room"] as! [String : Any]
-        ScoresViewController.word = (temp["word"] as? String)!
+        Game.sharedInstance.word = (temp["word"] as? String)!
         
         UIApplication.topViewController()?.showNextPage(identifier: "ScoresViewController")
     }

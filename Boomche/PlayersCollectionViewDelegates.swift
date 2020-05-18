@@ -11,7 +11,6 @@ import UIKit
 
 class PlayersCollectionViewDelegates: NSObject, UICollectionViewDelegate, UICollectionViewDataSource {
     var playersCollectionView: UICollectionView
-    
     var players = [Player]()
     
     init(playersCollectionView: UICollectionView) {

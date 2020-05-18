@@ -21,50 +21,13 @@ class DrawingViewController: UIViewController {
     @IBOutlet weak var chatTableView: UITableView!
     
     //MARK: ColorPalette:
-//    @IBOutlet weak var redColorButton: CustomButton!
-//    @IBOutlet weak var greenColorButton: CustomButton!
-//    @IBOutlet weak var darkBlueColorButton: CustomButton!
-//    @IBOutlet weak var yellowColorButton: CustomButton!
-//    @IBOutlet weak var purpleColorButton: CustomButton!
-//    @IBOutlet weak var pinkColorButton: CustomButton!
-//    @IBOutlet weak var brownColorButton: CustomButton!
-//    @IBOutlet weak var lightBlueColorButton: CustomButton!
-//    @IBOutlet weak var blackColorButton: CustomButton!
-//    @IBOutlet weak var grayColorButton: CustomButton!
-//    @IBOutlet weak var brushButton: CustomButton!
-//    @IBOutlet weak var eraserButton: CustomButton!
-//
-//    @IBOutlet weak var redColorView: CustomButton!
-//    @IBOutlet weak var greenColorView: CustomButton!
-//    @IBOutlet weak var darkBlueColorView: CustomButton!
-//    @IBOutlet weak var yellowColorView: CustomButton!
-//    @IBOutlet weak var purpleColorView: CustomButton!
-//    @IBOutlet weak var pinkColorView: CustomButton!
-//    @IBOutlet weak var brownColorView: CustomButton!
-//    @IBOutlet weak var lightBlueColorView: CustomButton!
-//    @IBOutlet weak var blackColorView: CustomButton!
-//    @IBOutlet weak var grayColorView: CustomButton!
-    @IBOutlet weak var brushView: UIImageView!
-    @IBOutlet weak var eraserView: UIImageView!
+    @IBOutlet weak var colorsCollectionView: UICollectionView!
     
-    @IBOutlet weak var brushThicknessView: UIView!
-    @IBOutlet weak var brushSizeButton1: UIButton!
-    @IBOutlet weak var brushSizeButton2: UIButton!
-    @IBOutlet weak var brushSizeButton3: UIButton!
-    @IBOutlet weak var brushSizeButton4: UIButton!
-    
-//    var colorButtons = [CustomButton]()
-//    var colorViews = [CustomButton]()
     var colors = [Color]()
-    var brushSizeButtons = [UIButton]()
-   
-    var drawing: Drawing?
-    
+
     var isBrushSelected: Bool = false
-//    var brushColorButton: CustomButton?
-    var brushColorView: UIView?
-    
-    static var chatTableViewDelegates: MessageTableViewDelegates?
+
+    var colorsCollectionViewDelegates: ColorsCollectionViewDelegates?
     
     //MARK: Timer Setting
     func setTimer() {
@@ -72,78 +35,35 @@ class DrawingViewController: UIViewController {
         timer.on()
     }
     
-    //MARK: Color picking
-    @IBAction func colorPicked(_ sender: Any) {
-        unselectColor()
-        
-//        brushColorButton = (sender as! CustomButton)
-        
-        if let siblings = (sender as! UIButton).superview?.subviews {
-            for component in siblings {
-                if component != sender as! UIView {
-                    showSelected(willShowComponent: component, willHideComponent: sender)
-                    brushColorView = component
-                }
-            }
-        }
-        
-        if !isBrushSelected {
-//            changeBrushSize(brushButton!)
-            selectBrush()
-        }
-        
-//        drawing?.brushColor = brushColorButton!.color!
-        SocketIOManager.sharedInstance.sendGameSetting(name: "color", value: (drawing?.brushColor.toHexString())!)
-    }
     
-    @IBAction func changeBrushSize(_ sender: Any) {
-        brushThicknessView.isHidden = false
-        brushView.addSubview(brushThicknessView)
-        
-    }
+//    func selectBrush() {
+////        showSelected(willShowComponent: brushView!, willHideComponent: brushButton!)
+//
+////        showSelected(willShowComponent: eraserButton!, willHideComponent: eraserView!)
+//
+//        isBrushSelected = true
+//        drawing?.brushWidth = 6.0
+//        SocketIOManager.sharedInstance.sendGameSetting(name: "lineWidth", value: String(Float(drawing!.brushWidth)))
+//
+////        if brushColorButton == nil {
+////            colorPicked(blackColorButton!)
+////        }
+//    }
     
-    func selectBrush() {
-//        showSelected(willShowComponent: brushView!, willHideComponent: brushButton!)
-        
-//        showSelected(willShowComponent: eraserButton!, willHideComponent: eraserView!)
-
-        isBrushSelected = true
-        drawing?.brushWidth = 6.0
-        SocketIOManager.sharedInstance.sendGameSetting(name: "lineWidth", value: String(Float(drawing!.brushWidth)))
-        
-//        if brushColorButton == nil {
-//            colorPicked(blackColorButton!)
-//        }
-    }
-    
-    @IBAction func selectEraser(_ sender: Any) {
-//        showSelected(willShowComponent: eraserView!, willHideComponent: eraserButton!)
-
-//        showSelected(willShowComponent: brushButton!, willHideComponent: brushView!)
-
-        isBrushSelected = false
-        unselectColor()
-        
-        drawing?.brushWidth = 17.0 //TODO: good?!
-        SocketIOManager.sharedInstance.sendGameSetting(name: "lineWidth", value: String(Float(drawing!.brushWidth)))
-        drawing?.brushColor = Colors.white.drawingColor!.lightBackground
-        SocketIOManager.sharedInstance.sendGameSetting(name: "color", value: (Colors.white.drawingColor?.lightBackground.toHexString())!)
-    }
-    
-    @IBAction func brushSizeSelected(_ sender: Any) {
-        brushThicknessView.removeFromSuperview()
-        print("HEEEEYYYY")
-        brushThicknessView.isHidden = true
-    }
-    
-    func unselectColor() {
-//        if let brushColorButton = brushColorButton {
-//            showSelected(willShowComponent: brushColorButton, willHideComponent: brushColorView!)
-//        }
-//        
-//        brushColorView = nil
-//        brushColorButton = nil
-    }
+//    @IBAction func selectEraser(_ sender: Any) {
+////        showSelected(willShowComponent: eraserView!, willHideComponent: eraserButton!)
+//
+////        showSelected(willShowComponent: brushButton!, willHideComponent: brushView!)
+//
+//        isBrushSelected = false
+//        unselectColor()
+//
+//        drawing?.brushWidth = 17.0 //TODO: good?!
+//        SocketIOManager.sharedInstance.sendGameSetting(name: "lineWidth", value: String(Float(drawing!.brushWidth)))
+//        drawing?.brushColor = Colors.white.drawingColor!.lightBackground
+//        SocketIOManager.sharedInstance.sendGameSetting(name: "color", value: (Colors.white.drawingColor?.lightBackground.toHexString())!)
+//    }
+//
     
     func showSelected(willShowComponent: Any, willHideComponent: Any) {
         if let hide = willHideComponent as? UIButton {
@@ -165,9 +85,9 @@ class DrawingViewController: UIViewController {
             return
         }
         
-        drawing?.touchesBegan(touch.location(in: canvasView))
+        Game.sharedInstance.drawing?.touchesBegan(touch.location(in: canvasView))
         
-        SocketIOManager.sharedInstance.sendDrawing(state: "start", point: [(drawing?.lastPoint.x)!, (drawing?.lastPoint.y)!])
+        SocketIOManager.sharedInstance.sendDrawing(state: "start", point: [(Game.sharedInstance.drawing?.lastPoint.x)!, (Game.sharedInstance.drawing?.lastPoint.y)!])
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -175,9 +95,9 @@ class DrawingViewController: UIViewController {
             return
         }
         
-        drawing?.touchesMoved(touch.location(in: canvasView))
+        Game.sharedInstance.drawing?.touchesMoved(touch.location(in: canvasView))
         
-        SocketIOManager.sharedInstance.sendDrawing(state: "moving", point: [(drawing?.lastPoint.x)!, (drawing?.lastPoint.y)!])
+        SocketIOManager.sharedInstance.sendDrawing(state: "moving", point: [(Game.sharedInstance.drawing?.lastPoint.x)!, (Game.sharedInstance.drawing?.lastPoint.y)!])
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -185,9 +105,9 @@ class DrawingViewController: UIViewController {
             return
         }
         
-        drawing?.touchesEnded()
+        Game.sharedInstance.drawing?.touchesEnded()
         
-        SocketIOManager.sharedInstance.sendDrawing(state: "end", point: [(drawing?.lastPoint.x)!, (drawing?.lastPoint.y)!])
+        SocketIOManager.sharedInstance.sendDrawing(state: "end", point: [(Game.sharedInstance.drawing?.lastPoint.x)!, (Game.sharedInstance.drawing?.lastPoint.y)!])
     }
     
     //MARK: Initializing
@@ -196,62 +116,29 @@ class DrawingViewController: UIViewController {
     }
     
     func initializeVariables() {
-        drawing = Drawing(canvasView: self.canvasView, canvas: self.canvas, templeCanvas: self.templeCanvas)
-        DrawingViewController.chatTableViewDelegates = MessageTableViewDelegates(chatTableView: chatTableView)
+        Game.sharedInstance.drawing = Drawing(canvasView: self.canvasView, canvas: self.canvas, templeCanvas: self.templeCanvas)
         
-        chatTableView.delegate = DrawingViewController.chatTableViewDelegates
-        chatTableView.dataSource = DrawingViewController.chatTableViewDelegates
-    }
-    
-    func clearVariables() { //drawing?!
-        DrawingViewController.chatTableViewDelegates = nil
+        colors = [Colors.red.drawingColor!, Colors.orange.drawingColor!, Colors.yellow.drawingColor!, Colors.purple.drawingColor!, Colors.green.drawingColor!, Colors.darkBlue.drawingColor!, Colors.lightBlue.drawingColor!, Colors.brown.drawingColor!,  Colors.black.drawingColor!, Colors.gray.drawingColor!]
+        
+        colorsCollectionViewDelegates = ColorsCollectionViewDelegates(colorsCollectionView: colorsCollectionView, colors: colors)
+        colorsCollectionView.delegate = colorsCollectionViewDelegates
+        colorsCollectionView.dataSource = colorsCollectionViewDelegates
+        
+        Game.sharedInstance.chatTableViewDelegates = MessageTableViewDelegates(chatTableView: chatTableView)
+        chatTableView.delegate = Game.sharedInstance.chatTableViewDelegates
+        chatTableView.dataSource = Game.sharedInstance.chatTableViewDelegates
     }
     
     //MARK: UI Handling
-    func initializeArrays() {
-//        colorButtons = [redColorButton, greenColorButton, darkBlueColorButton, yellowColorButton, purpleColorButton, pinkColorButton, brownColorButton, lightBlueColorButton, blackColorButton, grayColorButton]
-//
-//         colorViews = [redColorView, greenColorView, darkBlueColorView, yellowColorView, purpleColorView, pinkColorView, brownColorView, lightBlueColorView, blackColorView, grayColorView]
-         
-         colors = [Colors.red.drawingColor!, Colors.green.drawingColor!, Colors.darkBlue.drawingColor!, Colors.yellow.drawingColor!, Colors.purple.drawingColor!, Colors.pink.drawingColor!, Colors.brown.drawingColor!, Colors.lightBlue.drawingColor!, Colors.black.drawingColor!, Colors.gray.drawingColor!]
-        
-        brushSizeButtons = [brushSizeButton1, brushSizeButton2, brushSizeButton3, brushSizeButton4]
-    }
-    
-    func setColorPaletteAttributes() {
-//        for i in 0..<colors.count {
-//            colorButtons[i].setCornerRadius(radius: 10)
-//            colorButtons[i].setBackgroundColor(color: colors[i])
-//
-//            colorViews[i].setCornerRadius(radius: 10)
-//            colorViews[i].setBackgroundColor(color: colors[i])
-//        }
-    }
-    
-    func setBrushThicknessAttributes() {
-        brushThicknessView.layer.cornerRadius = 8
-        
-        for button in brushSizeButtons {
-            button.layer.cornerRadius = 2
-            button.isEnabled = true
-        }
-    }
-    
     func setWordLabelAttributes() {
         wordLabel.text = Game.sharedInstance.word
-    }
-    
-    func configure() {
-        initializeArrays()
-        setColorPaletteAttributes()
-        setBrushThicknessAttributes()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
      
-        configure()
+//        configure()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -264,9 +151,5 @@ class DrawingViewController: UIViewController {
             ChoosingWordViewController.parentViewController = self
             showNextPage(identifier: "ChoosingWordViewController")
         }
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        clearVariables()
     }
 }

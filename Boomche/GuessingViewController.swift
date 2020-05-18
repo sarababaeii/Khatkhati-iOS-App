@@ -24,10 +24,6 @@ class GuessingViewController: UIViewController {
     @IBOutlet weak var chatTextField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
     
-    static var drawing: Drawing?
-    
-    static var chatTableViewDelegates: MessageTableViewDelegates?
-    
     //MARK: Timer Setting
     func setTimer() {
         let timer = TimerSetting(label: timerLabel, time: 60)
@@ -51,11 +47,11 @@ class GuessingViewController: UIViewController {
     func showDrawing(state: String, point: [CGFloat]) {
         switch state {
         case "start":
-            GuessingViewController.drawing?.touchesBegan(CGPoint(x: point[0], y: point[1]))
+            Game.sharedInstance.drawing?.touchesBegan(CGPoint(x: point[0], y: point[1]))
         case "moving":
-            GuessingViewController.drawing?.touchesMoved(CGPoint(x: point[0], y: point[1]))
+            Game.sharedInstance.drawing?.touchesMoved(CGPoint(x: point[0], y: point[1]))
         case "end":
-            GuessingViewController.drawing?.touchesEnded()
+            Game.sharedInstance.drawing?.touchesEnded()
         default:
             print("Error in receiving draw")
         }
@@ -113,30 +109,14 @@ class GuessingViewController: UIViewController {
     
     //MARK: Initializing
     func initializeVariables() {
-        GuessingViewController.drawing = Drawing(canvasView: self.canvasView, canvas: self.canvas, templeCanvas: self.templeCanvas)
-        GuessingViewController.chatTableViewDelegates = MessageTableViewDelegates(chatTableView: chatTableView)
+        Game.sharedInstance.drawing = Drawing(canvasView: self.canvasView, canvas: self.canvas, templeCanvas: self.templeCanvas)
+        Game.sharedInstance.chatTableViewDelegates = MessageTableViewDelegates(chatTableView: chatTableView)
         
-        chatTableView.delegate = GuessingViewController.chatTableViewDelegates
-        chatTableView.dataSource = GuessingViewController.chatTableViewDelegates
-    }
-    
-    func clearVariables() { //drawing?!
-        GuessingViewController.chatTableViewDelegates = nil
-    }
-    
-    //MARK: UI Handling
-    func setChatTextFieldAttributes(){
-        chatTextField.layer.cornerRadius = 22
-    }
-    
-    func setSendButtonAttributes(){
-        sendButton.setAttributes(color: Colors.blue.componentColor!, radius: 18, hasShadow: false)
+        chatTableView.delegate = Game.sharedInstance.chatTableViewDelegates
+        chatTableView.dataSource = Game.sharedInstance.chatTableViewDelegates
     }
     
     func configure() {
-        setChatTextFieldAttributes()
-        setSendButtonAttributes()
-        
         registerForKeyboardNotifications()
         
         addSocketHandler()
@@ -157,9 +137,5 @@ class GuessingViewController: UIViewController {
             WaitingViewController.parentViewController = self
             showNextPage(identifier: "WaitingViewController")
         }
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        clearVariables()
     }
 }

@@ -24,54 +24,13 @@ class LoadingViewController: UIViewController {
         present(controller, animated: true, completion: nil)
     }
     
-    //MARK: Socket Management
-    //It would be more clear if it was implemented in SocketIOManager class
-//    func addSocketHandler() {
-//        SocketIOManager.sharedInstance.socket?.on("start_game") { data, ack in
-//            print("^^^^^RECEIVING WORDS^^^^^^")
-////            let temp = data[0] as! [String : Any]
-//        }
-//    }
-    
-    func determiningNextPage(username: String) {
-        if Game.sharedInstance.username == username {
-            showNextPage(identifier: "DrawingViewController")
-        } else {
-            showNextPage(identifier: "GuessingViewController")
-        }
-    }
-    
     //MARK: UI Handling
     func setLoadingBackgroundGif() {
         loadingBackgroundImage.loadGif(asset: "LoadingGif")
     }
     
-    var counter = 3
-
-    func on() {
-        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
-    }
-
-    @objc func updateCounter() {
-        if counter > 0 {
-            counter -= 1
-        }
-
-        if counter == 0 {
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let controller = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as UIViewController
-//            controller.modalPresentationStyle = .fullScreen
-//            controller.modalTransitionStyle = .coverVertical
-//            present(controller, animated: true, completion: nil)
-        }
-    }
-    
     func configure() {
         setLoadingBackgroundGif()
-
-//        addSocketHandler()
-        
-        on()
     }
     
     override func viewDidLoad() {
@@ -79,6 +38,5 @@ class LoadingViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         configure()
-        SocketIOManager.sharedInstance.shareStatus()
     }
 }

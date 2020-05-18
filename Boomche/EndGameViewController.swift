@@ -26,7 +26,7 @@ class EndGameViewController: UIViewController {
     @IBOutlet weak var thirdPlaceScoreView: UIView!
     @IBOutlet weak var thirdPlaceScoreLabel: UILabel!
     
-    @IBOutlet weak var homeButton: UIButton!
+    @IBOutlet weak var homeButton: CustomButton!
     @IBOutlet weak var againButton: UIButton!
     
     static var winnerPlayer: Player?
@@ -44,7 +44,7 @@ class EndGameViewController: UIViewController {
     }
     
     //MARK: UI Handling
-    func setRankingAttributes(player: Player, nameLabel: UILabel, scoreLabel: UILabel, scoreView: UIView) {
+    func setAttributes(player: Player, nameLabel: UILabel, scoreLabel: UILabel, scoreView: UIView) {
         nameLabel.text = player.username
         scoreLabel.text = String(player.totalScore).convertEnglishNumToPersianNum()
         
@@ -52,48 +52,25 @@ class EndGameViewController: UIViewController {
         scoreView.backgroundColor = player.color.lightBackground
     }
     
-    func setWinnerAttributes() {
-        winnerView.layer.cornerRadius = 29
-        winnerScoreView.layer.cornerRadius = 22.5
-        
+    func setRankingAttributes() {
         if let winner = EndGameViewController.winnerPlayer {
-            setRankingAttributes(player: winner, nameLabel: winnerNameLabel, scoreLabel: winnerScoreLabel, scoreView: winnerScoreView)
+            setAttributes(player: winner, nameLabel: winnerNameLabel, scoreLabel: winnerScoreLabel, scoreView: winnerScoreView)
         }
-    }
-    
-    func setSecondPlaceAttributes() {
-        secondPlaceView.layer.cornerRadius = 5
-        secondPlaceScoreView.layer.cornerRadius = 5
-        
         if let second = EndGameViewController.secondPlacePlayer {
-            setRankingAttributes(player: second, nameLabel: secondPlaceNameLabel, scoreLabel: secondPlaceScoreLabel, scoreView: secondPlaceScoreView)
+            setAttributes(player: second, nameLabel: secondPlaceNameLabel, scoreLabel: secondPlaceScoreLabel, scoreView: secondPlaceScoreView)
         }
-    }
-    
-    func setThirdPlaceAttributes() {
-        thirdPlaceView.layer.cornerRadius = 5
-        thirdPlaceScoreView.layer.cornerRadius = 5
-        
         if let third = EndGameViewController.thirdPlacePlayer {
-            setRankingAttributes(player: third, nameLabel: thirdPlaceNameLabel, scoreLabel: thirdPlaceScoreLabel, scoreView: thirdPlaceScoreView)
+            setAttributes(player: third, nameLabel: thirdPlaceNameLabel, scoreLabel: thirdPlaceScoreLabel, scoreView: thirdPlaceScoreView)
         }
-    }
-    
-    func setAgianButtonAttributes() {
-        againButton.setAttributes(color: Colors.blue.componentColor!, radius: 15, hasShadow: false)
     }
     
     func setHomeButtonAttributes() {
-        homeButton.setAttributes(color: Colors.yellow.componentColor!, radius: 15, hasShadow: false)
         homeButton.setImage(image: UIImage(named: "Home")!)
     }
     
     func configure() {
-        setWinnerAttributes()
-        setSecondPlaceAttributes()
-        setThirdPlaceAttributes()
+        setRankingAttributes()
         
-        setAgianButtonAttributes()
         setHomeButtonAttributes()
     }
     

@@ -14,12 +14,31 @@ class Drawing {
     var canvas: UIImageView
     var templeCanvas: UIImageView
     
-    var lastPoint = CGPoint.zero
-    var brushWidth: CGFloat = 6.0
-    var brushColor: UIColor = Colors.black.drawingColor!.lightBackground
+    var currentColorCell: ColorCollectionViewCell? {
+        didSet {
+            brushColor = (currentColorCell?.color.lightBackground)!
+        }
+    }
+    
+    var brushWidth: CGFloat = 6.0 {
+        didSet {
+            if Game.sharedInstance.painter == Game.sharedInstance.username {
+                SocketIOManager.sharedInstance.sendGameSetting(name: "lineWidth", value: String(Float(brushWidth)))
+            }
+        }
+    }
+    
+    var brushColor: UIColor = Colors.black.drawingColor!.lightBackground {
+        didSet {
+            if Game.sharedInstance.painter == Game.sharedInstance.username {
+                SocketIOManager.sharedInstance.sendGameSetting(name: "color", value: brushColor.toHexString())
+            }
+        }
+    }
     
     var opacity: CGFloat = 1.0
     var swiped = false
+    var lastPoint = CGPoint.zero
     
     init(canvasView: UIView, canvas: UIImageView, templeCanvas: UIImageView) {
         self.canvasView = canvasView

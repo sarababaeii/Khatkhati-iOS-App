@@ -20,7 +20,6 @@ class ScoreTableViewCell: UITableViewCell {
     @IBOutlet weak var bonusImage: UIImageView!
     @IBOutlet weak var colorView: UIView!
     
-    
     func setAttributes(player: Player){
         nameLabel.text = player.username
         currentScoreLabel.text = "+\(String(player.currentScore).convertEnglishNumToPersianNum()) امتیاز"
@@ -36,13 +35,7 @@ class ScoreTableViewCell: UITableViewCell {
         }
     }
     
-    func configure() {
-        wholeView.layer.cornerRadius = 5
-        colorView.layer.cornerRadius = 5
-    }
-    
     override func awakeFromNib(){
         super.awakeFromNib()
-        configure()
     }
 }

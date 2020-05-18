@@ -11,9 +11,9 @@ import UIKit
 
 class JoinGameViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var randomGameButton: UIButton!
+    @IBOutlet weak var randomGameButton: CustomButton!
     @IBOutlet weak var lobbyCodeTextField: UITextField!
-    @IBOutlet weak var joinButton: UIButton!
+    @IBOutlet weak var joinButton: CustomButton!
     
     @IBAction func randomGameAction(_ sender: Any) {
         SocketIOManager.sharedInstance.findGame()
@@ -61,23 +61,8 @@ class JoinGameViewController: UIViewController, UITextFieldDelegate {
         //TODO: joinButton.bottom = targetHight
     }
     
-    //MARK: UI handling
-    func setUIComponentsAttributes() {
-        randomGameButton.setAttributes(color: Colors.blue.componentColor!, radius: 15, hasShadow: false)
-        lobbyCodeTextField.setAttributes(backgroundColor: Colors.gray.componentColor!, cornerRadius: 20)
-        joinButton.setAttributes(color: Colors.pink.componentColor!, radius: 15, hasShadow: true)
-    }
-    
-    func configure() {
-        setUIComponentsAttributes()
-        
-        Game.sharedInstance.isLobbyLeader = false
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-     
-        configure()
     }
 }

@@ -20,6 +20,9 @@ class Game {
     //MARK: Game Information
     var roomID: String?
     
+    var drawing: Drawing?
+    var chatTableViewDelegates: MessageTableViewDelegates?
+    
     var painter = ""
     var wordList = [String]()
     var word: String?
@@ -33,6 +36,9 @@ class Game {
     }
     
     func resetRound() {
+        drawing = nil
+        chatTableViewDelegates = nil
+        
         painter = ""
         wordList.removeAll()
         word = nil

@@ -22,6 +22,8 @@ class DrawingViewController: UIViewController {
     
     //MARK: ColorPalette:
     @IBOutlet weak var colorsCollectionView: UICollectionView!
+    @IBOutlet weak var eraserButton: UIButton!
+    @IBOutlet weak var brushButton: UIButton!
     
     var colors = [Color]()
 
@@ -35,35 +37,18 @@ class DrawingViewController: UIViewController {
         timer.on()
     }
     
+    @IBAction func eraserSelected(_ sender: Any) {
+        if let cell = Game.sharedInstance.round.drawing?.currentColorCell {
+            cell.unSelectColor()
+        }
+        
+        Game.sharedInstance.round.drawing?.brushColor = UIColor.white
+        Game.sharedInstance.round.drawing?.brushWidth = 17 //TODO: good?!
+    }
     
-//    func selectBrush() {
-////        showSelected(willShowComponent: brushView!, willHideComponent: brushButton!)
-//
-////        showSelected(willShowComponent: eraserButton!, willHideComponent: eraserView!)
-//
-//        isBrushSelected = true
-//        drawing?.brushWidth = 6.0
-//        SocketIOManager.sharedInstance.sendGameSetting(name: "lineWidth", value: String(Float(drawing!.brushWidth)))
-//
-////        if brushColorButton == nil {
-////            colorPicked(blackColorButton!)
-////        }
-//    }
+    @IBAction func brushSelected(_ sender: Any) {
+    }
     
-//    @IBAction func selectEraser(_ sender: Any) {
-////        showSelected(willShowComponent: eraserView!, willHideComponent: eraserButton!)
-//
-////        showSelected(willShowComponent: brushButton!, willHideComponent: brushView!)
-//
-//        isBrushSelected = false
-//        unselectColor()
-//
-//        drawing?.brushWidth = 17.0 //TODO: good?!
-//        SocketIOManager.sharedInstance.sendGameSetting(name: "lineWidth", value: String(Float(drawing!.brushWidth)))
-//        drawing?.brushColor = Colors.white.drawingColor!.lightBackground
-//        SocketIOManager.sharedInstance.sendGameSetting(name: "color", value: (Colors.white.drawingColor?.lightBackground.toHexString())!)
-//    }
-//
     
     func showSelected(willShowComponent: Any, willHideComponent: Any) {
         if let hide = willHideComponent as? UIButton {
@@ -81,33 +66,33 @@ class DrawingViewController: UIViewController {
     
     //MARK: Drawing management
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first, Game.sharedInstance.wordChose else {
+        guard let touch = touches.first, Game.sharedInstance.round.wordChose else {
             return
         }
         
-        Game.sharedInstance.drawing?.touchesBegan(touch.location(in: canvasView))
+        Game.sharedInstance.round.drawing?.touchesBegan(touch.location(in: canvasView))
         
-        SocketIOManager.sharedInstance.sendDrawing(state: "start", point: [(Game.sharedInstance.drawing?.lastPoint.x)!, (Game.sharedInstance.drawing?.lastPoint.y)!])
+        SocketIOManager.sharedInstance.sendDrawing(state: "start", point: [(Game.sharedInstance.round.drawing?.lastPoint.x)!, (Game.sharedInstance.round.drawing?.lastPoint.y)!])
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first, Game.sharedInstance.wordChose else {
+        guard let touch = touches.first, Game.sharedInstance.round.wordChose else {
             return
         }
         
-        Game.sharedInstance.drawing?.touchesMoved(touch.location(in: canvasView))
+        Game.sharedInstance.round.drawing?.touchesMoved(touch.location(in: canvasView))
         
-        SocketIOManager.sharedInstance.sendDrawing(state: "moving", point: [(Game.sharedInstance.drawing?.lastPoint.x)!, (Game.sharedInstance.drawing?.lastPoint.y)!])
+        SocketIOManager.sharedInstance.sendDrawing(state: "moving", point: [(Game.sharedInstance.round.drawing?.lastPoint.x)!, (Game.sharedInstance.round.drawing?.lastPoint.y)!])
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard Game.sharedInstance.wordChose else {
+        guard Game.sharedInstance.round.wordChose else {
             return
         }
         
-        Game.sharedInstance.drawing?.touchesEnded()
+        Game.sharedInstance.round.drawing?.touchesEnded()
         
-        SocketIOManager.sharedInstance.sendDrawing(state: "end", point: [(Game.sharedInstance.drawing?.lastPoint.x)!, (Game.sharedInstance.drawing?.lastPoint.y)!])
+        SocketIOManager.sharedInstance.sendDrawing(state: "end", point: [(Game.sharedInstance.round.drawing?.lastPoint.x)!, (Game.sharedInstance.round.drawing?.lastPoint.y)!])
     }
     
     //MARK: Initializing
@@ -116,7 +101,7 @@ class DrawingViewController: UIViewController {
     }
     
     func initializeVariables() {
-        Game.sharedInstance.drawing = Drawing(canvasView: self.canvasView, canvas: self.canvas, templeCanvas: self.templeCanvas)
+        Game.sharedInstance.round.drawing = Drawing(canvasView: self.canvasView, canvas: self.canvas, templeCanvas: self.templeCanvas)
         
         colors = [Colors.red.drawingColor!, Colors.orange.drawingColor!, Colors.yellow.drawingColor!, Colors.purple.drawingColor!, Colors.green.drawingColor!, Colors.darkBlue.drawingColor!, Colors.lightBlue.drawingColor!, Colors.brown.drawingColor!,  Colors.black.drawingColor!, Colors.gray.drawingColor!]
         
@@ -124,14 +109,14 @@ class DrawingViewController: UIViewController {
         colorsCollectionView.delegate = colorsCollectionViewDelegates
         colorsCollectionView.dataSource = colorsCollectionViewDelegates
         
-        Game.sharedInstance.chatTableViewDelegates = MessageTableViewDelegates(chatTableView: chatTableView)
-        chatTableView.delegate = Game.sharedInstance.chatTableViewDelegates
-        chatTableView.dataSource = Game.sharedInstance.chatTableViewDelegates
+        Game.sharedInstance.round.chatTableViewDelegates = MessageTableViewDelegates(chatTableView: chatTableView)
+        chatTableView.delegate = Game.sharedInstance.round.chatTableViewDelegates
+        chatTableView.dataSource = Game.sharedInstance.round.chatTableViewDelegates
     }
     
     //MARK: UI Handling
     func setWordLabelAttributes() {
-        wordLabel.text = Game.sharedInstance.word
+        wordLabel.text = Game.sharedInstance.round.word
     }
     
     override func viewDidLoad() {
@@ -142,7 +127,7 @@ class DrawingViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if Game.sharedInstance.wordChose {
+        if Game.sharedInstance.round.wordChose {
             setTimer()
             initializeVariables()
             setWordLabelAttributes()
@@ -153,3 +138,5 @@ class DrawingViewController: UIViewController {
         }
     }
 }
+
+//TODO: brush size, initialize brush size

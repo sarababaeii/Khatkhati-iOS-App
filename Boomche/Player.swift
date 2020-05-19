@@ -10,10 +10,16 @@ import Foundation
 
 class Player {
     var username: String
+    var socketID: String?
+    
     var colorCode: Int
     var color: Color
+    
     var totalScore: Int
     var currentScore: Int
+    
+    var isLobbyLeader = false
+    var hasGuessed = false
     
     var isPainter = false
     var isFirstGuesser = false
@@ -21,9 +27,6 @@ class Player {
     init(username: String, colorCode: Int, totalScore: Double, currentScore: Double) {
         self.username = username
         self.colorCode = colorCode
-        self.totalScore = Int(totalScore)
-        self.currentScore = Int(currentScore)
-        
         switch colorCode {
         case 1:
             color = Colors.red.playerColor!
@@ -40,9 +43,30 @@ class Player {
         default:
             color = Colors.red.playerColor!
         }
+        self.totalScore = Int(totalScore)
+        self.currentScore = Int(currentScore)
     }
     
     convenience init(username: String, colorCode: Int) {
         self.init(username: username, colorCode: colorCode, totalScore: 0, currentScore: 0)
+    }
+    
+    convenience init(username: String) {
+        self.init(username: username, colorCode: 1)
+    }
+    
+    func roundFinished() {
+        currentScore = 0 //?!
+        hasGuessed = false
+        isPainter = false
+        isFirstGuesser = false
+    }
+    
+    func gameFinished() {
+        colorCode = 1
+        totalScore = 0
+        isLobbyLeader = false
+        
+        roundFinished()
     }
 }

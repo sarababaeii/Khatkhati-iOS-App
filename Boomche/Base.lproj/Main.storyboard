@@ -1102,8 +1102,8 @@
                                             <constraint firstItem="E1e-nY-c6W" firstAttribute="centerX" secondItem="31P-Oo-Vjj" secondAttribute="centerX" id="vkF-3n-BMS"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="کفش دوزک" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVx-61-fWj">
-                                        <rect key="frame" x="133" y="67" width="109" height="33"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVx-61-fWj">
+                                        <rect key="frame" x="187.5" y="67" width="0.0" height="33"/>
                                         <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="24"/>
                                         <color key="textColor" red="0.23137254901960785" green="0.22352941176470587" blue="0.34901960784313724" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1234,37 +1234,45 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DoW-R2-Lyu" userLabel="View2.0">
                                         <rect key="frame" x="90" y="56" width="147" height="34"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EWr-LQ-Jmw">
-                                                <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="EWr-LQ-Jmw" secondAttribute="height" multiplier="1:1" id="Ws6-tY-xbG"/>
-                                                </constraints>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RO7-RA-638">
-                                                <rect key="frame" x="113" y="0.0" width="34" height="34"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="RO7-RA-638" secondAttribute="height" multiplier="1:1" id="dgg-OH-PQ0"/>
-                                                </constraints>
-                                            </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3zh-Q1-sCW">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZM-rP-Kxl">
                                                 <rect key="frame" x="56.5" y="0.0" width="34" height="34"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="3zh-Q1-sCW" secondAttribute="height" multiplier="1:1" id="7je-Ed-mBC"/>
+                                                    <constraint firstAttribute="width" secondItem="xZM-rP-Kxl" secondAttribute="height" multiplier="1:1" id="jBt-LS-UqW"/>
                                                 </constraints>
-                                            </imageView>
+                                                <state key="normal" image="paint‌Brush"/>
+                                                <connections>
+                                                    <action selector="brushSelected:" destination="FH5-3d-izd" eventType="touchUpInside" id="YE6-r8-x7j"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSk-rP-wKt">
+                                                <rect key="frame" x="113" y="0.0" width="34" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="zSk-rP-wKt" secondAttribute="height" multiplier="1:1" id="Ufy-64-bvx"/>
+                                                </constraints>
+                                                <state key="normal" image="eraser"/>
+                                                <connections>
+                                                    <action selector="eraserSelected:" destination="FH5-3d-izd" eventType="touchUpInside" id="A2A-j9-22Q"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="es3-FV-8mv">
+                                                <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="es3-FV-8mv" secondAttribute="height" multiplier="1:1" id="QDJ-zo-ZXI"/>
+                                                </constraints>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="DoW-R2-Lyu" secondAttribute="height" multiplier="148:34" id="4PB-qk-z6q"/>
-                                            <constraint firstAttribute="trailing" secondItem="RO7-RA-638" secondAttribute="trailing" id="EDY-UR-9WM"/>
-                                            <constraint firstItem="3zh-Q1-sCW" firstAttribute="top" secondItem="DoW-R2-Lyu" secondAttribute="top" id="KIg-S4-xou"/>
-                                            <constraint firstItem="EWr-LQ-Jmw" firstAttribute="leading" secondItem="DoW-R2-Lyu" secondAttribute="leading" id="N7T-jN-ONq"/>
-                                            <constraint firstAttribute="bottom" secondItem="3zh-Q1-sCW" secondAttribute="bottom" id="PcF-Dn-db4"/>
-                                            <constraint firstItem="EWr-LQ-Jmw" firstAttribute="top" secondItem="DoW-R2-Lyu" secondAttribute="top" id="cGp-dn-6Db"/>
-                                            <constraint firstAttribute="bottom" secondItem="RO7-RA-638" secondAttribute="bottom" id="qh3-gV-Eu8"/>
-                                            <constraint firstItem="3zh-Q1-sCW" firstAttribute="centerX" secondItem="DoW-R2-Lyu" secondAttribute="centerX" id="uo4-q9-mM5"/>
-                                            <constraint firstAttribute="bottom" secondItem="EWr-LQ-Jmw" secondAttribute="bottom" id="vAe-n1-K3J"/>
-                                            <constraint firstItem="RO7-RA-638" firstAttribute="top" secondItem="DoW-R2-Lyu" secondAttribute="top" id="w7o-z3-Pcn"/>
+                                            <constraint firstItem="es3-FV-8mv" firstAttribute="leading" secondItem="DoW-R2-Lyu" secondAttribute="leading" id="5BG-gn-OIh"/>
+                                            <constraint firstItem="es3-FV-8mv" firstAttribute="top" secondItem="DoW-R2-Lyu" secondAttribute="top" id="8cH-II-s4l"/>
+                                            <constraint firstAttribute="bottom" secondItem="es3-FV-8mv" secondAttribute="bottom" id="EBZ-Qc-8Tw"/>
+                                            <constraint firstAttribute="bottom" secondItem="zSk-rP-wKt" secondAttribute="bottom" id="F2s-N9-50y"/>
+                                            <constraint firstItem="xZM-rP-Kxl" firstAttribute="top" secondItem="DoW-R2-Lyu" secondAttribute="top" id="NHs-dC-zFI"/>
+                                            <constraint firstAttribute="trailing" secondItem="zSk-rP-wKt" secondAttribute="trailing" id="YyG-Ph-NIG"/>
+                                            <constraint firstItem="zSk-rP-wKt" firstAttribute="top" secondItem="DoW-R2-Lyu" secondAttribute="top" id="p6B-1x-TVa"/>
+                                            <constraint firstAttribute="bottom" secondItem="xZM-rP-Kxl" secondAttribute="bottom" id="pB0-kl-yuQ"/>
+                                            <constraint firstItem="xZM-rP-Kxl" firstAttribute="centerX" secondItem="DoW-R2-Lyu" secondAttribute="centerX" id="s8W-iQ-9Bm"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1299,10 +1307,12 @@
                         <viewLayoutGuide key="safeArea" id="RD0-eh-Wtu"/>
                     </view>
                     <connections>
+                        <outlet property="brushButton" destination="xZM-rP-Kxl" id="vZD-b3-zdH"/>
                         <outlet property="canvas" destination="OK3-yE-8Z9" id="wKt-n7-yy3"/>
                         <outlet property="canvasView" destination="yek-85-i8W" id="vBO-cv-B9s"/>
                         <outlet property="chatTableView" destination="6Ag-Ar-g10" id="8cn-Bw-psa"/>
                         <outlet property="colorsCollectionView" destination="r7n-f5-ZMn" id="k28-4L-M7d"/>
+                        <outlet property="eraserButton" destination="zSk-rP-wKt" id="ovf-3t-nzf"/>
                         <outlet property="templeCanvas" destination="IhC-yN-VJX" id="cdJ-NC-z0X"/>
                         <outlet property="timerLabel" destination="E1e-nY-c6W" id="SPY-ju-qtB"/>
                         <outlet property="wordLabel" destination="jVx-61-fWj" id="r62-GE-Ila"/>
@@ -2750,8 +2760,10 @@
         <image name="SilverCup" width="26" height="30"/>
         <image name="Start" width="26" height="22"/>
         <image name="World" width="97" height="97"/>
+        <image name="eraser" width="500" height="500"/>
+        <image name="paint‌Brush" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="B02-37-tGE"/>
+        <segue reference="4nJ-e4-cP0"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -24,8 +24,10 @@ class WaitingViewController: UIViewController {
     }
     
     func setChooserNameLabelAttributes() {
-        //TODO: Setting name and color of chooser given from server
-        chooserNameLabel.text = Game.sharedInstance.painter
+        if let painter = Game.sharedInstance.round.painter {
+            chooserNameLabel.text = painter.username
+            chooserNameLabel.textColor = painter.color.lightBackground
+        }
     }
     
     func configure() {

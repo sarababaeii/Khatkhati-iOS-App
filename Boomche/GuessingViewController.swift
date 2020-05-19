@@ -47,11 +47,11 @@ class GuessingViewController: UIViewController {
     func showDrawing(state: String, point: [CGFloat]) {
         switch state {
         case "start":
-            Game.sharedInstance.drawing?.touchesBegan(CGPoint(x: point[0], y: point[1]))
+            Game.sharedInstance.round.drawing?.touchesBegan(CGPoint(x: point[0], y: point[1]))
         case "moving":
-            Game.sharedInstance.drawing?.touchesMoved(CGPoint(x: point[0], y: point[1]))
+            Game.sharedInstance.round.drawing?.touchesMoved(CGPoint(x: point[0], y: point[1]))
         case "end":
-            Game.sharedInstance.drawing?.touchesEnded()
+            Game.sharedInstance.round.drawing?.touchesEnded()
         default:
             print("Error in receiving draw")
         }
@@ -109,11 +109,11 @@ class GuessingViewController: UIViewController {
     
     //MARK: Initializing
     func initializeVariables() {
-        Game.sharedInstance.drawing = Drawing(canvasView: self.canvasView, canvas: self.canvas, templeCanvas: self.templeCanvas)
-        Game.sharedInstance.chatTableViewDelegates = MessageTableViewDelegates(chatTableView: chatTableView)
+        Game.sharedInstance.round.drawing = Drawing(canvasView: self.canvasView, canvas: self.canvas, templeCanvas: self.templeCanvas)
+        Game.sharedInstance.round.chatTableViewDelegates = MessageTableViewDelegates(chatTableView: chatTableView)
         
-        chatTableView.delegate = Game.sharedInstance.chatTableViewDelegates
-        chatTableView.dataSource = Game.sharedInstance.chatTableViewDelegates
+        chatTableView.delegate = Game.sharedInstance.round.chatTableViewDelegates
+        chatTableView.dataSource = Game.sharedInstance.round.chatTableViewDelegates
     }
     
     func configure() {
@@ -130,7 +130,7 @@ class GuessingViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if Game.sharedInstance.wordChose {
+        if Game.sharedInstance.round.wordChose {
             setTimer()
             initializeVariables()
         } else {

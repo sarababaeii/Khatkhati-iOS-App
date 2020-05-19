@@ -126,7 +126,7 @@ class NewLobbyViewController: UIViewController {
     func setUIComponentAttributes() {
         lobbyNameTextField.text = Game.sharedInstance.roomID
         
-        if !Game.sharedInstance.isLobbyLeader {
+        if !Game.sharedInstance.me.isLobbyLeader {
             for button in NewLobbyViewController.roundsNumberButtons {
                 button.isEnabled = false
             }

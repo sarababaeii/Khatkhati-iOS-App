@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
     }
     
     func configure(){
-        Game.sharedInstance.resetRoom()
+        Game.sharedInstance.gameFinished()
     }
     
     override func viewDidLoad() {

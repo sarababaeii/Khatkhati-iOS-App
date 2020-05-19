@@ -50,6 +50,7 @@
 		03CA7C65243C69D600578B60 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CA7C64243C69D600578B60 /* UIApplication.swift */; };
 		03CD95B82472B03500594050 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD95B72472B03500594050 /* CustomView.swift */; };
 		03CD95BA2472BFD800594050 /* ColorsCollectionViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD95B92472BFD800594050 /* ColorsCollectionViewDelegates.swift */; };
+		03CD95BC2472F3E000594050 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD95BB2472F3E000594050 /* Round.swift */; };
 		03D2FF3F2437503F008D9CB7 /* ChoosingWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D2FF3E2437503F008D9CB7 /* ChoosingWordViewController.swift */; };
 		03D2FF412437A875008D9CB7 /* ScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D2FF402437A875008D9CB7 /* ScoresViewController.swift */; };
 		03D5526E24245D8300969560 /* JoinGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5526D24245D8300969560 /* JoinGameViewController.swift */; };
@@ -128,6 +129,7 @@
 		03CA7C64243C69D600578B60 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		03CD95B72472B03500594050 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		03CD95B92472BFD800594050 /* ColorsCollectionViewDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsCollectionViewDelegates.swift; sourceTree = "<group>"; };
+		03CD95BB2472F3E000594050 /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
 		03D2FF3E2437503F008D9CB7 /* ChoosingWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosingWordViewController.swift; sourceTree = "<group>"; };
 		03D2FF402437A875008D9CB7 /* ScoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresViewController.swift; sourceTree = "<group>"; };
 		03D5526D24245D8300969560 /* JoinGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGameViewController.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 				0323C15E242EB6A20074856A /* SocketIOManager.swift */,
 				03506C01243257EE0052DE06 /* TimerSetting.swift */,
 				03506C0324329D990052DE06 /* Game.swift */,
+				03CD95BB2472F3E000594050 /* Round.swift */,
 				03BA7663243548E200E0B345 /* Drawing.swift */,
 				03CA7C64243C69D600578B60 /* UIApplication.swift */,
 				0381AAB4243F6D7900C4E1DE /* Message.swift */,
@@ -586,6 +589,7 @@
 				03B6DD392422CDEB00CC0B7F /* HomeViewController.swift in Sources */,
 				03CD95B82472B03500594050 /* CustomView.swift in Sources */,
 				03B6ECE2244C968200D7498D /* PlayerCollectionViewCell.swift in Sources */,
+				03CD95BC2472F3E000594050 /* Round.swift in Sources */,
 				03F287DD2423D9FB0024937C /* NewLobbyViewController.swift in Sources */,
 				03B6DD352422CDEB00CC0B7F /* AppDelegate.swift in Sources */,
 				0332F486245733960006F18E /* MessageTableViewDelegates.swift in Sources */,

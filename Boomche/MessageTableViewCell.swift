@@ -13,10 +13,11 @@ class MessageTableViewCell: UITableViewCell {
     @IBOutlet weak var messageLabel: UILabel!
     
     func setCaption(_ message: Message) {
-        if message.senderHasGuessed == true {
+        if message.sender.hasGuessed == true {
             messageLabel.textColor = Colors.lightBlue.playerColor?.lightBackground
         }
-        messageLabel.text = "\(message.username): \(message.content)"
+        messageLabel.text = "\(message.sender.username): \(message.content)"
+        messageLabel.textColor = message.sender.color.lightBackground
     }
     
     override func awakeFromNib(){

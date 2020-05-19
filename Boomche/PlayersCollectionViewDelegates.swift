@@ -11,14 +11,14 @@ import UIKit
 
 class PlayersCollectionViewDelegates: NSObject, UICollectionViewDelegate, UICollectionViewDataSource {
     var playersCollectionView: UICollectionView
-    var players = [Player]()
+//    var players = [Player]()
     
     init(playersCollectionView: UICollectionView) {
         self.playersCollectionView = playersCollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return players.count
+        return Game.sharedInstance.players.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -29,14 +29,14 @@ class PlayersCollectionViewDelegates: NSObject, UICollectionViewDelegate, UIColl
     }
     
     func playerDataSource(indexPath: IndexPath) -> Player? {
-        return players[indexPath.row]
+        return Game.sharedInstance.players[indexPath.row]
     }
     
     func insertPlayer(_ player: Player?, at indexPath: IndexPath?){
         if let player = player, let indexPath = indexPath {
             playersCollectionView.performBatchUpdates( {
                 
-                players.insert(player, at: indexPath.item)
+                Game.sharedInstance.players.insert(player, at: indexPath.item)
                 playersCollectionView.insertItems(at: [indexPath])
                 
             }, completion: nil)
@@ -47,7 +47,7 @@ class PlayersCollectionViewDelegates: NSObject, UICollectionViewDelegate, UIColl
         if let indexPath = indexPath {
             playersCollectionView.performBatchUpdates({
                 
-                players.remove(at: indexPath.item)
+                Game.sharedInstance.players.remove(at: indexPath.item)
                 playersCollectionView.deleteItems(at: [indexPath])
                 
             }, completion: nil)
@@ -55,15 +55,15 @@ class PlayersCollectionViewDelegates: NSObject, UICollectionViewDelegate, UIColl
     }
     
     func updatePlayers(users: [[String : Any]]) {//should be more efficient with socket_id
-        while players.count > 0 {
-            deletePlayer(at: IndexPath(item: players.count - 1, section: 0))
+        while Game.sharedInstance.players.count > 0 {
+            deletePlayer(at: IndexPath(item: Game.sharedInstance.players.count - 1, section: 0))
         }
         
         for i in 0 ..< users.count {
             let colorCode = users[i]["color"] as! Int
             let username = users[i]["name"] as! String
            
-            insertPlayer(Player(username: username, colorCode: colorCode), at: IndexPath(item: players.count, section: 0))
+            insertPlayer(Player(username: username, colorCode: colorCode), at: IndexPath(item: Game.sharedInstance.players.count, section: 0))
         }
     }
 }

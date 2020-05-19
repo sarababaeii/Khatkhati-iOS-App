@@ -22,7 +22,7 @@ class Drawing {
     
     var brushWidth: CGFloat = 6.0 {
         didSet {
-            if Game.sharedInstance.painter == Game.sharedInstance.username {
+            if Game.sharedInstance.round.painter?.username == Game.sharedInstance.me.username { //TODO: Be more clear
                 SocketIOManager.sharedInstance.sendGameSetting(name: "lineWidth", value: String(Float(brushWidth)))
             }
         }
@@ -30,7 +30,7 @@ class Drawing {
     
     var brushColor: UIColor = Colors.black.drawingColor!.lightBackground {
         didSet {
-            if Game.sharedInstance.painter == Game.sharedInstance.username {
+            if Game.sharedInstance.round.painter?.username == Game.sharedInstance.me.username {
                 SocketIOManager.sharedInstance.sendGameSetting(name: "color", value: brushColor.toHexString())
             }
         }

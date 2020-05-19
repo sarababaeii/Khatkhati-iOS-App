@@ -22,12 +22,12 @@ class ColorCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func colorPicked(_ sender: Any) {
-        Game.sharedInstance.drawing?.currentColorCell?.unSelectColor()
+        Game.sharedInstance.round.drawing?.currentColorCell?.unSelectColor()
         self.selectColor()
     }
     
     func selectColor() {
-        Game.sharedInstance.drawing?.currentColorCell = self
+        Game.sharedInstance.round.drawing?.currentColorCell = self
         colorButton.layer.borderWidth = 5
     }
     

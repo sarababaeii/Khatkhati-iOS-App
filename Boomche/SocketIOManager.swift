@@ -15,7 +15,7 @@ class SocketIOManager: NSObject {
     var manager: SocketManager?
     var socket: SocketIOClient?
     
-    var socketID: String?
+//    var socketID: String?
     
     //MARK: Initializing
     override init() {
@@ -79,7 +79,7 @@ class SocketIOManager: NSObject {
         
         socket.on(clientEvent: .connect) { data, ack in
             print("^^^^^ CONNECTED ^^^^^")
-            self.socketID = socket.sid
+            Game.sharedInstance.me.socketID = socket.sid
         }
         
         socket.on("get_generate_key") { data, ack in
@@ -133,14 +133,14 @@ class SocketIOManager: NSObject {
         Game.sharedInstance.roomID = (data["key"] as! String)
         joinGame()
                                                      
-        Game.sharedInstance.isLobbyLeader = true
+        Game.sharedInstance.me.isLobbyLeader = true
         
         UIApplication.topViewController()?.showNextPage(identifier: "NewLobbyViewController")
     }
     
     //MARK: Joining Game
     func joinGame() {
-        let data = ["room_id" : Game.sharedInstance.roomID, "username" : Game.sharedInstance.username]
+        let data = ["room_id" : Game.sharedInstance.roomID, "username" : Game.sharedInstance.me.username]
         socket?.emit("subscribe", data)
     }
     
@@ -162,7 +162,7 @@ class SocketIOManager: NSObject {
     func setPainter(users: [[String : Any]]) {
         for user in users {
             if (user["is_drawer"] as! Int) == 1 {
-                Game.sharedInstance.painter = user["name"] as! String
+                Game.sharedInstance.round.painter = Game.sharedInstance.getPlayerWith(username: user["name"] as! String)
             }
         }
     }
@@ -182,7 +182,7 @@ class SocketIOManager: NSObject {
                 UIApplication.topViewController()?.showNextPage(identifier: "NewLobbyViewController")
             case 1:
                 UIApplication.topViewController()?.showNextPage(identifier: "GuessingViewController")
-                Game.sharedInstance.wordChose = true
+                Game.sharedInstance.round.wordChose = true
             case 2:
                 UIApplication.topViewController()?.showNextPage(identifier: "ScoresViewController")
                 //TODO: score board
@@ -227,9 +227,9 @@ class SocketIOManager: NSObject {
             }
             changeLobbyType(to: type)
         case "color":
-            Game.sharedInstance.drawing?.brushColor = UIColor(hexString: value)
+            Game.sharedInstance.round.drawing?.brushColor = UIColor(hexString: value)
         case "lineWidth":
-            Game.sharedInstance.drawing?.brushWidth = CGFloat(Float(value)!)
+            Game.sharedInstance.round.drawing?.brushWidth = CGFloat(Float(value)!)
         default:
             return
         }
@@ -293,7 +293,7 @@ class SocketIOManager: NSObject {
     func unselectButton(button: CustomButton) {
         button.removeGradient()
         button.setTitleColor(Colors.dusk.componentColor?.lightBackground, for: .normal)
-        if Game.sharedInstance.isLobbyLeader {
+        if Game.sharedInstance.me.isLobbyLeader {
             button.isEnabled = true
         }
     }
@@ -327,8 +327,8 @@ class SocketIOManager: NSObject {
     }
     
     func setWord(word: String) {
-        Game.sharedInstance.wordChose = true
-        Game.sharedInstance.word = word
+        Game.sharedInstance.round.wordChose = true
+        Game.sharedInstance.round.word = word
     }
     
     //MARK: Choosing word
@@ -340,14 +340,14 @@ class SocketIOManager: NSObject {
     }
     
     func getWords(data: [String : Any]) {
-        Game.sharedInstance.painter = data["username"] as! String
+        Game.sharedInstance.round.painter = Game.sharedInstance.getPlayerWith(username: data["username"] as! String)
         
         let viewController = UIApplication.topViewController()
         
-        if (data["socket_id"] as! String) == socketID {
-            Game.sharedInstance.wordList = (data["words"] as? [String])!
+        if (data["socket_id"] as! String) == Game.sharedInstance.me.socketID {
+            Game.sharedInstance.round.wordList = (data["words"] as? [String])!
             viewController?.showNextPage(identifier: "DrawingViewController")
-            Game.sharedInstance.hasGuessed = true
+            Game.sharedInstance.me.hasGuessed = true
         } else {
             viewController?.showNextPage(identifier: "GuessingViewController")
         }
@@ -361,25 +361,24 @@ class SocketIOManager: NSObject {
     
     //MARK: Chatting
     func sendMessage(message: String) {
-        let data = ["room_id": Game.sharedInstance.roomID!, "text": message, "username": Game.sharedInstance.username, "socket_id": socketID]
+        let data = ["room_id": Game.sharedInstance.roomID!, "text": message, "username": Game.sharedInstance.me.username, "socket_id": Game.sharedInstance.me.socketID]
         socket?.emit("chat", data)
     }
     
     func receiveMessage(data: [String : Any]) {
-        let senderID = data["socket_id"] as! String
-        let senderUsername = data["username"] as! String
+        guard let sender = Game.sharedInstance.getPlayerWith(username: data["username"] as! String) else { //TODO: socketID
+            return
+        }
         var message: Message
         
-        let senderHasGuessed = Game.sharedInstance.personsHaveGuessed.contains(senderID)
-        
-         if (data["correct"] as! Int) == 1 &&  !senderHasGuessed{
-            message = receiveAnswer(senderID: senderID, senderUsername: senderUsername)
+        if (data["correct"] as! Int) == 1 &&  !sender.hasGuessed{
+            message = receiveAnswer(sender: sender)
          } else {
-             message = receiveNormalText(senderID: senderID, senderUsername: senderUsername, text: data["text"] as! String, senderHasGuessed: senderHasGuessed)
+             message = receiveNormalText(sender: sender, text: data["text"] as! String)
          }
         
 //        switch UIApplication.topViewController()?.restorationIdentifier {
-        Game.sharedInstance.chatTableViewDelegates?.insertMessage(message)
+        Game.sharedInstance.round.chatTableViewDelegates?.insertMessage(message)
 //        case "DrawingViewController":
 //
 //        case "GuessingViewController" :
@@ -389,27 +388,27 @@ class SocketIOManager: NSObject {
 //        }
     }
     
-    func receiveAnswer(senderID: String, senderUsername: String) -> Message {
-        let message = Message(username: senderUsername, content: "درست حدس زد!")
+    func receiveAnswer(sender: Player) -> Message {
+        let message = Message(sender: sender, content: "درست حدس زد!")
         
-        Game.sharedInstance.personsHaveGuessed.append(senderID)
-        if socketID == senderID {
-            Game.sharedInstance.hasGuessed = true
+//        Game.sharedInstance.round.personsHaveGuessed.append(senderID)
+        sender.hasGuessed = true
+        if Game.sharedInstance.me.socketID == sender.socketID { //TODO: be more clear
+            Game.sharedInstance.me.hasGuessed = true
         }
         
         return message
     }
     
-    func receiveNormalText(senderID: String, senderUsername: String, text: String, senderHasGuessed: Bool) -> Message {
-        let message = Message(username: senderUsername, content: text)
-        message.senderHasGuessed = senderHasGuessed
+    func receiveNormalText(sender: Player, text: String) -> Message {
+        let message = Message(sender: sender, content: text)
         
         return message
     }
     
     //MARK: Ending Game
     func endOfRound(data: [String : Any]) {
-        Game.sharedInstance.resetRound()
+        Game.sharedInstance.roundFinished()
         
         if (data["endOfGame"] as! Int) == 1 {
             ScoresViewController.isLastRound = true
@@ -419,7 +418,7 @@ class SocketIOManager: NSObject {
         ScoresViewController.users = temp["users"] as! [[String : Any]]
 
         temp = temp["room"] as! [String : Any]
-        Game.sharedInstance.word = (temp["word"] as? String)!
+        Game.sharedInstance.round.word = (temp["word"] as? String)!
         
         UIApplication.topViewController()?.showNextPage(identifier: "ScoresViewController")
     }
@@ -439,3 +438,8 @@ class SocketIOManager: NSObject {
 //     "which_round" = 0;
 //     word = apple;
 // }]
+
+
+//color = 1;
+//"is_drawer" = 0;
+//name = "\U0633\U0627\U0631\U0627";

@@ -93,7 +93,7 @@ class ScoresViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     //MARK: UI Handling
     func setWordLabelAttributes() {
-        wordLabel.text = Game.sharedInstance.word
+        wordLabel.text = Game.sharedInstance.round.word
     }
     
     func configure() {

@@ -12,42 +12,43 @@ class Game {
     static var sharedInstance = Game()
     
     //MARK: Personal Information
-    var username = "سارا"
-    
-    var isLobbyLeader = false
-    var hasGuessed = false
+    var me = Player(username: "سارا")
     
     //MARK: Game Information
     var roomID: String?
+    var lobbyType = "Private"
+    var roundsNumber = 6
     
-    var drawing: Drawing?
-    var chatTableViewDelegates: MessageTableViewDelegates?
+    var players = [Player]()
     
-    var painter = ""
-    var wordList = [String]()
-    var word: String?
-    var wordChose = false
-    var personsHaveGuessed = [String]()
+    var round = RoundData()
     
-    func resetRoom() {
+    func getPlayerWith(username: String) -> Player? { //socketID
+        for player in players {
+            if player.username == username { //socketID
+                return player
+            }
+        }
+        return nil
+    }
+    
+    func gameFinished() {
         roomID = nil
-        isLobbyLeader = false
-        resetRound()
-    }
-    
-    func resetRound() {
-        drawing = nil
-        chatTableViewDelegates = nil
+        lobbyType = "Private"
+        roundsNumber = 6
         
-        painter = ""
-        wordList.removeAll()
-        word = nil
-        wordChose = false
-        hasGuessed = false
-        personsHaveGuessed.removeAll()
+        players = [Player]()
+        
+        me.gameFinished()
+        roundFinished()
     }
-    
-//    static var roundNumber = 3
-//    var lobbyType = "Private"
+
+    func roundFinished() {
+        round.roundFinished()
+        for player in players {
+            player.roundFinished()
+        }
+    }
 }
         
+//TODO: Play again

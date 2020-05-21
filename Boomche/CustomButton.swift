@@ -87,4 +87,29 @@ import UIKit
 
         self.insertSubview(imageView, aboveSubview: view)
     }
+    
+    //MARK: For NewLobbyViewController Settings
+    func select(isTypeButton: Bool) {
+        self.setTitleColor(Colors.white.componentColor?.lightBackground, for: .normal)
+        self.isEnabled = false
+        if isTypeButton {
+            self.lightGradientColor = Colors.blue.componentColor!.lightBackground
+            self.darkGradientColor = Colors.blue.componentColor!.darkBackground!
+        } else {
+            self.lightGradientColor = Colors.yellow.componentColor!.lightBackground
+            self.darkGradientColor = Colors.yellow.componentColor!.darkBackground!
+        }
+    }
+    
+    func unselect() {
+        self.removeGradient()
+        self.setTitleColor(Colors.dusk.componentColor?.lightBackground, for: .normal)
+        if Game.sharedInstance.me.isLobbyLeader {
+            self.isEnabled = true
+        }
+    }
+    
+    func isSelected() -> Bool {
+        return (self.titleLabel?.textColor == Colors.white.componentColor?.lightBackground)
+    }
 }

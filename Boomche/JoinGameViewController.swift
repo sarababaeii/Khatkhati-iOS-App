@@ -61,8 +61,14 @@ class JoinGameViewController: UIViewController, UITextFieldDelegate {
         //TODO: joinButton.bottom = targetHight
     }
     
+    func configure() {
+        Game.sharedInstance.gameFinished()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        configure()
     }
 }

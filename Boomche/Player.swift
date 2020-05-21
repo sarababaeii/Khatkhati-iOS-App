@@ -12,7 +12,26 @@ class Player {
     var username: String
     var socketID: String?
     
-    var colorCode: Int
+    var colorCode: Int {
+        didSet {
+            switch colorCode {
+            case 1:
+                color = Colors.red.playerColor!
+            case 2:
+                color = Colors.green.playerColor!
+            case 3:
+                color = Colors.orange.playerColor!
+            case 4:
+                color = Colors.purple.playerColor!
+            case 5:
+                color = Colors.darkBlue.playerColor!
+            case 6:
+                color = Colors.lightBlue.playerColor!
+            default:
+                color = Colors.red.playerColor!
+            }
+        }
+    }
     var color: Color
     
     var totalScore: Int
@@ -56,17 +75,23 @@ class Player {
     }
     
     func roundFinished() {
-        currentScore = 0 //?!
+        totalScore += currentScore
+        currentScore = 0
         hasGuessed = false
         isPainter = false
         isFirstGuesser = false
     }
     
+    func playAgain() {
+        roundFinished()
+        totalScore = 0
+    }
+    
     func gameFinished() {
+        roundFinished()
+        
         colorCode = 1
         totalScore = 0
         isLobbyLeader = false
-        
-        roundFinished()
     }
 }

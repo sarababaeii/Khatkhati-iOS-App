@@ -16,39 +16,27 @@ class Game {
     
     //MARK: Game Information
     var roomID: String?
-    var lobbyType = "Private"
-    var roundsNumber = 6
-    
     var players = [Player]()
-    
     var round = RoundData()
     
-    func getPlayerWith(username: String) -> Player? { //socketID
-        for player in players {
-            if player.username == username { //socketID
-                return player
-            }
-        }
-        return nil
-    }
-    
-    func gameFinished() {
-        roomID = nil
-        lobbyType = "Private"
-        roundsNumber = 6
-        
-        players = [Player]()
-        
-        me.gameFinished()
-        roundFinished()
-    }
-
     func roundFinished() {
         round.roundFinished()
         for player in players {
             player.roundFinished()
         }
     }
+    
+    func playAgain() {
+        round.roundFinished()
+        for player in players {
+            player.playAgain()
+        }
+    }
+    
+    func gameFinished() {
+        roomID = nil
+        players = [Player]()
+        me.gameFinished()
+        roundFinished()
+    }
 }
-        
-//TODO: Play again

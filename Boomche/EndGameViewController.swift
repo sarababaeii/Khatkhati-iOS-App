@@ -29,12 +29,9 @@ class EndGameViewController: UIViewController {
     @IBOutlet weak var homeButton: CustomButton!
     @IBOutlet weak var againButton: UIButton!
     
-    static var winnerPlayer: Player?
-    static var secondPlacePlayer: Player?
-    static var thirdPlacePlayer: Player?
-    
     //MARK: Button Actions
     @IBAction func playAgainAction(_ sender: Any) {
+        Game.sharedInstance.playAgain()
         SocketIOManager.sharedInstance.playAgain()
     }
     
@@ -53,13 +50,16 @@ class EndGameViewController: UIViewController {
     }
     
     func setRankingAttributes() {
-        if let winner = EndGameViewController.winnerPlayer {
+        if Game.sharedInstance.players.count > 0 {
+            let winner = Game.sharedInstance.players[0]
             setAttributes(player: winner, nameLabel: winnerNameLabel, scoreLabel: winnerScoreLabel, scoreView: winnerScoreView)
         }
-        if let second = EndGameViewController.secondPlacePlayer {
+        if Game.sharedInstance.players.count > 1 {
+            let second = Game.sharedInstance.players[1]
             setAttributes(player: second, nameLabel: secondPlaceNameLabel, scoreLabel: secondPlaceScoreLabel, scoreView: secondPlaceScoreView)
         }
-        if let third = EndGameViewController.thirdPlacePlayer {
+        if Game.sharedInstance.players.count > 2 {
+            let third = Game.sharedInstance.players[2]
             setAttributes(player: third, nameLabel: thirdPlaceNameLabel, scoreLabel: thirdPlaceScoreLabel, scoreView: thirdPlaceScoreView)
         }
     }
@@ -70,7 +70,7 @@ class EndGameViewController: UIViewController {
     
     func configure() {
         setRankingAttributes()
-        
+
         setHomeButtonAttributes()
     }
     

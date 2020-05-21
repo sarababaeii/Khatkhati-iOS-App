@@ -67,8 +67,6 @@ class NewLobbyViewController: UIViewController {
     
     //MARK: Game Properties
     @IBAction func changeRoundsNumber(_ sender: Any) {
-        SocketIOManager.sharedInstance.changeRoundsNumber(to: (sender as! UIButton).titleLabel!.text!)
-        
         let roundsNumber: Int
         switch (sender as! UIButton).titleLabel!.text! {
         case "۳":
@@ -85,9 +83,7 @@ class NewLobbyViewController: UIViewController {
         SocketIOManager.sharedInstance.sendGameSetting(name: "round", value: String(roundsNumber))
     }
     
-    @IBAction func changeLobbyType(_ sender: Any) {
-        SocketIOManager.sharedInstance.changeLobbyType(to: (sender as! UIButton).titleLabel!.text!)
-        
+    @IBAction func changeLobbyType(_ sender: Any) {       
         let type: String
         switch (sender as! UIButton).titleLabel!.text! {
         case "خودمونی":
@@ -95,7 +91,7 @@ class NewLobbyViewController: UIViewController {
         case "عمومی":
             type = "public"
         default:
-            type = "private"
+            type = "public"
         }
         SocketIOManager.sharedInstance.sendGameSetting(name: "room-type", value: type)
     }

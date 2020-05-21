@@ -100,14 +100,16 @@ class DrawingViewController: UIViewController {
 //        colorPicked(blackColorButton!)
     }
     
-    func initializeVariables() {
-        Game.sharedInstance.round.drawing = Drawing(canvasView: self.canvasView, canvas: self.canvas, templeCanvas: self.templeCanvas)
-        
+    func initializeColorPalette() {
         colors = [Colors.red.drawingColor!, Colors.orange.drawingColor!, Colors.yellow.drawingColor!, Colors.purple.drawingColor!, Colors.green.drawingColor!, Colors.darkBlue.drawingColor!, Colors.lightBlue.drawingColor!, Colors.brown.drawingColor!,  Colors.black.drawingColor!, Colors.gray.drawingColor!]
         
         colorsCollectionViewDelegates = ColorsCollectionViewDelegates(colorsCollectionView: colorsCollectionView, colors: colors)
         colorsCollectionView.delegate = colorsCollectionViewDelegates
         colorsCollectionView.dataSource = colorsCollectionViewDelegates
+    }
+    
+    func initializeVariables() {
+        Game.sharedInstance.round.drawing = Drawing(canvasView: self.canvasView, canvas: self.canvas, templeCanvas: self.templeCanvas)
         
         Game.sharedInstance.round.chatTableViewDelegates = MessageTableViewDelegates(chatTableView: chatTableView)
         chatTableView.delegate = Game.sharedInstance.round.chatTableViewDelegates
@@ -119,11 +121,15 @@ class DrawingViewController: UIViewController {
         wordLabel.text = Game.sharedInstance.round.word
     }
     
+    func configure() {
+        initializeColorPalette()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
      
-//        configure()
+        configure()
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var createLobbyButton: UIButton!
     
     @IBAction func createLobbyAction(_ sender: Any) {
-        SocketIOManager.sharedInstance.creatLobby()
+        SocketIOManager.sharedInstance.requestRoomID()
         createLobbyButton.layer.masksToBounds = true //to showing button selected
     }
     

@@ -9,10 +9,9 @@
 import Foundation
 
 class RoundData {
-    var number = 1
-    
     var drawing: Drawing?
     var chatTableViewDelegates: MessageTableViewDelegates?
+    var scoreboardTableViewDelegates: ScoreboardTableViewDelegates?
     
     var painter: Player? {
         didSet {
@@ -25,18 +24,13 @@ class RoundData {
     var wordChose = false
     
     func roundFinished() {
-        number += 1
         drawing = nil
         chatTableViewDelegates = nil
+        scoreboardTableViewDelegates = nil
         
         painter = nil
         wordList = [String]()
         word = nil
         wordChose = false
-    }
-    
-    func gameFinished() {
-        roundFinished()
-        number = 1
     }
 }

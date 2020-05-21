@@ -13,8 +13,6 @@ class TimerSetting {
     var label: UILabel
     var counter: Int
     
-    var from: UIViewController?
-    
     init(label: UILabel, time: Int) {
         self.label = label
         self.counter = time
@@ -29,10 +27,6 @@ class TimerSetting {
         if counter > 0 {
             counter -= 1
             label.text = "۰:\(String(counter).convertEnglishNumToPersianNum())"
-        }
-        
-        if counter == 0, let controller = from {
-            controller.showNextPage(identifier: "EndGameViewController")
         }
     }
 }

@@ -42,6 +42,7 @@
 		03B6ECE2244C968200D7498D /* PlayerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6ECE1244C968200D7498D /* PlayerCollectionViewCell.swift */; };
 		03B6ECE4244CCA6600D7498D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6ECE3244CCA6600D7498D /* LoginViewController.swift */; };
 		03B6ECE6244CCAB700D7498D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B6ECE5244CCAB700D7498D /* SignUpViewController.swift */; };
+		03B835762476D1740013E87E /* ScoreboardTableViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B835752476D1740013E87E /* ScoreboardTableViewDelegates.swift */; };
 		03BA7664243548E200E0B345 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BA7663243548E200E0B345 /* Drawing.swift */; };
 		03BB1E88243E531C00459FDE /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BB1E87243E531C00459FDE /* MessageTableViewCell.swift */; };
 		03C544BD2424EF3B00C4049C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C544BC2424EF3B00C4049C /* Color.swift */; };
@@ -121,6 +122,7 @@
 		03B6ECE1244C968200D7498D /* PlayerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCollectionViewCell.swift; sourceTree = "<group>"; };
 		03B6ECE3244CCA6600D7498D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		03B6ECE5244CCAB700D7498D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		03B835752476D1740013E87E /* ScoreboardTableViewDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardTableViewDelegates.swift; sourceTree = "<group>"; };
 		03BA7663243548E200E0B345 /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
 		03BB1E87243E531C00459FDE /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		03C544BC2424EF3B00C4049C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 				037582F52448EA2600B67C3C /* Player.swift */,
 				031F857B244B76CE00C8B947 /* StringExtension.swift */,
 				0332F485245733960006F18E /* MessageTableViewDelegates.swift */,
+				03B835752476D1740013E87E /* ScoreboardTableViewDelegates.swift */,
 				03E6742A245EAD7500DB92DC /* PlayersCollectionViewDelegates.swift */,
 				03CD95B92472BFD800594050 /* ColorsCollectionViewDelegates.swift */,
 			);
@@ -589,6 +592,7 @@
 				03B6DD392422CDEB00CC0B7F /* HomeViewController.swift in Sources */,
 				03CD95B82472B03500594050 /* CustomView.swift in Sources */,
 				03B6ECE2244C968200D7498D /* PlayerCollectionViewCell.swift in Sources */,
+				03B835762476D1740013E87E /* ScoreboardTableViewDelegates.swift in Sources */,
 				03CD95BC2472F3E000594050 /* Round.swift in Sources */,
 				03F287DD2423D9FB0024937C /* NewLobbyViewController.swift in Sources */,
 				03B6DD352422CDEB00CC0B7F /* AppDelegate.swift in Sources */,

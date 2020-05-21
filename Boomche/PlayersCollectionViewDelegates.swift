@@ -11,7 +11,6 @@ import UIKit
 
 class PlayersCollectionViewDelegates: NSObject, UICollectionViewDelegate, UICollectionViewDataSource {
     var playersCollectionView: UICollectionView
-//    var players = [Player]()
     
     init(playersCollectionView: UICollectionView) {
         self.playersCollectionView = playersCollectionView
@@ -54,16 +53,22 @@ class PlayersCollectionViewDelegates: NSObject, UICollectionViewDelegate, UIColl
         }
     }
     
-    func updatePlayers(users: [[String : Any]]) {//should be more efficient with socket_id
+    func updatePlayers(users: [[String : Any]]) {
         while Game.sharedInstance.players.count > 0 {
             deletePlayer(at: IndexPath(item: Game.sharedInstance.players.count - 1, section: 0))
         }
         
-        for i in 0 ..< users.count {
-            let colorCode = users[i]["color"] as! Int
-            let username = users[i]["name"] as! String
-           
-            insertPlayer(Player(username: username, colorCode: colorCode), at: IndexPath(item: Game.sharedInstance.players.count, section: 0))
+        for user in users {
+            let username = user["name"] as! String //socketID
+            let colorCode = user["color"] as! Int
+
+            let indexPath = IndexPath(item: Game.sharedInstance.players.count, section: 0)
+            if Game.sharedInstance.me.username == username { //socketID
+                Game.sharedInstance.me.colorCode = colorCode
+                insertPlayer(Game.sharedInstance.me, at: indexPath)
+            } else {
+                insertPlayer(Player(username: username, colorCode: colorCode), at: indexPath)
+            }
         }
     }
 }

@@ -15,8 +15,6 @@ class SocketIOManager: NSObject {
     var manager: SocketManager?
     var socket: SocketIOClient?
     
-//    var socketID: String?
-    
     //MARK: Initializing
     override init() {
         super.init()
@@ -31,11 +29,9 @@ class SocketIOManager: NSObject {
 
         manager = SocketManager(socketURL: url, config: [.log(true), .compress])
 
-        guard let manager = manager else {
-            return
+        if let manager = manager {
+            socket = manager.defaultSocket
         }
-
-        socket = manager.defaultSocket
     }
     
     //MARK: Connection Management
@@ -53,23 +49,6 @@ class SocketIOManager: NSObject {
         }
         socket.removeAllHandlers()
         socket.disconnect()
-    }
-    
-    func shareStatus() {
-        let status = socket?.status
-        
-        switch status {
-        case .connected:
-            print("Yaaaaay    Connected!!!!")
-        case .connecting:
-            print("Good    is Connecting....")
-        case .notConnected:
-            print("Oops :(    not Connected________")
-        case .disconnected:
-            print("Shit    disconnected ^^^^^^^")
-        default:
-            print("Default")
-        }
     }
     
     func addHandlers() {
@@ -100,7 +79,7 @@ class SocketIOManager: NSObject {
         socket.on("get_room_settings") { data, ack in
             print("^^^^^RECEIVING ROOM_DATA^^^^^^")
             let temp = data[0] as! [String : Any]
-            self.getGameSettings(data: temp["data"] as! [String : Any])
+            self.getGameSetting(data: temp["data"] as! [String : Any])
         }
         
         socket.on("start_game") { data, ack in
@@ -110,7 +89,7 @@ class SocketIOManager: NSObject {
         
         socket.on("lets_play") { data, ack in
             print("^^^^^GAME STARTED^^^^^^")
-            self.getStartGame(data: data[0] as! [String : Any])
+            self.getStartDrawing(data: data[0] as! [String : Any])
         }
         
         socket.on("chat_and_guess") {data, ack in
@@ -125,15 +104,15 @@ class SocketIOManager: NSObject {
     }
     
     //MARK: Creating Lobby
-    func creatLobby() {
+    func requestRoomID() {
         socket?.emit("send_generate_key")
     }
     
     func getRoomID(data: [String : Any]) {
         Game.sharedInstance.roomID = (data["key"] as! String)
-        joinGame()
-                                                     
         Game.sharedInstance.me.isLobbyLeader = true
+        
+        joinGame()
         
         UIApplication.topViewController()?.showNextPage(identifier: "NewLobbyViewController")
     }
@@ -146,24 +125,27 @@ class SocketIOManager: NSObject {
     
     func getGameProperties(data: [String : Any]) {
         guard UIApplication.topViewController()?.restorationIdentifier == "NewLobbyViewController" else {
-            setPainter(users: data["users"] as! [[String : Any]])
+            setPlayers(users: data["users"] as! [[String : Any]])
             return
         }
         
         NewLobbyViewController.playersCollectionViewDelegates?.updatePlayers(users: data["users"] as! [[String : Any]])
         
         let settings = data["settings"] as! [String : Any]
-        //TODO: type
-        let round = settings["round"] as! Int
-        
-        changeRoundsNumber(to: String(round).convertEnglishNumToPersianNum())
+//        changeLobbyType(to: settings["type"] as! String)
+        changeRoundsNumber(to: settings["round"] as! Int)
     }
     
-    func setPainter(users: [[String : Any]]) {
+    func setPlayers(users: [[String : Any]]) {
         for user in users {
+            let player = Player(username: user["name"] as! String, colorCode: user["color"] as! Int)
+            
             if (user["is_drawer"] as! Int) == 1 {
-                Game.sharedInstance.round.painter = Game.sharedInstance.getPlayerWith(username: user["name"] as! String)
+                player.isPainter = true
+                Game.sharedInstance.round.painter = player
             }
+            
+            Game.sharedInstance.players.append(player)
         }
     }
     
@@ -202,10 +184,11 @@ class SocketIOManager: NSObject {
         socket?.emit("send_room_settings", data)
     }
     
-    func getGameSettings(data: [String : Any]) {
-        guard (UIApplication.topViewController()?.restorationIdentifier == "NewLobbyViewController" ||
-                UIApplication.topViewController()?.restorationIdentifier == "GuessingViewController") &&
-            Game.sharedInstance.roomID == (data["room_id"] as! String) else {
+    func getGameSetting(data: [String : Any]) {
+        let topViewController = UIApplication.topViewController()
+        guard (topViewController?.restorationIdentifier == "NewLobbyViewController" ||
+                topViewController?.restorationIdentifier == "GuessingViewController") &&
+                Game.sharedInstance.roomID == (data["room_id"] as! String) else {
             return
         }
         
@@ -214,18 +197,9 @@ class SocketIOManager: NSObject {
         
         switch property {
         case "round":
-            changeRoundsNumber(to: value.convertEnglishNumToPersianNum())
+            changeRoundsNumber(to: Int(value)!)
         case "room-type":
-            let type: String
-            switch value {
-            case "private":
-                type = "خودمونی"
-            case "public":
-                type = "عمومی"
-            default:
-                type = "خودمونی"
-            }
-            changeLobbyType(to: type)
+            changeLobbyType(to: value)
         case "color":
             Game.sharedInstance.round.drawing?.brushColor = UIColor(hexString: value)
         case "lineWidth":
@@ -235,74 +209,44 @@ class SocketIOManager: NSObject {
         }
     }
     
-    func changeRoundsNumber(to roundsNumber: String) {
-        for button in NewLobbyViewController.roundsNumberButtons {
-            if isSelected(button: button) {
-                unselectButton(button: button)
-            }
-        }
+    func changeRoundsNumber(to roundsNumber: Int) {
+        unselectPreviousButton(in: NewLobbyViewController.roundsNumberButtons)
         
-        let button: CustomButton
         switch roundsNumber {
-        case "۳":
-            button = NewLobbyViewController.roundsNumberButtons[0]
-        case "۴":
-            button = NewLobbyViewController.roundsNumberButtons[1]
-        case "۵":
-            button = NewLobbyViewController.roundsNumberButtons[2]
-        case "۶":
-            button = NewLobbyViewController.roundsNumberButtons[3]
+        case 3:
+            NewLobbyViewController.roundsNumberButtons[0].select(isTypeButton: false)
+        case 4:
+            NewLobbyViewController.roundsNumberButtons[1].select(isTypeButton: false)
+        case 5:
+            NewLobbyViewController.roundsNumberButtons[2].select(isTypeButton: false)
+        case 6:
+            NewLobbyViewController.roundsNumberButtons[3].select(isTypeButton: false)
         default:
-            button = NewLobbyViewController.roundsNumberButtons[0]
+            NewLobbyViewController.roundsNumberButtons[0].select(isTypeButton: false)
+            sendGameSetting(name: "round", value: "3")
         }
-        
-        selectButton(button: button, isTypeButton: false)
     }
     
     func changeLobbyType(to type: String) {
-        for button in NewLobbyViewController.lobbyTypeButtons {
-            if isSelected(button: button) {
-                unselectButton(button: button)
+        unselectPreviousButton(in: NewLobbyViewController.lobbyTypeButtons)
+        
+        switch type {
+        case "private":
+            NewLobbyViewController.lobbyTypeButtons[0].select(isTypeButton: true)
+        case "public":
+            NewLobbyViewController.lobbyTypeButtons[1].select(isTypeButton: true)
+        default:
+            NewLobbyViewController.lobbyTypeButtons[0].select(isTypeButton: true)
+            sendGameSetting(name: "room-type", value: "public")
+        }
+    }
+    
+    func unselectPreviousButton(in array: [CustomButton]) {
+        for button in array {
+            if button.isSelected() {
+                button.unselect()
             }
         }
-        
-        let button: CustomButton
-        switch type {
-        case "خودمونی":
-            button = NewLobbyViewController.lobbyTypeButtons[0]
-        case "عمومی":
-            button = NewLobbyViewController.lobbyTypeButtons[1]
-        default:
-            button = NewLobbyViewController.lobbyTypeButtons[0]
-        }
-        selectButton(button: button, isTypeButton: true)
-    }
-    
-    func selectButton(button: CustomButton, isTypeButton: Bool) {
-        button.setTitleColor(Colors.white.componentColor?.lightBackground, for: .normal)
-        button.isEnabled = false
-        if isTypeButton {
-            button.lightGradientColor = Colors.blue.componentColor!.lightBackground
-            button.darkGradientColor = Colors.blue.componentColor!.darkBackground!
-        } else {
-            button.lightGradientColor = Colors.yellow.componentColor!.lightBackground
-            button.darkGradientColor = Colors.yellow.componentColor!.darkBackground!
-        }
-    }
-    
-    func unselectButton(button: CustomButton) {
-        button.removeGradient()
-        button.setTitleColor(Colors.dusk.componentColor?.lightBackground, for: .normal)
-        if Game.sharedInstance.me.isLobbyLeader {
-            button.isEnabled = true
-        }
-    }
-    
-    func isSelected(button: UIButton) -> Bool {
-        if button.titleLabel?.textColor == Colors.white.componentColor?.lightBackground {
-            return true
-        }
-        return false
     }
     
     //MARK: Starting Game
@@ -310,7 +254,7 @@ class SocketIOManager: NSObject {
         socket?.emit("start_game_on", Game.sharedInstance.roomID!)
     }
     
-    func getStartGame(data: [String : Any]) {
+    func getStartDrawing(data: [String : Any]) {
         setWord(word: data["word"] as! String)
         
         let topViewController = UIApplication.topViewController()
@@ -340,14 +284,17 @@ class SocketIOManager: NSObject {
     }
     
     func getWords(data: [String : Any]) {
-        Game.sharedInstance.round.painter = Game.sharedInstance.getPlayerWith(username: data["username"] as! String)
+        Game.sharedInstance.roundFinished()
+        
+        Game.sharedInstance.round.painter = Game.sharedInstance.players.first(where: {$0.username == data["username"] as! String}) //socketID
+        Game.sharedInstance.round.painter?.isPainter = true
         
         let viewController = UIApplication.topViewController()
         
-        if (data["socket_id"] as! String) == Game.sharedInstance.me.socketID {
+        if Game.sharedInstance.me.isPainter {
+            Game.sharedInstance.me.hasGuessed = true
             Game.sharedInstance.round.wordList = (data["words"] as? [String])!
             viewController?.showNextPage(identifier: "DrawingViewController")
-            Game.sharedInstance.me.hasGuessed = true
         } else {
             viewController?.showNextPage(identifier: "GuessingViewController")
         }
@@ -366,34 +313,25 @@ class SocketIOManager: NSObject {
     }
     
     func receiveMessage(data: [String : Any]) {
-        guard let sender = Game.sharedInstance.getPlayerWith(username: data["username"] as! String) else { //TODO: socketID
+        guard let sender = Game.sharedInstance.players.first(where: {$0.username == data["username"] as! String}) else { //TODO: socketID
             return
         }
         var message: Message
         
-        if (data["correct"] as! Int) == 1 &&  !sender.hasGuessed{
+        if (data["correct"] as! Int) == 1 && !sender.hasGuessed{
             message = receiveAnswer(sender: sender)
          } else {
              message = receiveNormalText(sender: sender, text: data["text"] as! String)
          }
         
-//        switch UIApplication.topViewController()?.restorationIdentifier {
         Game.sharedInstance.round.chatTableViewDelegates?.insertMessage(message)
-//        case "DrawingViewController":
-//
-//        case "GuessingViewController" :
-//            GuessingViewController.chatTableViewDelegates?.insertMessage(message)
-//        default:
-//            return
-//        }
     }
     
     func receiveAnswer(sender: Player) -> Message {
         let message = Message(sender: sender, content: "درست حدس زد!")
         
-//        Game.sharedInstance.round.personsHaveGuessed.append(senderID)
-        sender.hasGuessed = true
-        if Game.sharedInstance.me.socketID == sender.socketID { //TODO: be more clear
+        sender.hasGuessed = true //bug
+        if Game.sharedInstance.me.socketID == sender.socketID {
             Game.sharedInstance.me.hasGuessed = true
         }
         
@@ -401,26 +339,19 @@ class SocketIOManager: NSObject {
     }
     
     func receiveNormalText(sender: Player, text: String) -> Message {
-        let message = Message(sender: sender, content: text)
-        
-        return message
+        return Message(sender: sender, content: text)
     }
     
     //MARK: Ending Game
     func endOfRound(data: [String : Any]) {
-        Game.sharedInstance.roundFinished()
+        let temp = data["data"] as! [String : Any]
+        ScoreboardTableViewDelegates.initialScoreboard(users: temp["users"] as! [[String : Any]])
         
         if (data["endOfGame"] as! Int) == 1 {
-            ScoresViewController.isLastRound = true
+            UIApplication.topViewController()?.showNextPage(identifier: "EndGameViewController")
+        } else {
+            UIApplication.topViewController()?.showNextPage(identifier: "ScoresViewController")
         }
-        
-        var temp = data["data"] as! [String : Any]
-        ScoresViewController.users = temp["users"] as! [[String : Any]]
-
-        temp = temp["room"] as! [String : Any]
-        Game.sharedInstance.round.word = (temp["word"] as? String)!
-        
-        UIApplication.topViewController()?.showNextPage(identifier: "ScoresViewController")
     }
     
     func playAgain() {
@@ -438,8 +369,3 @@ class SocketIOManager: NSObject {
 //     "which_round" = 0;
 //     word = apple;
 // }]
-
-
-//color = 1;
-//"is_drawer" = 0;
-//name = "\U0633\U0627\U0631\U0627";

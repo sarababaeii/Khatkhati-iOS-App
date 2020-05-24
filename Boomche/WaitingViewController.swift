@@ -19,7 +19,12 @@ class WaitingViewController: UIViewController {
     
     //MARK: Timer Setting
     func setTimer() {
-        let timer = TimerSetting(label: timerLabel, time: 10)
+        var time = 10
+        if Game.sharedInstance.joinedMiddle {
+            time = Game.sharedInstance.time!
+        }
+        timerLabel.text = String(time).convertEnglishNumToPersianNum()
+        let timer = TimerSetting(label: timerLabel, time: time)
         timer.on()
     }
     

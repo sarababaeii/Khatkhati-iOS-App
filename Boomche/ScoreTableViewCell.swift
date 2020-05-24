@@ -22,16 +22,18 @@ class ScoreTableViewCell: UITableViewCell {
     
     func setAttributes(player: Player){
         nameLabel.text = player.username
-        currentScoreLabel.text = "+\(String(player.currentScore).convertEnglishNumToPersianNum()) امتیاز"
         totalScoreLabel.text = String(player.totalScore).convertEnglishNumToPersianNum()
         nameLabel.textColor = player.color.lightBackground
         colorView.backgroundColor = player.color.lightBackground
         
-        if player.isPainter {
-            bonusImage.image = UIImage(named: "Brush")
-        }
-        if player.isFirstGuesser {
-            bonusImage.image = UIImage(named: "Medal")
+        if !Game.sharedInstance.joinedMiddle {
+            currentScoreLabel.text = "+\(String(player.currentScore).convertEnglishNumToPersianNum()) امتیاز"
+            if player.isPainter {
+               bonusImage.image = UIImage(named: "Brush")
+            }
+            if player.isFirstGuesser {
+               bonusImage.image = UIImage(named: "Medal")
+            }
         }
     }
     

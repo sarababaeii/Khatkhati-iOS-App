@@ -24,10 +24,11 @@ class DrawingViewController: UIViewController {
     @IBOutlet weak var colorsCollectionView: UICollectionView!
     @IBOutlet weak var eraserButton: UIButton!
     @IBOutlet weak var brushButton: UIButton!
+    @IBOutlet weak var trashButton: UIButton!
     
     var colors = [Color]()
 
-    var isBrushSelected: Bool = false
+    var selectedTool: UIButton?
 
     var colorsCollectionViewDelegates: ColorsCollectionViewDelegates?
     
@@ -44,24 +45,34 @@ class DrawingViewController: UIViewController {
         
         Game.sharedInstance.round.drawing?.brushColor = UIColor.white
         Game.sharedInstance.round.drawing?.brushWidth = 17 //TODO: good?!
+        
+        eraserButton.setImage(UIImage(named: "SelectedEraser"), for: .normal)
+        unselectTool(by: eraserButton)
     }
     
     @IBAction func brushSelected(_ sender: Any) {
+        brushButton.setImage(UIImage(named: "SelectedPaintBrush"), for: .normal)
+        unselectTool(by: brushButton)
     }
     
+    @IBAction func trashSelected(_ sender: Any) {
+        trashButton.setImage(UIImage(named: "SelectedTrash"), for: .normal)
+        unselectTool(by: trashButton)
+    }
     
-    func showSelected(willShowComponent: Any, willHideComponent: Any) {
-        if let hide = willHideComponent as? UIButton {
-            hide.isHidden = true
-        } else {
-            (willHideComponent as! UIImageView).isHidden = true
+    func unselectTool(by button: UIButton) {
+        switch selectedTool {
+        case eraserButton:
+            eraserButton.setImage(UIImage(named: "Eraser"), for: .normal)
+        case brushButton:
+            brushButton.setImage(UIImage(named: "PaintBrush"), for: .normal)
+        case trashButton:
+            trashButton.setImage(UIImage(named: "Trash"), for: .normal)
+        default:
+            eraserButton.setImage(UIImage(named: "Eraser"), for: .normal)
         }
         
-        if let show = willShowComponent as? UIButton {
-            show.isHidden = false
-        } else {
-            (willShowComponent as! UIImageView).isHidden = false
-        }
+        selectedTool = button
     }
     
     //MARK: Drawing management

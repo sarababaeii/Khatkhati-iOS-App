@@ -26,7 +26,12 @@ class GuessingViewController: UIViewController {
     
     //MARK: Timer Setting
     func setTimer() {
-        let timer = TimerSetting(label: timerLabel, time: 60)
+        var time = 60
+        if Game.sharedInstance.joinedMiddle {
+            time = Game.sharedInstance.time!
+        }
+        timerLabel.text = String(time).convertEnglishNumToPersianNum()
+        let timer = TimerSetting(label: timerLabel, time: time)
         timer.on()
     }
     
@@ -116,6 +121,17 @@ class GuessingViewController: UIViewController {
         chatTableView.dataSource = Game.sharedInstance.round.chatTableViewDelegates
     }
     
+    func setWordLabel() {
+        guard let word = Game.sharedInstance.round.word else {
+            return
+        }
+        var s = ""
+        for _ in word {
+            s += "-"
+        }
+        wordLabel.text = s
+    }
+    
     func configure() {
         registerForKeyboardNotifications()
         
@@ -133,6 +149,7 @@ class GuessingViewController: UIViewController {
         if Game.sharedInstance.round.wordChose {
             setTimer()
             initializeVariables()
+            setWordLabel()
         } else {
             WaitingViewController.parentViewController = self
             showNextPage(identifier: "WaitingViewController")

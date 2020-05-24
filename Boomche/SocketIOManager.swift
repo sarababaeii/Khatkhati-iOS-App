@@ -76,6 +76,12 @@ class SocketIOManager: NSObject {
             self.receiveRandomGame(data: data[0] as! [String : Any])
         }
         
+        socket.on("game_data_on") {data, ack in
+            print("^^^^^ RECEIVING GAME DATA ^^^^^^")
+            print(data)
+            self.receiveGameData(data: data[0] as! [String : Any])
+        }
+        
         socket.on("get_room_settings") { data, ack in
             print("^^^^^RECEIVING ROOM_DATA^^^^^^")
             let temp = data[0] as! [String : Any]
@@ -139,13 +145,15 @@ class SocketIOManager: NSObject {
     func setPlayers(users: [[String : Any]]) {
         for user in users {
             let player = Player(username: user["name"] as! String, colorCode: user["color"] as! Int)
-            
-            if (user["is_drawer"] as! Int) == 1 {
-                player.isPainter = true
-                Game.sharedInstance.round.painter = player
+            if Game.sharedInstance.me.username == player.username { //socketID
+                Game.sharedInstance.me.colorCode = player.colorCode
+                Game.sharedInstance.players.append(Game.sharedInstance.me)
+            } else {
+                Game.sharedInstance.players.append(player)
+//            if (user["is_drawer"] as! Int) == 1 {
+//                player.isPainter = true
+//                Game.sharedInstance.round.painter = player
             }
-            
-            Game.sharedInstance.players.append(player)
         }
     }
     
@@ -158,23 +166,38 @@ class SocketIOManager: NSObject {
         if let roomID = data["hash"] as? String {
             Game.sharedInstance.roomID = roomID
             joinGame()
+            Game.sharedInstance.joinedMiddle = true
+            Game.sharedInstance.time = data["restTime"] as? Int
             //TODO: time
-            switch data["state"] as! Int {
-            case 0: //server?!
-                UIApplication.topViewController()?.showNextPage(identifier: "NewLobbyViewController")
-            case 1:
-                UIApplication.topViewController()?.showNextPage(identifier: "GuessingViewController")
-                Game.sharedInstance.round.wordChose = true
-            case 2:
-                UIApplication.topViewController()?.showNextPage(identifier: "ScoresViewController")
-                //TODO: score board
-            case 3:
-                UIApplication.topViewController()?.showNextPage(identifier: "GuessingViewController")
-            default:
-                UIApplication.topViewController()?.showNextPage(identifier: "LoadingViewController")
-            }
+            Game.sharedInstance.round.word = data["word"] as? String
+            
+            requestGameData()
         } else {
             print("NO PUBLIC ROOM")
+        }
+    }
+    
+    func requestGameData() {
+        socket?.emit("game_data_emit", Game.sharedInstance.roomID!)
+    }
+    
+    func receiveGameData(data: [String : Any]) {
+        switch data["state"] as! Int {
+        case 0: //pending   server?!
+            UIApplication.topViewController()?.showNextPage(identifier: "NewLobbyViewController")
+        case 1: //drawing
+            UIApplication.topViewController()?.showNextPage(identifier: "GuessingViewController")
+            Game.sharedInstance.round.wordChose = true
+            setPainter(username: data["name"] as! String)
+        case 2: //scoreboard
+            UIApplication.topViewController()?.showNextPage(identifier: "ScoresViewController")
+            let temp = data["data"] as! [String : Any]
+            ScoreboardTableViewDelegates.initialScoreboard(users: temp["users"] as! [[String : Any]])
+        case 3: //choosing word
+            UIApplication.topViewController()?.showNextPage(identifier: "GuessingViewController")
+            setPainter(username: data["name"] as! String)
+        default:
+            UIApplication.topViewController()?.showNextPage(identifier: "LoadingViewController")
         }
     }
     
@@ -286,8 +309,7 @@ class SocketIOManager: NSObject {
     func getWords(data: [String : Any]) {
         Game.sharedInstance.roundFinished()
         
-        Game.sharedInstance.round.painter = Game.sharedInstance.players.first(where: {$0.username == data["username"] as! String}) //socketID
-        Game.sharedInstance.round.painter?.isPainter = true
+        setPainter(username: data["username"] as! String)
         
         let viewController = UIApplication.topViewController()
         
@@ -298,6 +320,11 @@ class SocketIOManager: NSObject {
         } else {
             viewController?.showNextPage(identifier: "GuessingViewController")
         }
+    }
+    
+    func setPainter(username: String) { //socketID
+        Game.sharedInstance.round.painter = Game.sharedInstance.players.first(where: {$0.username == username}) //socketID
+        Game.sharedInstance.round.painter?.isPainter = true
     }
     
     //MARK: Drawing
@@ -354,18 +381,82 @@ class SocketIOManager: NSObject {
         }
     }
     
-    func playAgain() {
-        socket?.emit("send_play_again", Game.sharedInstance.roomID!)
+    func requestPlayAgain() {
+        socket?.emit("play_again_emit", Game.sharedInstance.roomID!)
+    }
+    
+    func receivePlayAgain() {
+        
     }
 }
 
-// SocketIOClient{/}: Handling event: find_room_on with data: [{
-//     hash = abcd;
-//     "last_start_time" = 0;
-//     name = "my room";
-//     restTime = "-1588946596";
-//     round = 1;
-//     time = 60;
-//     "which_round" = 0;
-//     word = apple;
-// }]
+//Handling event: find_room_on with data: [{
+//    hash = asdf;
+//    "last_start_time" = 1590340371;
+//    name = "my room";
+//    restTime = 54;
+//    round = 3;
+//    state = 1;
+//    time = 60;
+//    "which_round" = 0;
+//    word = snowboard;
+//}]
+
+
+//Handling event: game_data_on with data: [{
+//    name = arshia;
+//    state = 1; drawing
+//word?!
+//}]
+
+//[{
+//    data =     {
+//        room =         {
+//            hash = 1234;
+//            "last_start_time" = 1590334005;
+//            name = "my room";
+//            round = 3;
+//            state = 2;
+//            time = 60;
+//            "which_round" = 1;
+//            word = florida;
+//        };
+//        users =         (
+//                        {
+//                color = 1;
+//                "current_score" = 0;
+//                "is_drawer" = 0;
+//                name = sara;
+//                score = "130.5";
+//            },
+//                        {
+//                color = 3;
+//                "current_score" = 0;
+//                "is_drawer" = 0;
+//                name = shayan;
+//                score = "105.5";
+//            },
+//                        {
+//                color = 4;
+//                "current_score" = 0;
+//                "is_drawer" = 0;
+//                name = arshia;
+//                score = 58;
+//            },
+//                        {
+//                color = 5;
+//                "current_score" = 0;
+//                "is_drawer" = 0;
+//                name = "\U0633\U0627\U0631\U0627";
+//                score = 0;
+//            }
+//        );
+//    };
+//    state = 2; scoreboard
+//word?!
+//}]
+
+//Handling event: game_data_on with data: [{
+//    name = sara;
+//    state = 3; choosing word
+//}]

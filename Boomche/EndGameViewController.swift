@@ -32,7 +32,7 @@ class EndGameViewController: UIViewController {
     //MARK: Button Actions
     @IBAction func playAgainAction(_ sender: Any) {
         Game.sharedInstance.playAgain()
-        SocketIOManager.sharedInstance.playAgain()
+        SocketIOManager.sharedInstance.requestPlayAgain()
     }
     
     @IBAction func homeAction(_ sender: Any) {

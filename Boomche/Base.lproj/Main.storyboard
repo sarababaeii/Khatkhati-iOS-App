@@ -1239,7 +1239,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="xZM-rP-Kxl" secondAttribute="height" multiplier="1:1" id="jBt-LS-UqW"/>
                                                 </constraints>
-                                                <state key="normal" image="paint‌Brush"/>
+                                                <state key="normal" image="PaintBrush"/>
                                                 <connections>
                                                     <action selector="brushSelected:" destination="FH5-3d-izd" eventType="touchUpInside" id="YE6-r8-x7j"/>
                                                 </connections>
@@ -1249,16 +1249,20 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="zSk-rP-wKt" secondAttribute="height" multiplier="1:1" id="Ufy-64-bvx"/>
                                                 </constraints>
-                                                <state key="normal" image="eraser"/>
+                                                <state key="normal" image="Eraser"/>
                                                 <connections>
                                                     <action selector="eraserSelected:" destination="FH5-3d-izd" eventType="touchUpInside" id="A2A-j9-22Q"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="es3-FV-8mv">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="es3-FV-8mv">
                                                 <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="es3-FV-8mv" secondAttribute="height" multiplier="1:1" id="QDJ-zo-ZXI"/>
                                                 </constraints>
+                                                <state key="normal" image="Trash"/>
+                                                <connections>
+                                                    <action selector="trashSelected:" destination="FH5-3d-izd" eventType="touchUpInside" id="XS2-Q2-vFi"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1315,6 +1319,7 @@
                         <outlet property="eraserButton" destination="zSk-rP-wKt" id="ovf-3t-nzf"/>
                         <outlet property="templeCanvas" destination="IhC-yN-VJX" id="cdJ-NC-z0X"/>
                         <outlet property="timerLabel" destination="E1e-nY-c6W" id="SPY-ju-qtB"/>
+                        <outlet property="trashButton" destination="es3-FV-8mv" id="DBK-Ks-LoT"/>
                         <outlet property="wordLabel" destination="jVx-61-fWj" id="r62-GE-Ila"/>
                     </connections>
                 </viewController>
@@ -1576,8 +1581,8 @@
                                             <constraint firstItem="WOw-X4-Y2c" firstAttribute="centerY" secondItem="tlX-17-WxP" secondAttribute="centerY" constant="8.5" id="xpb-pe-cJj"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-----" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRt-Ox-awy">
-                                        <rect key="frame" x="167.5" y="67" width="40" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRt-Ox-awy">
+                                        <rect key="frame" x="187.5" y="67" width="0.0" height="17"/>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="24"/>
                                         <color key="textColor" red="0.23137254900000001" green="0.22352941179999999" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1984,8 +1989,8 @@
                                                             <color key="textColor" red="1" green="0.20784313730000001" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+۲۵ امتیاز" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71J-FJ-ewD">
-                                                            <rect key="frame" x="221" y="41" width="74" height="28.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71J-FJ-ewD">
+                                                            <rect key="frame" x="295" y="41" width="0.0" height="0.0"/>
                                                             <fontDescription key="fontDescription" name="Vazir-Light" family="Vazir" pointSize="18"/>
                                                             <color key="textColor" red="0.44705882352941173" green="0.44705882352941173" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -2745,6 +2750,7 @@
         <image name="Clock" width="33" height="33"/>
         <image name="Crown" width="27" height="21"/>
         <image name="Email" width="20" height="15"/>
+        <image name="Eraser" width="39" height="34"/>
         <image name="GoldCup" width="102" height="118"/>
         <image name="Group" width="34" height="20"/>
         <image name="Home" width="30" height="29"/>
@@ -2755,13 +2761,13 @@
         <image name="Menu" width="28" height="20"/>
         <image name="Name&amp;Logo" width="150" height="225"/>
         <image name="NewLobbyBackground" width="375" height="181"/>
+        <image name="PaintBrush" width="33" height="34"/>
         <image name="Share" width="20" height="18"/>
         <image name="SignUpBackground" width="372" height="180"/>
         <image name="SilverCup" width="26" height="30"/>
         <image name="Start" width="26" height="22"/>
+        <image name="Trash" width="27" height="34"/>
         <image name="World" width="97" height="97"/>
-        <image name="eraser" width="500" height="500"/>
-        <image name="paint‌Brush" width="500" height="500"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="4nJ-e4-cP0"/>

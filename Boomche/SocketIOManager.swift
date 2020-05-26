@@ -166,7 +166,6 @@ class SocketIOManager: NSObject {
         if let roomID = data["hash"] as? String {
             Game.sharedInstance.roomID = roomID
             joinGame()
-            Game.sharedInstance.joinedMiddle = true
             Game.sharedInstance.time = data["restTime"] as? Int
             //TODO: time
             Game.sharedInstance.round.word = data["word"] as? String
@@ -182,7 +181,9 @@ class SocketIOManager: NSObject {
     }
     
     func receiveGameData(data: [String : Any]) {
-        switch data["state"] as! Int {
+        let state = data["state"] as! Int
+        Game.sharedInstance.joinedState = state
+        switch state {
         case 0: //pending   server?!
             UIApplication.topViewController()?.showNextPage(identifier: "NewLobbyViewController")
         case 1: //drawing

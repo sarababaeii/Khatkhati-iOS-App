@@ -27,7 +27,7 @@ class GuessingViewController: UIViewController {
     //MARK: Timer Setting
     func setTimer() {
         var time = 60
-        if Game.sharedInstance.joinedMiddle {
+        if Game.sharedInstance.joinedState == 1 {
             time = Game.sharedInstance.time!
         }
         timerLabel.text = String(time).convertEnglishNumToPersianNum()

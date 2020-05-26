@@ -26,7 +26,7 @@ class ScoreTableViewCell: UITableViewCell {
         nameLabel.textColor = player.color.lightBackground
         colorView.backgroundColor = player.color.lightBackground
         
-        if !Game.sharedInstance.joinedMiddle {
+        if Game.sharedInstance.joinedState != 2 {
             currentScoreLabel.text = "+\(String(player.currentScore).convertEnglishNumToPersianNum()) امتیاز"
             if player.isPainter {
                bonusImage.image = UIImage(named: "Brush")

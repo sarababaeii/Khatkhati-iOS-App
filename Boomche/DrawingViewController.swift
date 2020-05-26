@@ -20,17 +20,25 @@ class DrawingViewController: UIViewController {
     
     @IBOutlet weak var chatTableView: UITableView!
     
-    //MARK: ColorPalette:
+    //MARK: Color Palette:
     @IBOutlet weak var colorsCollectionView: UICollectionView!
     @IBOutlet weak var eraserButton: UIButton!
     @IBOutlet weak var brushButton: UIButton!
     @IBOutlet weak var trashButton: UIButton!
     
+    //MARK: Brush Thickness
+    @IBOutlet weak var brushSizeView: UIView!
+    @IBOutlet weak var brushSizeButton0: UIButton!
+    @IBOutlet weak var brushSizeButton1: UIButton!
+    @IBOutlet weak var brushSizeButton2: UIButton!
+    @IBOutlet weak var brushSizeButton3: UIButton!
+    
     var colors = [Color]()
-
+    var colorsCollectionViewDelegates: ColorsCollectionViewDelegates?
+    
     var selectedTool: UIButton?
 
-    var colorsCollectionViewDelegates: ColorsCollectionViewDelegates?
+    let brushSizez = [4, 6, 12, 24]
     
     //MARK: Timer Setting
     func setTimer() {
@@ -44,7 +52,6 @@ class DrawingViewController: UIViewController {
         }
         
         Game.sharedInstance.round.drawing?.brushColor = UIColor.white
-        Game.sharedInstance.round.drawing?.brushWidth = 17 //TODO: good?!
         
         eraserButton.setImage(UIImage(named: "SelectedEraser"), for: .normal)
         unselectTool(by: eraserButton)
@@ -52,12 +59,25 @@ class DrawingViewController: UIViewController {
     
     @IBAction func brushSelected(_ sender: Any) {
         brushButton.setImage(UIImage(named: "SelectedPaintBrush"), for: .normal)
+        brushSizeView.isHidden = false
         unselectTool(by: brushButton)
     }
     
     @IBAction func trashSelected(_ sender: Any) {
         trashButton.setImage(UIImage(named: "SelectedTrash"), for: .normal)
         unselectTool(by: trashButton)
+    }
+    
+    @IBAction func changeBrushSize(_ sender: Any) {
+        let tag = (sender as? UIButton)?.tag
+        switch tag {
+        case 0, 1, 2, 3:
+            Game.sharedInstance.round.drawing?.brushWidth = CGFloat(brushSizez[tag!])
+        case 4:
+            brushSizeView.isHidden = true
+        default:
+            return
+        }
     }
     
     func unselectTool(by button: UIButton) {
@@ -75,7 +95,7 @@ class DrawingViewController: UIViewController {
         selectedTool = button
     }
     
-    //MARK: Drawing management
+    //MARK: Drawing Management
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first, Game.sharedInstance.round.wordChose else {
             return

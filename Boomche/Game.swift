@@ -19,7 +19,7 @@ class Game {
     var players = [Player]()
     var round = RoundData()
     
-    var joinedMiddle = false
+    var joinedState = 0
     var time: Int?
     
     func roundFinished() {
@@ -27,7 +27,7 @@ class Game {
         for player in players {
             player.roundFinished()
         }
-        joinedMiddle = false
+        joinedState = 0
     }
     
     func playAgain() {

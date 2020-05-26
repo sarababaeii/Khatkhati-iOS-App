@@ -1232,10 +1232,10 @@
                                         </cells>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DoW-R2-Lyu" userLabel="View2.0">
-                                        <rect key="frame" x="90" y="56" width="147" height="34"/>
+                                        <rect key="frame" x="89.5" y="56" width="148" height="34"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZM-rP-Kxl">
-                                                <rect key="frame" x="56.5" y="0.0" width="34" height="34"/>
+                                                <rect key="frame" x="57" y="0.0" width="34" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="xZM-rP-Kxl" secondAttribute="height" multiplier="1:1" id="jBt-LS-UqW"/>
                                                 </constraints>
@@ -1245,7 +1245,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSk-rP-wKt">
-                                                <rect key="frame" x="113" y="0.0" width="34" height="34"/>
+                                                <rect key="frame" x="114" y="0.0" width="34" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="zSk-rP-wKt" secondAttribute="height" multiplier="1:1" id="Ufy-64-bvx"/>
                                                 </constraints>
@@ -1267,12 +1267,13 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="DoW-R2-Lyu" secondAttribute="height" multiplier="148:34" id="4PB-qk-z6q"/>
                                             <constraint firstItem="es3-FV-8mv" firstAttribute="leading" secondItem="DoW-R2-Lyu" secondAttribute="leading" id="5BG-gn-OIh"/>
                                             <constraint firstItem="es3-FV-8mv" firstAttribute="top" secondItem="DoW-R2-Lyu" secondAttribute="top" id="8cH-II-s4l"/>
                                             <constraint firstAttribute="bottom" secondItem="es3-FV-8mv" secondAttribute="bottom" id="EBZ-Qc-8Tw"/>
                                             <constraint firstAttribute="bottom" secondItem="zSk-rP-wKt" secondAttribute="bottom" id="F2s-N9-50y"/>
+                                            <constraint firstAttribute="width" constant="148" id="N0G-du-8nD"/>
                                             <constraint firstItem="xZM-rP-Kxl" firstAttribute="top" secondItem="DoW-R2-Lyu" secondAttribute="top" id="NHs-dC-zFI"/>
+                                            <constraint firstAttribute="height" constant="34" id="T1c-wy-HpR"/>
                                             <constraint firstAttribute="trailing" secondItem="zSk-rP-wKt" secondAttribute="trailing" id="YyG-Ph-NIG"/>
                                             <constraint firstItem="zSk-rP-wKt" firstAttribute="top" secondItem="DoW-R2-Lyu" secondAttribute="top" id="p6B-1x-TVa"/>
                                             <constraint firstAttribute="bottom" secondItem="xZM-rP-Kxl" secondAttribute="bottom" id="pB0-kl-yuQ"/>
@@ -1283,13 +1284,112 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="wk6-aL-jSg" secondAttribute="height" multiplier="327:90" id="V5B-ae-5Cy"/>
-                                    <constraint firstItem="DoW-R2-Lyu" firstAttribute="leading" secondItem="wk6-aL-jSg" secondAttribute="leading" constant="90" id="ZIn-ar-4lF"/>
                                     <constraint firstAttribute="bottom" secondItem="DoW-R2-Lyu" secondAttribute="bottom" id="diR-eq-Lip"/>
                                     <constraint firstItem="r7n-f5-ZMn" firstAttribute="top" secondItem="wk6-aL-jSg" secondAttribute="top" id="lIU-Re-dOq"/>
                                     <constraint firstAttribute="trailing" secondItem="r7n-f5-ZMn" secondAttribute="trailing" id="pup-Ew-eES"/>
                                     <constraint firstItem="DoW-R2-Lyu" firstAttribute="centerX" secondItem="wk6-aL-jSg" secondAttribute="centerX" id="u4T-nd-CtE"/>
                                     <constraint firstItem="r7n-f5-ZMn" firstAttribute="leading" secondItem="wk6-aL-jSg" secondAttribute="leading" id="uQQ-K2-EYU"/>
                                 </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIO-qG-iGh" customClass="CustomView" customModule="Boomche" customModuleProvider="target">
+                                <rect key="frame" x="164" y="486" width="47" height="173"/>
+                                <subviews>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRr-8O-nFr">
+                                        <rect key="frame" x="6.5" y="131" width="34" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="34" id="Q9P-LJ-Z66"/>
+                                            <constraint firstAttribute="height" constant="34" id="f2s-og-ahI"/>
+                                        </constraints>
+                                        <state key="normal" image="SelectedPaintBrush"/>
+                                        <connections>
+                                            <action selector="changeBrushSize:" destination="FH5-3d-izd" eventType="touchUpInside" id="ExI-e2-9AC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ty0-Kf-M5a" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
+                                        <rect key="frame" x="10.5" y="13" width="26" height="4"/>
+                                        <color key="backgroundColor" red="0.2302554846" green="0.2225066423" blue="0.34847956899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="4" id="Wc1-tv-0T3"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changeBrushSize:" destination="FH5-3d-izd" eventType="touchUpInside" id="69L-0Y-3vE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m20-Rt-tC4" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
+                                        <rect key="frame" x="10.5" y="35" width="26" height="6"/>
+                                        <color key="backgroundColor" red="0.2302554846" green="0.2225066423" blue="0.34847956899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="6" id="PdF-iB-2gP"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changeBrushSize:" destination="FH5-3d-izd" eventType="touchUpInside" id="DOO-K3-Gcz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5N-je-7Ss" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
+                                        <rect key="frame" x="10.5" y="59" width="26" height="12"/>
+                                        <color key="backgroundColor" red="0.2302554846" green="0.2225066423" blue="0.34847956899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="wqX-gN-8Kk"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changeBrushSize:" destination="FH5-3d-izd" eventType="touchUpInside" id="SOs-xw-oIc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Agb-Mt-eDO" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
+                                        <rect key="frame" x="10.5" y="89" width="26" height="24"/>
+                                        <color key="backgroundColor" red="0.2302554846" green="0.2225066423" blue="0.34847956899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="26" id="1Ur-IH-aH3"/>
+                                            <constraint firstAttribute="height" constant="24" id="Psj-WG-JZi"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changeBrushSize:" destination="FH5-3d-izd" eventType="touchUpInside" id="2rY-MV-t6Y"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94410854580000003" green="0.95810431240000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Agb-Mt-eDO" firstAttribute="leading" secondItem="Ty0-Kf-M5a" secondAttribute="leading" id="52o-CE-ZJd"/>
+                                    <constraint firstItem="Agb-Mt-eDO" firstAttribute="centerX" secondItem="yIO-qG-iGh" secondAttribute="centerX" id="E8j-HO-mws"/>
+                                    <constraint firstItem="JRr-8O-nFr" firstAttribute="top" secondItem="Agb-Mt-eDO" secondAttribute="bottom" constant="18" id="EkJ-h1-s3Q"/>
+                                    <constraint firstItem="Agb-Mt-eDO" firstAttribute="top" secondItem="z5N-je-7Ss" secondAttribute="bottom" constant="18" id="FAg-Pt-vuf"/>
+                                    <constraint firstItem="JRr-8O-nFr" firstAttribute="centerX" secondItem="yIO-qG-iGh" secondAttribute="centerX" id="G0S-P8-k2E"/>
+                                    <constraint firstAttribute="width" constant="47" id="Hqe-0d-znF"/>
+                                    <constraint firstItem="Agb-Mt-eDO" firstAttribute="trailing" secondItem="m20-Rt-tC4" secondAttribute="trailing" id="ITd-Fl-JEV"/>
+                                    <constraint firstItem="m20-Rt-tC4" firstAttribute="top" secondItem="Ty0-Kf-M5a" secondAttribute="bottom" constant="18" id="Iiy-iC-1OU"/>
+                                    <constraint firstItem="Agb-Mt-eDO" firstAttribute="trailing" secondItem="Ty0-Kf-M5a" secondAttribute="trailing" id="KUi-Pr-eV3"/>
+                                    <constraint firstItem="Agb-Mt-eDO" firstAttribute="leading" secondItem="m20-Rt-tC4" secondAttribute="leading" id="RjB-c9-m1J"/>
+                                    <constraint firstItem="Agb-Mt-eDO" firstAttribute="trailing" secondItem="z5N-je-7Ss" secondAttribute="trailing" id="SNc-yE-2zT"/>
+                                    <constraint firstItem="Agb-Mt-eDO" firstAttribute="leading" secondItem="z5N-je-7Ss" secondAttribute="leading" id="Tw8-oi-HBg"/>
+                                    <constraint firstAttribute="bottom" secondItem="JRr-8O-nFr" secondAttribute="bottom" constant="8" id="d1a-rv-T2g"/>
+                                    <constraint firstItem="z5N-je-7Ss" firstAttribute="top" secondItem="m20-Rt-tC4" secondAttribute="bottom" constant="18" id="fvM-DE-Os6"/>
+                                    <constraint firstAttribute="height" constant="173" id="tvd-cf-8dD"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1304,6 +1404,8 @@
                             <constraint firstItem="wk6-aL-jSg" firstAttribute="top" secondItem="6Ag-Ar-g10" secondAttribute="bottom" constant="16" id="TNe-fb-0jf"/>
                             <constraint firstItem="hJR-Kf-wjY" firstAttribute="leading" secondItem="RD0-eh-Wtu" secondAttribute="leading" id="Wpx-l3-JPJ"/>
                             <constraint firstItem="6Ag-Ar-g10" firstAttribute="centerX" secondItem="3rT-84-p3Q" secondAttribute="centerX" id="bMe-f7-ZCN"/>
+                            <constraint firstItem="yIO-qG-iGh" firstAttribute="centerX" secondItem="3rT-84-p3Q" secondAttribute="centerX" id="ijQ-83-RrC"/>
+                            <constraint firstItem="RD0-eh-Wtu" firstAttribute="bottom" secondItem="yIO-qG-iGh" secondAttribute="bottom" constant="8" id="l2r-zn-XfF"/>
                             <constraint firstItem="6Ag-Ar-g10" firstAttribute="leading" secondItem="RD0-eh-Wtu" secondAttribute="leading" constant="24" id="mN8-3k-vXV"/>
                             <constraint firstItem="wk6-aL-jSg" firstAttribute="leading" secondItem="RD0-eh-Wtu" secondAttribute="leading" constant="24" id="mXD-oV-vjJ"/>
                             <constraint firstItem="yek-85-i8W" firstAttribute="centerX" secondItem="3rT-84-p3Q" secondAttribute="centerX" id="wLM-Zc-PYI"/>
@@ -1312,6 +1414,11 @@
                     </view>
                     <connections>
                         <outlet property="brushButton" destination="xZM-rP-Kxl" id="vZD-b3-zdH"/>
+                        <outlet property="brushSizeButton0" destination="Ty0-Kf-M5a" id="H4w-tz-IFu"/>
+                        <outlet property="brushSizeButton1" destination="m20-Rt-tC4" id="b7b-km-UmU"/>
+                        <outlet property="brushSizeButton2" destination="z5N-je-7Ss" id="ANx-yb-qFc"/>
+                        <outlet property="brushSizeButton3" destination="Agb-Mt-eDO" id="WMq-Dh-ri2"/>
+                        <outlet property="brushSizeView" destination="yIO-qG-iGh" id="7Hn-tL-MCn"/>
                         <outlet property="canvas" destination="OK3-yE-8Z9" id="wKt-n7-yy3"/>
                         <outlet property="canvasView" destination="yek-85-i8W" id="vBO-cv-B9s"/>
                         <outlet property="chatTableView" destination="6Ag-Ar-g10" id="8cn-Bw-psa"/>
@@ -2107,13 +2214,13 @@
                                         <rect key="frame" x="86" y="158" width="93" height="95"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سارا" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVG-he-LMM">
-                                                <rect key="frame" x="18.5" y="0.0" width="56.5" height="57.5"/>
+                                                <rect key="frame" x="18" y="0.0" width="57" height="57"/>
                                                 <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="36"/>
                                                 <color key="textColor" red="1" green="0.26875725388526917" blue="0.42695242166519165" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="برنده شد!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiy-uV-B9i">
-                                                <rect key="frame" x="0.0" y="57.5" width="93" height="37.5"/>
+                                                <rect key="frame" x="0.0" y="57" width="93" height="38"/>
                                                 <fontDescription key="fontDescription" name="Vazir-Thin" family="Vazir" pointSize="24"/>
                                                 <color key="textColor" red="0.21862572429999999" green="0.21085071559999999" blue="0.3258422017" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2134,7 +2241,7 @@
                                         <rect key="frame" x="7" y="211.5" width="45" height="45"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۲۱۰" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Om-0N-afu">
-                                                <rect key="frame" x="10" y="7" width="25" height="31.5"/>
+                                                <rect key="frame" x="10" y="6.5" width="25" height="32"/>
                                                 <fontDescription key="fontDescription" name="Vazir-Black" family="Vazir" pointSize="20"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2179,7 +2286,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۱۹۰" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZN9-sC-kfo">
-                                                <rect key="frame" x="23.5" y="11.5" width="29.5" height="38"/>
+                                                <rect key="frame" x="23" y="11.5" width="30" height="38"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="38" id="1XE-08-k8z"/>
                                                 </constraints>
@@ -2188,7 +2295,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="امتیاز" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qhn-39-GqG">
-                                                <rect key="frame" x="26.5" y="49.5" width="23.5" height="17.5"/>
+                                                <rect key="frame" x="26" y="49.5" width="24" height="17"/>
                                                 <fontDescription key="fontDescription" name="Vazir-Thin" family="Vazir" pointSize="11"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2248,7 +2355,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۱۵۰" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kk1-Oi-qki">
-                                                <rect key="frame" x="22" y="11.5" width="32.5" height="38"/>
+                                                <rect key="frame" x="22" y="11.5" width="32" height="38"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="38" id="oSb-c0-fVR"/>
                                                 </constraints>
@@ -2257,7 +2364,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="امتیاز" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z37-Fz-gEz">
-                                                <rect key="frame" x="26.5" y="49.5" width="23.5" height="17.5"/>
+                                                <rect key="frame" x="26" y="49.5" width="24" height="17"/>
                                                 <fontDescription key="fontDescription" name="Vazir-Thin" family="Vazir" pointSize="11"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2762,6 +2869,7 @@
         <image name="Name&amp;Logo" width="150" height="225"/>
         <image name="NewLobbyBackground" width="375" height="181"/>
         <image name="PaintBrush" width="33" height="34"/>
+        <image name="SelectedPaintBrush" width="33" height="34"/>
         <image name="Share" width="20" height="18"/>
         <image name="SignUpBackground" width="372" height="180"/>
         <image name="SilverCup" width="26" height="30"/>

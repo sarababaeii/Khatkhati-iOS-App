@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 class RoundData {
     var drawing: Drawing?
+    var paint: [[[CGFloat]]]?
     var chatTableViewDelegates: MessageTableViewDelegates?
     var scoreboardTableViewDelegates: ScoreboardTableViewDelegates?
     
@@ -25,6 +27,7 @@ class RoundData {
     
     func roundFinished() {
         drawing = nil
+        paint = nil
         chatTableViewDelegates = nil
         scoreboardTableViewDelegates = nil
         

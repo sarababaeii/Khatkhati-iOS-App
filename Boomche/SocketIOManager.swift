@@ -150,9 +150,6 @@ class SocketIOManager: NSObject {
                 Game.sharedInstance.players.append(Game.sharedInstance.me)
             } else {
                 Game.sharedInstance.players.append(player)
-//            if (user["is_drawer"] as! Int) == 1 {
-//                player.isPainter = true
-//                Game.sharedInstance.round.painter = player
             }
         }
     }
@@ -166,9 +163,10 @@ class SocketIOManager: NSObject {
         if let roomID = data["hash"] as? String {
             Game.sharedInstance.roomID = roomID
             joinGame()
+            
             Game.sharedInstance.time = data["restTime"] as? Int
-            //TODO: time
             Game.sharedInstance.round.word = data["word"] as? String
+            Game.sharedInstance.round.paint = data["paint"] as? [[[CGFloat]]]
             
             requestGameData()
         } else {
@@ -187,9 +185,9 @@ class SocketIOManager: NSObject {
         case 0: //pending   server?!
             UIApplication.topViewController()?.showNextPage(identifier: "NewLobbyViewController")
         case 1: //drawing
-            UIApplication.topViewController()?.showNextPage(identifier: "GuessingViewController")
             Game.sharedInstance.round.wordChose = true
             setPainter(username: data["name"] as! String)
+            UIApplication.topViewController()?.showNextPage(identifier: "GuessingViewController")
         case 2: //scoreboard
             UIApplication.topViewController()?.showNextPage(identifier: "ScoresViewController")
             let temp = data["data"] as! [String : Any]

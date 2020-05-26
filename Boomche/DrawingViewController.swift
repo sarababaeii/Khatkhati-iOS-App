@@ -68,16 +68,14 @@ class DrawingViewController: UIViewController {
         unselectTool(by: trashButton)
     }
     
+    //unselect previous
     @IBAction func changeBrushSize(_ sender: Any) {
         let tag = (sender as? UIButton)?.tag
-        switch tag {
-        case 0, 1, 2, 3:
+        if tag == 0 || tag == 1 || tag == 2 || tag == 3 {
             Game.sharedInstance.round.drawing?.brushWidth = CGFloat(brushSizez[tag!])
-        case 4:
-            brushSizeView.isHidden = true
-        default:
-            return
+            (sender as? UIButton)?.backgroundColor = Colors.blue.componentColor?.lightBackground
         }
+        brushSizeView.isHidden = true
     }
     
     func unselectTool(by button: UIButton) {
@@ -175,5 +173,3 @@ class DrawingViewController: UIViewController {
         }
     }
 }
-
-//TODO: brush size, initialize brush size

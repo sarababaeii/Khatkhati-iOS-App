@@ -35,6 +35,26 @@ class GuessingViewController: UIViewController {
         timer.on()
     }
     
+    //MARK: Previous Drawing
+    func showPreDrawing() {
+        guard let paint = Game.sharedInstance.round.paint else {
+            return
+        }
+        for stroke in paint {
+            print("hi")
+            drawStroke(points: stroke)
+        }
+    }
+    
+    func drawStroke(points: [[CGFloat]]) {
+        //brush size and color
+        Game.sharedInstance.round.drawing?.touchesBegan(CGPoint(x: points[0][0], y: points[0][1]))
+        for i in 0 ..< points.count {
+            Game.sharedInstance.round.drawing?.touchesMoved(CGPoint(x: points[i][0], y: points[i][1]))
+        }
+        Game.sharedInstance.round.drawing?.touchesEnded()
+    }
+    
     //MARK: Socket Management For Drawing
     func addSocketHandler() {
         SocketIOManager.sharedInstance.socket?.on("conversation_private") { data, ack in
@@ -150,6 +170,7 @@ class GuessingViewController: UIViewController {
             setTimer()
             initializeVariables()
             setWordLabel()
+            showPreDrawing()
         } else {
             WaitingViewController.parentViewController = self
             showNextPage(identifier: "WaitingViewController")

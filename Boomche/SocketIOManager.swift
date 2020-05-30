@@ -115,16 +115,15 @@ class SocketIOManager: NSObject {
     }
     
     func getRoomID(data: [String : Any]) {
-        Game.sharedInstance.roomID = (data["key"] as! String)
         Game.sharedInstance.me.isLobbyLeader = true
-        
-        joinGame()
+        joinGame(roomID: data["key"] as! String)
         
         UIApplication.topViewController()?.showNextPage(identifier: "NewLobbyViewController")
     }
     
     //MARK: Joining Game
-    func joinGame() {
+    func joinGame(roomID: String) {
+        Game.sharedInstance.roomID = roomID
         let data = ["room_id" : Game.sharedInstance.roomID, "username" : Game.sharedInstance.me.username]
         socket?.emit("subscribe", data)
     }
@@ -160,17 +159,22 @@ class SocketIOManager: NSObject {
     }
     
     func receiveRandomGame(data: [String : Any]) {
-        if let roomID = data["hash"] as? String {
-            Game.sharedInstance.roomID = roomID
-            joinGame()
+        switch data["status"] as! Int {
+        case 0:
+            joinGame(roomID: data["hash"] as! String)
             
             Game.sharedInstance.time = data["restTime"] as? Int
             Game.sharedInstance.round.word = data["word"] as? String
             Game.sharedInstance.round.paint = data["paint"] as? [[[CGFloat]]]
-            
+
             requestGameData()
-        } else {
-            print("NO PUBLIC ROOM")
+        case 1:
+            print("\(data["userCount"] as! Int) Users in queue")
+        case 2:
+            joinGame(roomID: data["hash"] as! String)
+            UIApplication.topViewController()?.showNextPage(identifier: "NewLobbyViewController")
+        default:
+            print("DEFAULT \(data["status"] as! Int)")
         }
     }
     

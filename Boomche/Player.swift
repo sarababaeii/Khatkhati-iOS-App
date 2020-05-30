@@ -10,7 +10,7 @@ import Foundation
 
 class Player {
     var username: String
-    var socketID: String?
+    var socketID: String
     
     var colorCode: Int {
         didSet {
@@ -43,7 +43,8 @@ class Player {
     var isPainter = false
     var isFirstGuesser = false
     
-    init(username: String, colorCode: Int, totalScore: Double, currentScore: Double) {
+    init(socketID: String, username: String, colorCode: Int, totalScore: Double, currentScore: Double) {
+        self.socketID = socketID
         self.username = username
         self.colorCode = colorCode
         switch colorCode {
@@ -66,12 +67,12 @@ class Player {
         self.currentScore = Int(currentScore)
     }
     
-    convenience init(username: String, colorCode: Int) {
-        self.init(username: username, colorCode: colorCode, totalScore: 0, currentScore: 0)
+    convenience init(socketID: String, username: String, colorCode: Int) {
+        self.init(socketID: socketID, username: username, colorCode: colorCode, totalScore: 0, currentScore: 0)
     }
     
-    convenience init(username: String) {
-        self.init(username: username, colorCode: 1)
+    convenience init(socketID: String, username: String) {
+        self.init(socketID: socketID, username: username, colorCode: 1)
     }
     
     func roundFinished() {

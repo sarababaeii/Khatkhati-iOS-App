@@ -34,7 +34,7 @@ class MessageTableViewDelegates: NSObject, UITableViewDelegate, UITableViewDataS
     
     func insertMessage(_ message: Message?){
         if let message = message {
-            if Game.sharedInstance.me.hasGuessed == false && message.sender.hasGuessed == true {
+            if Game.sharedInstance.me.hasGuessed == false && message.sender.hasGuessed == true && message.isAnswer == false {
                 return
             }
             

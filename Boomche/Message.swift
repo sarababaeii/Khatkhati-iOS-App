@@ -11,9 +11,11 @@ import Foundation
 class Message {
     var sender: Player
     var content: String
+    var isAnswer: Bool
     
-    init(sender: Player, content: String) {
+    init(sender: Player, content: String, isAnswer: Bool) {
         self.sender = sender
         self.content = content
+        self.isAnswer = isAnswer
     }
 }

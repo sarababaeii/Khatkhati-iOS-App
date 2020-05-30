@@ -47,6 +47,7 @@ class Drawing {
     }
     
     func drawLine(from fromPoint: CGPoint, to toPoint: CGPoint) {
+        print("YUUUUUUUUHUUUUUUu \(fromPoint) to \(toPoint)")
         UIGraphicsBeginImageContext(canvasView.frame.size)
         
         guard let context = UIGraphicsGetCurrentContext() else {
@@ -79,6 +80,7 @@ class Drawing {
     func touchesMoved(_ touch: CGPoint) {
         swiped = true
         let currentPoint = touch
+        print("MMMMMMOOOOOOVVVVVEEEEE")
         drawLine(from: lastPoint, to: currentPoint)
         lastPoint = currentPoint
     }
@@ -86,6 +88,7 @@ class Drawing {
     func touchesEnded() {
         if !swiped {
         // draw a single point
+            print("PPPPPPOOOOOOIIIIIINNNNNTTTT")
             drawLine(from: lastPoint, to: lastPoint)
             //send to server!!
         }
@@ -100,3 +103,6 @@ class Drawing {
         templeCanvas.image = nil
     }
 }
+
+//MMMMMMOOOOOOVVVVVEEEEE
+//YUUUUUUUUHUUUUUUu (86.5, 149.5) to (90.0, 173.5)

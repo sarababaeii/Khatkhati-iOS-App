@@ -59,15 +59,16 @@ class PlayersCollectionViewDelegates: NSObject, UICollectionViewDelegate, UIColl
         }
         
         for user in users {
-            let username = user["name"] as! String //socketID
+            let socketID = user["socket_id"] as! String
+            let username = user["name"] as! String
             let colorCode = user["color"] as! Int
 
             let indexPath = IndexPath(item: Game.sharedInstance.players.count, section: 0)
-            if Game.sharedInstance.me.username == username { //socketID
+            if Game.sharedInstance.me.socketID == socketID { //check
                 Game.sharedInstance.me.colorCode = colorCode
                 insertPlayer(Game.sharedInstance.me, at: indexPath)
             } else {
-                insertPlayer(Player(username: username, colorCode: colorCode), at: indexPath)
+                insertPlayer(Player(socketID: socketID, username: username, colorCode: colorCode), at: indexPath)
             }
         }
     }

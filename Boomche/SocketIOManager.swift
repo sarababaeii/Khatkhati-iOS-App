@@ -144,8 +144,8 @@ class SocketIOManager: NSObject {
     
     func setPlayers(users: [[String : Any]]) {
         for user in users {
-            let player = Player(username: user["name"] as! String, colorCode: user["color"] as! Int)
-            if Game.sharedInstance.me.username == player.username { //socketID
+            let player = Player(socketID: user["socket_id"] as! String, username: user["name"] as! String, colorCode: user["color"] as! Int)
+            if Game.sharedInstance.me.socketID == player.socketID { //check
                 Game.sharedInstance.me.colorCode = player.colorCode
                 Game.sharedInstance.players.append(Game.sharedInstance.me)
             } else {
@@ -339,12 +339,12 @@ class SocketIOManager: NSObject {
     }
     
     func receiveMessage(data: [String : Any]) {
-        guard let sender = Game.sharedInstance.players.first(where: {$0.username == data["username"] as! String}) else { //TODO: socketID
+        guard let sender = Game.sharedInstance.players.first(where: {$0.socketID == data["socket_id"] as! String}) else {
             return
         }
         var message: Message
         
-        if (data["correct"] as! Int) == 1 && !sender.hasGuessed{
+        if (data["correct"] as! Int) == 1 && !sender.hasGuessed {
             message = receiveAnswer(sender: sender)
          } else {
              message = receiveNormalText(sender: sender, text: data["text"] as! String)
@@ -354,9 +354,9 @@ class SocketIOManager: NSObject {
     }
     
     func receiveAnswer(sender: Player) -> Message {
-        let message = Message(sender: sender, content: "درست حدس زد!")
+        let message = Message(sender: sender, content: "درست حدس زد!", isAnswer: true)
         
-        sender.hasGuessed = true //bug
+        sender.hasGuessed = true
         if Game.sharedInstance.me.socketID == sender.socketID {
             Game.sharedInstance.me.hasGuessed = true
         }
@@ -365,7 +365,7 @@ class SocketIOManager: NSObject {
     }
     
     func receiveNormalText(sender: Player, text: String) -> Message {
-        return Message(sender: sender, content: text)
+        return Message(sender: sender, content: text, isAnswer: false)
     }
     
     //MARK: Ending Game

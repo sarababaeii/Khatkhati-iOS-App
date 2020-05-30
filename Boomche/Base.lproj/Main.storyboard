@@ -1155,7 +1155,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="327" height="42.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kaf-sk-0ud">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kaf-sk-0ud">
                                                     <rect key="frame" x="15" y="11" width="297" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -1214,6 +1214,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <action selector="colorPicked:" destination="8jy-4b-xOY" eventType="touchUpInside" id="0WR-WB-uPg"/>
+                                                                <action selector="colorPicked:" destination="FH5-3d-izd" eventType="touchUpInside" id="fFU-Ol-NHD"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -1239,7 +1240,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="xZM-rP-Kxl" secondAttribute="height" multiplier="1:1" id="jBt-LS-UqW"/>
                                                 </constraints>
-                                                <state key="normal" image="PaintBrush"/>
+                                                <state key="normal" image="SelectedPaintBrush"/>
                                                 <connections>
                                                     <action selector="brushSelected:" destination="FH5-3d-izd" eventType="touchUpInside" id="YE6-r8-x7j"/>
                                                 </connections>
@@ -2868,7 +2869,6 @@
         <image name="Menu" width="28" height="20"/>
         <image name="Name&amp;Logo" width="150" height="225"/>
         <image name="NewLobbyBackground" width="375" height="181"/>
-        <image name="PaintBrush" width="33" height="34"/>
         <image name="SelectedPaintBrush" width="33" height="34"/>
         <image name="Share" width="20" height="18"/>
         <image name="SignUpBackground" width="372" height="180"/>

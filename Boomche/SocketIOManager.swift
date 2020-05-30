@@ -168,13 +168,13 @@ class SocketIOManager: NSObject {
             Game.sharedInstance.round.paint = data["paint"] as? [[[CGFloat]]]
 
             requestGameData()
-        case 1:
+        case 1: //UI?!
             print("\(data["userCount"] as! Int) Users in queue")
         case 2:
             joinGame(roomID: data["hash"] as! String)
             UIApplication.topViewController()?.showNextPage(identifier: "NewLobbyViewController")
         default:
-            print("DEFAULT \(data["status"] as! Int)")
+            return
         }
     }
     

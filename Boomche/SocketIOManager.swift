@@ -107,6 +107,11 @@ class SocketIOManager: NSObject {
             print("^^^^^ RECEIVING ROUND DATA ^^^^^^")
             self.endOfRound(data: data[0] as! [String : Any])
         }
+        
+        socket.on("play_again_on") { data, ack in
+            print("^^^^^ RECEIVING PLAY AGAIN USERS ^^^^^^")
+            self.receivePlayAgain(data: data[0] as! [String : Any])
+        }
     }
     
     //MARK: Creating Lobby
@@ -142,9 +147,10 @@ class SocketIOManager: NSObject {
     }
     
     func setPlayers(users: [[String : Any]]) {
+        Game.sharedInstance.players.removeAll()
         for user in users {
             let player = Player(socketID: user["socket_id"] as! String, username: user["name"] as! String, colorCode: user["color"] as! Int)
-            if Game.sharedInstance.me.socketID == player.socketID { //check
+            if Game.sharedInstance.me.socketID == player.socketID {
                 Game.sharedInstance.me.colorCode = player.colorCode
                 Game.sharedInstance.players.append(Game.sharedInstance.me)
             } else {
@@ -248,8 +254,9 @@ class SocketIOManager: NSObject {
         case 6:
             NewLobbyViewController.roundsNumberButtons[3].select(isTypeButton: false)
         default:
-            NewLobbyViewController.roundsNumberButtons[0].select(isTypeButton: false)
-            sendGameSetting(name: "round", value: "3")
+            return
+//            NewLobbyViewController.roundsNumberButtons[0].select(isTypeButton: false)
+//            sendGameSetting(name: "round", value: "3")
         }
     }
     
@@ -388,8 +395,15 @@ class SocketIOManager: NSObject {
         socket?.emit("play_again_emit", Game.sharedInstance.roomID!)
     }
     
-    func receivePlayAgain() {
+    func receivePlayAgain(data: [String : Any]) {
+        let users = data["users"] as! [[String : Any]]
         
+        for user in users {
+            if user["play_again"] as! Int == 1,
+                let index = Game.sharedInstance.players.firstIndex(where: {$0.socketID == user["socket_id"] as! String}) {
+                Game.sharedInstance.round.scoreboardTableViewDelegates?.setPlayAgain(userIndex: index)
+            }
+        }
     }
 }
 

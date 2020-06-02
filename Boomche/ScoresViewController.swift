@@ -28,7 +28,7 @@ class ScoresViewController: UIViewController {
     
     //MARK: Initializing
     func initializeVariables() {
-        Game.sharedInstance.round.scoreboardTableViewDelegates = ScoreboardTableViewDelegates(scoreboardTableView: scoresTableView)
+        Game.sharedInstance.round.scoreboardTableViewDelegates = ScoreboardTableViewDelegates(scoreboardTableView: scoresTableView, isEndGame: false)
         scoresTableView.delegate = Game.sharedInstance.round.scoreboardTableViewDelegates
         scoresTableView.dataSource = Game.sharedInstance.round.scoreboardTableViewDelegates
     }

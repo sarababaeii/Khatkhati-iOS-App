@@ -11,9 +11,11 @@ import UIKit
 
 class ScoreboardTableViewDelegates: NSObject, UITableViewDelegate, UITableViewDataSource {
     var scoreboardTableView: UITableView!
+    var isEndGame: Bool
     
-    init(scoreboardTableView: UITableView) {
+    init(scoreboardTableView: UITableView, isEndGame: Bool) {
         self.scoreboardTableView = scoreboardTableView
+        self.isEndGame = isEndGame
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -24,7 +26,18 @@ class ScoreboardTableViewDelegates: NSObject, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: "ScoreCellID", for: indexPath) as! ScoreTableViewCell
         let player = playerDataSource(indexPath: indexPath)
         cell.setAttributes(player: player!)
+        
+        if isEndGame {
+            cell.setCupImage(row: indexPath.row)
+        } else {
+            cell.setBonus(player: player!)
+        }
         return cell
+    }
+    
+    func setPlayAgain(userIndex row: Int) {
+        let cell = scoreboardTableView.cellForRow(at: IndexPath(row: row, section: 0)) as! ScoreTableViewCell
+        cell.setPlayAgain()
     }
     
     func playerDataSource(indexPath: IndexPath) -> Player? {

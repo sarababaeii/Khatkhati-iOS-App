@@ -43,6 +43,8 @@ class Player {
     var isPainter = false
     var isFirstGuesser = false
     
+//    var wantsPlayAgain = false
+    
     init(socketID: String, username: String, colorCode: Int, totalScore: Double, currentScore: Double) {
         self.socketID = socketID
         self.username = username
@@ -83,10 +85,10 @@ class Player {
         isFirstGuesser = false
     }
     
-    func playAgain() {
-        roundFinished()
-        totalScore = 0
-    }
+//    func playAgain() {
+//        roundFinished()
+//        totalScore = 0
+//    }
     
     func gameFinished() {
         roundFinished()

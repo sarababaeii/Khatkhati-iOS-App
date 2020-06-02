@@ -1781,17 +1781,17 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="bottom" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ttM-CE-B5g">
-                                <rect key="frame" x="39" y="396" width="297" height="200"/>
+                                <rect key="frame" x="24" y="396" width="327" height="200"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="playback" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MessageCellID" id="Rrf-a9-uSR" customClass="MessageTableViewCell" customModule="Boomche" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="297" height="42.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="327" height="42.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rrf-a9-uSR" id="uZc-jH-D7v">
-                                            <rect key="frame" x="0.0" y="0.0" width="297" height="42.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="327" height="42.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0U-mH-8O2">
-                                                    <rect key="frame" x="15" y="11" width="267" height="20.5"/>
+                                                    <rect key="frame" x="15" y="11" width="297" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1821,9 +1821,9 @@
                             <constraint firstItem="QRQ-G7-aZj" firstAttribute="top" secondItem="sAf-Jt-OAb" secondAttribute="bottom" id="Jte-jQ-wBv"/>
                             <constraint firstItem="ttM-CE-B5g" firstAttribute="top" secondItem="QRQ-G7-aZj" secondAttribute="bottom" constant="15" id="LG5-cI-EdM"/>
                             <constraint firstItem="sAf-Jt-OAb" firstAttribute="top" secondItem="JTG-Lz-hf6" secondAttribute="top" id="Nd2-4H-6Yl"/>
-                            <constraint firstItem="ttM-CE-B5g" firstAttribute="leading" secondItem="QRQ-G7-aZj" secondAttribute="leading" id="RJg-Ef-SAC"/>
-                            <constraint firstItem="ttM-CE-B5g" firstAttribute="trailing" secondItem="QRQ-G7-aZj" secondAttribute="trailing" id="ZTr-Fc-rVi"/>
+                            <constraint firstItem="ttM-CE-B5g" firstAttribute="leading" secondItem="JTG-Lz-hf6" secondAttribute="leading" constant="24" id="RJg-Ef-SAC"/>
                             <constraint firstItem="R0O-h4-5fd" firstAttribute="top" secondItem="ttM-CE-B5g" secondAttribute="bottom" constant="15" id="g9e-25-akL"/>
+                            <constraint firstItem="ttM-CE-B5g" firstAttribute="centerX" secondItem="GlI-9K-a7e" secondAttribute="centerX" id="r4t-Ut-4zK"/>
                             <constraint firstItem="R0O-h4-5fd" firstAttribute="centerX" secondItem="GlI-9K-a7e" secondAttribute="centerX" id="vqa-AY-fvq"/>
                             <constraint firstItem="QRQ-G7-aZj" firstAttribute="leading" secondItem="JTG-Lz-hf6" secondAttribute="leading" constant="39" id="wYs-M0-vAN"/>
                             <constraint firstItem="sAf-Jt-OAb" firstAttribute="leading" secondItem="JTG-Lz-hf6" secondAttribute="leading" id="zb9-hg-2AB"/>
@@ -1904,8 +1904,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xNC-rv-bsF" userLabel="View1.1">
                                         <rect key="frame" x="42" y="171.5" width="191" height="94.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عرفان" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYV-sj-pRp">
-                                                <rect key="frame" x="55" y="0.0" width="81" height="56"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYV-sj-pRp">
+                                                <rect key="frame" x="95.5" y="0.0" width="0.0" height="56"/>
                                                 <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="36"/>
                                                 <color key="textColor" red="0.0" green="0.74901960784313726" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2003,8 +2003,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R2n-7F-DHq" userLabel="View1">
                                 <rect key="frame" x="107" y="67" width="161" height="75.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="کفش‌دوزک" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAc-PD-uhg">
-                                        <rect key="frame" x="12" y="0.0" width="137" height="50.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAc-PD-uhg">
+                                        <rect key="frame" x="80.5" y="0.0" width="0.0" height="50.5"/>
                                         <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="32"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -2051,8 +2051,8 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEq-mK-ITg" customClass="CustomView" customModule="Boomche" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۲۱۰" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbB-Zj-xAr">
-                                                                    <rect key="frame" x="23" y="13" width="30" height="38"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbB-Zj-xAr">
+                                                                    <rect key="frame" x="38" y="13" width="0.0" height="38"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="38" id="KFO-oI-q0w"/>
                                                                     </constraints>
@@ -2091,14 +2091,14 @@
                                                                 <constraint firstAttribute="width" secondItem="mS5-7e-2r2" secondAttribute="height" multiplier="1:1" id="ufd-ml-36R"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mohammad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpu-R9-5bB">
-                                                            <rect key="frame" x="182" y="8" width="113" height="33"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpu-R9-5bB">
+                                                            <rect key="frame" x="295" y="8" width="0.0" height="0.0"/>
                                                             <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="21"/>
                                                             <color key="textColor" red="1" green="0.20784313730000001" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71J-FJ-ewD">
-                                                            <rect key="frame" x="295" y="41" width="0.0" height="0.0"/>
+                                                            <rect key="frame" x="295" y="8" width="0.0" height="0.0"/>
                                                             <fontDescription key="fontDescription" name="Vazir-Light" family="Vazir" pointSize="18"/>
                                                             <color key="textColor" red="0.44705882352941173" green="0.44705882352941173" blue="0.44705882352941173" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -2222,8 +2222,8 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s7F-ys-g3U" customClass="CustomView" customModule="Boomche" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="76" height="76"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="۲۱۰" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adV-C5-Zk2">
-                                                                    <rect key="frame" x="23" y="13" width="30" height="38"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adV-C5-Zk2">
+                                                                    <rect key="frame" x="38" y="13" width="0.0" height="38"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="38" id="RgP-yi-cpt"/>
                                                                     </constraints>
@@ -2269,8 +2269,8 @@
                                                                 <constraint firstAttribute="width" secondItem="9gS-sp-Wca" secondAttribute="height" multiplier="1:1" id="M2C-S1-wPh"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mohammad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpk-yK-A7a">
-                                                            <rect key="frame" x="187.5" y="22" width="107.5" height="32"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpk-yK-A7a">
+                                                            <rect key="frame" x="295" y="22" width="0.0" height="32"/>
                                                             <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="20"/>
                                                             <color key="textColor" red="1" green="0.20784313730000001" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>

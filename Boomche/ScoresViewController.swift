@@ -21,7 +21,7 @@ class ScoresViewController: UIViewController {
         if Game.sharedInstance.joinedState == 2 {
             time = Game.sharedInstance.time!
         }
-        timerLabel.text = String(time).convertEnglishNumToPersianNum()
+        timerLabel.text = "۰:" + String(time).convertEnglishNumToPersianNum()
         let timer = TimerSetting(label: timerLabel, time: time)
         timer.on()
     }

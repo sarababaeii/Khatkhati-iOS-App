@@ -23,7 +23,7 @@ class WaitingViewController: UIViewController {
         if Game.sharedInstance.joinedState == 3 {
             time = Game.sharedInstance.time!
         }
-        timerLabel.text = String(time).convertEnglishNumToPersianNum()
+        timerLabel.text = "۰:" + String(time).convertEnglishNumToPersianNum()
         let timer = TimerSetting(label: timerLabel, time: time)
         timer.on()
     }

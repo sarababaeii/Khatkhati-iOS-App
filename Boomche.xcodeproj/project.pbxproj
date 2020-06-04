@@ -14,6 +14,7 @@
 		032B6D382426B40E00F7AA13 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B6D372426B40E00F7AA13 /* LoadingViewController.swift */; };
 		0332F486245733960006F18E /* MessageTableViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332F485245733960006F18E /* MessageTableViewDelegates.swift */; };
 		033602432427AF4B00925975 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033602422427AF4B00925975 /* DrawingViewController.swift */; };
+		03389C4E2489AE7F00034434 /* REST_API_Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03389C4D2489AE7F00034434 /* REST_API_Manager.swift */; };
 		03506C02243257EE0052DE06 /* TimerSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03506C01243257EE0052DE06 /* TimerSetting.swift */; };
 		03506C0424329D990052DE06 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03506C0324329D990052DE06 /* Game.swift */; };
 		035087A82471798600CF8AE8 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035087A72471798600CF8AE8 /* ColorCollectionViewCell.swift */; };
@@ -58,9 +59,9 @@
 		03E6742B245EAD7500DB92DC /* PlayersCollectionViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E6742A245EAD7500DB92DC /* PlayersCollectionViewDelegates.swift */; };
 		03F287DD2423D9FB0024937C /* NewLobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F287DC2423D9FB0024937C /* NewLobbyViewController.swift */; };
 		03F287DF2423F2320024937C /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F287DE2423F2320024937C /* CustomLabel.swift */; };
-		4D02B8C3C2CE97CE9F61814F /* Pods_KhatKhati_KhatKhatiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D4CE308C1B1455638C26E06 /* Pods_KhatKhati_KhatKhatiUITests.framework */; };
-		904009CC2792C786C28E523F /* Pods_KhatKhatiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08EB2108E0BB2FC31CD3C84C /* Pods_KhatKhatiTests.framework */; };
-		F51C49F67F5291DC0F0E58D9 /* Pods_KhatKhati.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B4C524938FE9A8BF7EFEE00 /* Pods_KhatKhati.framework */; };
+		1CDC00E3D94921E9DD1D3621 /* Pods_Boomche.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E2A5CA87806BAEF2744A70 /* Pods_Boomche.framework */; };
+		62265677C6DC678A9A922DC9 /* Pods_BoomcheTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E38AB96656D3EB10363D963 /* Pods_BoomcheTests.framework */; };
+		828C15C9CD4F0EB8DF4B3C45 /* Pods_Boomche_BoomcheUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8D35B73B6B032E75E16279 /* Pods_Boomche_BoomcheUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		032B6D372426B40E00F7AA13 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		0332F485245733960006F18E /* MessageTableViewDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewDelegates.swift; sourceTree = "<group>"; };
 		033602422427AF4B00925975 /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
+		03389C4D2489AE7F00034434 /* REST_API_Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REST_API_Manager.swift; sourceTree = "<group>"; };
 		03506C01243257EE0052DE06 /* TimerSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSetting.swift; sourceTree = "<group>"; };
 		03506C0324329D990052DE06 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		035087A72471798600CF8AE8 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -138,14 +140,20 @@
 		03E6742A245EAD7500DB92DC /* PlayersCollectionViewDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersCollectionViewDelegates.swift; sourceTree = "<group>"; };
 		03F287DC2423D9FB0024937C /* NewLobbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLobbyViewController.swift; sourceTree = "<group>"; };
 		03F287DE2423F2320024937C /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
-		08EB2108E0BB2FC31CD3C84C /* Pods_KhatKhatiTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KhatKhatiTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B4C524938FE9A8BF7EFEE00 /* Pods_KhatKhati.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KhatKhati.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		17B2CD4D23131BAF5410E5B3 /* Pods-Boomche-BoomcheUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boomche-BoomcheUITests.debug.xcconfig"; path = "Target Support Files/Pods-Boomche-BoomcheUITests/Pods-Boomche-BoomcheUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1E38AB96656D3EB10363D963 /* Pods_BoomcheTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoomcheTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E44E5E8761B87A77EA99321 /* Pods-KhatKhati.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KhatKhati.release.xcconfig"; path = "Target Support Files/Pods-KhatKhati/Pods-KhatKhati.release.xcconfig"; sourceTree = "<group>"; };
 		3C9759B4171F56EC00C68930 /* Pods-KhatKhati.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KhatKhati.debug.xcconfig"; path = "Target Support Files/Pods-KhatKhati/Pods-KhatKhati.debug.xcconfig"; sourceTree = "<group>"; };
-		3D4CE308C1B1455638C26E06 /* Pods_KhatKhati_KhatKhatiUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KhatKhati_KhatKhatiUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E71EE511BF9BA5FA99A0FBB /* Pods-BoomcheTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoomcheTests.release.xcconfig"; path = "Target Support Files/Pods-BoomcheTests/Pods-BoomcheTests.release.xcconfig"; sourceTree = "<group>"; };
+		5E5F53BB811117D24712A073 /* Pods-Boomche.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boomche.release.xcconfig"; path = "Target Support Files/Pods-Boomche/Pods-Boomche.release.xcconfig"; sourceTree = "<group>"; };
+		67E2A5CA87806BAEF2744A70 /* Pods_Boomche.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Boomche.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A8D35B73B6B032E75E16279 /* Pods_Boomche_BoomcheUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Boomche_BoomcheUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8676DC8918C964F2D2574E35 /* Pods-KhatKhatiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KhatKhatiTests.debug.xcconfig"; path = "Target Support Files/Pods-KhatKhatiTests/Pods-KhatKhatiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		99E0B7B55AFDFA858DF42D17 /* Pods-KhatKhatiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KhatKhatiTests.release.xcconfig"; path = "Target Support Files/Pods-KhatKhatiTests/Pods-KhatKhatiTests.release.xcconfig"; sourceTree = "<group>"; };
 		9CB3A168AFFDD51CDB80CCD2 /* Pods-KhatKhati-KhatKhatiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KhatKhati-KhatKhatiUITests.release.xcconfig"; path = "Target Support Files/Pods-KhatKhati-KhatKhatiUITests/Pods-KhatKhati-KhatKhatiUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C0DF589EA8855B8107906510 /* Pods-Boomche-BoomcheUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boomche-BoomcheUITests.release.xcconfig"; path = "Target Support Files/Pods-Boomche-BoomcheUITests/Pods-Boomche-BoomcheUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D3355879C81520D6EA398E34 /* Pods-Boomche.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Boomche.debug.xcconfig"; path = "Target Support Files/Pods-Boomche/Pods-Boomche.debug.xcconfig"; sourceTree = "<group>"; };
+		D55B06F37DEDEE6396E27E01 /* Pods-BoomcheTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoomcheTests.debug.xcconfig"; path = "Target Support Files/Pods-BoomcheTests/Pods-BoomcheTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E3ED174C318A019BCAA3A2F3 /* Pods-KhatKhati-KhatKhatiUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KhatKhati-KhatKhatiUITests.debug.xcconfig"; path = "Target Support Files/Pods-KhatKhati-KhatKhatiUITests/Pods-KhatKhati-KhatKhatiUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,7 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F51C49F67F5291DC0F0E58D9 /* Pods_KhatKhati.framework in Frameworks */,
+				1CDC00E3D94921E9DD1D3621 /* Pods_Boomche.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				904009CC2792C786C28E523F /* Pods_KhatKhatiTests.framework in Frameworks */,
+				62265677C6DC678A9A922DC9 /* Pods_BoomcheTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D02B8C3C2CE97CE9F61814F /* Pods_KhatKhati_KhatKhatiUITests.framework in Frameworks */,
+				828C15C9CD4F0EB8DF4B3C45 /* Pods_Boomche_BoomcheUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +293,7 @@
 			children = (
 				03C544BC2424EF3B00C4049C /* Color.swift */,
 				0323C15E242EB6A20074856A /* SocketIOManager.swift */,
+				03389C4D2489AE7F00034434 /* REST_API_Manager.swift */,
 				03506C01243257EE0052DE06 /* TimerSetting.swift */,
 				03506C0324329D990052DE06 /* Game.swift */,
 				03CD95BB2472F3E000594050 /* Round.swift */,
@@ -317,9 +326,9 @@
 		DF526716AF6B7993D46A59CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0B4C524938FE9A8BF7EFEE00 /* Pods_KhatKhati.framework */,
-				3D4CE308C1B1455638C26E06 /* Pods_KhatKhati_KhatKhatiUITests.framework */,
-				08EB2108E0BB2FC31CD3C84C /* Pods_KhatKhatiTests.framework */,
+				67E2A5CA87806BAEF2744A70 /* Pods_Boomche.framework */,
+				7A8D35B73B6B032E75E16279 /* Pods_Boomche_BoomcheUITests.framework */,
+				1E38AB96656D3EB10363D963 /* Pods_BoomcheTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -333,6 +342,12 @@
 				9CB3A168AFFDD51CDB80CCD2 /* Pods-KhatKhati-KhatKhatiUITests.release.xcconfig */,
 				8676DC8918C964F2D2574E35 /* Pods-KhatKhatiTests.debug.xcconfig */,
 				99E0B7B55AFDFA858DF42D17 /* Pods-KhatKhatiTests.release.xcconfig */,
+				D3355879C81520D6EA398E34 /* Pods-Boomche.debug.xcconfig */,
+				5E5F53BB811117D24712A073 /* Pods-Boomche.release.xcconfig */,
+				17B2CD4D23131BAF5410E5B3 /* Pods-Boomche-BoomcheUITests.debug.xcconfig */,
+				C0DF589EA8855B8107906510 /* Pods-Boomche-BoomcheUITests.release.xcconfig */,
+				D55B06F37DEDEE6396E27E01 /* Pods-BoomcheTests.debug.xcconfig */,
+				3E71EE511BF9BA5FA99A0FBB /* Pods-BoomcheTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -490,7 +505,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KhatKhati-KhatKhatiUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Boomche-BoomcheUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -512,7 +527,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KhatKhatiTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-BoomcheTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -525,15 +540,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KhatKhati-KhatKhatiUITests/Pods-KhatKhati-KhatKhatiUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Boomche-BoomcheUITests/Pods-Boomche-BoomcheUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KhatKhati-KhatKhatiUITests/Pods-KhatKhati-KhatKhatiUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Boomche-BoomcheUITests/Pods-Boomche-BoomcheUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KhatKhati-KhatKhatiUITests/Pods-KhatKhati-KhatKhatiUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Boomche-BoomcheUITests/Pods-Boomche-BoomcheUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A0F22CE38799A277CB19CB54 /* [CP] Embed Pods Frameworks */ = {
@@ -542,15 +557,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KhatKhati/Pods-KhatKhati-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Boomche/Pods-Boomche-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KhatKhati/Pods-KhatKhati-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Boomche/Pods-Boomche-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KhatKhati/Pods-KhatKhati-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Boomche/Pods-Boomche-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A1FC195D687533161FEF9A2E /* [CP] Check Pods Manifest.lock */ = {
@@ -568,7 +583,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KhatKhati-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Boomche-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -615,6 +630,7 @@
 				03BB1E88243E531C00459FDE /* MessageTableViewCell.swift in Sources */,
 				037582F62448EA2600B67C3C /* Player.swift in Sources */,
 				03CA7C65243C69D600578B60 /* UIApplication.swift in Sources */,
+				03389C4E2489AE7F00034434 /* REST_API_Manager.swift in Sources */,
 				0381AAB5243F6D7900C4E1DE /* Message.swift in Sources */,
 				033602432427AF4B00925975 /* DrawingViewController.swift in Sources */,
 				03BA7664243548E200E0B345 /* Drawing.swift in Sources */,
@@ -792,7 +808,7 @@
 		};
 		03B6DD5F2422CDED00CC0B7F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C9759B4171F56EC00C68930 /* Pods-KhatKhati.debug.xcconfig */;
+			baseConfigurationReference = D3355879C81520D6EA398E34 /* Pods-Boomche.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -813,7 +829,7 @@
 		};
 		03B6DD602422CDED00CC0B7F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E44E5E8761B87A77EA99321 /* Pods-KhatKhati.release.xcconfig */;
+			baseConfigurationReference = 5E5F53BB811117D24712A073 /* Pods-Boomche.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -834,7 +850,7 @@
 		};
 		03B6DD622422CDED00CC0B7F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8676DC8918C964F2D2574E35 /* Pods-KhatKhatiTests.debug.xcconfig */;
+			baseConfigurationReference = D55B06F37DEDEE6396E27E01 /* Pods-BoomcheTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -857,7 +873,7 @@
 		};
 		03B6DD632422CDED00CC0B7F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 99E0B7B55AFDFA858DF42D17 /* Pods-KhatKhatiTests.release.xcconfig */;
+			baseConfigurationReference = 3E71EE511BF9BA5FA99A0FBB /* Pods-BoomcheTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -880,7 +896,7 @@
 		};
 		03B6DD652422CDED00CC0B7F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E3ED174C318A019BCAA3A2F3 /* Pods-KhatKhati-KhatKhatiUITests.debug.xcconfig */;
+			baseConfigurationReference = 17B2CD4D23131BAF5410E5B3 /* Pods-Boomche-BoomcheUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -901,7 +917,7 @@
 		};
 		03B6DD662422CDED00CC0B7F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9CB3A168AFFDD51CDB80CCD2 /* Pods-KhatKhati-KhatKhatiUITests.release.xcconfig */;
+			baseConfigurationReference = C0DF589EA8855B8107906510 /* Pods-Boomche-BoomcheUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

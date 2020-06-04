@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ysL-m2-TyN">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -67,7 +67,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JRl-Dl-JfI" userLabel="View1">
                                 <rect key="frame" x="32" y="174" width="311" height="132"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oX5-0c-pbz" customClass="CustomTextField" customModule="Boomche" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="leading" contentVerticalAlignment="center" text="sarababaei212@gmail.com" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oX5-0c-pbz" customClass="CustomTextField" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="58"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="oX5-0c-pbz" secondAttribute="height" multiplier="311:58" id="zde-dh-WxK"/>
@@ -91,7 +91,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="APq-uQ-OcX" customClass="CustomTextField" customModule="Boomche" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ioi2018" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="APq-uQ-OcX" customClass="CustomTextField" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="74" width="311" height="58"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="APq-uQ-OcX" secondAttribute="height" multiplier="311:58" id="D6n-Jy-zL3"/>
@@ -150,6 +150,9 @@
                                                 <color key="value" red="0.99651390309999999" green="0.74282366040000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signIn:" destination="ysL-m2-TyN" eventType="touchUpInside" id="gst-6R-WXo"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JmE-qg-Abw">
                                         <rect key="frame" x="215" y="6.5" width="96" height="37"/>
@@ -355,6 +358,9 @@
                                         <color key="value" red="0.99651390309999999" green="0.74282366040000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signUp:" destination="vFc-mI-NUa" eventType="touchUpInside" id="dmW-v5-cdF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

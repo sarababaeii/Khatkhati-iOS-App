@@ -175,7 +175,7 @@ class SocketIOManager: NSObject {
 
             requestGameData()
         case 1: //UI?!
-            print("\(data["userCount"] as! Int) Users in queue")
+            UIApplication.topViewController()?.showToast(message: "\(data["userCount"] as! Int) Users in queue")
         case 2:
             joinGame(roomID: data["hash"] as! String)
             UIApplication.topViewController()?.showNextPage(identifier: "NewLobbyViewController")

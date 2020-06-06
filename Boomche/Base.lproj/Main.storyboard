@@ -67,7 +67,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JRl-Dl-JfI" userLabel="View1">
                                 <rect key="frame" x="32" y="174" width="311" height="132"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="leading" contentVerticalAlignment="center" text="sarababaei212@gmail.com" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oX5-0c-pbz" customClass="CustomTextField" customModule="Boomche" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oX5-0c-pbz" customClass="CustomTextField" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="58"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="oX5-0c-pbz" secondAttribute="height" multiplier="311:58" id="zde-dh-WxK"/>
@@ -91,7 +91,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ioi2018" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="APq-uQ-OcX" customClass="CustomTextField" customModule="Boomche" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="APq-uQ-OcX" customClass="CustomTextField" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="74" width="311" height="58"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="APq-uQ-OcX" secondAttribute="height" multiplier="311:58" id="D6n-Jy-zL3"/>
@@ -114,6 +114,9 @@
                                                 <color key="value" red="0.82352941180000006" green="0.81568627449999997" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signIn:" destination="ysL-m2-TyN" eventType="primaryActionTriggered" id="zGi-JX-NAI"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -246,7 +249,10 @@
                                         <rect key="frame" x="139" y="187" width="97" height="44"/>
                                         <color key="textColor" red="0.23137254900000001" green="0.22352941179999999" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Vazir-Black" family="Vazir" pointSize="28"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="nickname"/>
+                                        <connections>
+                                            <action selector="signUp:" destination="vFc-mI-NUa" eventType="primaryActionTriggered" id="niS-aV-O7e"/>
+                                        </connections>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YNa-Gr-x5d">
                                         <rect key="frame" x="107.5" y="233" width="160" height="5"/>
@@ -272,7 +278,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vu9-XW-hZP" userLabel="View1">
                                 <rect key="frame" x="32" y="267.5" width="311" height="132"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="sarababaei212@gmail.com" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TG5-Fq-3X5" customClass="CustomTextField" customModule="Boomche" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TG5-Fq-3X5" customClass="CustomTextField" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="58"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="TG5-Fq-3X5" secondAttribute="height" multiplier="311:58" id="wvJ-Tw-MAb"/>
@@ -296,7 +302,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ioi2018" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Fl-Vu-Pmr" customClass="CustomTextField" customModule="Boomche" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Fl-Vu-Pmr" customClass="CustomTextField" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="74" width="311" height="58"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="1Fl-Vu-Pmr" secondAttribute="height" multiplier="311:58" id="LI8-0Q-Bm8"/>

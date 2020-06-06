@@ -17,80 +17,31 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var startButton: UIButton!
     
+    static var email: String = ""
+    static var password: String = ""
+    
     @IBAction func signIn(_ sender: Any) {
-        RestAPIManagr.sharedInstance.login(email: emailTextField.text!, password: passwordTextField.text!)
-//        let myUrl = URL(string: "http://boomche.ir/api/login")
-//        var request = URLRequest(url:myUrl!)
-//
-//        request.httpMethod = "POST"// Compose a query string
-////        request.addValue("application/json", forHTTPHeaderField: "content-type")
-////        request.addValue("application/json", forHTTPHeaderField: "Accept")
-//
-//        let postString = ["email": emailTextField.text!, "password": passwordTextField.text!]
-//
-//        do {
-//            request.httpBody = try JSONSerialization.data(withJSONObject: postString, options: .prettyPrinted)
-//        } catch let error {
-//            print("Something went wrong... \(error.localizedDescription)")
-//            return
-//        }
-//
-//
-//
-//        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-//
-//            if error != nil {
-//                print("Could not successfully perform this request. Please try again later, error=\(String(describing: error))")
-//                return
-//            }
-//
-//            print("HEEEEY \((response as? HTTPURLResponse)?.statusCode)")
-        //Let's convert response sent from a server side code to a NSDictionary object:
-//            do {
-//                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
-//
-//                if let parseJSON = json {
-//
-//                    if parseJSON["errorMessageKey"] != nil {
-//                         print("SHIT \(parseJSON["errorMessage"] as! String)")
-//                        return
-//                    }
-//                    // Now we can access value of First Name by its key
-//                    let accessToken = parseJSON["token"] as? String
-//                    let userId = parseJSON["id"] as? String
-////                    print("Access token: \(String(describing: accessToken!))")
-//
-////                    let saveAccesssToken: Bool = KeychainWrapper.standard.set(accessToken!, forKey: "accessToken")
-//                    let saveUserId: Bool = KeychainWrapper.standard.set(userId!, forKey: "userId")
-//
-////                    print("The access token save result: \(saveAccesssToken)")
-//                    print("The userId save result \(saveUserId)")
-//
-//                    if (accessToken?.isEmpty)! {
-//                        // Display an Alert dialog with a friendly error message
-//                        print("Could not successfully perform this request. Please try again later")
-//                        return
-//                    }
-//
-//                    DispatchQueue.main.async {
-//                            let homePage = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-//                            let appDelegate = UIApplication.shared.delegate
-//                            appDelegate?.window??.rootViewController = homePage
-//                    }
-//
-//                } else {
-//                    //Display an Alert dialog with a friendly error message
-//                    print("Could not successfully perform this request. Please try again later")
-//                }
-//
-//            } catch {
-//                // Display an Alert dialog with a friendly error message
-//                print("Could not successfully perform this request. Please try again later")
-//                print(error)
-//            }
-//        }
-//        task.resume()
-        print("WE DID IT!")
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        if !setTexts() {
+            return
+        }
+        RestAPIManagr.sharedInstance.login(email: LoginViewController.email, password: LoginViewController.password)
+    }
+    
+    func setTexts() -> Bool {
+        if let email = emailTextField.fetchInput(), let password = passwordTextField.fetchInput() {
+            LoginViewController.email = email
+            LoginViewController.password = password
+            return true
+        }
+        UIApplication.topViewController()?.showToast(message: "All Fields Must Be Fill")
+        return false
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
     }
     
     override func viewDidLoad() {
@@ -138,3 +89,31 @@ class LoginViewController: UIViewController {
 //        59
 //    );
 //} })
+
+
+//response <NSHTTPURLResponse: 0x28327d120> { URL: http://boomche.ir/api/login } { Status Code: 200, Headers {
+//    Connection =     (
+//        "keep-alive"
+//    );
+//    "Content-Encoding" =     (
+//        gzip
+//    );
+//    "Content-Type" =     (
+//        "text/html; charset=UTF-8"
+//    );
+//    Date =     (
+//        "Sat, 06 Jun 2020 13:19:21 GMT"
+//    );
+//    Server =     (
+//        "nginx/1.14.0 (Ubuntu)"
+//    );
+//    "Transfer-Encoding" =     (
+//        Identity
+//    );
+//    Vary =     (
+//        "Accept-Encoding"
+//    );
+//    "X-Powered-By" =     (
+//        "PHP/7.4.2"
+//    );
+//} }

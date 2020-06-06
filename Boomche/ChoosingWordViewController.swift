@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class ChoosingWordViewController: UIViewController {
+    
     @IBOutlet weak var timerLabel: UILabel!
     
     @IBOutlet weak var firstWordButton: UIButton!

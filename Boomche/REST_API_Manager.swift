@@ -7,17 +7,18 @@
 //
 
 import Foundation
-
-private struct API {
-    private static let base = "http://boomche.ir/api/"
-    private static let login = API.base + "login"
-    private static let signUp = API.base + "register"
-        
-    static let loginhURL = URL(string: API.login)!
-    static let signUpURL = URL(string: API.signUp)!
-}
+import UIKit
 
 class RestAPIManagr {
+    private struct API {
+        private static let base = "http://boomche.ir/api/"
+        private static let login = API.base + "login"
+        private static let signUp = API.base + "register"
+            
+        static let loginhURL = URL(string: API.login)!
+        static let signUpURL = URL(string: API.signUp)!
+    }
+    
     static let sharedInstance = RestAPIManagr()
     
     func createRequest(url: URL, params: [String: Any]) -> URLRequest {
@@ -41,50 +42,50 @@ class RestAPIManagr {
         return createRequest(url: API.signUpURL, params: params)
     }
     
-    func login(email: String, password: String) {
-        
+    func postRequest(request: URLRequest) {
         let session = URLSession(configuration: .default)
-        let request = createLoginRequest(email: email, password: password)
-        
+
+        var code = 0
         let task = session.dataTask(with: request) { (data, response, error) in
-            if error == nil {
-                // response needs processing
-                if let response = response as? HTTPURLResponse, response.statusCode == 200 {
-                    print("YUUUUUHUUUU")
-                    print("response \(response)")
-                    print("heeeey")
-                    for kuft in data! {
-                        print(kuft)
-                    }
-                   print("hoooy")
-                   print("Error: \(String(describing: error))")
-                } else {
-                    print("errooooooooor1 \((response as? HTTPURLResponse)?.statusCode)")
-                }
-            } else {
-                print("errooooooooor0 \(error.debugDescription)")
+            if let data = data, let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                print(responseJSON)
             }
+            code = self.checkResponse(data: data, response: response as? HTTPURLResponse, error: error)
         }
         task.resume()
+        
+        while true {
+            if code != 0 { //task.state == .completed
+                action(response: code)
+                return
+            }
+        }
+    }
+    
+    func action(response: Int) {
+        if response == 200 {
+            UIApplication.topViewController()?.showNextPage(identifier: "HomeViewController")
+            //TODO: get token, set me, connect to socket
+        } else if response == 401{
+            UIApplication.topViewController()?.showNextPage(identifier: "SignUpViewController")
+        } else {
+            print("Error1 \(response)")
+        }
+    }
+    
+    func checkResponse(data: Data?, response: HTTPURLResponse?, error: Error?) -> Int{
+        if error == nil, let response = response {
+            return response.statusCode
+        }
+        print("Error0 \(error.debugDescription)")
+        return 1
+    }
+    
+    func login(email: String, password: String) {
+        postRequest(request: createLoginRequest(email: email, password: password))
     }
     
     func signUp(username: String, email: String, password: String) {
-        
-        let session = URLSession(configuration: .default)
-        let request = createSignUpRequest(username:username, email: email, password: password)
-        
-        let task = session.dataTask(with: request) { (data, response, error) in
-            if error == nil {
-                // response needs processing
-                if let response = response as? HTTPURLResponse, response.statusCode == 200 {
-                   
-                } else {
-                    print("errooooooooor1 \((response as? HTTPURLResponse)?.statusCode)")
-                }
-            } else {
-                print("errooooooooor0 \(error.debugDescription)")
-            }
-        }
-        task.resume()
+        postRequest(request: createSignUpRequest(username:username, email: email, password: password))
     }
 }

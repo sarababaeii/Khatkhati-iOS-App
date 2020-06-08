@@ -78,14 +78,31 @@ import UIKit
         }
     }
     
-    func setImage(image: UIImage) {
+    @IBInspectable var image: UIImage? {
+        didSet {
+            self.setImage(image: image!)
+        }
+    }
+    
+    @IBInspectable var coordinate: CGPoint = CGPoint(x: 0, y: 0) {
+        didSet {
+            self.setImage(image: image!, coordinate: coordinate)
+        }
+    }
+    
+    var overImageView: UIImageView?
+    
+    func setImage(image: UIImage, coordinate: CGPoint = CGPoint(x: 0, y: 0)) {
         let view = UIView()
         view.frame = self.bounds
 
-        let imageView = UIImageView(frame: CGRect(x: 15, y: 15, width: image.size.width, height: image.size.height))
+        let imageView = UIImageView(frame: CGRect(origin: coordinate, size: image.size))
+//        let imageView = UIImageView(frame: CGRect(x: 15, y: 15, width: image.size.width, height: image.size.height))
         imageView.image = image
 
+        overImageView?.removeFromSuperview()
         self.insertSubview(imageView, aboveSubview: view)
+        overImageView = imageView
     }
     
     //MARK: For NewLobbyViewController Settings

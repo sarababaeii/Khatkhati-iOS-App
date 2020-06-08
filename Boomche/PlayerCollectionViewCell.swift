@@ -23,10 +23,13 @@ class PlayerCollectionViewCell: UICollectionViewCell {
         nameLabel.text = player.username
     }
     
+    func setTextColor(color: Color) {
+        nameLabel.textColor = color.lightBackground
+    }
+    
     override func awakeFromNib(){
         super.awakeFromNib()
     }
 }
 
-//TODO: show crown for lobbyLeader, coloring my name
-//        colorView.layer.shadowRadius = 2.0
+//TODO: show crown for lobbyLeader

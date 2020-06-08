@@ -14,7 +14,7 @@
 		032B6D382426B40E00F7AA13 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032B6D372426B40E00F7AA13 /* LoadingViewController.swift */; };
 		0332F486245733960006F18E /* MessageTableViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0332F485245733960006F18E /* MessageTableViewDelegates.swift */; };
 		033602432427AF4B00925975 /* DrawingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033602422427AF4B00925975 /* DrawingViewController.swift */; };
-		03389C4E2489AE7F00034434 /* REST_API_Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03389C4D2489AE7F00034434 /* REST_API_Manager.swift */; };
+		03389C4E2489AE7F00034434 /* RESTAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03389C4D2489AE7F00034434 /* RESTAPIManager.swift */; };
 		03506C02243257EE0052DE06 /* TimerSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03506C01243257EE0052DE06 /* TimerSetting.swift */; };
 		03506C0424329D990052DE06 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03506C0324329D990052DE06 /* Game.swift */; };
 		035087A82471798600CF8AE8 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035087A72471798600CF8AE8 /* ColorCollectionViewCell.swift */; };
@@ -49,7 +49,7 @@
 		03C544BD2424EF3B00C4049C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C544BC2424EF3B00C4049C /* Color.swift */; };
 		03C544BF2424F0C200C4049C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C544BE2424F0C200C4049C /* Colors.swift */; };
 		03C727282426584300334429 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C727272426584300334429 /* GradientView.swift */; };
-		03CA7C65243C69D600578B60 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CA7C64243C69D600578B60 /* UIApplication.swift */; };
+		03CA7C65243C69D600578B60 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CA7C64243C69D600578B60 /* UIApplicationExtension.swift */; };
 		03CD95B82472B03500594050 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD95B72472B03500594050 /* CustomView.swift */; };
 		03CD95BA2472BFD800594050 /* ColorsCollectionViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD95B92472BFD800594050 /* ColorsCollectionViewDelegates.swift */; };
 		03CD95BC2472F3E000594050 /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD95BB2472F3E000594050 /* Round.swift */; };
@@ -89,7 +89,7 @@
 		032B6D372426B40E00F7AA13 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		0332F485245733960006F18E /* MessageTableViewDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewDelegates.swift; sourceTree = "<group>"; };
 		033602422427AF4B00925975 /* DrawingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewController.swift; sourceTree = "<group>"; };
-		03389C4D2489AE7F00034434 /* REST_API_Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REST_API_Manager.swift; sourceTree = "<group>"; };
+		03389C4D2489AE7F00034434 /* RESTAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTAPIManager.swift; sourceTree = "<group>"; };
 		03506C01243257EE0052DE06 /* TimerSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSetting.swift; sourceTree = "<group>"; };
 		03506C0324329D990052DE06 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		035087A72471798600CF8AE8 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 		03C544BC2424EF3B00C4049C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		03C544BE2424F0C200C4049C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		03C727272426584300334429 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		03CA7C64243C69D600578B60 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		03CA7C64243C69D600578B60 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		03CD95B72472B03500594050 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		03CD95B92472BFD800594050 /* ColorsCollectionViewDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsCollectionViewDelegates.swift; sourceTree = "<group>"; };
 		03CD95BB2472F3E000594050 /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
@@ -185,6 +185,94 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03478B33248D54C10085383F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				03B6ECE1244C968200D7498D /* PlayerCollectionViewCell.swift */,
+				03BB1E87243E531C00459FDE /* MessageTableViewCell.swift */,
+				035087A72471798600CF8AE8 /* ColorCollectionViewCell.swift */,
+				037582F32448CF7D00B67C3C /* ScoreTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		03478B34248D54F40085383F /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				03B6DD6C2422E01000CC0B7F /* CustomButton.swift */,
+				03F287DE2423F2320024937C /* CustomLabel.swift */,
+				03275161244E49C1005D4474 /* CustomTextField.swift */,
+				03CD95B72472B03500594050 /* CustomView.swift */,
+				03849DBD2451EAB900166C5A /* UIViewControllerExtension.swift */,
+			);
+			name = UIComponents;
+			sourceTree = "<group>";
+		};
+		03508EFA248E9B1B00CB2FB0 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				03E6742A245EAD7500DB92DC /* PlayersCollectionViewDelegates.swift */,
+				0332F485245733960006F18E /* MessageTableViewDelegates.swift */,
+				03CD95B92472BFD800594050 /* ColorsCollectionViewDelegates.swift */,
+				03B835752476D1740013E87E /* ScoreboardTableViewDelegates.swift */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+		03508EFB248E9B9500CB2FB0 /* ServerHandlers */ = {
+			isa = PBXGroup;
+			children = (
+				03389C4D2489AE7F00034434 /* RESTAPIManager.swift */,
+				0323C15E242EB6A20074856A /* SocketIOManager.swift */,
+			);
+			name = ServerHandlers;
+			sourceTree = "<group>";
+		};
+		03508EFC248E9BF200CB2FB0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				03CA7C64243C69D600578B60 /* UIApplicationExtension.swift */,
+				031F857B244B76CE00C8B947 /* StringExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		03508EFD248E9CD800CB2FB0 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				03B6ECE3244CCA6600D7498D /* LoginViewController.swift */,
+				03B6ECE5244CCAB700D7498D /* SignUpViewController.swift */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
+		03508EFE248E9CF200CB2FB0 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				033602422427AF4B00925975 /* DrawingViewController.swift */,
+				03B100E7242973E7009418D2 /* GuessingViewController.swift */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		03508EFF248E9D2100CB2FB0 /* Word */ = {
+			isa = PBXGroup;
+			children = (
+				03D2FF3E2437503F008D9CB7 /* ChoosingWordViewController.swift */,
+				037582F12448AD5800B67C3C /* WaitingViewController.swift */,
+			);
+			name = Word;
+			sourceTree = "<group>";
+		};
+		03508F00248E9D5500CB2FB0 /* Scores */ = {
+			isa = PBXGroup;
+			children = (
+				03D2FF402437A875008D9CB7 /* ScoresViewController.swift */,
+				031F857D244B990C00C8B947 /* EndGameViewController.swift */,
+			);
+			name = Scores;
+			sourceTree = "<group>";
+		};
 		03B6DD282422CDEB00CC0B7F = {
 			isa = PBXGroup;
 			children = (
@@ -253,18 +341,14 @@
 		03B6DD682422CE4200CC0B7F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				03508EFD248E9CD800CB2FB0 /* Authentication */,
+				03508EFF248E9D2100CB2FB0 /* Word */,
+				03508EFE248E9CF200CB2FB0 /* Game */,
+				03508F00248E9D5500CB2FB0 /* Scores */,
 				03B6DD382422CDEB00CC0B7F /* HomeViewController.swift */,
 				03F287DC2423D9FB0024937C /* NewLobbyViewController.swift */,
 				03D5526D24245D8300969560 /* JoinGameViewController.swift */,
 				032B6D372426B40E00F7AA13 /* LoadingViewController.swift */,
-				033602422427AF4B00925975 /* DrawingViewController.swift */,
-				03B100E7242973E7009418D2 /* GuessingViewController.swift */,
-				03D2FF3E2437503F008D9CB7 /* ChoosingWordViewController.swift */,
-				037582F12448AD5800B67C3C /* WaitingViewController.swift */,
-				03D2FF402437A875008D9CB7 /* ScoresViewController.swift */,
-				031F857D244B990C00C8B947 /* EndGameViewController.swift */,
-				03B6ECE3244CCA6600D7498D /* LoginViewController.swift */,
-				03B6ECE5244CCAB700D7498D /* SignUpViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -273,16 +357,9 @@
 			isa = PBXGroup;
 			children = (
 				03C544BE2424F0C200C4049C /* Colors.swift */,
-				03B6DD6C2422E01000CC0B7F /* CustomButton.swift */,
-				03F287DE2423F2320024937C /* CustomLabel.swift */,
-				03275161244E49C1005D4474 /* CustomTextField.swift */,
-				03CD95B72472B03500594050 /* CustomView.swift */,
-				03849DBD2451EAB900166C5A /* UIViewControllerExtension.swift */,
 				03C727272426584300334429 /* GradientView.swift */,
-				03BB1E87243E531C00459FDE /* MessageTableViewCell.swift */,
-				037582F32448CF7D00B67C3C /* ScoreTableViewCell.swift */,
-				03B6ECE1244C968200D7498D /* PlayerCollectionViewCell.swift */,
-				035087A72471798600CF8AE8 /* ColorCollectionViewCell.swift */,
+				03478B34248D54F40085383F /* UIComponents */,
+				03478B33248D54C10085383F /* Cells */,
 				03B6DD3A2422CDEB00CC0B7F /* Main.storyboard */,
 			);
 			name = View;
@@ -291,21 +368,16 @@
 		03B6DD6A2422CE5100CC0B7F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				03508EFB248E9B9500CB2FB0 /* ServerHandlers */,
+				03508EFA248E9B1B00CB2FB0 /* Delegates */,
+				03508EFC248E9BF200CB2FB0 /* Extensions */,
 				03C544BC2424EF3B00C4049C /* Color.swift */,
-				0323C15E242EB6A20074856A /* SocketIOManager.swift */,
-				03389C4D2489AE7F00034434 /* REST_API_Manager.swift */,
 				03506C01243257EE0052DE06 /* TimerSetting.swift */,
 				03506C0324329D990052DE06 /* Game.swift */,
 				03CD95BB2472F3E000594050 /* Round.swift */,
 				03BA7663243548E200E0B345 /* Drawing.swift */,
-				03CA7C64243C69D600578B60 /* UIApplication.swift */,
 				0381AAB4243F6D7900C4E1DE /* Message.swift */,
 				037582F52448EA2600B67C3C /* Player.swift */,
-				031F857B244B76CE00C8B947 /* StringExtension.swift */,
-				0332F485245733960006F18E /* MessageTableViewDelegates.swift */,
-				03B835752476D1740013E87E /* ScoreboardTableViewDelegates.swift */,
-				03E6742A245EAD7500DB92DC /* PlayersCollectionViewDelegates.swift */,
-				03CD95B92472BFD800594050 /* ColorsCollectionViewDelegates.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -629,8 +701,8 @@
 				03C544BF2424F0C200C4049C /* Colors.swift in Sources */,
 				03BB1E88243E531C00459FDE /* MessageTableViewCell.swift in Sources */,
 				037582F62448EA2600B67C3C /* Player.swift in Sources */,
-				03CA7C65243C69D600578B60 /* UIApplication.swift in Sources */,
-				03389C4E2489AE7F00034434 /* REST_API_Manager.swift in Sources */,
+				03CA7C65243C69D600578B60 /* UIApplicationExtension.swift in Sources */,
+				03389C4E2489AE7F00034434 /* RESTAPIManager.swift in Sources */,
 				0381AAB5243F6D7900C4E1DE /* Message.swift in Sources */,
 				033602432427AF4B00925975 /* DrawingViewController.swift in Sources */,
 				03BA7664243548E200E0B345 /* Drawing.swift in Sources */,

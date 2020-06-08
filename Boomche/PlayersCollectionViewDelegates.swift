@@ -24,6 +24,10 @@ class PlayersCollectionViewDelegates: NSObject, UICollectionViewDelegate, UIColl
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlayerCellID", for: indexPath) as! PlayerCollectionViewCell
         let player = playerDataSource(indexPath: indexPath)
         cell.setAttributes(player: player!)
+        
+        if player?.socketID == Game.sharedInstance.me.socketID {
+            cell.setTextColor(color: player!.color)
+        }
         return cell
     }
     

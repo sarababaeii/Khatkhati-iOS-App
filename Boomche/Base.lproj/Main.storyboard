@@ -74,7 +74,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.2302554846" green="0.2225066423" blue="0.34847956899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" textContentType="email"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="15"/>
@@ -139,7 +139,7 @@
                                             <constraint firstAttribute="width" secondItem="jyY-Kr-Eg9" secondAttribute="height" multiplier="127:50" id="l9T-Y1-MME"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="20"/>
-                                        <state key="normal" title="شروع" image="Start">
+                                        <state key="normal">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -152,11 +152,21 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="darkGradientColor">
                                                 <color key="value" red="0.99651390309999999" green="0.74282366040000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="Start"/>
+                                            <userDefinedRuntimeAttribute type="point" keyPath="coordinate">
+                                                <point key="value" x="16" y="14"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="signIn:" destination="ysL-m2-TyN" eventType="touchUpInside" id="gst-6R-WXo"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="شروع" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0Y-Dq-opf">
+                                        <rect key="frame" x="58" y="0.0" width="45" height="50"/>
+                                        <fontDescription key="fontDescription" name="Vazir-Bold" family="Vazir" pointSize="20"/>
+                                        <color key="textColor" red="0.94410854580000003" green="0.95810431240000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JmE-qg-Abw">
                                         <rect key="frame" x="215" y="6.5" width="96" height="37"/>
                                         <fontDescription key="fontDescription" name="Vazir-Light" family="Vazir" pointSize="16"/>
@@ -170,10 +180,14 @@
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jyY-Kr-Eg9" secondAttribute="trailing" constant="20" symbolic="YES" id="BCr-pD-rKD"/>
                                     <constraint firstItem="jyY-Kr-Eg9" firstAttribute="leading" secondItem="FbX-Fd-R0y" secondAttribute="leading" id="Ev1-hj-Sqz"/>
                                     <constraint firstItem="jyY-Kr-Eg9" firstAttribute="top" secondItem="FbX-Fd-R0y" secondAttribute="top" id="FVs-fs-4cf"/>
+                                    <constraint firstItem="K0Y-Dq-opf" firstAttribute="trailing" secondItem="jyY-Kr-Eg9" secondAttribute="trailing" constant="-24" id="G5G-7W-nQp"/>
                                     <constraint firstAttribute="width" secondItem="FbX-Fd-R0y" secondAttribute="height" multiplier="311:50" id="UqR-ud-hBW"/>
                                     <constraint firstItem="JmE-qg-Abw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jyY-Kr-Eg9" secondAttribute="trailing" constant="8" symbolic="YES" id="VMJ-BC-X93"/>
+                                    <constraint firstItem="K0Y-Dq-opf" firstAttribute="top" secondItem="jyY-Kr-Eg9" secondAttribute="top" id="bOc-AG-JKB"/>
+                                    <constraint firstItem="K0Y-Dq-opf" firstAttribute="bottom" secondItem="jyY-Kr-Eg9" secondAttribute="bottom" id="c1r-dp-hjw"/>
                                     <constraint firstItem="jyY-Kr-Eg9" firstAttribute="bottom" secondItem="FbX-Fd-R0y" secondAttribute="bottom" id="deS-0A-UMr"/>
                                     <constraint firstItem="JmE-qg-Abw" firstAttribute="centerY" secondItem="jyY-Kr-Eg9" secondAttribute="centerY" id="gvf-Ks-2jS"/>
+                                    <constraint firstItem="K0Y-Dq-opf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FbX-Fd-R0y" secondAttribute="leading" constant="20" symbolic="YES" id="jio-sY-luU"/>
                                     <constraint firstAttribute="trailing" secondItem="JmE-qg-Abw" secondAttribute="trailing" id="obL-Ty-i4I"/>
                                 </constraints>
                             </view>
@@ -285,7 +299,7 @@
                                         </constraints>
                                         <color key="textColor" red="0.2302554846" green="0.2225066423" blue="0.34847956899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" textContentType="email"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="15"/>
@@ -526,7 +540,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mo0-Lw-ZD6">
-                                        <rect key="frame" x="310" y="33.5" width="33" height="33"/>
+                                        <rect key="frame" x="277" y="17" width="66" height="66"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Mo0-Lw-ZD6" secondAttribute="height" multiplier="1:1" id="UGR-Pl-4bp"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="33" id="eCL-zl-AVR"/>
@@ -2376,6 +2390,10 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="Home"/>
+                                            <userDefinedRuntimeAttribute type="point" keyPath="coordinate">
+                                                <point key="value" x="15" y="15"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="homeAction:" destination="BNU-Pt-hRf" eventType="touchUpInside" id="e3K-sw-SqL"/>
@@ -2440,7 +2458,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RC3-yy-QeC">
-                                                <rect key="frame" x="310" y="29" width="33" height="33"/>
+                                                <rect key="frame" x="277" y="12.5" width="66" height="66"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="RC3-yy-QeC" secondAttribute="height" multiplier="1:1" id="LeS-66-L4T"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="33" id="alm-cz-b32"/>

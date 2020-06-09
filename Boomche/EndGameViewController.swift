@@ -12,7 +12,7 @@ import UIKit
 class EndGameViewController: UIViewController {
  
     @IBOutlet weak var scoresTableView: UITableView!
-    @IBOutlet weak var homeButton: CustomButton!
+    @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var againButton: UIButton!
     
     //MARK: Button Actions
@@ -34,14 +34,8 @@ class EndGameViewController: UIViewController {
         scoresTableView.dataSource = Game.sharedInstance.round.scoreboardTableViewDelegates
     }
     
-    //MARK: UI Handling
-    func setHomeButtonAttributes() {
-        homeButton.setImage(image: UIImage(named: "Home")!)
-    }
-    
     func configure() {
         initializeVariables()
-        setHomeButtonAttributes()
     }
     
     override func viewDidLoad() {

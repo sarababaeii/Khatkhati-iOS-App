@@ -23,6 +23,7 @@ class GuessingViewController: UIViewController {
     @IBOutlet weak var messageView: UIView!
     @IBOutlet weak var chatTextField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var messageViewBottomConstraint: NSLayoutConstraint!
     
     //MARK: Timer Setting
     func setTimer() {
@@ -35,13 +36,12 @@ class GuessingViewController: UIViewController {
         timer.on()
     }
     
-    //MARK: Previous Drawing
+    //MARK: Previous Drawing For Random Game
     func showPreDrawing() {
         guard let paint = Game.sharedInstance.round.paint else {
             return
         }
         for stroke in paint {
-            print("hi")
             drawStroke(points: stroke)
         }
     }
@@ -104,32 +104,21 @@ class GuessingViewController: UIViewController {
     }
     
     func registerForKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShowOrChange), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShowOrChange), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    @objc func keyboardWillShow(notification: NSNotification){
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height
-            }
+    @objc func keyboardWillShowOrChange(notification: NSNotification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
         }
+        messageViewBottomConstraint.constant = -keyboardSize.height
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y != 0 {
-//                self.view.frame.origin.y += keyboardSize.height
-                self.view.frame.origin.y = 0
-            }
-        }
-//        adjustLayoutForKeyboard(targetHight: 0)
-    }
-    
-    func adjustLayoutForKeyboard(targetHight: CGFloat){
-//        if self.view.frame.origin.y == 0 {
-            messageView.frame.origin.y -= targetHight
-//        }
+        messageViewBottomConstraint.constant = 0
+//        messageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: keyboardSize.height).isActive = true
     }
     
     //MARK: Initializing

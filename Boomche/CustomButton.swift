@@ -80,7 +80,7 @@ import UIKit
     
     @IBInspectable var image: UIImage? {
         didSet {
-            self.setImage(image: image!)
+            self.setImage(image: image!, coordinate: coordinate)
         }
     }
     
@@ -92,12 +92,11 @@ import UIKit
     
     var overImageView: UIImageView?
     
-    func setImage(image: UIImage, coordinate: CGPoint = CGPoint(x: 0, y: 0)) {
+    func setImage(image: UIImage, coordinate: CGPoint) {
         let view = UIView()
         view.frame = self.bounds
 
         let imageView = UIImageView(frame: CGRect(origin: coordinate, size: image.size))
-//        let imageView = UIImageView(frame: CGRect(x: 15, y: 15, width: image.size.width, height: image.size.height))
         imageView.image = image
 
         overImageView?.removeFromSuperview()

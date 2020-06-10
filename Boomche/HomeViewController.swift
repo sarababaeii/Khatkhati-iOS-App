@@ -10,14 +10,13 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var joinGameButton: CustomButton!
-    @IBOutlet weak var createLobbyButton: CustomButton!
+    @IBOutlet weak var joinGameButton: UIButton!
+    @IBOutlet weak var createLobbyButton: UIButton!
     
     @IBAction func createLobbyAction(_ sender: Any) {
         SocketIOManager.sharedInstance.requestRoomID()
         createLobbyButton.layer.masksToBounds = true //to showing button selected
     }
-    
     
     func configure(){
         Game.sharedInstance.gameFinished()
@@ -28,7 +27,6 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     
         configure()
-//        print("heeeeeeeeey \(self.getSubviews(view: self.view)?.count as Any)")
     }
     
     override func viewDidLayoutSubviews() {

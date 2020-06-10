@@ -111,7 +111,6 @@ class GuessingViewController: UIViewController {
     
     @objc func keyboardWillHide(notification: NSNotification) {
         messageViewBottomConstraint.constant = 0
-//        messageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: keyboardSize.height).isActive = true
     }
     
     //MARK: Initializing

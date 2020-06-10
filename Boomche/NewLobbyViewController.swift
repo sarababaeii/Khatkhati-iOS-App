@@ -12,8 +12,8 @@ import UIKit
 class NewLobbyViewController: UIViewController {
     
     @IBOutlet weak var lobbyNameTextField: UITextField!
-    @IBOutlet weak var copyButton: CustomButton!
-    @IBOutlet weak var shareView: CustomButton!
+    @IBOutlet weak var copyButton: UIButton!
+    @IBOutlet weak var shareView: UIButton!
    
     @IBOutlet weak var roundsNumberLabel: UILabel!
     @IBOutlet weak var roundsNumberButton6: CustomButton!
@@ -27,7 +27,7 @@ class NewLobbyViewController: UIViewController {
     
     @IBOutlet weak var playersCollectionView: UICollectionView!
     
-    @IBOutlet weak var startGameButton: CustomButton!
+    @IBOutlet weak var startGameButton: UIButton!
     
     static var lobbyTypeButtons = [CustomButton]()
     static var roundsNumberButtons = [CustomButton]()
@@ -139,7 +139,6 @@ class NewLobbyViewController: UIViewController {
        // Do any additional setup after loading the view.
         
         configure()
-//        print("heeeeeeeeey \(self.getSubviews(view: self.view)?.count as Any)")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -150,18 +149,4 @@ class NewLobbyViewController: UIViewController {
         super.viewDidLayoutSubviews()
         self.setGradientSizes()
     }
-    
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//
-//        copyButton.gradientLayer.frame = copyButton.bounds
-//        shareView.gradientLayer.frame = shareView.bounds
-//        roundsNumberButton6.gradientLayer.frame = roundsNumberButton6.bounds
-//        roundsNumberButton5.gradientLayer.frame = roundsNumberButton5.bounds
-//        roundsNumberButton4.gradientLayer.frame = roundsNumberButton4.bounds
-//        roundsNumberButton3.gradientLayer.frame = roundsNumberButton3.bounds
-//        privateLobbyTypeButton.gradientLayer.frame = privateLobbyTypeButton.bounds
-//        publicLobbyTypeButton.gradientLayer.frame = publicLobbyTypeButton.bounds
-//        startGameButton.gradientLayer.frame = startGameButton.bounds
-//    }
 }

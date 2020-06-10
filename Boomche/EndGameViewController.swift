@@ -17,8 +17,6 @@ class EndGameViewController: UIViewController {
     
     //MARK: Button Actions
     @IBAction func playAgainAction(_ sender: Any) {
-        print("poooooooof0 \(Game.sharedInstance.round.scoreboardTableViewDelegates as Any)")
-//        Game.sharedInstance.playAgain()
         SocketIOManager.sharedInstance.requestPlayAgain()
     }
     

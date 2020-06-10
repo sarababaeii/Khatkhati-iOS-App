@@ -341,13 +341,10 @@
 			isa = PBXGroup;
 			children = (
 				03508EFD248E9CD800CB2FB0 /* Authentication */,
+				03DA88EA249167CE00FB705A /* BeforeGame */,
 				03508EFF248E9D2100CB2FB0 /* Word */,
 				03508EFE248E9CF200CB2FB0 /* Game */,
 				03508F00248E9D5500CB2FB0 /* Scores */,
-				03B6DD382422CDEB00CC0B7F /* HomeViewController.swift */,
-				03F287DC2423D9FB0024937C /* NewLobbyViewController.swift */,
-				03D5526D24245D8300969560 /* JoinGameViewController.swift */,
-				032B6D372426B40E00F7AA13 /* LoadingViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -377,6 +374,17 @@
 				037582F52448EA2600B67C3C /* Player.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		03DA88EA249167CE00FB705A /* BeforeGame */ = {
+			isa = PBXGroup;
+			children = (
+				03B6DD382422CDEB00CC0B7F /* HomeViewController.swift */,
+				03F287DC2423D9FB0024937C /* NewLobbyViewController.swift */,
+				03D5526D24245D8300969560 /* JoinGameViewController.swift */,
+				032B6D372426B40E00F7AA13 /* LoadingViewController.swift */,
+			);
+			name = BeforeGame;
 			sourceTree = "<group>";
 		};
 		03F287DB2423D5AA0024937C /* Fonts */ = {

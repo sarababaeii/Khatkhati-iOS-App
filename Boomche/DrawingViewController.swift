@@ -223,9 +223,4 @@ class DrawingViewController: UIViewController {
             showNextPage(identifier: "ChoosingWordViewController")
         }
     }
-    
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        self.setGradientSizes()
-//    }
 }

@@ -30,13 +30,6 @@ class Game {
         joinedState = 0
     }
     
-//    func playAgain() {
-//        round.roundFinished()
-//        for player in players {
-//            player.playAgain()
-//        }
-//    }
-    
     func gameFinished() {
         roomID = nil
         players = [Player]()

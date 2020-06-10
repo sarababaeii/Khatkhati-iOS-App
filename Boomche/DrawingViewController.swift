@@ -89,6 +89,7 @@ class DrawingViewController: UIViewController {
             return
         }
         canvas.image = nil
+        Game.sharedInstance.round.drawing?.brushColor = UIColor.white
         trashButton.setImage(UIImage(named: "SelectedTrash"), for: .normal)
         unselectTool(by: trashButton)
     }
@@ -222,4 +223,9 @@ class DrawingViewController: UIViewController {
             showNextPage(identifier: "ChoosingWordViewController")
         }
     }
+    
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        self.setGradientSizes()
+//    }
 }

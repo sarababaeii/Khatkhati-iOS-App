@@ -44,4 +44,9 @@ class EndGameViewController: UIViewController {
      
         configure()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.setGradientSizes()
+    }
 }

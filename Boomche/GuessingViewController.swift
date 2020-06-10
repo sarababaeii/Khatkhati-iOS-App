@@ -84,18 +84,11 @@ class GuessingViewController: UIViewController {
     
     //MARK: Sending Message
     @IBAction func sendMessage(_ sender: Any) {
-        if let message = fetchInput() {
+        if let message = chatTextField.fetchInput() {
             SocketIOManager.sharedInstance.sendMessage(message: message)
             chatTextField.text = ""
             chatTextField.resignFirstResponder()
         }
-    }
-    
-    func fetchInput() -> String? {
-        if let caption = chatTextField.text?.trimmingCharacters(in: .whitespaces) {
-            return caption.count > 0 ? caption : nil
-        }
-        return nil
     }
     
     //MARK: Keyboard Management
@@ -164,5 +157,10 @@ class GuessingViewController: UIViewController {
             WaitingViewController.parentViewController = self
             showNextPage(identifier: "WaitingViewController")
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.setGradientSizes()
     }
 }

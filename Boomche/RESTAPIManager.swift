@@ -24,6 +24,7 @@ class RestAPIManagr {
     var accessToken: String?
     var refreshToken: String?
     
+    //MARK: Creating A Request
     func createRequest(url: URL, params: [String: Any]) -> URLRequest {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -45,6 +46,7 @@ class RestAPIManagr {
         return createRequest(url: API.signUpURL, params: params)
     }
     
+    //MARK: Posting A Request
     func postRequest(request: URLRequest) {
         let session = URLSession(configuration: .default)
         var code = 0
@@ -63,6 +65,7 @@ class RestAPIManagr {
         }
     }
     
+    //MARK: Processing Response
     func setToken(data: Data?) {
         guard let data = data, let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
             return
@@ -92,10 +95,11 @@ class RestAPIManagr {
         } else if response == 401{
             UIApplication.topViewController()?.showNextPage(identifier: "SignUpViewController")
         } else {
-            print("Error1 \(response)")
+            UIApplication.topViewController()?.showToast(message: "Error \(response)")
         }
     }
     
+    //MARK: Functions
     func login(email: String, password: String) {
         postRequest(request: createLoginRequest(email: email, password: password))
     }

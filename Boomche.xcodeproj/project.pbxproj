@@ -48,7 +48,6 @@
 		03BB1E88243E531C00459FDE /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BB1E87243E531C00459FDE /* MessageTableViewCell.swift */; };
 		03C544BD2424EF3B00C4049C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C544BC2424EF3B00C4049C /* Color.swift */; };
 		03C544BF2424F0C200C4049C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C544BE2424F0C200C4049C /* Colors.swift */; };
-		03C727282426584300334429 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C727272426584300334429 /* GradientView.swift */; };
 		03CA7C65243C69D600578B60 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CA7C64243C69D600578B60 /* UIApplicationExtension.swift */; };
 		03CD95B82472B03500594050 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD95B72472B03500594050 /* CustomView.swift */; };
 		03CD95BA2472BFD800594050 /* ColorsCollectionViewDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CD95B92472BFD800594050 /* ColorsCollectionViewDelegates.swift */; };
@@ -129,7 +128,6 @@
 		03BB1E87243E531C00459FDE /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		03C544BC2424EF3B00C4049C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		03C544BE2424F0C200C4049C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		03C727272426584300334429 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		03CA7C64243C69D600578B60 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		03CD95B72472B03500594050 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		03CD95B92472BFD800594050 /* ColorsCollectionViewDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsCollectionViewDelegates.swift; sourceTree = "<group>"; };
@@ -231,6 +229,7 @@
 		03508EFC248E9BF200CB2FB0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				03C544BC2424EF3B00C4049C /* Color.swift */,
 				03CA7C64243C69D600578B60 /* UIApplicationExtension.swift */,
 				031F857B244B76CE00C8B947 /* StringExtension.swift */,
 			);
@@ -357,7 +356,6 @@
 			isa = PBXGroup;
 			children = (
 				03C544BE2424F0C200C4049C /* Colors.swift */,
-				03C727272426584300334429 /* GradientView.swift */,
 				03478B34248D54F40085383F /* UIComponents */,
 				03478B33248D54C10085383F /* Cells */,
 				03B6DD3A2422CDEB00CC0B7F /* Main.storyboard */,
@@ -371,10 +369,9 @@
 				03508EFB248E9B9500CB2FB0 /* ServerHandlers */,
 				03508EFA248E9B1B00CB2FB0 /* Delegates */,
 				03508EFC248E9BF200CB2FB0 /* Extensions */,
-				03C544BC2424EF3B00C4049C /* Color.swift */,
-				03506C01243257EE0052DE06 /* TimerSetting.swift */,
 				03506C0324329D990052DE06 /* Game.swift */,
 				03CD95BB2472F3E000594050 /* Round.swift */,
+				03506C01243257EE0052DE06 /* TimerSetting.swift */,
 				03BA7663243548E200E0B345 /* Drawing.swift */,
 				0381AAB4243F6D7900C4E1DE /* Message.swift */,
 				037582F52448EA2600B67C3C /* Player.swift */,
@@ -674,7 +671,6 @@
 				03F287DF2423F2320024937C /* CustomLabel.swift in Sources */,
 				0323C15F242EB6A20074856A /* SocketIOManager.swift in Sources */,
 				03C544BD2424EF3B00C4049C /* Color.swift in Sources */,
-				03C727282426584300334429 /* GradientView.swift in Sources */,
 				031F857C244B76CE00C8B947 /* StringExtension.swift in Sources */,
 				03B6DD392422CDEB00CC0B7F /* HomeViewController.swift in Sources */,
 				03CD95B82472B03500594050 /* CustomView.swift in Sources */,

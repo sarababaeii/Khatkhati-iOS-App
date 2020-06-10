@@ -11,17 +11,11 @@ import UIKit
 import SwiftGifOrigin
 
 class LoadingViewController: UIViewController {
-
-    static var parentStoryboardID: String?
     
     @IBOutlet weak var loadingBackgroundImage: UIImageView!
     
     @IBAction func back(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: LoadingViewController.parentStoryboardID!) as UIViewController
-        controller.modalPresentationStyle = .fullScreen
-        controller.modalTransitionStyle = .flipHorizontal
-        present(controller, animated: true, completion: nil)
+        self.showNextPage(identifier: "JoinGameViewController")
     }
     
     //MARK: UI Handling

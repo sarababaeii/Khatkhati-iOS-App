@@ -43,8 +43,6 @@ class Player {
     var isPainter = false
     var isFirstGuesser = false
     
-//    var wantsPlayAgain = false
-    
     init(socketID: String, username: String, colorCode: Int, totalScore: Double, currentScore: Double) {
         self.socketID = socketID
         self.username = username
@@ -77,6 +75,10 @@ class Player {
         self.init(socketID: socketID, username: username, colorCode: 1)
     }
     
+    func isMe() -> Bool {
+        return self.socketID == Game.sharedInstance.me.socketID
+    }
+    
     func roundFinished() {
         totalScore += currentScore
         currentScore = 0
@@ -84,11 +86,6 @@ class Player {
         isPainter = false
         isFirstGuesser = false
     }
-    
-//    func playAgain() {
-//        roundFinished()
-//        totalScore = 0
-//    }
     
     func gameFinished() {
         roundFinished()

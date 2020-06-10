@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 @IBDesignable class CustomButton: UIButton {
+    
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {
             self.layer.cornerRadius = self.cornerRadius
@@ -43,9 +44,22 @@ import UIKit
     }
     
     func removeGradient() {
-        if let topLayer = self.layer.sublayers?.first, topLayer is CAGradientLayer {
-            topLayer.removeFromSuperlayer()
+        if let gradientLayer = self.getGradientLayer() {
+            gradientLayer.removeFromSuperlayer()
         }
+    }
+    
+    func resizeGradientLayer() {
+        if let gradientLayer = self.getGradientLayer() {
+            gradientLayer.frame = self.bounds
+        }
+    }
+    
+    private func getGradientLayer() -> CALayer? {
+        if let topLayer = self.layer.sublayers?.first, topLayer is CAGradientLayer {
+            return topLayer
+        }
+        return nil
     }
     
     @IBInspectable var shadowColor: UIColor = UIColor.white {
@@ -106,7 +120,7 @@ import UIKit
     
     //MARK: For NewLobbyViewController Settings
     func select(isTypeButton: Bool) {
-        self.setTitleColor(Colors.white.componentColor?.lightBackground, for: .normal)
+        self.setTitleColor(UIColor.white, for: .normal)
         self.isEnabled = false
         if isTypeButton {
             self.lightGradientColor = Colors.blue.componentColor!.lightBackground
@@ -126,6 +140,6 @@ import UIKit
     }
     
     func isSelected() -> Bool {
-        return (self.titleLabel?.textColor == Colors.white.componentColor?.lightBackground)
+        return (self.titleLabel?.textColor == UIColor.white)
     }
 }

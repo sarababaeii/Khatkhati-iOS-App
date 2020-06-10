@@ -10,49 +10,53 @@ import Foundation
 import UIKit
 
 class PlayersCollectionViewDelegates: NSObject, UICollectionViewDelegate, UICollectionViewDataSource {
+    
     var playersCollectionView: UICollectionView
     
+    //MARK: Initializer
     init(playersCollectionView: UICollectionView) {
         self.playersCollectionView = playersCollectionView
     }
     
+    //MARK: Protocol Functions
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Game.sharedInstance.players.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlayerCellID", for: indexPath) as! PlayerCollectionViewCell
-        let player = playerDataSource(indexPath: indexPath)
-        cell.setAttributes(player: player!)
         
-        if player?.socketID == Game.sharedInstance.me.socketID {
-            cell.setTextColor(color: player!.color)
+        if let player = playerDataSource(indexPath: indexPath) {
+            cell.setAttributes(player: player)
+            if player.isMe() {
+                cell.setTextColor(color: player.color)
+            }
         }
         return cell
     }
     
     func playerDataSource(indexPath: IndexPath) -> Player? {
-        return Game.sharedInstance.players[indexPath.row]
+        if indexPath.row < Game.sharedInstance.players.count {
+            return Game.sharedInstance.players[indexPath.row]
+        }
+        return nil
     }
     
-    func insertPlayer(_ player: Player?, at indexPath: IndexPath?){
+    //MARK: Functions
+    func insertPlayer(_ player: Player?, at indexPath: IndexPath?) {
         if let player = player, let indexPath = indexPath {
-            playersCollectionView.performBatchUpdates( {
-                
+            playersCollectionView.performBatchUpdates({
                 Game.sharedInstance.players.insert(player, at: indexPath.item)
                 playersCollectionView.insertItems(at: [indexPath])
-                
             }, completion: nil)
         }
     }
 
-    func deletePlayer(at indexPath: IndexPath?){
+    func deletePlayer(at indexPath: IndexPath?) {
         if let indexPath = indexPath {
             playersCollectionView.performBatchUpdates({
-                
                 Game.sharedInstance.players.remove(at: indexPath.item)
                 playersCollectionView.deleteItems(at: [indexPath])
-                
             }, completion: nil)
         }
     }
@@ -63,16 +67,14 @@ class PlayersCollectionViewDelegates: NSObject, UICollectionViewDelegate, UIColl
         }
         
         for user in users {
-            let socketID = user["socket_id"] as! String
-            let username = user["name"] as! String
-            let colorCode = user["color"] as! Int
-
+            let player = Player(socketID: user["socket_id"] as! String, username: user["name"] as! String, colorCode: user["color"] as! Int)
             let indexPath = IndexPath(item: Game.sharedInstance.players.count, section: 0)
-            if Game.sharedInstance.me.socketID == socketID { //check
-                Game.sharedInstance.me.colorCode = colorCode
+            
+            if player.isMe() {
+                Game.sharedInstance.me.colorCode = player.colorCode
                 insertPlayer(Game.sharedInstance.me, at: indexPath)
             } else {
-                insertPlayer(Player(socketID: socketID, username: username, colorCode: colorCode), at: indexPath)
+                insertPlayer(player, at: indexPath)
             }
         }
     }

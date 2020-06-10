@@ -48,4 +48,9 @@ class SignUpViewController: UIViewController {
         
         configure()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.setGradientSizes()
+    }
 }

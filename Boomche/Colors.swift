@@ -50,13 +50,12 @@ enum Colors {
                               border: UIColor(red: 210/255, green: 208/255, blue: 244/255, alpha: 1))
         case .dusk:
             return Color.init(UIColor(red: 59/255, green: 57/255, blue: 89/255, alpha: 1))
-        case .white:
-            return Color.init(UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1))
         default:
             return nil
         }
     }
 
+    //MARK: Drawing Colors
     var drawingColor: Color? {
         switch self {
         case .purple:
@@ -79,13 +78,12 @@ enum Colors {
             return Color.init(UIColor(red: 48/255, green: 40/255, blue: 43/255, alpha: 1))
         case .gray:
             return Color.init(UIColor(red: 243/255, green: 243/255, blue: 246/255, alpha: 1))
-        case .white:
-            return Color.init(UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1))
         default:
             return nil
         }
     }
     
+    //MARK: Player Colors
     var playerColor: Color? {
         switch self {
         case .red:
@@ -103,36 +101,5 @@ enum Colors {
         default:
             return nil
         }
-    }
-}
-
-
-extension UIColor {
-    convenience init(hexString: String, alpha: CGFloat = 1.0) {
-        let hexString: String = hexString.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-        let scanner = Scanner(string: hexString)
-        if (hexString.hasPrefix("#")) {
-            scanner.scanLocation = 1
-        }
-        var color: UInt32 = 0
-        scanner.scanHexInt32(&color)
-        let mask = 0x000000FF
-        let r = Int(color >> 16) & mask
-        let g = Int(color >> 8) & mask
-        let b = Int(color) & mask
-        let red   = CGFloat(r) / 255.0
-        let green = CGFloat(g) / 255.0
-        let blue  = CGFloat(b) / 255.0
-        self.init(red:red, green:green, blue:blue, alpha:alpha)
-    }
-    
-    func toHexString() -> String {
-        var r:CGFloat = 0
-        var g:CGFloat = 0
-        var b:CGFloat = 0
-        var a:CGFloat = 0
-        getRed(&r, green: &g, blue: &b, alpha: &a)
-        let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
-        return String(format:"#%06x", rgb)
     }
 }

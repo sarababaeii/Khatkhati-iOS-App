@@ -59,4 +59,9 @@ class ChoosingWordViewController: UIViewController {
      
         configure()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.setGradientSizes()
+    }
 }

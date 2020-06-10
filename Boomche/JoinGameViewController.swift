@@ -21,19 +21,12 @@ class JoinGameViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func joinGameAction(_ sender: Any) {
-        if let caption = fetchInput() {
+        if let caption = lobbyCodeTextField.fetchInput() {
             SocketIOManager.sharedInstance.joinGame(roomID: caption)
             lobbyCodeTextField.resignFirstResponder()
             
             self.showNextPage(identifier: "NewLobbyViewController")
         }
-    }
-    
-    func fetchInput() -> String? {
-        if let caption = lobbyCodeTextField.text?.trimmingCharacters(in: .whitespaces) {
-            return caption.count > 0 ? caption : nil
-        }
-        return nil
     }
     
     //MARK: Keyboard management
@@ -69,5 +62,17 @@ class JoinGameViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         
         configure()
+//        print("heeeeeeeeey \(self.getSubviews(view: self.view)?.count as Any)")
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.setGradientSizes()
+    }
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//
+//        randomGameButton.gradientLayer.frame = randomGameButton.bounds
+//        joinButton.gradientLayer.frame = joinButton.bounds
+//    }
 }

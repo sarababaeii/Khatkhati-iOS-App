@@ -12,8 +12,8 @@ import UIKit
 class NewLobbyViewController: UIViewController {
     
     @IBOutlet weak var lobbyNameTextField: UITextField!
-    @IBOutlet weak var copyButton: UIButton!
-    @IBOutlet weak var shareView: UIButton!
+    @IBOutlet weak var copyButton: CustomButton!
+    @IBOutlet weak var shareView: CustomButton!
    
     @IBOutlet weak var roundsNumberLabel: UILabel!
     @IBOutlet weak var roundsNumberButton6: CustomButton!
@@ -27,7 +27,7 @@ class NewLobbyViewController: UIViewController {
     
     @IBOutlet weak var playersCollectionView: UICollectionView!
     
-    @IBOutlet weak var startGameButton: UIButton!
+    @IBOutlet weak var startGameButton: CustomButton!
     
     static var lobbyTypeButtons = [CustomButton]()
     static var roundsNumberButtons = [CustomButton]()
@@ -36,14 +36,14 @@ class NewLobbyViewController: UIViewController {
     
     //MARK: Sharing Lobby Name
     @IBAction func copyLobbyName(_ sender: Any) {
-        if let lobbyName = fetchInput() {
+        if let lobbyName = lobbyNameTextField.fetchInput() {
             UIPasteboard.general.string = lobbyName
             lobbyNameTextField.resignFirstResponder()
         }
     }
     
     @IBAction func shareLobbyName(_ sender: Any) {
-        if let lobbyName = fetchInput() {
+        if let lobbyName = lobbyNameTextField.fetchInput() {
             displaySharingOption(lobbyName: lobbyName)
         }
     }
@@ -56,13 +56,6 @@ class NewLobbyViewController: UIViewController {
         activityViewController.popoverPresentationController?.sourceView = view
 //        activityViewController.excludedActivityTypes = [UIActivity.ActivityType.message]
         present(activityViewController, animated: true, completion: nil)
-    }
-    
-    func fetchInput() -> String? {
-        if let caption = lobbyNameTextField.text?.trimmingCharacters(in: .whitespaces) {
-            return caption.count > 0 ? caption : nil
-        }
-        return nil
     }
     
     //MARK: Game Properties
@@ -146,9 +139,29 @@ class NewLobbyViewController: UIViewController {
        // Do any additional setup after loading the view.
         
         configure()
+//        print("heeeeeeeeey \(self.getSubviews(view: self.view)?.count as Any)")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         clearVariables()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.setGradientSizes()
+    }
+    
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//
+//        copyButton.gradientLayer.frame = copyButton.bounds
+//        shareView.gradientLayer.frame = shareView.bounds
+//        roundsNumberButton6.gradientLayer.frame = roundsNumberButton6.bounds
+//        roundsNumberButton5.gradientLayer.frame = roundsNumberButton5.bounds
+//        roundsNumberButton4.gradientLayer.frame = roundsNumberButton4.bounds
+//        roundsNumberButton3.gradientLayer.frame = roundsNumberButton3.bounds
+//        privateLobbyTypeButton.gradientLayer.frame = privateLobbyTypeButton.bounds
+//        publicLobbyTypeButton.gradientLayer.frame = publicLobbyTypeButton.bounds
+//        startGameButton.gradientLayer.frame = startGameButton.bounds
+//    }
 }

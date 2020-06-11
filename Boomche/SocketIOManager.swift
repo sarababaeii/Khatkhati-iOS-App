@@ -94,8 +94,14 @@ class SocketIOManager: NSObject {
         }
         
         socket.on("lets_play") { data, ack in
-            print("^^^^^GAME STARTED^^^^^^")
+            print("^^^^^ GAME STARTED ^^^^^^")
             self.getStartDrawing(data: data[0] as! [String : Any])
+        }
+        
+        socket.on("conversation_private") { data, ack in
+            print("^^^^^ RECEIVING DRAWING ^^^^^^")
+            let temp = data[0] as! [String : Any]
+            self.receiveDrawing(data: temp["data"] as! [String : Any])
         }
         
         socket.on("chat_and_guess") {data, ack in
@@ -254,9 +260,8 @@ class SocketIOManager: NSObject {
         case 6:
             NewLobbyViewController.roundsNumberButtons[3].select(isTypeButton: false)
         default:
-            return
-//            NewLobbyViewController.roundsNumberButtons[0].select(isTypeButton: false)
-//            sendGameSetting(name: "round", value: "3")
+            NewLobbyViewController.roundsNumberButtons[0].select(isTypeButton: false)
+            sendGameSetting(name: "round", value: "3")
         }
     }
     
@@ -343,6 +348,24 @@ class SocketIOManager: NSObject {
         socket?.emit("send_message", data)
     }
     
+    func receiveDrawing(data: [String : Any]) {
+        guard Game.sharedInstance.roomID == data["room"] as? String, UIApplication.topViewController()?.restorationIdentifier == "GuessingViewController" else {
+            return
+        }
+        
+        let point = data["point"] as! [CGFloat]
+        switch data["state"] as! String {
+        case "start":
+            Game.sharedInstance.round.drawing?.touchesBegan(CGPoint(x: point[0], y: point[1]))
+        case "moving":
+            Game.sharedInstance.round.drawing?.touchesMoved(CGPoint(x: point[0], y: point[1]))
+        case "end":
+            Game.sharedInstance.round.drawing?.touchesEnded()
+        default:
+            print("Error in receiving draw")
+        }
+    }
+    
     //MARK: Chatting
     func sendMessage(message: String) {
         let data = ["room_id": Game.sharedInstance.roomID!, "text": message, "username": Game.sharedInstance.me.username, "socket_id": Game.sharedInstance.me.socketID]
@@ -400,8 +423,9 @@ class SocketIOManager: NSObject {
         
         for user in users {
             if user["play_again"] as! Int == 1,
-                let index = Game.sharedInstance.players.firstIndex(where: {$0.socketID == user["socket_id"] as! String}) {
-                Game.sharedInstance.round.scoreboardTableViewDelegates?.setPlayAgain(userIndex: index)
+                let index = Game.sharedInstance.players.firstIndex(where: {$0.username == user["name"] as! String}) {
+                    print("heeeeey \(index)")
+                    Game.sharedInstance.round.scoreboardTableViewDelegates?.setPlayAgain(userIndex: index)
             }
         }
     }

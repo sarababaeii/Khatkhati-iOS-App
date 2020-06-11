@@ -119,11 +119,9 @@ class NewLobbyViewController: UIViewController {
             for button in NewLobbyViewController.roundsNumberButtons {
                 button.isEnabled = false
             }
-            
             for button in NewLobbyViewController.lobbyTypeButtons {
                 button.isEnabled = false
             }
-            
             startGameButton.isEnabled = false
         }
     }

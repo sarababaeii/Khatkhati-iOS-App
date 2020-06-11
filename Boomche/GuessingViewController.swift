@@ -55,33 +55,6 @@ class GuessingViewController: UIViewController {
         Game.sharedInstance.round.drawing?.touchesEnded()
     }
     
-    //MARK: Socket Management For Drawing
-    func addSocketHandler() {
-        SocketIOManager.sharedInstance.socket?.on("conversation_private") { data, ack in
-            var temp = data[0] as! [String : Any]
-            temp = temp["data"] as! [String : Any]
-            
-            if let roomID = Game.sharedInstance.roomID {
-                if roomID == temp["room"] as! String {
-                    self.showDrawing(state: temp["state"] as! String, point: temp["point"] as! [CGFloat])
-                }
-            }
-        }
-    }
-    
-    func showDrawing(state: String, point: [CGFloat]) {
-        switch state {
-        case "start":
-            Game.sharedInstance.round.drawing?.touchesBegan(CGPoint(x: point[0], y: point[1]))
-        case "moving":
-            Game.sharedInstance.round.drawing?.touchesMoved(CGPoint(x: point[0], y: point[1]))
-        case "end":
-            Game.sharedInstance.round.drawing?.touchesEnded()
-        default:
-            print("Error in receiving draw")
-        }
-    }
-    
     //MARK: Sending Message
     @IBAction func sendMessage(_ sender: Any) {
         if let message = chatTextField.fetchInput() {
@@ -135,8 +108,6 @@ class GuessingViewController: UIViewController {
     
     func configure() {
         registerForKeyboardNotifications()
-        
-        addSocketHandler()
     }
     
     override func viewDidLoad() {

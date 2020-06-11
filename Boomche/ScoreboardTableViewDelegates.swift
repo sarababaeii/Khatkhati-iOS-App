@@ -49,7 +49,7 @@ class ScoreboardTableViewDelegates: NSObject, UITableViewDelegate, UITableViewDa
     //MARK: Functions
     static func initialScoreboard(users: [[String : Any]]) {
         for user in users {
-            let index = Game.sharedInstance.players.firstIndex(where: {$0.username == user["name"] as! String})
+            let index = Game.sharedInstance.players.firstIndex(where: {$0.username == user["name"] as! String}) //socket_id
             let player =  Game.sharedInstance.players[index!]
             
             player.currentScore = Int(user["current_score"] as! Double)

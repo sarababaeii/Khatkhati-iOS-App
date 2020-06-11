@@ -22,17 +22,13 @@ class Drawing {
     
     var brushWidth: CGFloat = 6.0 {
         didSet {
-            if Game.sharedInstance.round.painter?.username == Game.sharedInstance.me.username { //TODO: Be more clear
-                SocketIOManager.sharedInstance.sendGameSetting(name: "lineWidth", value: String(Float(brushWidth)))
-            }
+            sendSetting(variable: "lineWidth", value: String(Float(brushWidth)))
         }
     }
     
     var brushColor: UIColor = Colors.black.drawingColor!.lightBackground {
         didSet {
-            if Game.sharedInstance.round.painter?.username == Game.sharedInstance.me.username {
-                SocketIOManager.sharedInstance.sendGameSetting(name: "color", value: brushColor.toHexString())
-            }
+            sendSetting(variable: "color", value: brushColor.toHexString())
         }
     }
     
@@ -40,14 +36,15 @@ class Drawing {
     var swiped = false
     var lastPoint = CGPoint.zero
     
+    //MARK: Initializer
     init(canvasView: UIView, canvas: UIImageView, templeCanvas: UIImageView) {
         self.canvasView = canvasView
         self.canvas = canvas
         self.templeCanvas = templeCanvas
     }
     
+    //MARK: Drawing
     func drawLine(from fromPoint: CGPoint, to toPoint: CGPoint) {
-        print("YUUUUUUUUHUUUUUUu \(fromPoint) to \(toPoint)")
         UIGraphicsBeginImageContext(canvasView.frame.size)
         
         guard let context = UIGraphicsGetCurrentContext() else {
@@ -75,20 +72,22 @@ class Drawing {
     func touchesBegan(_ touch: CGPoint) {
         swiped = false
         lastPoint = touch
+        
+        sendDrawing(state: "start")
     }
     
     func touchesMoved(_ touch: CGPoint) {
         swiped = true
         let currentPoint = touch
-        print("MMMMMMOOOOOOVVVVVEEEEE")
         drawLine(from: lastPoint, to: currentPoint)
         lastPoint = currentPoint
+        
+        sendDrawing(state: "moving")
     }
     
     func touchesEnded() {
         if !swiped {
         // draw a single point
-            print("PPPPPPOOOOOOIIIIIINNNNNTTTT")
             drawLine(from: lastPoint, to: lastPoint)
             //send to server!!
         }
@@ -101,8 +100,20 @@ class Drawing {
         UIGraphicsEndImageContext()
 
         templeCanvas.image = nil
+        
+        sendDrawing(state: "end")
+    }
+    
+    //MARK: Server Handling
+    func sendSetting(variable: String, value: String) {
+        if Game.sharedInstance.me.isPainter {
+            SocketIOManager.sharedInstance.sendGameSetting(name: variable, value: value)
+        }
+    }
+    
+    func sendDrawing(state: String) {
+        if Game.sharedInstance.me.isPainter {
+            SocketIOManager.sharedInstance.sendDrawing(state: state, point: [lastPoint.x, lastPoint.y])
+        }
     }
 }
-
-//MMMMMMOOOOOOVVVVVEEEEE
-//YUUUUUUUUHUUUUUUu (86.5, 149.5) to (90.0, 173.5)

@@ -27,7 +27,7 @@ class SocketIOManager: NSObject {
             return
         }
 
-        manager = SocketManager(socketURL: url, config: [.log(true), .compress])
+        manager = SocketManager(socketURL: url, config: [.log(false), .compress])
 
         if let manager = manager {
             socket = manager.defaultSocket

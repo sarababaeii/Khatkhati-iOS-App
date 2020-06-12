@@ -61,8 +61,8 @@ extension UIViewController {
         return subviews
     }
     
+    //MARK: Timer Finished
     func timerFinished() {
-        print("YUHU \(String(describing: self.restorationIdentifier))")
         switch self.restorationIdentifier {
         case "EndGameViewController":
             showNextPage(identifier: "HomeViewController")

@@ -1255,16 +1255,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DoW-R2-Lyu" userLabel="View2.0">
                                         <rect key="frame" x="109" y="66.5" width="148" height="34"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZM-rP-Kxl">
-                                                <rect key="frame" x="57" y="0.0" width="34" height="34"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="xZM-rP-Kxl" secondAttribute="height" multiplier="1:1" id="jBt-LS-UqW"/>
-                                                </constraints>
-                                                <state key="normal" image="SelectedPaintBrush"/>
-                                                <connections>
-                                                    <action selector="brushSelected:" destination="FH5-3d-izd" eventType="touchUpInside" id="YE6-r8-x7j"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSk-rP-wKt">
                                                 <rect key="frame" x="114" y="0.0" width="34" height="34"/>
                                                 <constraints>
@@ -1275,7 +1265,17 @@
                                                     <action selector="eraserSelected:" destination="FH5-3d-izd" eventType="touchUpInside" id="A2A-j9-22Q"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="es3-FV-8mv">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZM-rP-Kxl">
+                                                <rect key="frame" x="57" y="0.0" width="34" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="xZM-rP-Kxl" secondAttribute="height" multiplier="1:1" id="jBt-LS-UqW"/>
+                                                </constraints>
+                                                <state key="normal" image="SelectedPaintBrush"/>
+                                                <connections>
+                                                    <action selector="brushSelected:" destination="FH5-3d-izd" eventType="touchUpInside" id="YE6-r8-x7j"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="es3-FV-8mv">
                                                 <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="es3-FV-8mv" secondAttribute="height" multiplier="1:1" id="QDJ-zo-ZXI"/>
@@ -1312,7 +1312,7 @@
                                     <constraint firstItem="r7n-f5-ZMn" firstAttribute="leading" secondItem="wk6-aL-jSg" secondAttribute="leading" id="uQQ-K2-EYU"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIO-qG-iGh" customClass="CustomView" customModule="Boomche" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" restorationIdentifier="BrushSizeView" translatesAutoresizingMaskIntoConstraints="NO" id="yIO-qG-iGh" customClass="CustomView" customModule="Boomche" customModuleProvider="target">
                                 <rect key="frame" x="183.5" y="715" width="47" height="173"/>
                                 <subviews>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRr-8O-nFr">
@@ -1323,10 +1323,10 @@
                                         </constraints>
                                         <state key="normal" image="SelectedPaintBrush"/>
                                         <connections>
-                                            <action selector="changeBrushSize:" destination="FH5-3d-izd" eventType="touchUpInside" id="ExI-e2-9AC"/>
+                                            <action selector="changeThickness:" destination="FH5-3d-izd" eventType="touchUpInside" id="ExI-e2-9AC"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ty0-Kf-M5a" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ty0-Kf-M5a" userLabel="Brush Size Button0" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="10.5" y="13" width="26" height="4"/>
                                         <color key="backgroundColor" red="0.2302554846" green="0.2225066423" blue="0.34847956899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -1338,7 +1338,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="changeBrushSize:" destination="FH5-3d-izd" eventType="touchUpInside" id="69L-0Y-3vE"/>
+                                            <action selector="changeThickness:" destination="FH5-3d-izd" eventType="touchUpInside" id="69L-0Y-3vE"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m20-Rt-tC4" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
@@ -1353,10 +1353,10 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="changeBrushSize:" destination="FH5-3d-izd" eventType="touchUpInside" id="DOO-K3-Gcz"/>
+                                            <action selector="changeThickness:" destination="FH5-3d-izd" eventType="touchUpInside" id="DOO-K3-Gcz"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5N-je-7Ss" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5N-je-7Ss" userLabel="Brush Size Button2" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="10.5" y="59" width="26" height="12"/>
                                         <color key="backgroundColor" red="0.2302554846" green="0.2225066423" blue="0.34847956899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -1368,10 +1368,10 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="changeBrushSize:" destination="FH5-3d-izd" eventType="touchUpInside" id="SOs-xw-oIc"/>
+                                            <action selector="changeThickness:" destination="FH5-3d-izd" eventType="touchUpInside" id="SOs-xw-oIc"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Agb-Mt-eDO" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Agb-Mt-eDO" userLabel="Brush Size Button3" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="10.5" y="89" width="26" height="24"/>
                                         <color key="backgroundColor" red="0.2302554846" green="0.2225066423" blue="0.34847956899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -1384,7 +1384,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="changeBrushSize:" destination="FH5-3d-izd" eventType="touchUpInside" id="2rY-MV-t6Y"/>
+                                            <action selector="changeThickness:" destination="FH5-3d-izd" eventType="touchUpInside" id="2rY-MV-t6Y"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1412,7 +1412,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vUO-O0-44e" customClass="CustomView" customModule="Boomche" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" restorationIdentifier="EraserSizeView" translatesAutoresizingMaskIntoConstraints="NO" id="vUO-O0-44e" customClass="CustomView" customModule="Boomche" customModuleProvider="target">
                                 <rect key="frame" x="240.5" y="715" width="47" height="173"/>
                                 <subviews>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzV-Ld-dDy">
@@ -1422,8 +1422,11 @@
                                             <constraint firstAttribute="width" constant="34" id="NMI-ZJ-jz2"/>
                                         </constraints>
                                         <state key="normal" image="SelectedEraser"/>
+                                        <connections>
+                                            <action selector="changeThickness:" destination="FH5-3d-izd" eventType="touchUpInside" id="PHE-tI-MOt"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vhz-Ja-a4I" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vhz-Ja-a4I" userLabel="Eraser Size Button0" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="10.5" y="13" width="26" height="4"/>
                                         <color key="backgroundColor" red="0.2302554846" green="0.2225066423" blue="0.34847956899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -1434,8 +1437,11 @@
                                                 <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changeThickness:" destination="FH5-3d-izd" eventType="touchUpInside" id="Eih-AO-NaH"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcF-xG-XkO" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcF-xG-XkO" userLabel="Eraser Size Button1" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="10.5" y="35" width="26" height="6"/>
                                         <color key="backgroundColor" red="0.2302554846" green="0.2225066423" blue="0.34847956899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -1446,8 +1452,11 @@
                                                 <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changeThickness:" destination="FH5-3d-izd" eventType="touchUpInside" id="YUK-cO-ckL"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMO-Qz-6fP" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMO-Qz-6fP" userLabel="Eraser Size Button2" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="10.5" y="59" width="26" height="12"/>
                                         <color key="backgroundColor" red="0.2302554846" green="0.2225066423" blue="0.34847956899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -1458,8 +1467,11 @@
                                                 <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changeThickness:" destination="FH5-3d-izd" eventType="touchUpInside" id="izY-sa-hfN"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PE9-Ol-Pm8" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PE9-Ol-Pm8" userLabel="Eraser Size Button3" customClass="CustomButton" customModule="Boomche" customModuleProvider="target">
                                         <rect key="frame" x="10.5" y="89" width="26" height="24"/>
                                         <color key="backgroundColor" red="0.2302554846" green="0.2225066423" blue="0.34847956899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -1471,6 +1483,9 @@
                                                 <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="changeThickness:" destination="FH5-3d-izd" eventType="touchUpInside" id="Vte-t5-HF4"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.94410854580000003" green="0.95810431240000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1522,16 +1537,15 @@
                     </view>
                     <connections>
                         <outlet property="brushButton" destination="xZM-rP-Kxl" id="vZD-b3-zdH"/>
-                        <outlet property="brushSizeButton0" destination="Ty0-Kf-M5a" id="H4w-tz-IFu"/>
                         <outlet property="brushSizeButton1" destination="m20-Rt-tC4" id="b7b-km-UmU"/>
-                        <outlet property="brushSizeButton2" destination="z5N-je-7Ss" id="ANx-yb-qFc"/>
-                        <outlet property="brushSizeButton3" destination="Agb-Mt-eDO" id="WMq-Dh-ri2"/>
                         <outlet property="brushSizeView" destination="yIO-qG-iGh" id="7Hn-tL-MCn"/>
                         <outlet property="canvas" destination="OK3-yE-8Z9" id="wKt-n7-yy3"/>
                         <outlet property="canvasView" destination="yek-85-i8W" id="vBO-cv-B9s"/>
                         <outlet property="chatTableView" destination="6Ag-Ar-g10" id="8cn-Bw-psa"/>
                         <outlet property="colorsCollectionView" destination="r7n-f5-ZMn" id="k28-4L-M7d"/>
                         <outlet property="eraserButton" destination="zSk-rP-wKt" id="ovf-3t-nzf"/>
+                        <outlet property="eraserSizeButton2" destination="SMO-Qz-6fP" id="xSf-og-sL4"/>
+                        <outlet property="eraserSizeView" destination="vUO-O0-44e" id="udB-QH-dxN"/>
                         <outlet property="templeCanvas" destination="IhC-yN-VJX" id="cdJ-NC-z0X"/>
                         <outlet property="timerLabel" destination="E1e-nY-c6W" id="SPY-ju-qtB"/>
                         <outlet property="trashButton" destination="es3-FV-8mv" id="DBK-Ks-LoT"/>

@@ -20,15 +20,40 @@ class Drawing {
         }
     }
     
+    var eraserWidth: CGFloat = 12.0 {
+        didSet {
+            if brushColor == UIColor.white {
+                thickness = eraserWidth
+            }
+        }
+    }
+    
     var brushWidth: CGFloat = 6.0 {
         didSet {
-            sendSetting(variable: "lineWidth", value: String(Float(brushWidth)))
+            if brushColor != UIColor.white {
+                thickness = brushWidth
+            }
+        }
+    }
+    
+    var thickness: CGFloat = 6.0 {
+        didSet {
+            sendSetting(variable: "lineWidth", value: String(Float(thickness)))
         }
     }
     
     var brushColor: UIColor = Colors.black.drawingColor!.lightBackground {
+        willSet {
+            if brushColor == UIColor.white {
+                thickness = brushWidth
+            }
+        }
         didSet {
             sendSetting(variable: "color", value: brushColor.toHexString())
+            
+            if brushColor == UIColor.white {
+                thickness = eraserWidth
+            }
         }
     }
     
@@ -58,7 +83,7 @@ class Drawing {
 
         context.setLineCap(.round)
         context.setBlendMode(.normal)
-        context.setLineWidth(brushWidth)
+        context.setLineWidth(thickness)
         context.setStrokeColor(brushColor.cgColor)
         context.setAllowsAntialiasing(true)
         context.strokePath()

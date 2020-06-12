@@ -183,104 +183,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03478B33248D54C10085383F /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				03B6ECE1244C968200D7498D /* PlayerCollectionViewCell.swift */,
-				03BB1E87243E531C00459FDE /* MessageTableViewCell.swift */,
-				035087A72471798600CF8AE8 /* ColorCollectionViewCell.swift */,
-				037582F32448CF7D00B67C3C /* ScoreTableViewCell.swift */,
-			);
-			name = Cells;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		03478B34248D54F40085383F /* UIComponents */ = {
-			isa = PBXGroup;
-			children = (
-				03B6DD6C2422E01000CC0B7F /* CustomButton.swift */,
-				03F287DE2423F2320024937C /* CustomLabel.swift */,
-				03275161244E49C1005D4474 /* CustomTextField.swift */,
-				03CD95B72472B03500594050 /* CustomView.swift */,
-				03849DBD2451EAB900166C5A /* UIViewControllerExtension.swift */,
-			);
-			name = UIComponents;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		03508EFA248E9B1B00CB2FB0 /* Delegates */ = {
-			isa = PBXGroup;
-			children = (
-				03E6742A245EAD7500DB92DC /* PlayersCollectionViewDelegates.swift */,
-				0332F485245733960006F18E /* MessageTableViewDelegates.swift */,
-				03CD95B92472BFD800594050 /* ColorsCollectionViewDelegates.swift */,
-				03B835752476D1740013E87E /* ScoreboardTableViewDelegates.swift */,
-			);
-			name = Delegates;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		03508EFB248E9B9500CB2FB0 /* ServerHandlers */ = {
-			isa = PBXGroup;
-			children = (
-				03389C4D2489AE7F00034434 /* RESTAPIManager.swift */,
-				0323C15E242EB6A20074856A /* SocketIOManager.swift */,
-			);
-			name = ServerHandlers;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		03508EFC248E9BF200CB2FB0 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				03C544BC2424EF3B00C4049C /* Color.swift */,
-				03CA7C64243C69D600578B60 /* UIApplicationExtension.swift */,
-				031F857B244B76CE00C8B947 /* StringExtension.swift */,
-			);
-			name = Extensions;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		03508EFD248E9CD800CB2FB0 /* Authentication */ = {
-			isa = PBXGroup;
-			children = (
-				03B6ECE3244CCA6600D7498D /* LoginViewController.swift */,
-				03B6ECE5244CCAB700D7498D /* SignUpViewController.swift */,
-			);
-			name = Authentication;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		03508EFE248E9CF200CB2FB0 /* Game */ = {
-			isa = PBXGroup;
-			children = (
-				033602422427AF4B00925975 /* DrawingViewController.swift */,
-				03B100E7242973E7009418D2 /* GuessingViewController.swift */,
-			);
-			name = Game;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		03508EFF248E9D2100CB2FB0 /* Word */ = {
-			isa = PBXGroup;
-			children = (
-				03D2FF3E2437503F008D9CB7 /* ChoosingWordViewController.swift */,
-				037582F12448AD5800B67C3C /* WaitingViewController.swift */,
-			);
-			name = Word;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		03508F00248E9D5500CB2FB0 /* Scores */ = {
-			isa = PBXGroup;
-			children = (
-				03D2FF402437A875008D9CB7 /* ScoresViewController.swift */,
-				031F857D244B990C00C8B947 /* EndGameViewController.swift */,
-			);
-			name = Scores;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		03B6DD282422CDEB00CC0B7F = {
 			isa = PBXGroup;
 			children = (
@@ -349,11 +251,11 @@
 		03D31E6924940959003C66E6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				03508EFD248E9CD800CB2FB0 /* Authentication */,
-				03DA88EA249167CE00FB705A /* BeforeGame */,
-				03508EFF248E9D2100CB2FB0 /* Word */,
-				03508EFE248E9CF200CB2FB0 /* Game */,
-				03508F00248E9D5500CB2FB0 /* Scores */,
+				03D31E7124941EEA003C66E6 /* Authentication */,
+				03D31E7224941F04003C66E6 /* BeforeGame */,
+				03D31E7324941F1D003C66E6 /* Word */,
+				03D31E7424941F30003C66E6 /* Game */,
+				03D31E7524941F42003C66E6 /* Scores */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -362,8 +264,8 @@
 			isa = PBXGroup;
 			children = (
 				03C544BE2424F0C200C4049C /* Colors.swift */,
-				03478B34248D54F40085383F /* UIComponents */,
-				03478B33248D54C10085383F /* Cells */,
+				03D31E6F24941E78003C66E6 /* UIComponents */,
+				03D31E7024941E92003C66E6 /* Cells */,
 				03B6DD3A2422CDEB00CC0B7F /* Main.storyboard */,
 			);
 			path = View;
@@ -372,9 +274,9 @@
 		03D31E6B24940994003C66E6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				03508EFB248E9B9500CB2FB0 /* ServerHandlers */,
-				03508EFA248E9B1B00CB2FB0 /* Delegates */,
-				03508EFC248E9BF200CB2FB0 /* Extensions */,
+				03D31E6C24941E04003C66E6 /* ServerHandlers */,
+				03D31E6D24941E21003C66E6 /* Delegates */,
+				03D31E6E24941E46003C66E6 /* Extensions */,
 				03506C0324329D990052DE06 /* Game.swift */,
 				03CD95BB2472F3E000594050 /* Round.swift */,
 				03506C01243257EE0052DE06 /* TimerSetting.swift */,
@@ -385,7 +287,69 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		03DA88EA249167CE00FB705A /* BeforeGame */ = {
+		03D31E6C24941E04003C66E6 /* ServerHandlers */ = {
+			isa = PBXGroup;
+			children = (
+				03389C4D2489AE7F00034434 /* RESTAPIManager.swift */,
+				0323C15E242EB6A20074856A /* SocketIOManager.swift */,
+			);
+			path = ServerHandlers;
+			sourceTree = "<group>";
+		};
+		03D31E6D24941E21003C66E6 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				03E6742A245EAD7500DB92DC /* PlayersCollectionViewDelegates.swift */,
+				0332F485245733960006F18E /* MessageTableViewDelegates.swift */,
+				03CD95B92472BFD800594050 /* ColorsCollectionViewDelegates.swift */,
+				03B835752476D1740013E87E /* ScoreboardTableViewDelegates.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		03D31E6E24941E46003C66E6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				03C544BC2424EF3B00C4049C /* Color.swift */,
+				03CA7C64243C69D600578B60 /* UIApplicationExtension.swift */,
+				031F857B244B76CE00C8B947 /* StringExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		03D31E6F24941E78003C66E6 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				03B6DD6C2422E01000CC0B7F /* CustomButton.swift */,
+				03F287DE2423F2320024937C /* CustomLabel.swift */,
+				03275161244E49C1005D4474 /* CustomTextField.swift */,
+				03CD95B72472B03500594050 /* CustomView.swift */,
+				03849DBD2451EAB900166C5A /* UIViewControllerExtension.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		03D31E7024941E92003C66E6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				03B6ECE1244C968200D7498D /* PlayerCollectionViewCell.swift */,
+				03BB1E87243E531C00459FDE /* MessageTableViewCell.swift */,
+				035087A72471798600CF8AE8 /* ColorCollectionViewCell.swift */,
+				037582F32448CF7D00B67C3C /* ScoreTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		03D31E7124941EEA003C66E6 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				03B6ECE3244CCA6600D7498D /* LoginViewController.swift */,
+				03B6ECE5244CCAB700D7498D /* SignUpViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		03D31E7224941F04003C66E6 /* BeforeGame */ = {
 			isa = PBXGroup;
 			children = (
 				03B6DD382422CDEB00CC0B7F /* HomeViewController.swift */,
@@ -393,8 +357,34 @@
 				03D5526D24245D8300969560 /* JoinGameViewController.swift */,
 				032B6D372426B40E00F7AA13 /* LoadingViewController.swift */,
 			);
-			name = BeforeGame;
-			path = ..;
+			path = BeforeGame;
+			sourceTree = "<group>";
+		};
+		03D31E7324941F1D003C66E6 /* Word */ = {
+			isa = PBXGroup;
+			children = (
+				03D2FF3E2437503F008D9CB7 /* ChoosingWordViewController.swift */,
+				037582F12448AD5800B67C3C /* WaitingViewController.swift */,
+			);
+			path = Word;
+			sourceTree = "<group>";
+		};
+		03D31E7424941F30003C66E6 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				033602422427AF4B00925975 /* DrawingViewController.swift */,
+				03B100E7242973E7009418D2 /* GuessingViewController.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		03D31E7524941F42003C66E6 /* Scores */ = {
+			isa = PBXGroup;
+			children = (
+				03D2FF402437A875008D9CB7 /* ScoresViewController.swift */,
+				031F857D244B990C00C8B947 /* EndGameViewController.swift */,
+			);
+			path = Scores;
 			sourceTree = "<group>";
 		};
 		03F287DB2423D5AA0024937C /* Fonts */ = {

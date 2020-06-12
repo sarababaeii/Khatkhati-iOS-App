@@ -192,6 +192,7 @@
 				037582F32448CF7D00B67C3C /* ScoreTableViewCell.swift */,
 			);
 			name = Cells;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		03478B34248D54F40085383F /* UIComponents */ = {
@@ -204,6 +205,7 @@
 				03849DBD2451EAB900166C5A /* UIViewControllerExtension.swift */,
 			);
 			name = UIComponents;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		03508EFA248E9B1B00CB2FB0 /* Delegates */ = {
@@ -215,6 +217,7 @@
 				03B835752476D1740013E87E /* ScoreboardTableViewDelegates.swift */,
 			);
 			name = Delegates;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		03508EFB248E9B9500CB2FB0 /* ServerHandlers */ = {
@@ -224,6 +227,7 @@
 				0323C15E242EB6A20074856A /* SocketIOManager.swift */,
 			);
 			name = ServerHandlers;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		03508EFC248E9BF200CB2FB0 /* Extensions */ = {
@@ -234,6 +238,7 @@
 				031F857B244B76CE00C8B947 /* StringExtension.swift */,
 			);
 			name = Extensions;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		03508EFD248E9CD800CB2FB0 /* Authentication */ = {
@@ -243,6 +248,7 @@
 				03B6ECE5244CCAB700D7498D /* SignUpViewController.swift */,
 			);
 			name = Authentication;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		03508EFE248E9CF200CB2FB0 /* Game */ = {
@@ -252,6 +258,7 @@
 				03B100E7242973E7009418D2 /* GuessingViewController.swift */,
 			);
 			name = Game;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		03508EFF248E9D2100CB2FB0 /* Word */ = {
@@ -261,6 +268,7 @@
 				037582F12448AD5800B67C3C /* WaitingViewController.swift */,
 			);
 			name = Word;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		03508F00248E9D5500CB2FB0 /* Scores */ = {
@@ -270,6 +278,7 @@
 				031F857D244B990C00C8B947 /* EndGameViewController.swift */,
 			);
 			name = Scores;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		03B6DD282422CDEB00CC0B7F = {
@@ -297,9 +306,9 @@
 		03B6DD332422CDEB00CC0B7F /* Boomche */ = {
 			isa = PBXGroup;
 			children = (
-				03B6DD6A2422CE5100CC0B7F /* Model */,
-				03B6DD692422CE4B00CC0B7F /* View */,
-				03B6DD682422CE4200CC0B7F /* Controller */,
+				03D31E6B24940994003C66E6 /* Model */,
+				03D31E6A24940977003C66E6 /* View */,
+				03D31E6924940959003C66E6 /* Controller */,
 				03B6DD672422CE2F00CC0B7F /* SupportingFiles */,
 			);
 			path = Boomche;
@@ -337,7 +346,7 @@
 			name = SupportingFiles;
 			sourceTree = "<group>";
 		};
-		03B6DD682422CE4200CC0B7F /* Controller */ = {
+		03D31E6924940959003C66E6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				03508EFD248E9CD800CB2FB0 /* Authentication */,
@@ -346,10 +355,10 @@
 				03508EFE248E9CF200CB2FB0 /* Game */,
 				03508F00248E9D5500CB2FB0 /* Scores */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
-		03B6DD692422CE4B00CC0B7F /* View */ = {
+		03D31E6A24940977003C66E6 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				03C544BE2424F0C200C4049C /* Colors.swift */,
@@ -357,10 +366,10 @@
 				03478B33248D54C10085383F /* Cells */,
 				03B6DD3A2422CDEB00CC0B7F /* Main.storyboard */,
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
-		03B6DD6A2422CE5100CC0B7F /* Model */ = {
+		03D31E6B24940994003C66E6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				03508EFB248E9B9500CB2FB0 /* ServerHandlers */,
@@ -373,7 +382,7 @@
 				0381AAB4243F6D7900C4E1DE /* Message.swift */,
 				037582F52448EA2600B67C3C /* Player.swift */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		03DA88EA249167CE00FB705A /* BeforeGame */ = {
@@ -385,6 +394,7 @@
 				032B6D372426B40E00F7AA13 /* LoadingViewController.swift */,
 			);
 			name = BeforeGame;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		03F287DB2423D5AA0024937C /* Fonts */ = {

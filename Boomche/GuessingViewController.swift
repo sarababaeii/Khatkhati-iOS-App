@@ -32,8 +32,7 @@ class GuessingViewController: UIViewController {
             time = Game.sharedInstance.time!
         }
         timerLabel.text = "۰:" + String(time).convertEnglishNumToPersianNum()
-        let timer = TimerSetting(label: timerLabel, time: time)
-        timer.on()
+        _ = TimerSetting(label: timerLabel, time: time, from: self)
     }
     
     //MARK: Previous Drawing For Random Game

@@ -260,8 +260,9 @@ class SocketIOManager: NSObject {
         case 6:
             NewLobbyViewController.roundsNumberButtons[3].select(isTypeButton: false)
         default:
-            NewLobbyViewController.roundsNumberButtons[0].select(isTypeButton: false)
-            sendGameSetting(name: "round", value: "3")
+            return
+//            NewLobbyViewController.roundsNumberButtons[0].select(isTypeButton: false)
+//            sendGameSetting(name: "round", value: "3")
         }
     }
     

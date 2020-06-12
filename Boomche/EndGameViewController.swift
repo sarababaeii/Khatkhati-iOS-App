@@ -11,9 +11,15 @@ import UIKit
 
 class EndGameViewController: UIViewController {
  
+    @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var scoresTableView: UITableView!
     @IBOutlet weak var homeButton: UIButton!
     @IBOutlet weak var againButton: UIButton!
+    
+    //MARK: Timer Setting
+    func setTimer() {
+        _ = TimerSetting(label: timerLabel, time: 20, from: self)
+    }
     
     //MARK: Button Actions
     @IBAction func playAgainAction(_ sender: Any) {
@@ -34,6 +40,7 @@ class EndGameViewController: UIViewController {
     
     func configure() {
         initializeVariables()
+        setTimer()
     }
     
     override func viewDidLoad() {

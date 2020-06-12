@@ -27,8 +27,7 @@ class ChoosingWordViewController: UIViewController {
     
     //MARK: Timer Setting
     func setTimer() {
-        let timer = TimerSetting(label: timerLabel, time: 10)
-        timer.on()
+        _ = TimerSetting(label: timerLabel, time: 10, from: self)
     }
     
     //MARK: Initializing

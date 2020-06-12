@@ -43,8 +43,7 @@ class DrawingViewController: UIViewController {
     
     //MARK: Timer Setting
     func setTimer() {
-        let timer = TimerSetting(label: timerLabel, time: 60)
-        timer.on()
+        _ = TimerSetting(label: timerLabel, time: 60, from: self)
     }
     
     @IBAction func colorPicked(_ sender: Any) {

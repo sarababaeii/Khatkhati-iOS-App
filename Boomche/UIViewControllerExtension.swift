@@ -48,7 +48,7 @@ extension UIViewController {
         }
     }
     
-    func getSubviews(view: UIView) -> [UIView]? {
+    private func getSubviews(view: UIView) -> [UIView]? {
         if view.subviews.count == 0 {
             return nil
         }
@@ -59,5 +59,15 @@ extension UIViewController {
             }
         }
         return subviews
+    }
+    
+    func timerFinished() {
+        print("YUHU \(String(describing: self.restorationIdentifier))")
+        switch self.restorationIdentifier {
+        case "EndGameViewController":
+            showNextPage(identifier: "HomeViewController")
+        default:
+            return
+        }
     }
 }

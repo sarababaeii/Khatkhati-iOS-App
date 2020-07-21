@@ -13,10 +13,16 @@ class MessageTableViewCell: UITableViewCell {
     @IBOutlet weak var messageLabel: UILabel!
     
     func setCaption(_ message: Message) {
-        if message.sender.hasGuessed && !message.isAnswer{
+        if message.sender.hasGuessed && !message.isAnswer {
             messageLabel.font = UIFont(name: "Vazir-Thin", size: 19)
         }
-        messageLabel.text = "\(message.sender.username): \(message.content)"
+        if message.isAnswer {
+            messageLabel.attributedText = NSAttributedString(string: "\(message.sender.username) \(message.content)", attributes:
+            [.underlineStyle: NSUnderlineStyle.single.rawValue])
+        }
+        else{
+            messageLabel.text = "\(message.sender.username): \(message.content)"
+        }
         messageLabel.textColor = message.sender.color.lightBackground
     }
     

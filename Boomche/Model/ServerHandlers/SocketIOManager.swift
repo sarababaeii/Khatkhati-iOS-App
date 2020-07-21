@@ -27,7 +27,7 @@ class SocketIOManager: NSObject {
             return
         }
 
-        manager = SocketManager(socketURL: url, config: [.log(false), .compress])
+        manager = SocketManager(socketURL: url, config: [.log(true), .compress])
 
         if let manager = manager {
             socket = manager.defaultSocket
@@ -231,17 +231,24 @@ class SocketIOManager: NSObject {
         }
         
         let property = data["name"] as! String
-        let value = data["val"] as! String
         
         switch property {
         case "round":
-            changeRoundsNumber(to: Int(value)!)
+            if let value = data["val"] as? String {
+                changeRoundsNumber(to: Int(value)!)
+            }
         case "room-type":
-            changeLobbyType(to: value)
+            if let value = data["val"] as? String {
+                changeLobbyType(to: value)
+            }
         case "color":
-            Game.sharedInstance.round.drawing?.brushColor = UIColor(hexString: value)
+            if let value = data["val"] as? String {
+                Game.sharedInstance.round.drawing?.brushColor = UIColor(hexString: value)
+            }
         case "lineWidth":
-            Game.sharedInstance.round.drawing?.brushWidth = CGFloat(Float(value)!)
+            if let value = data["val"] as? String { //TODO: Int is bug?!
+                Game.sharedInstance.round.drawing?.brushWidth = CGFloat(Float(value)!)
+            }
         default:
             return
         }
@@ -251,8 +258,7 @@ class SocketIOManager: NSObject {
         unselectPreviousButton(in: NewLobbyViewController.roundsNumberButtons)
         
         switch roundsNumber {
-        case 3:
-            NewLobbyViewController.roundsNumberButtons[0].select(isTypeButton: false)
+        case 3: NewLobbyViewController.roundsNumberButtons[0].select(isTypeButton: false)
         case 4:
             NewLobbyViewController.roundsNumberButtons[1].select(isTypeButton: false)
         case 5:
@@ -260,9 +266,9 @@ class SocketIOManager: NSObject {
         case 6:
             NewLobbyViewController.roundsNumberButtons[3].select(isTypeButton: false)
         default:
-            return
-//            NewLobbyViewController.roundsNumberButtons[0].select(isTypeButton: false)
-//            sendGameSetting(name: "round", value: "3")
+//            return
+            NewLobbyViewController.roundsNumberButtons[0].select(isTypeButton: false)
+            sendGameSetting(name: "round", value: "3")
         }
     }
     

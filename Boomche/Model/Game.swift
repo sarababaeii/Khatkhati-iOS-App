@@ -12,7 +12,7 @@ class Game {
     static var sharedInstance = Game()
     
     //MARK: Personal Information
-    var me = Player(socketID: "0", username: "سارا")
+    var me = Player(socketID: "0", username: "شایان")
     
     //MARK: Game Information
     var roomID: String?

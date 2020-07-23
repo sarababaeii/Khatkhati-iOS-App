@@ -20,9 +20,8 @@ class GuessingViewController: UIViewController {
     
     @IBOutlet weak var chatTableView: UITableView!
     
-    @IBOutlet weak var messageView: UIView!
     @IBOutlet weak var chatTextField: UITextField!
-    @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var messageViewBottomConstraint: NSLayoutConstraint!
     
     //MARK: Timer Setting
@@ -59,8 +58,8 @@ class GuessingViewController: UIViewController {
         if let message = chatTextField.fetchInput() {
             SocketIOManager.sharedInstance.sendMessage(message: message)
             chatTextField.text = ""
-            chatTextField.resignFirstResponder()
         }
+        chatTextField.resignFirstResponder()
     }
     
     //MARK: Keyboard Management
@@ -78,7 +77,7 @@ class GuessingViewController: UIViewController {
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
             return
         }
-        messageViewBottomConstraint.constant = -keyboardSize.height
+        messageViewBottomConstraint.constant = -keyboardSize.height + bottomView.frame.height
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
